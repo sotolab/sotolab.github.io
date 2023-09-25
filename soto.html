@@ -1,139 +1,283 @@
-<!DOCTYPE html>
-<html lang="kor">
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
 
-<head>
-    <title>소토의 멘토링</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <!-- Load Require CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font CSS -->
-    <link href="assets/css/boxicon.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Load Tempalte CSS -->
-    <link rel="stylesheet" href="assets/css/templatemo.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/custom.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-    <!-- Header -->
-    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand h1" href="index.html">
-                <i class='bx bx-buildings bx-sm text-dark'></i>
-                <span class="text-dark h4">소토</span> <span class="text-primary h4">멘토링</span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
-                <div class="flex-fill mx-xl-5 mb-2">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="soto.html">소토</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="course.html">커리큘럼</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="review.html">멘토링 후기</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">멘토링 신청</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Close Header -->
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="assets/css/style2.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
+    <!-- Ionic icons -->
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
 
-    <!-- Start Banner Hero -->
-    <section class="bg-light w-100">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <title>Soto's Mentoring</title>
+
+  </head>
+
+  <body>
+  <!-- N A V B A R -->
+  <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="icon ion-md-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="container">
+        <img src="assets/img/logo.png" width="108px" class="img-fluid nav-logo-desktop" alt="Company Logo">
+        <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+          <li class="nav-item nav-custom-link">
+            <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          </li>
+          <li class="nav-item nav-custom-link">
+            <a class="nav-link" href="soto.html">소토 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          </li>
+          <li class="nav-item nav-custom-link">
+            <a class="nav-link" href="course.html">커리큘럼 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          </li>
+          <li class="nav-item nav-custom-link">
+            <a class="nav-link" href="review.html">멘토링후기 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          </li>
+          <li class="nav-item nav-custom-link btn btn-demo-small">
+            <a class="nav-link" href="contact.html">멘토링신청 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- E N D  N A V B A R -->
+
+    <!-- About Section -->
+     <section id="about">
+        <!-- Container -->
         <div class="container">
-            <div class="row d-flex align-items-center py-5">
-                <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">소토</h1>
-                    <h4>약력</h4>
-                    <p class="light-300">
-                        컴퓨터소프트웨어 전공, 공학박사 <br>
-                        취미 : 멘토링, 글 쓰기, 책 출판 <br>
-                        전) 멘토티 소프트웨어 스쿨 운영 <br>
-                        전) 아트센터 나비 미술관, 기술멘토 <br>
-                        전) 한양대학교 공학대학원 겸임교수 <br>
-                        전) 한양사이버대학교 강의 <br>
-                        전) 한컴MDS <br>
-                    </p>
-                       <a href="project.html" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">기억에 남는 프로젝트</a><br>
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+                <h2 style="text-align:center">소토</h2>
+                <div class="after" style="top:60px"><h1>About SOTO</h1></div>
+                <div class="content" style="top:45px">
+                    <!-- row -->
+                    <div class="row" >
+                        <div class="col">
+                            <p><b>연혁</b></p>
+                            <p>    
+                                컴퓨터소프트웨어 전공, 공학박사 <br>
+                                취미 : 멘토링, 글 쓰기, 책 출판 <br>
+                                전) 멘토티 소프트웨어 스쿨 운영 <br>
+                                전) 아트센터 나비 미술관, 기술멘토 <br>
+                                전) 한양대학교 공학대학원 겸임교수 <br>
+                                전) 한양사이버대학교 강의 <br>
+                                전) 한컴MDS <br>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p><b>brief history</b></p>
+                            <p>    
+                                Computer Software Major, Doctor of Engineering <br>
+                                Hobbies: Mentoring, writing, book publishing <br>
+                                Former) Mentoti Software School Operation <br>
+                                Former) Art Center Butterfly Museum, Technical Mentor <br>
+                                Former) Adjunct Professor, Graduate School of Engineering, Hanyang University <br>
+                                Previous) Lecture at Hanyang Cyber University <br>
+                                Former) Hancom MDS <br>
+                            </p>
+                        </div>
+                    </div><!-- End of Row -->                   
                 </div>
-                <div class="col-lg-6">
-                    <img src="./assets/img/banner-img-02.svg">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Banner Hero -->
+            </div><!-- End of About Wrapper -->         
+        </div>  <!-- End of Container-->        
+     </section><!--End of Section -->
 
+     <section><div class="title mb-3" style="text-align:center"><h2>A Memorable Project</h2><p>기억에 남는 프로젝트</p></div></section>
 
-
-    <!-- Start Footer -->
-    <footer class="bg-secondary pt-4">
+    <!-- section -->
+    <section>
+        <!-- Container -->
         <div class="container">
-
-                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
-                    <h2 class="h4 pb-lg-3 text-light light-300">Contact</h2>
-                    <ul class="list-unstyled text-light light-300">
-                        <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:010-020-0340">010-020-0340</a>
-                        </li>
-                        <li class="pb-2">
-                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:info@company.com">info@company.com</a>
-                        </li>
-                        <li class="pb-2">
-                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="https://open.kakao.com/o/sK8hYXfb">카카오 오픈 채팅</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="w-100 bg-primary py-3">
-            <div class="container">
-                <div class="row pt-2">
-                    <div class="col-lg-6 col-sm-12">
-                        <p class="text-lg-start text-center text-light light-300">
-                            © Copyright 2023 SOTO. All Rights Reserved.
-                        </p>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <p class="text-lg-end text-center text-light light-300">
-                            Designed by osh
-                        </p>
+            <!-- row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/XO9dm8MwApo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">에코브리티</h6>
+                    <p>국민 ‘탄소제로 프로젝트’ 이며, 플라스틱을 재활용하여 탄소제로에 기여하고자 하는 프로젝트입니다.<br></p>
+                    <p class="text-muted">It is a national ‘zero carbon project’ and is a project that aims to contribute to zero carbon by recycling plastic.</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                </div>
             </div>
+            <!-- End of Row -->
+        </div>  
+        <!-- End of Container -->
+    </section><!-- End of Section -->   
+
+    <!-- section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">                
+                <div class="col-md-5">
+                    <h6 class="title mb-3">제주 4.3 희생자 기록</h6>
+                    <p>한글 설명.</p>
+                    <p class="text-muted">영문 설명</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YQLMknAs040" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>                      
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section -->
+ 
+
+    <!-- Section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mHo9HwUaYJQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">제주 감귤 나무 분양</h6>
+                    <p>한글 설명</p>
+                    <p class="text-muted">영문 설명</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section --> 
+
+        <!-- section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">                
+                <div class="col-md-5">
+                    <h6 class="title mb-3">스마트 게스트 하우스</h6>
+                    <p>게스트 하우스 운영자를 위해 게스트가 방문하기 전과 후에 원격으로 게스트 하우스를 제어하는 솔루션 입니다. 방문 전에 게스트 하우스를 쾌적하기 위해 원격으로 에어컨을 미리 켜 두거나 난방을 미리 예약할 수 있으며 퇴실후 각종 전자 제품의 일괄 소등 및 관리를 할 수 있습니다.</p>
+                    <p class="text-muted">A solution for guest house operators to remotely control their guest houses before and after guests visit. To make the guesthouse more comfortable before your visit, you can remotely turn on the air conditioner or reserve heating in advance, and turn off and manage various electronic appliances after leaving the room.</p>
+                    <button class="btn btn-outline-primary btn-sm">Learn More</button>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mX3f4B8wmLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>                      
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section -->
+ 
+
+    <!-- Section -->
+    <section>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6">
+                    <div class="img-wrapper">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/HicFmwYO0cI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h6 class="title mb-3">삼도 코인</h6>
+                    <p>삼도 2동의 지역 카페 활성화를 위해 지역 코인을 발행하고, 카페 매장과 이용자들이 일회용 컵과 종이 영수증을 발행하지 않는 탄소 제로의 실천도 함께하는 프로젝트입니다.</p>
+                    <p class="text-muted">This is a project that issues local coins to revitalize local cafes in Samdo 2-dong, and also implements zero-carbon practices by allowing cafe stores and users to stop issuing disposable cups and paper receipts.</p>
+                    <button class="btn btn-outline-primary">Learn More</button>
+                </div>
+            </div><!-- End of Row -->           
+        </div><!-- End of Container-->      
+    </section><!-- End of Section --> 
+
+
+  <!--  F O O T E R  -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>소개</h5>
+          <ul>
+            <li><a href="#">멘토링</a></li>
+            <li><a href="#">소</a></li>
+            <li><a href="#">Keyword Generator</a></li>
+            <li><a href="#">Serp Checker</a></li>
+            <li><a href="#">Site Audit</a></li>
+            <li><a href="https://open.kakao.com/o/sK8hYXfb">카카오 오픈 채팅</a></li>
+
+          </ul>
         </div>
+        <div class="col-md-3">
+          <h5>BOOK</h5>
+          <ul>
+            <li><a href="#">Rank Tracker</a></li>
+            <li><a href="#">Backlink Checker</a></li>
+            <li><a href="#">Keyword Generator</a></li>
+            <li><a href="#">Serp Checker</a></li>
+            <li><a href="#">Site Audit</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Blog</h5>
+          <ul>
+            <li><a href="#">Get High Quality Backlinks</a></li>
+            <li><a href="#">Top Google Searches</a></li>
+            <li><a href="#">Avoid Google Penalties</a></li>
+            <li><a href="#">White Hat SEO Tips</a></li>
+            <li><a href="#">Google Trends</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Company</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque, tortor nec mattis feugiat, velit purus euismod odio, quis vulputate velit urna.</p>
+        </div>
+      </div> 
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <a href="#"><i class="icon ion-logo-facebook"></i></a>
+            <a href="#"><i class="icon ion-logo-instagram"></i></a>
+            <a href="#"><i class="icon ion-logo-twitter"></i></a>
+            <a href="#"><i class="icon ion-logo-youtube"></i></a>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <small>&copy; Copyright 2023 SOTO. All Rights Reserved.</small>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!--  E N D  F O O T E R  -->
+    
 
-    </footer>
-    <!-- End Footer -->
-
-
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Templatemo -->
-    <script src="assets/js/templatemo.js"></script>
-    <!-- Custom -->
-    <script src="assets/js/custom.js"></script>
-
-</body>
-
+    <!-- External JavaScripts -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+    <script src="assets/js/functions-min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <a style="display:scroll;position:fixed;bottom:20px;right:30px;" href="#"><img src="assets/img/top.svg" width="40px" height="40px"></a>
+  </body>
 </html>
