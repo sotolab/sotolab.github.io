@@ -1,0 +1,1408 @@
+고등학생 필수 단어 1400
+
+1. tradition 전통 ,전설 
+2. patriotism 애국심 
+3. religion 종교 
+4. conscience 양심 
+5. intellect 지성 
+6. culture 교양 ,문화 
+7. civilization 문명 
+8. prejudice 편견 ,선입견 
+9. instinct 본능 
+10. privilege 특권 ,특권을 주다 
+11. impulse 충동 
+12. virtue 미덕 ,장점 
+13. vice 악덕 ,결점 
+14. revolution 혁명, (천체의)운행 
+15. stimulus 자극 
+16. ambition 대망 ,야심 
+17. vanity 허영심 
+18. envy 시기, 부러움 
+19. jealousy 질투 
+20. fatigue 피로 
+21. passion  정열 
+22. famine 기근 
+23. calamity 재난 ,불행 
+24. individual 개인, 개인의 
+25. emotion 정서, 감정 
+26. evolution 진화, 발전 
+27. hypocrisy 위선 
+28. character 특징, 인격, 문자 
+29. method 방법 
+30. psychology 심리(학) 
+31. chivalry 기사도 
+32. literature 문학 
+33. responsibility 책임 
+34. system 조직, 체계 
+35. challenge 도전, 도전하다 
+36. monotony 단조로움 
+37. disgrace 불명예, 치욕 
+38. luxury 사치(품) 
+39. anachronism 시대착오 
+40. conquest 정복 
+41. siege 포위공격 
+42. insight 통찰력 
+43. panic 공황, 당황 
+44. universe 우주, 전 세계 
+45. criticism 비평, 비판 
+46. influence 영향(력), 영향을 미치다 
+47. resistance 저항 
+48. convenience 편리 
+49. hardship 고난 
+50. existence 존재, 생존 
+51. fortitude 인내, 용기 
+52. compromise 타협(하다) 
+53. prosperity 번영 
+54. comfort 위안, 안락, 위로하다 
+55. sacrifice 희생, 희생하다 
+56. superstition 미신 
+57. sympathy 동정, 공감 
+58. perseverance 인내 
+59. disgust 혐오, 불쾌하게 하다 
+60. monopoly 독점 
+61. species 인류, 종(류) 
+62. moisture 습기 
+63. solitude 고독 
+64. candidate 지원자, 후보자 
+65. environment 환경 
+66. destiny 운명 
+67. hindrance 방해 
+68. property 재산, 소유권 
+69. increase 증가, 증가하다 
+70. decrease 감소, 감소하다 
+71. courtesy 예절 
+72. theory 이론 
+73. medium 매개, 중간의 
+74. principle 원리, 주의 
+75. shortcoming 결점 
+76. crisis 위기 
+77. policy 정책, 방침 
+78. affection 애정 
+79. homage 경의 
+80. conceit 자부심 
+81. hostility 적의, 적개심 
+82. frustration 좌절, 욕구불만 
+83. victory 승리 
+84. triumph 승리 
+85. hatred 증오 
+86. purpose 목적 
+87. fantasy 공상, 환상 
+88. struggle 분투노력(하다) 
+89. access 접근 
+90. contempt 경멸 
+91. convention 회의, 인습 
+92. harmony 조화 
+93. scorn 경멸 
+94. comment 주석, 논평, 주석을 달다 
+95. dignity 위엄 
+96. mercy 자비 
+97. cowardice 겁, 비겁 
+98. logic 논리학 
+99. eloquence 웅변 
+100. pastime 오락, 기분전환
+101. talent 재능 
+102. misery 비참 
+103. modesty 겸손 
+104. circumstance 환경, 사정 
+105. quality 질, 특질, 성질 
+106. quantity 양 
+107. commerce 상업 
+108. conception 개념 
+109. identity 신원, 정체, 동일성 
+110. legend 전설 
+111. trick 계략, 장난, 속이다 
+112. wealth 부, 재산 
+113. charity 자비, 자선 
+114. fate 운명 
+115. evidence 증거 
+116. tension 긴장 
+117. impression 인상, 감명 
+118. elegy 애가, 비가 
+119. strain 긴장, 압박 
+120. bribe 뇌물, 뇌물을 주다 
+121. fame 명성 
+122. soul 영혼, 사람 
+123. gratitude 감사 
+124. sin 죄 
+125. crime 범죄 
+126. strategy 전략, 전술 
+127. heritage 유산 
+128. strife 투쟁 
+129. pollution 오염 
+130. industry 근면, 산업 
+131. defect 결점, 단점 
+132. sincerity 성실 
+133. piety 경건, 신앙심 
+134. adolescence 청년기, 청춘기 
+135. phenomenon 현상 
+136. account 계산(하다),설명(하다) 
+137. emphasis 강조 
+138. proportion 비례, 비율 
+139. rumo(u)r 소문, 소문을 내다 
+140. faculty 능력 
+141. worship 숭배(하다) 
+142. doctrine 학설, 주의 
+143. pity 연민, 유감 
+144. commodity 상품, 일용품 
+145. distress 고통, 괴롭히다 
+146. discourse 이야기, 이야기하다 
+147. function 기능, 역할, 작용하다 
+148. fallacy 오류 
+149. violence 폭력, 맹렬 
+150. appetite 식욕, 욕구 
+151. revival 부활 
+152. foundation 기초 
+153. behavio(u)r 행위, 태도 
+154. discipline 훈련, 규율, 훈련하다 
+155. poverty 빈곤 
+156. threat 협박, 위협 
+157. menace 협박(위협)하다 
+158. plague 전염병 
+159. capacity 능력, 수용력 
+160. attitude 태도 
+161. merit 장점, 공적 
+162. astronomy 천문학 
+163. despair 절망 
+164. patience 인내 
+165. confidence 신용, 자신 
+166. enthusiasm 열광 
+167. peril 위험 
+168. livelihood 생계, 살림 
+169. opportunity 기회 
+170. ridicule 조롱, 조소(하다) 
+171. liberty 자유 
+172. spirit 정신, 원기 
+173. traffic 교통(의) 
+174. remedy 구제책, 요법 
+175. symptom 징후 
+176. tyranny 전제정치, 포악 
+177. prospect 기대, 전망 
+178. credit 신용, 명예 
+179. profit 이익, 이익을 보다 
+180. oblivion 망각 
+181. constitution 헌법, 체격 
+182. extent 범위, 정도 
+183. efficiency 능률, 효력 
+184. genius 천재 
+185. nightmare 악몽 
+186. benefit 이익, 은혜, 이익이 되다 
+187. reign 통치, 군림(하다) 
+188. ruin 파멸, 파멸시키다, (pl.) 폐허 
+189. factor 요인, 요소 
+190. vocation 직업 
+191. contract 계약, 계약하다 
+192. welfare 복지 
+193. community 사회 
+194. faith 신앙, 신용, 성실 
+195. propaganda 선전 
+196. thrift 절약, 검약 
+197. melancholy 우울, 우울한 
+198. temper 기질, 기분, 노여움 
+199. finance 재정 
+200 significance 의의, 중요성 
+
+201. suffrage 참정권, 투표 
+202. rage 격노, 격노하다 
+203. thirst 목마름, 갈망, 갈망하다 
+204. infancy 유년 시대, 초기 
+205. adoration 숭배, 동경 
+206. insult 모욕, 모욕하다 
+207. epidemic 유행병, 전염병 
+208. analogy 유사, 유추 
+209. ethics 윤리학 
+210. analysis 분석, 분해 
+211. labor 노동, 노력, 일하다 
+212. indignation 분개, 분노 
+213. substance 실질, 실체 
+214. slang 속어 
+215. chaos 혼돈, 무질서 
+216. vigor 활력, 원기 
+217. heaven 하늘, 천국 
+218. hell 지옥 
+219. shame 수치, 치욕 
+220. dialect 방언, 사투리 
+221. barrier 장애물 
+222. barometer 기압계, 지표 
+223. glory 영광 
+224. generosity 관대함, 너그러움 
+225. technology 과학기술, 공예학 
+226. basis 기초 
+227. biography 전기 
+228. gravity 중력, 인력 
+229. treaty 조약 
+230. advantage 유리, 이점 
+231. vacuum 진공(의) 
+232. economy 경제, 절약 
+233. bravery 용기 
+234. epoch 신기원, 신시대 
+235. courage 용기 
+236. sphere 구(球), 범위 
+237. achievement 성취, 업적 
+238. biology 생물학 
+239. recreation 기분전환, 오락 
+240. gravitation 중력, 인력 
+241. fury 격분 
+242. behalf 위함, 이익 
+243. generalization 일반화, 보편화 
+244. damage 손해, 손상 
+245. horizon 지평선, 수평선 
+246. degree 정도, 학위 
+247. folly 어리석음, 어리석은 짓 
+248. heredity 유전 
+249. describe 묘사하다 
+250. declare 선언하다 
+251. approve 시인하다 
+252. recommend 추천하다 
+253. reconcile 화해시키다 
+254. contribute 공헌하다 
+255. distribute 분배하다 
+256. extinguish 끄다 
+257. survive 살아남다, …보다 오래 살다 
+258. contrast 대조하다,  대조를 이루다 
+259. invade 침입하다 
+260. upset 뒤엎다, 당황하게 하다, 전복, 혼란 
+261. accomplish 성취하다 
+262. violate 위반하다 
+263. stride 성큼성큼 걷다,  성큼성큼 걷기 
+264. forbear 참고 견디다, 삼가다 
+265. calculate 계산하다 
+266. blame 비난하다 
+267. plow 갈다, 쟁기 
+268. grasp 파악하다, 이해하다, 파악 
+269. stumble 비틀거리다, 비틀거리기 
+270. require 필요로 하다 
+271. cancel 취소하다 
+272. deceive 속이다 
+273. combine 결합하다 
+274. relate 말하다, 관계(관련)시키다 
+275. arrest 체포하다, 저지하다, 체포 
+276. embody 구체화하다 
+277. select 고르다, 선발한 
+278. persist 고집하다 
+279. tremble 떨다, 떨리다 
+280. isolate 격리시키다, 고립시키다 
+281. desert 버리다, 도망하다, 사막 
+282. establish 설립하다, 확립하다 
+283. vary 변화하다, 변경하다 
+284. investigate 조사하다, 연구하다 
+285. vanish 사라지다 
+286. lament 한탄하다, 슬퍼하다 
+287. stretch 잡아 늘이다, 퍼지다, 넓이 
+288. starve 굶어죽다, 갈망하다 
+289. generate 낳다, 발생하다 
+290.reform개혁하다,개정하다,개학 
+291. possess 소유하다 
+292. devote 바치다 
+293. tend …의 경향이 있다, 하기 쉽다 
+294. pursue 추구하다, 종사하다 
+295. attach 붙이다 
+296. perish 멸망하다. 죽다 
+297. dispose 처리하다 
+298. quit 떠나다, 그만두다 
+299. secure 획득하다, 보증하다, 안전한 
+300. reveal 나타내다, 누설하다 
+301. persuade 설득하다 
+302. gaze 응시하다 
+303. restore 회복시키다 
+304. heal 상처를(병을) 낫게 하다, 고치다 
+305. acquire 얻다 
+306. halt 서다, 정지 
+307. maintain 유지하다, 주장하다 
+308. mourn 슬퍼하다 
+309. suspect 의심하다 
+310. grumble 불평하다 
+311. entertain 즐겁게 해주다, 마음에 품다 
+312. utilize 이용하다 
+313. convert 바꾸다 
+314. despise 경멸하다 
+315. commence 시작하다 
+316. consume 소비하다, 다 써버리다 
+317. assimilate 동화하다 
+318. impose 부과하다, 강요하다 
+319. encounter 만나다 
+320. release 해방하다, 면제하다, 해방 
+321. specialize 전공하다, 전문화하다 
+322. respond 응답하다 
+323. soar 치솟다 
+324. comprehend 이해하다, 포함하다 
+325. detect 발견하다 
+326. qualify 자격을 주다 
+327. decorate 장식하다 
+328. accelerate 속도를 더하다, 촉진하다 
+329. betray 배반하다, 누설하다 
+330. dominate 통치하다, 지배하다 
+331. preserve 유지하다, 보존하다 
+332. entreat 간청하다 
+333. lack …이 없다, 부족하다,부족 
+334. interrupt 방해하다, 중단하다 
+335. surpass …보다 뛰어나다, 우월하다 
+336. render …이 되게 하다, 주다 
+337. export 수출하다, 수출(품) 
+338. fulfill 이행하다, 실행하다 
+339. inspect 검사하다 
+340. indulge  탐닉하다, 제멋대로 하게하다 
+341. prevail 유행하다, 우세하다 
+342. adjust 적응시키다, 조정하다 
+343. estimate 어림잡다, 평가하다, 견적, 평가 
+344. compensate 배상하다, 갚다 
+345. restrain 억제하다, 제한하다 
+346. appreciate 감사하다, 감상하다 
+347. insist 주장하다, 고집하다 
+348. acknowledge 인정하다 
+349. distinguish 구별하다 
+350. involve 포함하다 
+351. intrude 침입하다 
+352. torment 고문하다, 괴롭히다, 고문, 고통 
+353. exhaust 다 써버리다, 지치게 하다 
+354. endure 견디다 
+355. hesitate 주저하다 
+356. substitute 대리하다, 대용하다, 대리인 
+357. prohibit 금하다 
+358. forbid 금하다 
+359. display 보이다, 진열(전시)하다, 진열 
+360. concentrate 집중하다 
+361. yearn 그리워하다 
+362. forsake 버리다 
+363. endeavo(u)r 노력(하다) 
+364. soothe 위로하다, 진정시키다 
+365. congratulate 축하하다 
+366. confuse 혼란시키다 
+367. improve 개선하다, 진보하다 
+368. diffuse 퍼지게 하다, 보급하다 
+369. alter 바꾸다 
+370. speculate 사색하다, 투기하다 
+371. recover 회복하다 
+372. urge 몰아대다, 격려하다 
+373. command 명령하다, 지휘하다, 명령, 지휘 
+374. warn 경고하다 
+375.  transport 수송하다, 수송 
+376.  ignore 무시하다 
+377.  conceal 감추다 
+378.  utter 말하다, 완전한 
+379.  flatter 아첨하다 
+380.  absorb 흡수하다, 열중하다 
+381.  yield 생산하다, 굴복하다, 생산(고) 
+382.  meditate 숙고하다, 묵상하다 
+383.  perform 수행하다, 연기(연주)하다 
+384.  embarrass 난처하게 하다 
+385.  reproach 비난하다 
+386.  bewilder 당황하게 하다 
+387.  overcome 이겨내다, 압도하다 
+388.  assert 주장하다, 단언하다 
+389.  recognize 인정하다 
+390.  admit 들어오게 하다, 인정하다 
+391.  persecute 박해하다 
+392.  launch 진수하다, 발사하다 
+393.  pretend …인 체하다, 가장하다 
+394.  circulate 돌다, 유통하다 
+395.  contemplate 깊이 생각하다, 응시하다 
+396.  cope 맞서다, 대처하다 
+397.  adapt 적응시키다, 개작하다 
+398.  alarm 놀라게 하다, 놀람 
+399.  adopt 채용하다, 양자(양녀)로 삼다 
+400.  submit 복종시키다 
+
+401.  convince 확신시키다 
+402.  repent 후회하다 
+403.  predict 예언하다 
+404.  avoid 피하다 
+405.  boast 자랑하다 
+406.  participate 참가하다 
+407.  abolish 폐지하다 
+408.  attribute …탓이라고 하다, 속성, 특질 
+409.  survey 둘러보다, 개관(하다) 조사(하다) 
+410.  invest 투자하다, 부여하다 
+411.  seek 찾다, 구하다 
+412.  communicate 전달하다, 통신하다 
+413.  perplex 당황하게 하다 
+414.  broadcast 방송(하다) 
+415.  reject 거절하다 
+416. vex 초조하게 하다, 괴롭히다 
+417. overlook 못보다, 내려다보다 
+418. reinforce 보강하다 
+419. accuse 고발하다, 비난하다 
+420. restrict 제한하다 
+421. attain 달성하다 
+422. cherish 소중히 하다, 마음에 품다 
+423. suspend 중지하다, 매달다 
+424. inherit 상속하다, 유전하다 
+425. bestow 주다 
+426. undertake 떠맡다, 착수하다 
+427. include 포함하다 
+428. exclude 제외하다, 배척하다 
+429. justify 정당화하다, 변명하다 
+430. annoy 괴롭히다, 성가시게 하다 
+431. esteem 존중하다, 간주하다 
+432. cure 치료하다, 고치다 
+433. resign 사직하다, 단념하다 
+434. accurate 정확한 
+435. rational 합리적인, 이성적인 
+436. literate 글을 읽고 쓸 줄 아는 (사람) 
+437. conservative 보수적인 
+438. radical 근본적인, 급진적인 
+439. pure 순수한 
+440. queer 별난, 기묘한 
+441. sane 제 정신의, 온전한 
+442. genuine 진짜의, 순수한 
+443. vague 막연한 
+444. entire 완전한, 전체의 
+445. absurd 터무니없는, 불합리한 
+446. lonely 고독한 
+447. savage 야만스러운, 잔인한 
+448. nuclear 핵의 
+449. obscure 무명의, 애매한 
+450. intricate 뒤얽힌, 복잡한 
+451. mortal 죽을 운명의 
+452. vivid 생생한, 발랄한 
+453. arrogant 오만한 
+454. exotic 외국의, 이국풍의 
+455. extreme 극단의 
+456. imperative 명령적인, 긴급한 
+457. mature 성숙한 
+458. tight 단단한, 팽팽한 
+459. adequate 적당한, 충분한 
+460. dissolute 방탕한, 타락한 
+461. mutual 서로의 
+462. splendid 화려한, 훌륭한 
+463. timid 겁 많은 
+464.  durable 오래 견디는, 튼튼한 
+465. conspicuous 유난히 눈에 띄는, 현저한 
+466. brisk 활발한 
+467. primitive 원시의 
+468. superficial 피상적인, 천박한 
+469. brilliant 빛나는, 훌륭한 
+470. conscious 의식적인, 알고 있는 
+471. abstract 추상적인 
+472. concrete 구체적인 
+473. profound 깊이가 있는, 심오한 
+474. supreme 최고의 
+475. trivial 시시한, 하찮은 
+476. apparent 명백한, 외관상의 
+477. thorough 철저한 
+478. athletic 운동경기의 
+479. absolute 절대적인 
+480. meager 여윈, 빈약한 
+481. ultimate 최후의, 궁극적인 
+482. initial 처음의, 머리문자 
+483. solemn 엄숙한 
+484. notorious 소문난, 악명이 높은 
+485. sublime 숭고한 
+486. immemorial 태고의 
+487. constructive 건설적인 
+488. destructive 파괴적인 
+489. temporary 임시의, 한때의 
+490. contemporary 현대의(사람) 
+491. aloof 따로 떨어져서 
+492. indispensable 없어서는 안 되는, 필수의 
+493. juvenile 소년(소녀)의, 나이 어린 
+494. abnormal 비정상적인 
+495. external 외부의 
+496. rare 드문, 진귀한 
+497. main 주요한 
+498. complex 복잡한 
+499. bold 대담한 
+500. crude 천연그대로의, 거친 
+501. polite 예의바른, 공손한 
+502. current 유행의, 현재의 
+503. severe 엄격한, 격렬한 
+504. remote 먼, 먼 곳의 
+505. deliberate 신중한 
+506. separate 분리된 
+507. physical 물리적인, 물질의 
+508. eternal 영원한 
+509. unique 유일한, 독특한 
+510. transparent 투명한 
+511. swift 신속한 
+512. surplus 과잉(의) 
+513.  obstinate 완고한, 고집 센 
+514.  stubborn 완고한, 고집 센 
+515.  dense 짙은, 빽빽한 
+516.  familiar 친한 
+517.  shrewd 영리한, 빈틈없는 
+518.  remarkable 현저한, 두드러진 
+519.  punctual 시간을 지키는 
+520.  terrible 무시무시한, 지독한 
+521.  rude 무례한 
+522.  earnest 열심인, 진지한 
+523.  typical 전형적인, …을 대표하는 
+524.  sole 유일한 
+525.  fundamental 근본적인 
+526.  intense 강렬한 
+527.  essential 본질적인, 필수의 
+528.  distinct 명백한, 명확한 
+529.  particular 특수한, 까다로운 
+530.  subtle 미묘한 
+531.  ordinary 보통의 
+532.  vulgar 천한, 상스러운 
+533.  preferable 더 마음에 드는, 더 바람직한 
+534.  strict 엄격한, 엄밀한 
+535.  naked 나체의, 벌거벗은 
+536.  feminine 여성의 
+537.  deficient 부족한 
+538.  tender 부드러운, 상냥한 
+539.  incurable 고칠 수 없는, 불치의 
+540.  infinite 무한의 
+541.  irresistible 저항할 수 없는, 억제할 수 없는 
+542.  barren 불모의, 메마른 
+543.  annual 해마다의 
+544.  precise 정확한 
+545.  native 타고난, 태어난 
+546.  constant 불변의, 끊임없는 
+547.  concise 간결한 
+548.  moral 도덕적인, 정신적인, 교훈 
+549.  delicate 미묘한, 민감한, 허약한 
+550.  ambiguous 애매한 
+551.  neutral 중립의 
+552.  sacred 신성한 
+553.  resolute 결심이 굳은, 단호한 
+554.  instructive 교훈적인, 유익한 
+555. unanimous 만장일치의 
+556. decent 고상한, 상당한 
+557. legal 법률(상)의, 합법적인 
+558. ancient 고대의 
+559. precious 귀중한 
+560. stern 엄한, 엄격한 
+561. education 교육 
+562. prey 먹이, 희생 
+563. tumult 소동 
+564. surrender 항복, 항복하다 
+565. reputation 평판, 명성 
+566. landscape 풍경, 경치 
+567. posterity 자손, 후세사람들 
+568. offspring 자손, 소산(所産) 
+569. growth 성장, 발전 
+570. (orbit 천체의)궤도 
+571. channel 해협, 경로 
+572. ancestor 선조 
+573. justice 정의, 공정 
+574. theme 주제, 제목 
+575. routine 일상적인 일, 틀에 박힌 
+576. protest 항의, 주장, 항의하다, 주장하다 
+577. tendency 경향 
+578. prophecy 예언 
+579. career 경력, 생애 
+580. advertisement 광고 
+581. role 역할 
+582. origin 기원, 태생 
+583. process 경과, 과정 
+584. agriculture 농업 
+585. skyscraper 고층건물 
+586. nuisance 방해물, 성가신 것 
+587. vote 투표(하다) 
+588. spur 박차(를 가하다) 
+589. average 평균(의) 
+590. category 범주 
+591. doom 운명, 파멸, 운명짓다 
+592. utility 유익, 효용 
+593. slavery 노예제도 
+594. antipathy 반감 
+595. caution 조심, 경고 
+596. reaction 반동, 반응 
+597. atmosphere 분위기, 대기 
+598. satellite 위성, 위성의 
+599. sage 현인, 성인, 현명한 
+600. excess 초과, 과잉 
+
+601. architecture  건축(술) 
+602. prose  산문 
+603. temperature  온도 
+604. purchase 구입(물), 획득 
+605. oracle 신탁(神託) 
+606. heir 상속인, 후계자 
+607. applause 박수갈채, 칭찬 
+608. anarchy 무정부 상태 
+609. scrutiny 면밀한 조사, 응시 
+610. sculpture 조각 
+611. notion 생각, 개념 
+612. diplomacy 외교(술) 
+613. decade 10년 
+614. witness 증거, 증인, 목격자 
+615. thermometer 온도계 
+616. usage 용법, 어법, 습관 
+617. institution 제도, 협회 
+618. exertion 노력 
+619. feature 특징, 용모 
+620. disguise 변장(하다) 
+621. congress 회의 
+622. germ 세균 
+623. algebra 대수(학) 
+624. geometry 기하학 
+625. sojourn 체류, 묵다 
+626. expedition 탐험(대) 
+627. definition 정의 
+628. issue 문제, 발행하다 
+629. conflict 투쟁, 싸우다 
+630. disaster 재해, 불행 
+631. focus 초점, 집중하다 
+632. budget 예산(안) 
+633. intercourse 교제 
+634. ceremony 의식, 의례 
+635. regret 후회(하다) 
+636. enterprise 기업, 진취적 기상 
+637. ravage 황폐, 황폐해지다 
+638. tragedy 비극 
+639. miser 구두쇠 
+640. muscle 근육 
+641. unemployment 실업 
+642. arithmetic 산수, 셈 
+643. skill 숙련 
+644. instrument 기구, 수단 
+645. equator 적도 
+646. structure 구조, 건조물 
+647. mode 방법, 양식 
+648. aristocracy 귀족정치(사회) 
+649. wage 임금 
+650. zeal 열심 
+651. trial 시도, 시련, 재판 
+652. burden 무거운 짐, 부담 
+653. tribe 종족 
+654. realm 영지, 왕국 
+655. fright 놀람, 공포 
+656. demand 요구, 수요, 요구하다 
+657. supply 공급, 공급하다, (pl.)생활용품 
+658. intelligence 지능, 지성, 정보 
+659. frame 구조, 골격, 틀, 형성하다 
+660. hobby 취미 
+661. source 원천, 출처 
+662. twilight 황혼, 희미한 빛 
+663. fever 열 
+664. relief 구제, 안심, 제거 
+665. refuge 피난(처) 
+666. experiment 실험(하다) 
+667. expense 비용, 희생 
+668. reliance 신뢰 
+669. grief 슬픔 
+670. effect 결과, 효과, 이루다 
+671.  scope 범위, 시야 
+672. habit 습관 
+673. defense 방어, 변호 
+674. aviation 비행(술), 항공(술) 
+675. navigation 항해(술), 항공(술) 
+676. resource 자원, 지략 
+677. cruelty 잔인 
+678. negligence 태만 
+679. bliss 더 없는 행복, 환희 
+680. delay 연기, 지체 
+681. contact 접촉, 접촉하다, 연락하다 
+682. poison 독(약) 
+683. awe 두려움 
+684. nutrition 영양(물) 
+685. obligation 의무, 은혜 
+686. reward 보답, 상, 보답하다 
+687. peer 귀족, 동료, 응시하다 
+688. controversy 논쟁 
+689. material 물질, 재료, 소질, 물질적인 
+690. nationality 국적, 국민성 
+691.  majority 대다수, 전공하다 
+692. personality 개성, 명사 
+693. region 지방 
+694. clue 단서, 실마리 
+695. parliament 의회 
+696. government 정치, 정부 
+697. oath 맹세, 서약 
+698. revenue 세입 
+699. explanation 설명 
+700. minister 장관, 목사 
+701. obstacle 장애(물) 
+702. majesty 존엄, 폐하 
+703. globe 지구 
+704. pressure 압력, 압박 
+705. standpoint 입장, 견지 
+706. monument 기념비, 기념물 
+707. opponent 적, 적수 
+708. fiction 소설, 꾸며낸 이야기 
+709. detail 상세, 상세히 말하다 
+710. solution 해결, 용해 
+711. maximum 최대한(의) 
+712. communism 공산주의 
+713. tide 조수, 풍조 
+714. honesty 정직 
+715. brute 짐승 
+716. beast 짐승, 짐승 같은 인간 
+717. inspiration 영감, 고취 
+718. harm 해, 해치다 
+719. taste 맛, 취미 
+720. independence 독립(심) 
+721. engagement 약속, 약혼, 교전 
+722. rank 열, 지휘, 계급, 사병, 자리 잡다. 
+723. glacier 빙하 
+724. prairie 대초원 
+725. cradle 요람, 발상지 
+726. incident 사건 
+727. disillusion 환멸, 환멸을 느끼게 하다 
+728. election 선거 
+729. gesture 몸짓 
+730. warfare 전쟁 
+731. adventure 모험 
+732. resort 놀이터, 수단, 호소하다 
+733. situation 위치, 사태 
+734. emigrant (타국으로의)이주자, 이주하는 
+735. historian 역사가 
+736. creature 창조물, 생물 
+737. victim 희생(자) 
+738. delight 즐거움, 즐겁게 하다 
+739. decay 부패(하다), 쇠퇴(하다) 
+740. admiral 해군대장, 제독 
+741. colony 식민지, 거류지 
+742. philosophy 철학 
+743. treasure 보물, 소중히 하다 
+744. admiration 감탄, 칭찬 
+745. flesh 살, 육체 
+746. conduct 행위, 지도, 행동하다, 인도하다 
+747. aspect 양상, 국면, 면 
+748. anniversary 기념일 
+749. laboratory 실험실, 연구소 
+750. cell 세포 
+751. area 면적, 지역 
+752. symbol 상징, 부호 
+753. assent 동의(하다) 
+754. manuscript 원고 
+755. mechanism 기계(장치), 기구 
+756. scent 향기, 냄새 맡다 
+757. donation 기부(금), 기증 
+758. miracle 기적 
+759. continent 대륙 
+760. horror 공포 
+761. essay 수필 
+762. armament 군비 
+763. fable 우화 
+764. maxim 격언 
+765. perspective 가망, 전망 
+766. income 수입 
+767. fortune 운, 행운, 재산 
+768. aid 도움, 도와주다 
+769. fuel 연료, 연료를 공급하다 
+770. sigh 한숨(쉬다) 
+771. furniture 가구 
+772. shelter 피난(처), 피난하다, 보호하다 
+773. view 경치, 의견, 목적, 보다 
+774. navy 해군 
+775. inability 무능, 무력 
+776. territory 영토 
+777. imitation 모방 
+778. alternative 양자택일, 양자택일의 
+779. foliage (무성한)나뭇잎 
+780. preface 머리말 
+781. review 복습, 재검토, 평론, 복습하다 
+782. mischief 장난, 손해 
+783. departure 출발 
+784. surface 표면, 표면의 
+785. funeral 장례식 
+786. ignorance 무지 
+787. popularity 인기, 유행 
+788. pace 걸음 
+789. merchandise 상품 
+790. space 공간, 우주 
+791. predecessor 전임자, 선배, 선조 
+792. soil 흙, 땅 
+793. hospitality 환대 
+794. trait 특색 
+795. traitor 배반자, 반역자 
+796. puzzle 수수께끼, 당황하게 하다 
+797. riddle 수수께끼 
+798. solace 위안, 위로(하다) 
+799. vision 시력, 통찰력, 환상 
+800. treachery 배신, 반역 
+
+801. pasture 목장, 목초지 
+802. renown 명성 
+803. vessel (큰)배, 그릇 
+804. specimen 표본, 실례(實例) 
+805. trace 자국, 자국을 밟아가다 
+806. slumber 잠, 잠자다 
+807. harvest 수확(기), 거두어들이다 
+808. tact 재치, 요령 
+809. element 요소, 원소 
+810. pang 심한 고통, 양심의 가책 
+811. flaw 결점, 흠 
+812. riot 폭동(을 일으키다) 
+813. folk 사람들, 가족 
+814. temperance 절제, 금주 
+815. garbage 쓰레기, 찌꺼기 
+816. mob 군중, 폭도 
+817. adult 성인, 성인의 
+818. temperament 기질 
+819. expansion 확장 
+820. output 생산량 
+821. glance 힐끗 봄, 힐끗 보다 
+822. vein 혈관, 광맥 
+823. conclusion 결말, 결론 
+824. revolt 반역, 혐오, 반역하다, 불쾌감을 느끼다 
+825. pessimist 비관론자 
+826. reverie 환상(幻想) 
+827. mixture 혼합(물) 
+828. outcome 결과, 성과 
+829. expert 익숙한 사람, 전문가 
+830. project 계획, 계획하다, 내던지다 
+831. consequence 결과, 중요성 
+832. rapture 큰 기쁨, 환희 
+833. pioneer 개척자, 선구자 
+834. revenge 복수, 원한, 복수하다 
+835. amount 총계, 총계 …이 되다 
+836. repose 휴식, 쉬다, 쉬게 하다 
+837. author 저자, 창시자 
+838. audience 청중 
+839. throne 왕위, 왕좌 
+840. outlook 전망, …관(觀) 
+841. expression 표현, 표정 
+842. benefactor 은인, 후원자 
+843. suburb 교외, 변두리 
+844. apology 사과, 변명 
+845. proposal 제의, 신청 
+846. phase 국면, 양상 
+847. male 남자, 수컷 
+848. relish 맛, 흥미 
+849. motive 동기, 동기가 되다 
+850. summary 요약, 요약한 
+851. plot 음모, 계획, 줄거리 
+852. relic 유물 
+853. bronze 청동 
+854. status 지위, 현상 
+855. mystery 신비, 불가시의 
+856. treason 반역(죄) 
+857. trifle 사소한 일, 조금 
+858. trend 경향, 추세 
+859. spectacle 광경, (pl.)안경 
+860. statue 조각상 
+861. cliff 절벽, 낭떠러지 
+862. trap 덫, 함정, 덫을 놓다 
+863. sermon 설교 
+864. imagination 상상(력) 
+865. omen 전조, 조짐 
+866. diameter 직경, 지름 
+867. effort 노력 
+868. adversity 역경 
+869. snare 덫, 유혹, 덫으로 잡다, 유혹하다. 
+870. satisfaction 만족, 만족시키다 
+871. estate 재산, 지위 
+872. orator 웅변가 
+873. plea 탄원, 구실 
+874. meadow 목초지 
+875. shortage 부족 
+876. activity 활동 
+877. stage 무대, 시기, 단계 
+878. decree 명령, 포고, 명령하다, 포고하다 
+879. myth 신화 
+880. hazard 위험, 우연, 위험을 무릅쓰다 
+881. pattern 모범, 모형 
+882. fluid 액체, 유동성의 
+883. union 결합, 일치 
+884. disciple 제자 
+885. playwright 극작가 
+886. truce 휴전 
+887. cave 동굴 
+888. feat 공적 
+889. forest 숲 
+890. friction 마찰, 압력 
+891. digestion 소화, 숙고 
+892. verse 운문, 시, (성경의)한 절 
+893. counsel 의논, 충고 
+894. token 표시, 증거 
+895. value 가치, 존중하다 
+896. flavo(u)r 맛, 향기 
+897. transition 변천, 과도기 
+898. pause 멈춤, 중지, 멈추다,쉬다 
+899. heathen 이교도, 이방인 
+900. worth 가치, …의 가치가 있는 
+901. heretic 이단자, 이교도 
+902. fund 자금 
+903. bait 미끼, 유혹, 미끼로 꾀다 
+904. range 범위, 산맥, …에 걸치다 
+905. orientation 방향결정, 안내 
+906. elegance 우아함 
+907. masterpiece 걸작 
+908. stature 키, 신장 
+909. retort 말대꾸(하다) 
+910. metropolis 수도, 중심지 
+911. layer 층 
+912. volume 책, 권(卷), 다량 
+913. testimony 증거, 증명 
+914. haven 항구, 피난처 
+915. research 연구(하다), 조사(하다) 
+916. spot 장소, 지점 
+917. seed 씨, 종자 
+918. drudgery 고된 일, 고역(苦役) 
+919. reverence 존경, 존경하다 
+920. summit 정상 
+921. crust (빵)껍질 
+922. boss 우두머리, 사장 
+923. agony 고민, 고뇌, 고통 
+924. wisdom 지혜 
+925. propriety 예의바름, 적당 
+926. physics 물리학 
+927. timber 재목 
+928. planet 유성, 혹성 
+929. design 디자인, 계획 
+930. lung 폐, 허파 
+931. leisure 틈, 여가, 한가한 
+932. organization 조직, 단체 
+933. republic 공화국, 공화정체 
+934. prosecution 수행 
+935. torture 고문, 고뇌, 고문하다, 고통을 주다 
+936. cottage 오두막집, 시골집 
+937. castle 성(城) 
+938. conference 회의 
+939. tomb 묘 
+940. fault 결점, 잘못 
+941. magic 마술(의), 마력(의) 
+942. aim 목적, 표적 
+943. sword 검(劍), 무력 
+944. risk 위험, 위험을 무릅쓰다 
+945. tool 도구, 연장 
+946. weapon 무기 
+947. vehicle 탈 것, 차량, 매개물, 전달수단 
+948. peculiarity 특색, 버릇 
+949. contest 투쟁, 경쟁, 다투다, 겨루다 
+950. favo(u)r 호의, 찬성 
+951. mankind 인간, 인류 
+952. draft, draught 설계도, 초안, 설계하다, 기초하다 
+953. bomb 폭탄, 폭격하다 
+954. nerve 신경 
+955. chemistry 화학 
+956. addition 부가 
+957. measure 수단, 치수, 계량기구 
+958. vogue 유행 
+959. reserve 사양, 보존하다, 예약하다 
+960. occasion 경우, 기회 
+961. dictator 독재자 
+962. curiosity 호기심 
+963. disorder 무질서, 혼란 
+964. cast 형(型), 주조, 배역, 던지다, 주조하다 
+965. cancer 암 
+966. well??being 복지, 행복 
+967. chamber 방 
+968. devil 악마 
+969. barbarian 야만인, 야만의, 잔인한 
+970. stuff 재료, 물건, 채워넣다 
+971. scheme 계획 
+972. legislation 입법, 법제 
+973. symmetry 균형, 조화 
+974. pomp 화려 
+975. antiquity 고대(인) 
+976. malice 악의, 원한 
+977. multitude 다수 
+978. bent 경향, 구부러진, 열중한 
+979. creed 신조, 주의 
+980. procedure 수속, 진행 
+981. standard 표준(의), 모범(적인) 
+982. boredom 지루함 
+983. device 고안, 장치 
+984. greed 탐욕 
+985. contagion 전염(병) 
+986. satire 풍자 
+987. hypothesis 가설 
+988. proposition 명제, 제의 
+989. perfume 향수, 향기 
+990. miniature 축소지도, 축소모형, 소형의 
+991. bond 속박 
+992. providence 섭리, 신의 뜻, 신 
+993. compassion 동정 
+994. domain 영토 
+995. caricature (풍자적)만화 
+996. anguish 고민, 고뇌 
+997. facility 손쉬움, (pl.)설비, 기관 
+998. hygiene 위생 
+999. conspiracy 음모, 공모 
+1000. accordance 일치, 조화 
+
+1001. ecstasy 무아의 경지, 황홀
+1002. censure 비난(하다)
+1003. allowance 급여, 허가, 참작
+1004. campaign (선거)운동, 전쟁
+1005. canal 운하
+1006. apparatus 기구, 기계
+1007. defiance 도전, 무시
+1008. craft 기능, 교묘, 배, 비행기
+1009. patent 전매특허(의), 면백(한)
+1010. countenance 표정, 안색
+1011. pulse 맥박
+1012. implement 기구, 도구
+1013. insurance 보험, 보증
+1014. catastrophe 파국, 재난, 비극적 결말
+1015. accident 사고, 사건, 우연
+1016. district 구역, 지역
+1017. direction 방향, 지도, 지시
+1018. textile 직물, 직물의
+1019. organ (생물의)기관, (정치적인)기관
+1020. blood 피, 혈액
+1021. ray 광선
+1022. crop 농작물, 수확
+1023. drought 가뭄
+1024. skin 피부, (동물의)가죽
+1025. bone 뼈
+1026. interest 이익, 흥미, 관심
+1027. limit 제한, 제한하다, 한정하다
+1028. haste 서두름
+1029. bless 축복하다
+1030. irritate 화나게 하다, 안달 나게 하다
+1031. prolong 연장하다
+1032. postpone 연기하다
+1033. co??operate 협력하다
+1034. refer 언급하다, 참조하다
+1035. permit 허가하다
+1036. exaggerate 과장하다
+1037. emerge 나타나다
+1038. equip 갖추다, 장비하다
+1039. ornament 장식(하다)
+1040. furnish 공급하다, 비치하다
+1041. advance 진보하다,승진시키다
+1042. embark 배를 타다, 시작하다
+1043. flourish 번창하다
+1044. deprive 빼앗다
+1045. diminish 줄어들다, 감소하다
+1046. derive …을 얻다, 유래하다
+1047. exchange 교환(하다)
+1048. rejoice 기뻐하다
+1049. promote 촉진하다, 승진시키다
+1050. nourish 기르다,(영양분을)주다
+1051. inquire 묻다, 안부를 묻다, 조사하다
+1052. ascertain 확인하다
+1053. swear 맹세하다
+1054. celebrate 축하하다
+1055. marvel 놀라다, 경탄(할만한 일)
+1056. pray 빌다
+1057. reflect 반사하다, 반영하다, 숙고하다
+1058. ascend 올라가다
+1059. descend 내려오다
+1060. mention 말하다
+1061. quote 인용하다
+1062. occupy 차지하다, 종사하다
+1063. surround 둘러싸다
+1064. avail 쓸모 있다, 소용되다, 쓸모, 이익
+1065. preach 설교하다
+1066. retire 물러나다, 은퇴하다
+1067. argue 논하다, 설득하다
+1068. graduate 졸업하다, 졸업생
+1069. affect 영향을 주다, 감동시키다, …인 체하다
+1070. unify 통일하다
+1071. operate 움직이다, 운영하다, 수술하다
+1072. condemn 비난하다, (형을)선고하다
+1073. praise 칭찬하다, 칭찬
+1074. forgive 용서하다
+1075. deserve …할 가치가 있다, …을 할 만하다
+1076. correspond 일치하다, 편지를 주고받다
+1077. explore 탐험하다
+1078. recollect 회상하다
+1079. fascinate 매혹하다
+1080. stir 휘젓다, 움직이다
+1081. exploit 개발하다, 이용하다, 공훈, 위업
+1082. contradict 반박하다, 모순 되다
+1083. develop 발달하다, 개발하다
+1084. approach 접근하다, 접근
+1085. emancipate 해방하다
+1086. classify 분류하다
+1087. represent 나타내다, 묘사하다, 대표하다
+1088. reduce 줄이다, …으로 돌아가게 하다
+1089. wither 시들다, 말라죽다
+1090. astonish 놀라게 하다
+1091. commit 맡기다, 범하다
+1092. claim 요구(하다), 주장(하다), 권리
+1093. seclude 은퇴시키다
+1094. appoint 임명하다, 지정하다
+1095. animate 활기를 주다, 고무하다
+1096. apply 적용하다, 전념하다, 신청(지원)하다
+1097. disappoint 실망시키다
+1098. trespass 침해하다
+1099. decide 결정하다, 결심하다
+1100. afford 주다, …할 여유가 있다
+1101. compete 경쟁하다
+1102. perceive 지각하다, 이해하다, 간과하다
+1103. enchant 매혹시키다
+1104. consider 숙고하다, …이라고 생각하다
+1105. transform 변형하다
+1106. amaze 몹시 놀라게 하다
+1107. expose 드러내다, 폭로하다
+1108. penetrate 꿰뚫다, 간파하다
+1109. extend 넓히다, 뻗치다, …에 이르다
+1110. reside 살다, 존재하다
+1111. confine 가두다, 경계, 한도
+1112. exhibit 보이다, 전시하다
+1113. extract 뽑다, 추출물, 발췌
+1114. imply 의미하다, 암시하다
+1115. determine 결정하다, 결심하다
+1116. indicate 지시하다, 나타내다
+1117. confront 직면하다
+1118. pierce 꿰뚫다, 간파하다
+1119. dread 두려워하다
+1120. foster 기르다, (성장을)촉진하다
+1121. cease 끝내다, 중지하다
+1122. convey 나르다, 전하다
+1123. rescue 구하다, 구조
+1124. dismiss 해고하다, 해산하다, 내쫓다
+1125. disturb 방해하다
+1126. incline 기울이다, 마음이 기울 다, 경사, 비탈
+1127. languish 원기가 없어지다, 시들다
+1128. illustrate 예증하다, 설명하다, 그림(삽화)을 넣다
+1129. excel (남보다)낫다
+1130. mold 틀에 넣어 만들다, 틀, 성질
+1131. taint 더럽히다, 오염
+1132. discharge 수행하다, 면제하다
+1133. exceed 넘다, 능가하다
+1134. usher 안내하다, 수위
+1135. owe 힘입다, 빚(의무)이 있다
+1136. heed 주의, 주의하다
+1137. resemble …을 닮다
+1138. compose 구성하다, (마음을)가라앉히다
+1139. refrain …을 그만두다, (노래의)후렴
+1140. relax 늦추다, 쉬다
+1141. subscribe 서명하다, 기부하다, 구독하다
+1142. interfere 간섭하다, 방해하다
+1143. share 분배하다, 분담하다, 몫, 분담
+1144. injure 해치다
+1145. depend …에 의존하다
+1146. disperse 퍼뜨리다, 흩어지다
+1147. remove 이사하다, 제거하다
+1148. realize 깨닫다, 실현하다
+1149. cultivate 경작하다, 기르다
+1150. sum 합계하다, 요약하다, 합계, 요점
+1151. throng 떼 지어 모이다, 군중
+1152. scatter 뿌리다
+1153. modify 변경하다, 수식하다, 완화하다
+1154. intoxicate 취하게 하다
+1155. offend 화나게 하다, 범하다
+1156. associate 교제하다, 연상하다, 
+1157. behold 보다
+1158. mingle 섞다
+1159. venture 감히 …하다
+1160. invert …을 거꾸로 하다, 뒤집다
+1161. collect 모으다, 수집하다
+1162. complain 불평하다, (고통을)호소하다
+1163. spoil 망치다, 손상하다
+1164. mock 비웃다, 조롱, 모의의
+1165. recall 상기하다, 소환하다, 회상, 소환
+1166. reproduce 재생하다, 번식하다
+1167. assemble 모이다
+1168. retreat 물러가다, 후퇴, 피난처
+1169. punish 처벌하다
+1170. settle 정착하다, 해결하다
+1171. conceive 상상하다, 품다
+1172. disclose 드러내다, 폭로(적발)하다
+1173. repair 수리(하다)
+1174. repeat 되풀이하다
+1175. degrade 타락하다
+1176. amuse 재미나게 하다
+1177. obtain 얻다
+1178. inform 알리다
+1179. curse 저주하다, 저주
+1180. provide …을 주다, 준비하다
+1181. refresh 상쾌하게 하다, 새롭게 하다
+1182. manage 관리하다, 이럭저럭 …하다
+1183. confess 자백하다, 자인하다
+1184. demonstrate 증명하다, 시위하다
+1185. stoop (몸을)구부리다,굴복하다
+1186. profess 공언하다, …이라고 자칭하다
+1187. fade (색이)바래다, 시들다
+1188. manufacture 제조(하다), 제품
+1189. appeal 호소하다, 간청하다, 호소
+1190. contend 다투다, 논쟁하다
+1191. publish 발표하다, 출판하다
+1192. interpret 통역하다, 해석하다
+1193. entitle 권리(자격)를 주다
+1194. disregard 무시하다
+1195. ascribe (원인을)…으로 돌리다
+1196. astound 깜짝 놀라게 하다
+1197. protect 보호하다
+1198. accommodate 수용하다, 편의를 도모하다
+1199. progress 진행, 진보, 진행하다, 진보하다
+1200. overtake …을 뒤따라 잡다, 덮치다
+
+1201. assist 돕다
+1202. advocate 변호하다, 주장하다
+1203. attempt 시도하다, 시도
+1204. partake …에 관여하다, 참가하다
+1205. greet 인사하다
+1206. suggest 암시하다, 제안하다
+1207. waste 낭비하다, 황폐한
+1208. dissolve …을 녹이다, 해산하다
+1209. oblige 강요하다, 고맙게 여기다
+1210. decline 기울다, 쇠퇴하다, 거절하다, 경사
+1211. accustom 익히다, 습관을 붙이다
+1212. defeat 패배하다, 패배
+1213. tempt 유혹하다
+1214. exempt 면제하다, 면제된
+1215. induce 권유하다, 설득하여 …시키다
+1216. oppress 압박하다
+1217. acquaint 알리다
+1218. impoverish 가난하게 하다, 쇠약하게 하다
+1219. resent 분개하다
+1220. abuse 남용하다, 학대하다
+1221. bother 괴롭히다, 걱정하다
+1222. shrink 줄다, 오그라들다
+1223. compel 억지로 …시키다
+1224. deliver 배달하다, 연설하다
+1225. register 등록하다, 가리키다
+1226. coincide 일치하다, 부합하다
+1227. complicate 복잡하게 하다
+1228. discern 분간하다, 식별하다
+1229. dispute 논쟁(하다)
+1230. remark 말하다, 주목하다
+1231. supplement 보충(하다)
+1232. debate 논쟁(하다), 토론(하다)
+1233. humiliate 창피를 주다, 모욕하다
+1234. explode 폭발하다
+1235. narrate 이야기하다
+1236. administer 관리하다, 시행하다, 경영하다
+1237. haunt 자주 가다, 늘 따라다니다
+1238. dispense 나눠주다, …없이 지내다
+1239. differ 다르다
+1240. eliminate 제거하다
+1241. dwell 살다, 거주하다
+1242. assume …인 체하다, 생각하다, 가정하다
+1243. apprehend 이해하다, 염려하다
+1244. capture 사로잡다, 포획
+1245. rear 기르다, 세우다
+1246. stare 뚫어지게 보다
+1247. confer 수여하다, 상담하다, 비교하다
+1248. discard 버리다
+1249. negotiate 교섭하다
+1250. anticipate 예상하다
+1251. contrive 연구해내다, 고안하다, 꾸미다
+1252. consent 동의(하다), 승낙(하다)
+1253. defy 도전하다, 무시하다
+1254. beware 조심하다
+1255. summon 소환하다, (용기, 힘 따위를)내다
+1256. thrive 번영하다, 무성하다
+1257. subdue 진압하다, 완화하다
+1258. bloom 꽃(피다)
+1259. discriminate 구별하다
+1260. sustain 떠받치다, 부양하다, 견디다
+1261. enforce 실시하다, 강제하다
+1262. transact 처리하다, 거래하다
+1263. support 지지하다, 부양하다
+1264. cling 달라붙다, 고수하다, 집착하다
+1265. entrust 위임하다
+1266. adhere 들러붙다, 고수하다, 견지하다
+1267. transmit 보내다, 전달하다
+1268. infect 전염시키다
+1269. wrap 싸다, 포장하다
+1270. inflict (형벌, 고통, 손해를)주다
+1271. undergo (수술, 시험 따위를) 받다, 당하다
+1272. withstand 저항하다
+1273. withhold 보류하다, 억제하다
+1274. adorn 장식하다
+1275. accumulate 쌓아올리다, 축적하다
+1276. lurk 숨어 있다
+1277. provoke 화나게 하다, 도발하다
+1278. trim 정돈하다, 손질하다
+1279. rebuke 비난(하다)
+1280. confirm 확인하다
+1281. conform 일치시키다(하다)
+1282. aspire 열망하다
+1283. detach 떼어놓다, 파견하다
+1284. rebel 반역하다, 반역자
+1285. repel 쫓아버리다, 불쾌감을 주다
+1286. annihilate 전멸시키다
+1287. allude 언급하다, 암시하다
+1288. sting 찌르다, (동물의)침, 고통
+1289. allure 유혹하다
+1290. replace …을 대신하다, 제 자리에 두다
+1291. console 위로하다
+1292. surmount 극복하다
+1293. treat 다루다, 대접하다, 대접, 환대
+1294. swell 부풀다, 부풀음
+1295. sneer 비웃다, 냉소하다
+1296. befall 일어나다, 신변에 닥치다
+1297. subside (비, 바람이)가라앉다
+1298. seize 붙잡다
+1299. implore 애원하다, 탄원하다
+1300. abandon 버리다
+1301. deal 거래하다, 취급하다
+1302. steer 조종하다, 나아가다
+1303. depress 억압하다, 우울하게 하다
+1304. inhabit …에 살다, …에 거주하다
+1305. grant 허락하다, 주다, 인정하다
+1306. muse 명상하다, 곰곰이 생각하다
+1307. attract 끌다
+1308. introduce 소개하다, 도입하다
+1309. portray 그리다
+1310. guarantee 보증하다
+1311. regulate 규정하다, 조절하다
+1312. presume 상상하다, 생각하다
+1313. resume 다시 시작하다, 되찾다
+1314. lure 유혹하다
+1315. award (심사하여) 주다, 수여하다
+1316. multiply 증가하다, (수를)곱하다
+1317. spare 절약하다, 아끼다, 예비의
+1318. grudge 아까워하다, …하기를 싫어하다
+1319. stroll 한가롭게 거닐다, 산책
+1320. execute 실시하다, 성취하다
+1321. imprison …을 교도소에 넣다, 투옥하다
+1322. proceed 나아가다, 계속하다
+1323. recede 물러가다
+1324. ponder …을 깊이 생각하다
+1325. scratch 할퀴다, 긁다
+1326. compare 비교하다, 비유하다
+1327. embrace …을 껴안다, 포옹하다
+1328. reckon 계산하다, …라고 생각하다
+1329. throb (심장이)뛰다, 두근거리다
+1330. suppress 억압하다, (사실을)감추다
+1331. preoccupy 마음을 빼앗다, 먼저 차지하다
+1332. salute 인사(하다), 경례
+1333. revise 개정하다
+1334. lessen 적어지다, 적게 하다
+1335. beguile 속이다
+1336. bid 명령하다, 말하다
+1337. reap 베다, 수확하다
+1338. concede 양보하다
+1339. lade 싣다
+1340. deplore 한탄하다
+1341. precede …에 앞서다, 능가하다
+1342. banish 추방하다
+1343. stifle 숨 막히게 하다, 억누르다
+1344. abound 풍부하다
+1345. deposit 맡기다, 예금, 맡긴 것
+1346. retain 보유하다, 간직하다
+1347. sob 흐느껴 울다
+1348. withdraw 물러나다, 탈퇴하다
+1349. reprove 비난하다, 꾸짖다
+1350. ally 동맹하다, 동맹자(국)
+1351. renounce 버리다, 부인하다
+1352. allot 할당하다
+1353. assign 할당하다
+1354. vow 맹세(하다)
+1355. vouch 보증하다
+1356. carve 조각하다
+1357. verify 증명하다, 확인하다
+1358. ordain 명령하다, 운명지우다
+1359. avenge 복수하다
+1360. confound 혼동하다
+1361. beckon (손짓 따위로)부르다, 신호하다
+1362. collapse 붕괴(하다)
+1363. mar 상하게 하다
+1364. kneel 무릎 꿇다, 굴복하다
+1365. pant 헐떡이다, 갈망하다
+1366. warrant 보증(하다)
+1367. kindle 불을 붙이다
+1368. uphold 지지하다, 돕다
+1369. disdain 경멸(하다) 
+1370. prescribe 규정하다, 처방하다
+1371. accompany 동반하다, (음악)반주하다
+1372. abide 살다, 머무르다
+1373. divide 나누다, 분할하다
+1374. paralyze 마비시키다
+1375. contain 포함하다
+1376. endow 기부하다, 주다
+1377. guard 지키다, 조심하다, 경계, 수위
+1378. crash 와르르 무너지다, 충돌하다, 추락하다
+1379. burst 폭발하다, 파열하다, 폭발, 파열
+1380. worry 괴롭히다, 걱정하다
+1381. military 군대의, 육군의
+1382. trustworthy 신뢰(신용)할 수 있는
+1383. delicious 맛있는
+1384. manifest 명백한, 명시하다
+1385. gradual 점진적인
+1386. voluntary 자발적인
+1387. stately 위엄이 있는, 당당한
+1388. proficient 숙달한
+1389. tropical 열대의
+1390. superfluous 여분의
+1391. eminent 저명한, 뛰어난
+1392. contrary 반대의, 반대
+1393. feudal 봉건적인
+1394. fertile 비옥한, 다산의
+1395. intimate 친밀한
+1396. primary 제일의, 주요한
+1397. enormous 막대한, 거대한
+1398. disinterested 사심 없는, 공평한
+1399. magnificent 웅대한, 장엄한
+1400. similar 비슷한
