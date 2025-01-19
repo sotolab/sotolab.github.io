@@ -92,24 +92,33 @@
 <body>
     <!-- N A V B A R -->
     <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-            <span class="icon ion-md-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <div class="container">
-                <img src="assets/img/logo.png" width="108px" class="img-fluid nav-logo-desktop" alt="Company Logo">
-                <ul class="navbar-nav ml-auto nav-right">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="soto.html">프로젝트</a></li>
-                    <li class="nav-item"><a class="nav-link" href="course.html">커리큘럼</a></li>
-                    <li class="nav-item"><a class="nav-link" href="review.html">멘토링후기</a></li>
-                    <li class="nav-item btn btn-demo-small">
-                        <a class="nav-link" href="contact.html">멘토링신청</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon ion-md-menu"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="container">
+              <img src="assets/img/logo.png" width="108px" class="img-fluid nav-logo-desktop" alt="Company Logo">
+              <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                  <li class="nav-item nav-custom-link">
+                      <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+                  <li class="nav-item nav-custom-link">
+                      <a class="nav-link" href="soto.html">프로젝트 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+                  <li class="nav-item nav-custom-link">
+                      <a class="nav-link" href="course.html">커리큘럼 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+                  <li class="nav-item nav-custom-link">
+                      <a class="nav-link" href="review.html">멘토링후기 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+                  <li class="nav-item nav-custom-link btn btn-demo-small">
+                      <a class="nav-link" href="contact.html">멘토링신청 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!-- E N D  N A V B A R -->
 
     <!-- 소개 섹션 -->
     <section id="about" class="section">
