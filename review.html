@@ -1,103 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>멘토티멘토링 - 개발자 멘토링</title>
-
     <!-- SEO Meta Tags -->
     <meta name="description" content="멘토티멘토링은 스타트업 개발팀 멘토링 서비스로, 개발 팀빌딩, 프로젝트 관리, 컴퓨터 사이언스 기본 교육을 통해 개발자 역량 향상을 돕습니다.">
-    <meta name="keywords" content="멘토티멘토링, 소토멘토링, 스타트업 개발자 멘토링, 소토피아, SNTR 학습법">
     <meta name="author" content="Sotolab">
+    <meta name="keywords" content="멘토티멘토링, 소토멘토링, 스타트업 개발자 멘토링, 소토피아, SNTR 학습법">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sotolab.github.io/">
     <meta property="og:title" content="SotoLAB | 멘토티멘토링">
     <meta property="og:description" content="멘토티멘토링은 스타트업 개발팀 개발자를 위한 멘토링 서비스입니다.">
     <meta property="og:image" content="assets/img/og-image.png">
     <meta property="og:site_name" content="멘토티멘토링">
     <meta property="og:locale" content="ko_KR">
 
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="멘토티멘토링 | 소토멘토링">
+    <meta property="twitter:description" content="멘토티멘토링은 스타트업 개발팀 개발자를 위한 멘토링 서비스입니다.">
+    <meta property="twitter:image" content="assets/img/twitter-card.png">
+
+    <!-- Title -->
+    <title>멘토티멘토링 - 개발자 멘토링 | 소토멘토링</title>
+
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
 
-    <!-- Google Fonts -->
+    <!-- Fonts and CSS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link href="assets/css/bootstrap2.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style2.css" rel="stylesheet">
+    <link href="assets/css/responsive2.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
+    
     <style>
+        /* 반응형 스타일 */
         body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            background-color: #333;
-        }
-
-        .navbar-brand, .nav-link {
-            color: white !important;
-        }
-
-        .nav-link:hover {
-            color: #ffc107 !important;
-        }
-
-        .btn {
             font-size: 16px;
-            padding: 10px 20px;
         }
-
+        .navbar-nav {
+            text-align: center;
+        }
         .carousel-item img {
             width: 100%;
             height: auto;
         }
-
-        .content-box {
-            text-align: center;
-            padding: 20px;
+        .btn {
+            font-size: 16px;
+            padding: 10px 15px;
         }
-
-        /* 반응형 미디어 쿼리 */
         @media (max-width: 768px) {
-            .navbar-nav {
-                text-align: center;
-            }
-
             .content-box {
-                padding: 15px;
+                text-align: center;
+                padding: 20px;
             }
-
+            .nav-logo-desktop {
+                width: 80px;
+            }
             .btn {
-                font-size: 14px;
-                padding: 8px 12px;
                 width: 100%;
             }
-        }
-
-        /* 작은 화면 (480px 이하) */
-        @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-            }
-
-            .btn {
-                font-size: 14px;
-                padding: 6px 10px;
-            }
-
-            .content-box {
-                padding: 10px;
+            .carousel-inner img {
+                max-width: 100%;
+                height: auto;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- N A V B A R -->
     <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
