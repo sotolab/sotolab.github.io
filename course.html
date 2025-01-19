@@ -76,6 +76,21 @@
                 height: auto;
             }
         }
+        .about-img img {
+        max-width: 80%;  /* 이미지 크기 조정 */
+        height: auto;  /* 비율 유지 */
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .about-img img {
+            max-width: 70%; /* 모바일에서 크기 조정 */
+        }
+        .col-lg-6 {
+            padding: 20px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -110,26 +125,29 @@
     <!-- E N D  N A V B A R -->
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6 text-center">
-                    <div class="about-img">
-                        <img src="assets/img/book.png" alt="멘토티 멘토링 책">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <h2>멘토티 멘토링 커리큘럼</h2>
-                    <p>멘토티멘토링은 개발자를 위한 체계적인 커리큘럼을 제공합니다. 원하는 분야를 선택하고, 8주 동안 집중 학습하여 개발자로 성장할 수 있습니다.</p>
-                    <ul>
-                        <li>✔ 실무 중심의 프로젝트 학습</li>
-                        <li>✔ 주 1회 멘토링 세션</li>
-                        <li>✔ 개발자 필수 역량 강화</li>
-                    </ul>
-                    <a href="course.html" class="btn btn-primary">자세히 보기</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="container">
+          <div class="row align-items-center">
+              <!-- 이미지 영역 -->
+              <div class="col-lg-6 col-md-6">
+                  <div class="about-img text-center">
+                      <img src="assets/img/book.png" alt="멘토티 멘토링 책">
+                  </div>
+              </div>
+              <!-- 텍스트 영역 -->
+              <div class="col-lg-6 col-md-6">
+                  <h2>멘토티 멘토링 커리큘럼</h2>
+                  <p>멘토티멘토링은 개발자를 위한 체계적인 커리큘럼을 제공합니다. 원하는 분야를 선택하고, 8주 동안 집중 학습하여 개발자로 성장할 수 있습니다.</p>
+                  <ul>
+                      <li>✔ 실무 중심의 프로젝트 학습</li>
+                      <li>✔ 주 1회 멘토링 세션</li>
+                      <li>✔ 개발자 필수 역량 강화</li>
+                  </ul>
+                  <a href="course.html" class="btn btn-primary">자세히 보기</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  
 
     <!-- Why Us Section -->
     <section id="why-us" class="section bg-light">
