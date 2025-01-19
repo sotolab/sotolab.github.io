@@ -5,159 +5,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="멘토티멘토링은 스타트업 개발팀 멘토링 서비스로, 개발 팀빌딩, 프로젝트 관리, 컴퓨터 사이언스 기본 교육을 통해 개발자 역량 향상을 돕습니다.">
-    <meta name="author" content="Sotolab">
-    <meta name="keywords" content="멘토티멘토링, 소토멘토링, 스타트업 개발자 멘토링, 소토피아, SNTR 학습법">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sotolab.github.io/">
-    <meta property="og:title" content="SotoLAB | 멘토티멘토링">
-    <meta property="og:description" content="멘토티멘토링은 스타트업 개발팀 개발자를 위한 멘토링 서비스입니다.">
-    <meta property="og:image" content="assets/img/og-image.png">
-    <meta property="og:site_name" content="멘토티멘토링">
-    <meta property="og:locale" content="ko_KR">
-
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="멘토티멘토링 | 소토멘토링">
-    <meta property="twitter:description" content="멘토티멘토링은 스타트업 개발팀 개발자를 위한 멘토링 서비스입니다.">
-    <meta property="twitter:image" content="assets/img/twitter-card.png">
-
-    <!-- Title -->
     <title>멘토티멘토링 - 개발자 멘토링 | 소토멘토링</title>
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
 
     <!-- Fonts and CSS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-    <link href="assets/css/bootstrap2.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/style2.css" rel="stylesheet">
-    <link href="assets/css/responsive2.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
-    
     <style>
-        /* 반응형 스타일 */
+        /* 기본 스타일 */
         body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* 섹션 스타일 */
+        .section {
+            padding: 50px 0;
+        }
+
+        /* 제목 정렬 */
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* 버튼 스타일 */
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 10px 20px;
             font-size: 16px;
         }
-        .navbar-nav {
-            text-align: center;
-        }
-        .carousel-item img {
-            width: 100%;
+
+        /* 소개 섹션 */
+        .about-img img {
+            max-width: 70%;
             height: auto;
+            display: block;
+            margin: auto;
         }
-        .btn {
-            font-size: 16px;
-            padding: 10px 15px;
-        }
+
+        /* 반응형 스타일 */
         @media (max-width: 768px) {
-            .content-box {
+            .about-img img {
+                max-width: 80%;
+            }
+            .col-md-6 {
                 text-align: center;
                 padding: 20px;
             }
-            .nav-logo-desktop {
-                width: 80px;
-            }
-            .btn {
-                width: 100%;
-            }
-            .carousel-inner img {
-                max-width: 100%;
-                height: auto;
-            }
         }
-        .about-img img {
-        max-width: 80%;  /* 이미지 크기 조정 */
-        height: auto;  /* 비율 유지 */
-        display: block;
-        margin: 0 auto;
-    }
 
-    @media (max-width: 768px) {
-        .about-img img {
-            max-width: 70%; /* 모바일에서 크기 조정 */
+        @media (max-width: 576px) {
+            .about-img img {
+                max-width: 90%;
+            }
+            .row {
+                flex-direction: column;
+                text-align: center;
+            }
         }
-        .col-lg-6 {
-            padding: 20px;
-        }
-    }
+
     </style>
 </head>
+
 <body>
-    <!-- N A V B A R -->
-    <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon ion-md-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <div class="container">
-                <img src="assets/img/logo.png" width="108px" class="img-fluid nav-logo-desktop" alt="Company Logo">
-                <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-                    <li class="nav-item nav-custom-link">
-                        <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                    </li>
-                    <li class="nav-item nav-custom-link">
-                        <a class="nav-link" href="soto.html">프로젝트 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                    </li>
-                    <li class="nav-item nav-custom-link">
-                        <a class="nav-link" href="course.html">커리큘럼 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                    </li>
-                    <li class="nav-item nav-custom-link">
-                        <a class="nav-link" href="review.html">멘토링후기 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                    </li>
-                    <li class="nav-item nav-custom-link btn btn-demo-small">
-                        <a class="nav-link" href="contact.html">멘토링신청 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                    </li>
-                </ul>
+
+    <!-- 소개 섹션 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- 이미지 영역 -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="about-img">
+                        <img src="assets/img/book.png" alt="멘토티 멘토링 책">
+                    </div>
+                </div>
+                <!-- 텍스트 영역 -->
+                <div class="col-lg-6 col-md-6">
+                    <h2>멘토티 멘토링 커리큘럼</h2>
+                    <p>멘토티멘토링은 개발자를 위한 체계적인 커리큘럼을 제공합니다. 원하는 분야를 선택하고, 8주 동안 집중 학습하여 개발자로 성장할 수 있습니다.</p>
+                    <ul>
+                        <li>✔ 실무 중심의 프로젝트 학습</li>
+                        <li>✔ 주 1회 멘토링 세션</li>
+                        <li>✔ 개발자 필수 역량 강화</li>
+                    </ul>
+                    <a href="course.html" class="btn btn-primary">자세히 보기</a>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- E N D  N A V B A R -->
-    <!-- About Section -->
-    <section id="about" class="section">
-      <div class="container">
-          <div class="row align-items-center">
-              <!-- 이미지 영역 -->
-              <div class="col-lg-6 col-md-6">
-                  <div class="about-img text-center">
-                      <img src="assets/img/book.png" alt="멘토티 멘토링 책">
-                  </div>
-              </div>
-              <!-- 텍스트 영역 -->
-              <div class="col-lg-6 col-md-6">
-                  <h2>멘토티 멘토링 커리큘럼</h2>
-                  <p>멘토티멘토링은 개발자를 위한 체계적인 커리큘럼을 제공합니다. 원하는 분야를 선택하고, 8주 동안 집중 학습하여 개발자로 성장할 수 있습니다.</p>
-                  <ul>
-                      <li>✔ 실무 중심의 프로젝트 학습</li>
-                      <li>✔ 주 1회 멘토링 세션</li>
-                      <li>✔ 개발자 필수 역량 강화</li>
-                  </ul>
-                  <a href="course.html" class="btn btn-primary">자세히 보기</a>
-              </div>
-          </div>
-      </div>
-  </section>
-  
+    </section>
 
-    <!-- Why Us Section -->
+    <!-- 핵심 요소 섹션 -->
     <section id="why-us" class="section bg-light">
         <div class="container">
             <h2 class="text-center">멘토티 멘토링의 핵심 요소</h2>
             <p class="text-center">멘토티멘토링은 SNTR 학습법을 기반으로 합니다.</p>
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
-                    <div class="why-us-img">
-                        <img src="assets/img/Component.png" alt="SNTR 학습법">
+                    <div class="why-us-img text-center">
+                        <img src="assets/img/Component.png" alt="SNTR 학습법" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -173,7 +123,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 푸터 -->
     <footer class="text-center mt-4">
         <p>&copy; 2025 Mentotee. All Rights Reserved.</p>
     </footer>
