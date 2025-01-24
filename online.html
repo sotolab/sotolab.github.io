@@ -50,6 +50,11 @@
             background-color: #f8f9fa;
         }
 
+        .text-style {
+            color: black;
+            font-size: 12px;
+        }
+
         /* 제목 스타일 */
         .title-block {
             text-align: center;
@@ -74,7 +79,7 @@
 
         /* 이미지 크기 조정 */
         .about-img img {
-            max-width: 50%;
+            max-width: 60%;
             height: auto;
             display: block;
             margin: auto;
@@ -109,7 +114,7 @@
                       <a class="nav-link" href="course.html">커리큘럼 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
                   </li>
                   <li class="nav-item nav-custom-link">
-                    <a class="nav-link" href="books.html">도서 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
+                    <a class="nav-link" href="books.html">출판도서 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
                   </li>
                   <li class="nav-item nav-custom-link">
                     <a class="nav-link" href="online.html">온라인강의 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
@@ -128,120 +133,93 @@
 
     <!-- 소개 섹션 -->
     <section id="about" class="section">
-      <div class="container">
-          <div class="title-block">
-              <h2>멘토티 멘토링 커리큘럼</h2>
-          </div>
-          <div class="row align-items-center">
-              <div class="col-lg-6 col-md-6">
-                  <div class="about-img">
-                    <img src="assets/img/book.png" alt="멘토티 멘토링 책">
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                  <p>멘토티멘토링은 개발자를 위한 체계적인 커리큘럼을 제공합니다.</p>
-                  <ul>
-                      <li>✔ 실무 중심의 프로젝트 학습</li>
-                      <li>✔ 주 1회 2시간씩 멘토링 세션</li>
-                      <li>✔ 질문베이스 학습 철학</li>
-                      <li>✔ 컴퓨터사이언스 기본 역량 세션</li>
-                  </ul>
-                  <a href="course.html" class="btn btn-primary">자세히 보기</a>
-              </div>
-          </div>
-      </div>
-  </section>
-
-    <!-- 핵심 요소 섹션 -->
-    <section id="why-us" class="section bg-light">
         <div class="container">
-            <h2 class="text-center">멘토티 멘토링의 핵심 요소</h2>
-            <p class="text-center">멘토티멘토링은 SNTR 학습법을 기반으로 합니다.</p>
+            <div class="title-block">
+                <h2>[전공]</h2>
+            </div>
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">
-                    <div class="why-us-img text-center">
-                        <img src="assets/img/Component.png" alt="SNTR 학습법" class="img-fluid">
+                    <div class="about-img text-center">
+                        <img src="assets/img/iot.png" alt="아두이노와 Node-RED 활용한 사물인터넷 실습">
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <ul>
-                        <li><strong>✔ 좋아하는 개발 분야 찾기</strong></li>
-                        <li><strong>✔ 10년 로드맵 작성</strong></li>
-                        <li><strong>✔ 좋은 개발자 습관 형성</strong></li>
-                        <li><strong>✔ 생각의 힘 기르기</strong></li>
-                    </ul>
-                    <a href="about.html" class="btn btn-secondary">더 알아보기</a>
+                <div class="col-lg-6 col-md-6 text-style title-block">
+                <h2>아두이노와 Node-RED 활용한 사물인터넷 실습 [5강]</p>
+                <br><p>아두이노와 센서 제어, Node-RED를 활용한 IoT 시스템 구축까지 주제를 단계적으로 학습합니다. 기초 개념부터 실전 프로젝트까지 포괄적인 구성을 통해 체계적으로 스킬을 습득할 수 있습니다. 스스로 설계하고 구현하고자 하는 IoT 프로젝트에 더욱 자신감 있게 다가서보세요. 
+                </p>
+                <br>
+                    <a href="https://inf.run/uNNqV" target="_blank" class="btn btn-primary">강의신청</a>
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
 
-    <!-- P R I C I N G -->
-    <section id="pricing">
-      <div class="container">
-          <div class="title-block">
-              <h2>멘토티멘토링만의 SNTR학습법</h2>
-              <p>개발자를 원하시나요? 나의 꿈을 향해 달려가고 있나요?<br>
-                  진로, 진학, 학습법 관련된 멘토링을 20년간 수 차례 진행해왔습니다.<br>멘토링을 통해 인생의 터닝포인트가 될 수 있도록, 자신의 목표를 이루기 위해 준비하시는 모든 분들께 소토의 멘토링 수업은 SNTR학습법으로 진행합니다.</p>
-          </div>
-          <div class="row">
-              <div class="col-md-3">
-                  <div class="pricing-box" style="height:450px">
-                      <h6>S</h6>
-                      <small>STUDY</small>
-                      <p>전공서적에 대한 스터디</p>
-                      <div class="divider-light"></div>
-                      <ul>
-                          <li><i class="icon ion-md-checkmark-circle-outline demo"></i>책을 중심으로 학습하고, 책에서 설명을 다 하지 못한 부분은 다른 책이나 블로그를 통해 보강합니다.</li>
-                      </ul>
-                      <div class="text-center">
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="pricing-box" style="height:450px">
-                      <h6>N</h6>
-                      <small>NOTE</small>
-                      <p>스터디 한 내용 노트정리</p>
-                      <div class="divider-light"></div>
-                      <ul>
-                          <li><i class="icon ion-md-checkmark-circle-outline"></i>스터디 한 내용을 노트필기 하듯이 정리합니다. 절대 요약하지 않으며, 책 집필 하듯이 친절하고 상세하게 설명하고 정리합니다.</li>
-                      </ul>
-                      <div class="text-center">
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="pricing-box" style="height:450px">
-                      <h6>T</h6>
-                      <small>TEACH</small>
-                      <p>정리한 내용 가르치듯 발표</p>
-                      <div class="divider-light"></div>
-                      <ul>
-                          <li><i class="icon ion-md-checkmark-circle-outline demo"></i>정리한 내용을 가르치듯이 발표합니다. 내가 학습한 것을 누군가에게 쉽게 설명하기란 매우 어렵겠지만 설명하려고 할수록 내가 정말 알고 있는지 스스로 '메타인지'를 통해 부족했던 부분을 발견하게 됩니다.</li>
-                      </ul>
-                      <div class="text-center">
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="pricing-box" style="height:450px">
-                      <h6>R</h6>
-                      <small>REVIEW</small>
-                      <p>스터디 리뷰</p>
-                      <div class="divider-light"></div>
-                      <ul>
-                          <li><i class="icon ion-md-checkmark-circle-outline"></i>3개의 단계에서 부족한 부분이 있었는지 확인하고 더 나은 방법에 대해 궁리하며 다음 학습 때 적용해 봅니다.</li>
-                      </ul>
-                      <div class="text-center">
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <center><a href="course.html" class="btn btn-regular">자세히보기</a></center>
-      </div>
-  </section>
-  <!-- E N D  P R I C I N G -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="title-block">
+                <h2></h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="about-img text-center">
+                        <img src="assets/img/nft.png" alt="메타버스와 NFT">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-style title-block">
+                <h2>메타버스와 NFT [5강]</p>
+                <br><p>이론으로 끝나지 않고 실무형 인재가 될 수 있도록 강의를 구성하였습니다. 메타버스와 NFT 코인의 핵심 기술 요소에 대해 설명하고, 이러한 이론적 배경을 바탕으로 최신 기술의 실체를 직접 경험하며 창작자로 활동하실 수 있습니다.  NFT 발행은 아르고 기반의 토큰으로 하며,  블로코XYZ에서 운영하는 cccv 플랫폼에서 진행합니다. 
+                </p>
+                <br>
+                    <a href="https://inf.run/YJ4z1" target="_blank" class="btn btn-primary">강의신청</a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="title-block">
+                <h2></h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="about-img text-center">
+                        <img src="assets/img/bigdata.png" alt="빅데이터와 인공지능 입문">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-style title-block">
+                <h2>빅데이터와 인공지능 입문 [5강]</p>
+                <br><p>모든 멘티들의 고민을 완벽히 해결해 드릴 순 없지만, 인공지능 기술에 대하여 명확하게 이해 할 수 있도록 도와 드릴 수 있는 강의입니다. 얇고 넓은 지식의 깊이를 가져가는 것은 물론, 인공지능의 핵심인 '딥러닝 모델'을 만들어 봄으로써 인공지능 분야에 대해서 큰 호기심과 관심을 가질 수 있도록 구성했습니다. 
+                </p>
+                <br>
+                    <a href="https://inf.run/TFkdK" target="_blank" class="btn btn-primary">강의신청</a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="title-block">
+                <h2></h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <div class="about-img text-center">
+                        <img src="assets/img/blockchain_edu.png" alt="블록체인 이해와 구조">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 text-style title-block">
+                <h2>블록체인 이해와 구조 [23강]</p>
+                <br><p>블록체인 강의와 비즈니스를 하고 있습니다. 그동안 KISA 핀테크 아카데미, 한국전파진흥원, 제주산학융합원, 포항창조경제혁신센터, 강원창조혁신센터, 블록체인 놀이터, 한컴MDS 아카데미, 에이콘아카데미, 한양대, 연세대, 제주대학교, 부산마이스터고등학교 등 다양한 곳에서 강의를 진행했습니다. 다시 한번 온라인으로 수강하고 싶다는 기존 수강생들의 요청이 많아, 그동안의 노하우를 녹여 이번 강의를 기획하게 되었습니다. 
+                </p>
+                <br>
+                    <a href="https://inf.run/3XiBb" target="_blank" class="btn btn-primary">강의신청</a>
+                </div>
+            </div>
+        </div>
+    </section>  
+    
 
     <!-- 원본 풋터 -->
     <footer>
