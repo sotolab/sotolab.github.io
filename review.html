@@ -60,6 +60,27 @@
             font-size: 16px;
             padding: 10px 15px;
         }
+    
+        /* 멘토링 후기 박스 스타일 추가 */
+        .testimonial-box {
+            height: 500px;  /* 기본 박스 높이 */
+            max-height: 500px;
+            overflow-y: auto; /* 내부 스크롤 가능 */
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+    
+        .testimonial-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            text-overflow: ellipsis;
+        }
+    
+        /* 모바일 최적화 */
         @media (max-width: 768px) {
             .content-box {
                 text-align: center;
@@ -75,8 +96,21 @@
                 max-width: 100%;
                 height: auto;
             }
+    
+            /* 모바일에서 멘토링 박스 스타일 */
+            .testimonial-box {
+                height: auto;
+                max-height: 350px; /* 모바일에서는 높이 줄이기 */
+                overflow-y: auto; /* 모바일에서도 스크롤 가능 */
+            }
+    
+            .testimonial-box p {
+                font-size: 13px; /* 모바일에서 글씨 크기 줄이기 */
+                line-height: 1.5;
+            }
         }
     </style>
+    
 </head>
 <body>
     <!-- N A V B A R -->
