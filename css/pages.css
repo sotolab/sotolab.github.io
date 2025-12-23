@@ -1,0 +1,520 @@
+/* ============================================
+   SotoLab 2026 - Pages Stylesheet
+   서브 페이지 전용 스타일
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(46, 91, 255, 0.05), rgba(255, 107, 107, 0.05));
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.project-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.project-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-features span {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Filter Tabs */
+.filter-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* SOTE Timeline */
+.sote-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sote-step {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.sote-number {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.step-letter {
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+}
+
+.step-label {
+    font-size: 0.875rem;
+}
+
+.sote-content {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+    flex: 1;
+}
+
+.sote-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.sote-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.sote-features {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.sote-features span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(46, 91, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Books */
+.book-card {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.book-card.featured {
+    border: 2px solid var(--primary);
+}
+
+.book-cover {
+    flex-shrink: 0;
+    width: 200px;
+    height: 280px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.book-placeholder {
+    text-align: center;
+}
+
+.book-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.book-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.book-card-small {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.book-cover-small {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 8px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+/* Reviews */
+.review-card {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    border-color: var(--primary);
+}
+
+.review-card.featured {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(46, 91, 255, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.review-meta {
+    flex: 1;
+}
+
+.review-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.review-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.review-badge {
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.review-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.review-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: rgba(46, 91, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.review-card.compact {
+    padding: 1.5rem;
+}
+
+.review-summary {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Contact Form */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.contact-method {
+    display: flex;
+    gap: 1rem;
+}
+
+.method-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-form-wrapper {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .book-card {
+        flex-direction: column;
+    }
+    
+    .sote-step {
+        flex-direction: column;
+    }
+}

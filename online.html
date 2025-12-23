@@ -1,269 +1,203 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="멘토티멘토링은 스타트업 개발팀 멘토링 서비스로 개발자 역량 향상을 돕습니다.">
-    <meta name="author" content="Sotolab">
-    <meta name="keywords" content="멘토티멘토링, 소토멘토링, 스타트업 개발자 멘토링, 소토피아, SOTE 학습법">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sotolab.github.io/">
-    <meta property="og:title" content="멘토티멘토링 | 소토멘토링">
-    <meta property="og:description" content="멘토티멘토링은 스타트업 개발팀 멘토링 서비스로 개발자 역량 향상을 돕습니다.">
-    <meta property="og:image" content="assets/img/og-image.png">
-    <meta property="og:site_name" content="멘토티멘토링">
-    <meta property="og:locale" content="ko_KR">
-
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="멘토티멘토링 | 소토멘토링">
-    <meta property="twitter:description" content="멘토티멘토링은 스타트업 개발팀 멘토링 서비스로 개발자 역량 향상을 돕습니다.">
-    <meta property="twitter:image" content="assets/img/twitter-card.png">
-
-    <!-- Title -->
-    <title>멘토티멘토링 - 개발자 멘토링 | 소토멘토링</title>
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-
-    <!-- Fonts and CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-    <link href="assets/css/bootstrap2.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/style2.css" rel="stylesheet">
-    <link href="assets/css/responsive2.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
-
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" crossorigin="anonymous">
-    
-    <style>
-        /* 기본 스타일 */
-        body {
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            color: #333;
-            background-color: #f8f9fa;
-        }
-
-        .text-style {
-            color: black;
-            font-size: 12px;
-        }
-
-        /* 제목 스타일 */
-        .title-block {
-            text-align: center;
-            margin-top: 50px;
-            padding-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .title-block {
-                margin-top: 30px;
-                padding-bottom: 10px;
-            }
-        }
-
-        /* 버튼 스타일 */
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-        }
-
-        /* 이미지 크기 조정 */
-        .about-img img {
-            max-width: 60%;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
-
-        /* 모바일 반응형 조정 */
-        @media (max-width: 768px) {
-            .about-img img {
-                max-width: 60%;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인강의 | SotoLab 2026</title>
+    <meta name="description" content="22년 경력 멘토의 온라인 블록체인 강의">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
 </head>
-
 <body>
-    <!-- N A V B A R -->
-    <nav class="navbar navbar-default navbar-expand-lg fixed-top custom-navbar">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon ion-md-menu"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <div class="container">
-            <a href="https://sotolab.github.io/">
-                <img src="assets/img/logo.png" width="108px" class="img-fluid nav-logo-desktop" alt="SotoLab">
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SotoLab</span>
             </a>
-              <ul class="navbar-nav ml-auto nav-right" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
-                  <li class="nav-item nav-custom-link">
-                      <a class="nav-link" href="index.html">Home <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link">
-                      <a class="nav-link" href="soto.html">MVP 프로젝트 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link">
-                      <a class="nav-link" href="course.html">커리큘럼 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link">
-                    <a class="nav-link" href="books.html">출판도서 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link">
-                    <a class="nav-link" href="online.html">온라인강의 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link">
-                      <a class="nav-link" href="review.html">멘토링후기 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-                  <li class="nav-item nav-custom-link btn btn-demo-small">
-                      <a class="nav-link" href="contact.html">멘토링문의 <i class="icon ion-ios-arrow-forward icon-mobile"></i></a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  <!-- E N D  N A V B A R -->
+            <button class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
+                <li><a href="curriculum.html">커리큘럼</a></li>
+                <li><a href="books.html">출판도서</a></li>
+                <li><a href="online.html" class="active">온라인강의</a></li>
+                <li><a href="reviews.html">멘토링후기</a></li>
+                <li><a href="contact.html">멘토링문의</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
 
-  <section>
-    <div class="title mb-3" style="text-align:center">
-        <h2>멘티와 함께 하는 온라인 강의</h2>
-        <p></p>
-        <h5>내가 쌓아온 기술을 온라인 강의로 판매 해 보세요. </h5>
-        <h5>멘티에서 멘토로 한 단계 성장시켜줍니다.</h5>
-        <h5>멘토티멘토링이 함께 하겠습니다.</h5>
-    </div>
-  </section>
-
-    <!-- 소개 섹션 -->
-    <section id="about" class="section">
+    <section class="page-header">
         <div class="container">
-            <div class="title-block">
-                <h2>[전공]</h2>
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <span>/</span>
+                <span>온라인강의</span>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="about-img text-center">
-                        <img src="assets/img/iot.png" alt="아두이노와 Node-RED 활용한 사물인터넷 실습">
+            <h1 class="page-title">온라인강의</h1>
+            <p class="page-description">22년 경력 멘토의 검증된 강의 콘텐츠</p>
+        </div>
+    </section>
+
+    <section class="online-course-section">
+        <div class="container">
+            <div class="course-main">
+                <div class="course-image">
+                    <div class="course-thumbnail">
+                        <i class="fas fa-cubes"></i>
+                        <div class="course-badge">23강</div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-style title-block">
-                <h2>아두이노와 Node-RED 활용한 사물인터넷 실습 [5강]</p>
-                <br><p>아두이노와 센서 제어, Node-RED를 활용한 IoT 시스템 구축까지 주제를 단계적으로 학습합니다. 기초 개념부터 실전 프로젝트까지 포괄적인 구성을 통해 체계적으로 스킬을 습득할 수 있습니다. 스스로 설계하고 구현하고자 하는 IoT 프로젝트에 더욱 자신감 있게 다가서보세요. 
-                </p>
-                <br>
-                    <a href="https://inf.run/uNNqV" target="_blank" class="btn btn-primary">강의신청</a>
-                </div>
-            </div>
-        </div>
-    </section> 
+                <div class="course-content">
+                    <span class="course-category">
+                        <i class="fas fa-graduation-cap"></i> 블록체인
+                    </span>
+                    <h2 class="course-title">블록체인 이해와 구조</h2>
+                    <p class="course-instructor">
+                        <i class="fas fa-user-tie"></i> 장성균 (22년 경력)
+                    </p>
+                    
+                    <div class="course-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-video"></i>
+                            <span>23강</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>평균 15분/강</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9/5.0</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>수강생 다수</span>
+                        </div>
+                    </div>
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="title-block">
-                <h2></h2>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="about-img text-center">
-                        <img src="assets/img/nft.png" alt="메타버스와 NFT">
+                    <div class="course-description">
+                        <h3>강의 소개</h3>
+                        <p>
+                            블록체인 강의와 비즈니스를 하고 있습니다. 그동안 <strong>KISA 핀테크 아카데미, 한국전파진흥원, 
+                            제주산학융합원, 포항창조경제혁신센터, 강원창조혁신센터, 블록체인 놀이터, 한컴MDS 아카데미, 
+                            에이콘아카데미, 한양대, 연세대, 제주대학교, 부산마이스터고등학교</strong> 등 
+                            다양한 곳에서 강의를 진행했습니다.
+                        </p>
+                        <p>
+                            다시 한번 온라인으로 수강하고 싶다는 기존 수강생들의 요청이 많아, 
+                            그동안의 노하우를 녹여 이번 강의를 기획하게 되었습니다.
+                        </p>
+                    </div>
+
+                    <div class="course-highlights">
+                        <h3>이런 것을 배웁니다</h3>
+                        <ul class="highlights-list">
+                            <li><i class="fas fa-check-circle"></i> 블록체인의 기본 개념과 원리</li>
+                            <li><i class="fas fa-check-circle"></i> 블록체인 구조와 작동 방식</li>
+                            <li><i class="fas fa-check-circle"></i> 스마트 컨트랙트 이해</li>
+                            <li><i class="fas fa-check-circle"></i> 실제 블록체인 활용 사례</li>
+                            <li><i class="fas fa-check-circle"></i> 블록체인 비즈니스 모델</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-cta">
+                        <a href="https://inf.run/3XiBb" class="btn btn-primary btn-large" target="_blank">
+                            <i class="fas fa-play-circle"></i> 강의 신청하기
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-large">
+                            <i class="fas fa-question-circle"></i> 강의 문의
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-style title-block">
-                <h2>메타버스와 NFT [5강]</p>
-                <br><p>이론으로 끝나지 않고 실무형 인재가 될 수 있도록 강의를 구성하였습니다. 메타버스와 NFT 코인의 핵심 기술 요소에 대해 설명하고, 이러한 이론적 배경을 바탕으로 최신 기술의 실체를 직접 경험하며 창작자로 활동하실 수 있습니다.  NFT 발행은 아르고 기반의 토큰으로 하며,  블로코XYZ에서 운영하는 cccv 플랫폼에서 진행합니다. 
-                </p>
-                <br>
-                    <a href="https://inf.run/YJ4z1" target="_blank" class="btn btn-primary">강의신청</a>
-                </div>
             </div>
-        </div>
-    </section> 
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="title-block">
-                <h2></h2>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="about-img text-center">
-                        <img src="assets/img/bigdata.png" alt="빅데이터와 인공지능 입문">
+            <div class="teaching-experience">
+                <h2 class="section-title text-center">강의 경력</h2>
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <i class="fas fa-university"></i>
+                        <h4>대학교</h4>
+                        <p>한양대, 연세대, 제주대학교</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-building"></i>
+                        <h4>기업/기관</h4>
+                        <p>KISA, 한국전파진흥원, 한컴MDS</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>혁신센터</h4>
+                        <p>포항, 강원 창조경제혁신센터</p>
+                    </div>
+                    <div class="experience-item">
+                        <i class="fas fa-school"></i>
+                        <h4>교육기관</h4>
+                        <p>에이콘, 블록체인 놀이터</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-style title-block">
-                <h2>빅데이터와 인공지능 입문 [5강]</p>
-                <br><p>모든 멘티들의 고민을 완벽히 해결해 드릴 순 없지만, 인공지능 기술에 대하여 명확하게 이해 할 수 있도록 도와 드릴 수 있는 강의입니다. 얇고 넓은 지식의 깊이를 가져가는 것은 물론, 인공지능의 핵심인 '딥러닝 모델'을 만들어 봄으로써 인공지능 분야에 대해서 큰 호기심과 관심을 가질 수 있도록 구성했습니다. 
-                </p>
-                <br>
-                    <a href="https://inf.run/TFkdK" target="_blank" class="btn btn-primary">강의신청</a>
-                </div>
             </div>
         </div>
-    </section> 
+    </section>
 
-    <section id="about" class="section">
+    <section class="cta-section">
         <div class="container">
-            <div class="title-block">
-                <h2></h2>
+            <div class="cta-content">
+                <h2 class="cta-title">1:1 멘토링이 필요하신가요?</h2>
+                <p class="cta-description">강의와 함께 개인 맞춤형 멘토링도 제공합니다</p>
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    멘토링 문의하기 <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="about-img text-center">
-                        <img src="assets/img/blockchain_edu.png" alt="블록체인 이해와 구조">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-title">SotoLab</h4>
+                    <p class="footer-description">22년 경력의 전문가와 함께하는 개발자 성장 파트너</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mentor.soto" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://open.kakao.com/o/sK8hYXfb" aria-label="KakaoTalk"><i class="fas fa-comment"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 text-style title-block">
-                <h2>블록체인 이해와 구조 [23강]</p>
-                <br><p>블록체인 강의와 비즈니스를 하고 있습니다. 그동안 KISA 핀테크 아카데미, 한국전파진흥원, 제주산학융합원, 포항창조경제혁신센터, 강원창조혁신센터, 블록체인 놀이터, 한컴MDS 아카데미, 에이콘아카데미, 한양대, 연세대, 제주대학교, 부산마이스터고등학교 등 다양한 곳에서 강의를 진행했습니다. 다시 한번 온라인으로 수강하고 싶다는 기존 수강생들의 요청이 많아, 그동안의 노하우를 녹여 이번 강의를 기획하게 되었습니다. 
-                </p>
-                <br>
-                    <a href="https://inf.run/3XiBb" target="_blank" class="btn btn-primary">강의신청</a>
+                <div class="footer-col">
+                    <h4 class="footer-title">바로가기</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
+                        <li><a href="curriculum.html">커리큘럼</a></li>
+                        <li><a href="books.html">출판도서</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">멘토링</h4>
+                    <ul class="footer-links">
+                        <li><a href="online.html">온라인강의</a></li>
+                        <li><a href="reviews.html">멘토링후기</a></li>
+                        <li><a href="contact.html">멘토링문의</a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SotoLab. All rights reserved.</p>
+            </div>
         </div>
-    </section>  
-    
-
-    <!-- 원본 풋터 -->
-    <footer>
-      <div class="container">
-        <div class="row">        
-          <div class="col-md-3">
-            <h5>Mentotee</h5>
-            <p><a href="https://open.kakao.com/o/sK8hYXfb">카카오 오픈 채팅</a></p>
-          </div>
-        </div> 
-        <div class="divider"></div>
-        <div class="row">
-          <div class="col-md-6 col-xs-12">
-              <a href="https://www.instagram.com/mentor.soto"><i class="icon ion-logo-instagram"></i></a>
-              <a href="https://www.youtube.com/@SotoLab"><i class="icon ion-logo-youtube"></i></a>
-          </div>
-          <div class="col-md-6 col-xs-12">
-              <small> Copyright © 2015–Present SotoLAB. All Rights Reserved.</small>
-          </div>
-        </div>
-      </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <a style="display:scroll;position:fixed;bottom:20px;right:30px;" href="#"><img src="assets/img/top.svg" width="40px" height="40px" alt="Scroll to Top"></a>
-
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
 </body>
 </html>

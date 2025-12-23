@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커리큘럼 | SotoLab 2026</title>
+    <meta name="description" content="SOTE 학습법으로 진행하는 체계적인 개발자 멘토링 커리큘럼">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SotoLab</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 토글">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
+                <li><a href="curriculum.html" class="active">커리큘럼</a></li>
+                <li><a href="books.html">출판도서</a></li>
+                <li><a href="online.html">온라인강의</a></li>
+                <li><a href="reviews.html">멘토링후기</a></li>
+                <li><a href="contact.html">멘토링문의</a></li>
+            </ul>
+            
+            <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <span>/</span>
+                <span>커리큘럼</span>
+            </div>
+            <h1 class="page-title">멘토티 멘토링 커리큘럼</h1>
+            <p class="page-description">소프트웨어 윤리와 친절한 마음을 바탕으로 하는 체계적 학습</p>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="section-title">교육철학</h2>
+                <p class="philosophy-text">
+                    소프트웨어 윤리와 친절한 마음을 바탕으로, 가족을 위해 용감하고 씩씩하게 행동하는 가치를 추구합니다.<br>
+                    이를 통해 사람들의 삶의 질을 높이는 소프트웨어의 유토피아, <strong>소토피아(Sotopia)</strong>를 실현하고자 합니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Elements Section -->
+    <section class="core-section">
+        <div class="container">
+            <h2 class="section-title text-center">멘토링 핵심 요소</h2>
+            <div class="core-grid">
+                <div class="core-card">
+                    <div class="core-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>실무 중심 프로젝트</h3>
+                    <p>실제 프로젝트를 통한 실무 역량 향상</p>
+                </div>
+                <div class="core-card">
+                    <div class="core-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>주 1회 2시간 세션</h3>
+                    <p>정기적이고 체계적인 멘토링 진행</p>
+                </div>
+                <div class="core-card">
+                    <div class="core-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>질문베이스 학습</h3>
+                    <p>스스로 질문하고 해답을 찾는 학습법</p>
+                </div>
+                <div class="core-card">
+                    <div class="core-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>CS 기본 역량</h3>
+                    <p>컴퓨터사이언스 기본 역량 강화</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOTE Learning Method -->
+    <section class="sote-section">
+        <div class="container">
+            <div class="sote-header">
+                <h2 class="section-title">멘토티멘토링만의 SOTE 학습법</h2>
+                <p class="sote-description">
+                    개발자를 원하시나요? 나의 꿈을 향해 달려가고 있나요?<br>
+                    진로, 진학, 학습법 관련된 멘토링을 22년간 수 차례 진행해왔습니다.<br>
+                    멘토링을 통해 인생의 터닝포인트가 될 수 있도록, 자신의 목표를 이루기 위해 준비하시는 모든 분들께<br>
+                    소토의 멘토링 수업은 <strong>SOTE 학습법</strong>으로 진행합니다.
+                </p>
+            </div>
+
+            <div class="sote-timeline">
+                <!-- Step 1: STUDY -->
+                <div class="sote-step">
+                    <div class="sote-number">
+                        <span class="step-letter">S</span>
+                        <span class="step-label">01</span>
+                    </div>
+                    <div class="sote-content">
+                        <h3 class="sote-title">STUDY</h3>
+                        <h4 class="sote-subtitle">전공서적에 대한 스터디</h4>
+                        <p class="sote-text">
+                            책을 중심으로 학습하고, 책에서 설명을 다 하지 못한 부분은 다른 책이나 블로그를 통해 보강합니다.
+                            단순히 읽는 것이 아닌, 이해하며 학습하는 것이 핵심입니다.
+                        </p>
+                        <div class="sote-features">
+                            <span><i class="fas fa-book"></i> 전공서적 중심 학습</span>
+                            <span><i class="fas fa-search"></i> 추가 자료 탐색</span>
+                            <span><i class="fas fa-lightbulb"></i> 깊이 있는 이해</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: NOTE -->
+                <div class="sote-step">
+                    <div class="sote-number">
+                        <span class="step-letter">O</span>
+                        <span class="step-label">02</span>
+                    </div>
+                    <div class="sote-content">
+                        <h3 class="sote-title">NOTE</h3>
+                        <h4 class="sote-subtitle">스터디 한 내용 노트정리</h4>
+                        <p class="sote-text">
+                            스터디 한 내용을 노트필기 하듯이 정리합니다. 절대 요약하지 않으며, 
+                            책 집필 하듯이 친절하고 상세하게 설명하고 정리합니다.
+                        </p>
+                        <div class="sote-features">
+                            <span><i class="fas fa-edit"></i> 상세한 정리</span>
+                            <span><i class="fas fa-file-alt"></i> 요약 금지</span>
+                            <span><i class="fas fa-pen-fancy"></i> 집필 스타일</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: TEACH -->
+                <div class="sote-step">
+                    <div class="sote-number">
+                        <span class="step-letter">T</span>
+                        <span class="step-label">03</span>
+                    </div>
+                    <div class="sote-content">
+                        <h3 class="sote-title">TEACH</h3>
+                        <h4 class="sote-subtitle">정리한 내용 가르치듯 발표</h4>
+                        <p class="sote-text">
+                            정리한 내용을 가르치듯이 발표합니다. 내가 학습한 것을 누군가에게 쉽게 설명하기란 매우 어렵겠지만 
+                            설명하려고 할수록 내가 정말 알고 있는지 스스로 '메타인지'를 통해 부족했던 부분을 발견하게 됩니다.
+                        </p>
+                        <div class="sote-features">
+                            <span><i class="fas fa-chalkboard-teacher"></i> 강의식 발표</span>
+                            <span><i class="fas fa-brain"></i> 메타인지</span>
+                            <span><i class="fas fa-check-double"></i> 이해도 확인</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: REVIEW -->
+                <div class="sote-step">
+                    <div class="sote-number">
+                        <span class="step-letter">E</span>
+                        <span class="step-label">04</span>
+                    </div>
+                    <div class="sote-content">
+                        <h3 class="sote-title">REVIEW</h3>
+                        <h4 class="sote-subtitle">스터디 리뷰</h4>
+                        <p class="sote-text">
+                            3개의 단계에서 부족한 부분이 있었는지 확인하고 더 나은 방법에 대해 궁리하며 
+                            다음 학습 때 적용해 봅니다. 지속적인 개선을 통해 학습 효율을 높입니다.
+                        </p>
+                        <div class="sote-features">
+                            <span><i class="fas fa-clipboard-check"></i> 부족한 부분 확인</span>
+                            <span><i class="fas fa-sync-alt"></i> 개선 방법 모색</span>
+                            <span><i class="fas fa-arrow-up"></i> 지속적 성장</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Elements Section -->
+    <section class="key-elements-section">
+        <div class="container">
+            <h2 class="section-title text-center">멘토티 멘토링의 핵심</h2>
+            <div class="key-grid">
+                <div class="key-card">
+                    <div class="key-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>좋아하는 개발 분야 찾기</h3>
+                    <p>자신에게 맞는 개발 분야를 찾아 진로 방향 설정</p>
+                </div>
+                <div class="key-card">
+                    <div class="key-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>10년 로드맵 작성</h3>
+                    <p>장기적인 관점에서 커리어 로드맵 계획 수립</p>
+                </div>
+                <div class="key-card">
+                    <div class="key-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>좋은 개발자 습관 형성</h3>
+                    <p>체계적인 학습과 개발 습관을 통한 역량 강화</p>
+                </div>
+                <div class="key-card">
+                    <div class="key-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>생각의 힘 기르기</h3>
+                    <p>문제 해결 능력과 창의적 사고력 향상</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title text-center">멘토링을 통해 얻을 수 있는 것</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <h3>명확한 방향성</h3>
+                    <p>개발자로서의 진로와 목표를 명확하게 설정할 수 있습니다</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <h3>실무 역량 향상</h3>
+                    <p>실제 프로젝트를 통해 현장에서 필요한 실무 능력을 키웁니다</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <h3>학습 습관 형성</h3>
+                    <p>평생 학습할 수 있는 효과적인 학습 방법을 체득합니다</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <h3>네트워크 형성</h3>
+                    <p>멘토 및 다른 멘티들과의 네트워킹을 통해 인맥을 쌓습니다</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <h3>자신감 향상</h3>
+                    <p>지속적인 성장을 통해 개발자로서의 자신감을 키웁니다</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <h3>취업/이직 성공</h3>
+                    <p>체계적인 준비를 통해 원하는 기업에 취업할 수 있습니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">지금 바로 시작하세요</h2>
+                <p class="cta-description">22년 경력의 멘토와 함께 개발자로 성장하는 여정을 시작하세요</p>
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    멘토링 신청하기
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-title">SotoLab</h4>
+                    <p class="footer-description">
+                        22년 경력의 전문가와 함께하는<br>
+                        개발자 성장 파트너
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mentor.soto" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://open.kakao.com/o/sK8hYXfb" aria-label="KakaoTalk"><i class="fas fa-comment"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">바로가기</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
+                        <li><a href="curriculum.html">커리큘럼</a></li>
+                        <li><a href="books.html">출판도서</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">멘토링</h4>
+                    <ul class="footer-links">
+                        <li><a href="online.html">온라인강의</a></li>
+                        <li><a href="reviews.html">멘토링후기</a></li>
+                        <li><a href="contact.html">멘토링문의</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SotoLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
+</body>
+</html>
