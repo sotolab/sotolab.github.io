@@ -45,59 +45,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- 메인 CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- 구조화 데이터 (JSON-LD) : Organization + Person + Service -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://sotolab.github.io/#organization",
-          "name": "SotoLab",
-          "url": "https://sotolab.github.io/",
-          "logo": "https://sotolab.github.io/img/favicon.png",
-          "description": "22년 경력 소프트웨어 개발자가 운영하는 개발자 멘토링 & 스타트업 개발팀 성장 파트너.",
-          "founder": {
-            "@type": "Person",
-            "name": "장성균",
-            "jobTitle": "Software Developer & Mentor"
-          },
-          "sameAs": [
-            "https://www.instagram.com/mentor.soto",
-            "https://open.kakao.com/o/sK8hYXfb"
-          ]
-        },
-        {
-          "@type": "Person",
-          "@id": "https://sotolab.github.io/#founder",
-          "name": "장성균",
-          "alternateName": "Soto",
-          "jobTitle": "개발 멘토",
-          "affiliation": {
-            "@id": "https://sotolab.github.io/#organization"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://sotolab.github.io/#mentoring-service",
-          "name": "SotoLab 소프트웨어 개발 멘토링",
-          "provider": {
-            "@id": "https://sotolab.github.io/#organization"
-          },
-          "serviceType": "개발자 멘토링, 스타트업 개발팀 멘토링, CS 기초 교육, MVP 개발 코칭",
-          "areaServed": {
-            "@type": "Country",
-            "name": "대한민국"
-          }
-        }
-      ]
-    }
-    </script>
+    <link rel="stylesheet" href="css/pages.css">
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
 </head>
-
 <body>
     <!-- Navigation -->
     <nav class="nav">
