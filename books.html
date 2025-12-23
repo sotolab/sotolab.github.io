@@ -2,17 +2,102 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>출판도서 | SotoLab 2026</title>
-    <meta name="description" content="22년 경력 멘토의 개발 도서 - 인문학부터 전공서까지">
-    
+
+    <!-- 기본 SEO -->
+    <title>SotoLab 소프트웨어 개발 멘토링 | 22년 경력 개발자 성장 파트너</title>
+    <meta name="description" content="22년 경력 소프트웨어 개발자가 직접 진행하는 SotoLab 멘토링. 비전공자 · 주니어 개발자 · 스타트업 개발팀을 위한 실전 프로젝트, 코드 리뷰, CS 기초, MVP 개발까지 올인원 성장 파트너.">
+    <meta name="author" content="장성균 (Soto)">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://sotolab.github.io/">
+
+    <!-- 한국어 / 지역 정보 -->
+    <meta name="content-language" content="ko">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- 키워드 (요즘 영향은 적지만, 정리 차원에서) -->
+    <meta name="keywords" content="개발 멘토링, 소프트웨어 멘토, 비전공자 개발자, 스타트업 개발팀, 프론트엔드 멘토링, 백엔드 멘토링, 컴퓨터 사이언스 교육, SotoLab, 소토랩">
+
+    <!-- Open Graph / SNS 공유 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SotoLab 소프트웨어 개발 멘토링 | 22년 경력 개발자 성장 파트너">
+    <meta property="og:description" content="비전공자, 주니어, 스타트업 개발팀을 위한 맞춤형 개발 멘토링. 실전 프로젝트, 코드 리뷰, CS 기초, MVP 개발까지 한 번에 배우는 SotoLab 멘토링.">
+    <meta property="og:url" content="https://sotolab.github.io/">
+    <meta property="og:site_name" content="SotoLab Mentoring">
+    <!-- TODO: 실제 존재하는 대표 이미지 파일로 변경 -->
+    <meta property="og:image" content="https://sotolab.github.io/img/og-sotolab-mentoring.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SotoLab 소프트웨어 개발 멘토링 | 22년 경력 개발자 성장 파트너">
+    <meta name="twitter:description" content="비전공자와 스타트업 개발팀을 위한 실전 개발 멘토링. 프론트엔드, 백엔드, CS 기초, MVP 개발까지 한 번에.">
+    <meta name="twitter:image" content="https://sotolab.github.io/img/og-sotolab-mentoring.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- 폰트 & 아이콘 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 메인 CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pages.css">
+
+    <!-- 구조화 데이터 (JSON-LD) : Organization + Person + Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sotolab.github.io/#organization",
+          "name": "SotoLab",
+          "url": "https://sotolab.github.io/",
+          "logo": "https://sotolab.github.io/img/favicon.png",
+          "description": "22년 경력 소프트웨어 개발자가 운영하는 개발자 멘토링 & 스타트업 개발팀 성장 파트너.",
+          "founder": {
+            "@type": "Person",
+            "name": "장성균",
+            "jobTitle": "Software Developer & Mentor"
+          },
+          "sameAs": [
+            "https://www.instagram.com/mentor.soto",
+            "https://open.kakao.com/o/sK8hYXfb"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://sotolab.github.io/#founder",
+          "name": "장성균",
+          "alternateName": "Soto",
+          "jobTitle": "개발 멘토",
+          "affiliation": {
+            "@id": "https://sotolab.github.io/#organization"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://sotolab.github.io/#mentoring-service",
+          "name": "SotoLab 소프트웨어 개발 멘토링",
+          "provider": {
+            "@id": "https://sotolab.github.io/#organization"
+          },
+          "serviceType": "개발자 멘토링, 스타트업 개발팀 멘토링, CS 기초 교육, MVP 개발 코칭",
+          "areaServed": {
+            "@type": "Country",
+            "name": "대한민국"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
+
 <body>
     <nav class="nav">
         <div class="container">
