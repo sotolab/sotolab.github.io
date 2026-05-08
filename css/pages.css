@@ -586,7 +586,7 @@
 /* Responsive */
 @media (max-width: 768px) {
     .page-header {
-        padding: 7rem 1rem 3rem;
+        padding: 7rem 0 3rem;
     }
 
     .page-title {
@@ -609,6 +609,12 @@
         grid-template-columns: 1fr;
     }
 
+    .projects-grid,
+    .books-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+
     .project-card,
     .book-card,
     .book-card-small,
@@ -617,7 +623,7 @@
     .course-card,
     .course-note,
     .sote-content {
-        padding: 1.25rem;
+        padding: 1rem;
     }
 }
 
