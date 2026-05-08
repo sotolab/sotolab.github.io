@@ -450,6 +450,31 @@ section {
     color: var(--text-secondary);
 }
 
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+.about-description,
+.about-details,
+.about-quote {
+    color: var(--text-secondary);
+}
+
+.about-details ul {
+    padding-left: 1.25rem;
+}
+
+.about-details li {
+    margin-bottom: 0.4rem;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-secondary);
@@ -601,6 +626,19 @@ section {
 
     .method-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-content {
+        padding: 0 0.5rem;
+    }
+
+    .about-details ul {
+        padding-left: 1.1rem;
     }
 
     .client-grid {
