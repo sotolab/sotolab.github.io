@@ -144,6 +144,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll to top button
+const scrollTopButton = document.getElementById('scrollTop');
+if (scrollTopButton) {
+    window.addEventListener('scroll', () => {
+        scrollTopButton.classList.toggle('visible', window.scrollY > 500);
+    });
+
+    scrollTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // Form Submission
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

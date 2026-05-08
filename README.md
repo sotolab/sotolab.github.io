@@ -1,6 +1,6 @@
 # 🚀 SotoLab 2026 - 프리미엄 개발 멘토링 웹사이트
 
-> **22년 경력 전문가와 함께하는 개발자 성장 파트너**
+> **좋은 개발 습관을 만드는 기업 개발팀 성장 파트너**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -101,7 +101,7 @@
 - 핵심 4가지 & 혜택 6가지
 
 ### 4. **출판도서** (books.html)
-- 인문학: 멘토티 멘토링 (2022)
+- 인문학: 소토랩 멘토링 (2022)
 - 전공서 6권:
   - 블록체인 멘토링 (2019)
   - 블록체인 앱 메이커 (2019)
@@ -110,12 +110,12 @@
   - 임베디드 실무론 (2016)
   - 임베디드 스케치 (2011)
 
-### 5. **온라인강의** (online.html)
+### 5. **기술교육** (online.html)
 - 블록체인 이해와 구조 [23강]
 - 강의 경력 (한양대, 연세대, 제주대, KISA, 한컴MDS 등)
 - 강의 신청 링크
 
-### 6. **멘토링후기** (reviews.html)
+### 6. **사례** (reviews.html)
 - 8개 실제 후기 (상세 2개 + 간결 6개)
 - 필터링 기능
 - 성과 통계 (500+ 멘티, 98% 만족도, 22년 경력, 6개월 취업)
@@ -159,8 +159,8 @@ sotolab-2026/
 ├── mvp-projects.html       (22KB) - MVP 프로젝트
 ├── curriculum.html         (15KB) - 커리큘럼
 ├── books.html              (11KB) - 출판도서
-├── online.html             (9KB)  - 온라인강의
-├── reviews.html            (15KB) - 멘토링후기
+├── online.html             (9KB)  - 기술교육
+├── reviews.html            (15KB) - 사례
 ├── contact.html            (14KB) - 멘토링문의
 ├── README.md               (현재 파일)
 ├── css/
@@ -279,7 +279,7 @@ vercel
 - **카카오톡 오픈채팅**: https://open.kakao.com/o/sK8hYXfb
 - **이메일**: mentor@sotolab.com
 - **GitHub**: https://github.com/sotolab
-- **온라인강의**: https://inf.run/3XiBb
+- **기술교육**: https://inf.run/3XiBb
 
 ---
 
