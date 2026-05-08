@@ -467,6 +467,17 @@ section {
     color: var(--text-secondary);
 }
 
+.about-details {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+}
+
+.about-details h4 {
+    color: var(--text-primary);
+}
+
 .about-details ul {
     padding-left: 1.25rem;
 }
@@ -634,11 +645,15 @@ section {
     }
 
     .about-content {
-        padding: 0 0.5rem;
+        padding: 0;
+    }
+
+    .about-details {
+        padding: 1.25rem;
     }
 
     .about-details ul {
-        padding-left: 1.1rem;
+        padding-left: 1.25rem;
     }
 
     .client-grid {
