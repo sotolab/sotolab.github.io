@@ -585,6 +585,14 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .page-header {
+        padding: 7rem 1rem 3rem;
+    }
+
+    .page-title {
+        font-size: 2.25rem;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -598,6 +606,28 @@
     }
 
     .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card,
+    .book-card,
+    .book-card-small,
+    .review-card,
+    .contact-form-wrapper,
+    .course-card,
+    .course-note,
+    .sote-content {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid,
+    .books-grid {
         grid-template-columns: 1fr;
     }
 }

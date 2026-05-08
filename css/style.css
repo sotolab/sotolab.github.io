@@ -550,6 +550,14 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -589,8 +597,29 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .impact-card,
+    .service-card,
+    .method-card,
+    .client-card {
+        padding: 1.25rem;
+    }
+
     .scroll-top {
         right: 1rem;
         bottom: 1rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        padding: 0 0.875rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
     }
 }
