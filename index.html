@@ -3,100 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- 기본 SEO -->
-    <title>SotoLab 기업 개발팀 빌딩 | 좋은 개발 습관을 만드는 멘토링</title>
-    <meta name="description" content="소토랩 멘토링은 개발팀 진단, 빌딩, 역량 레벨업, MVP 서비스 배포를 지원하는 기업 전문 멘토링 서비스입니다. 주간 미션, 주 1회 방문 피드백, 상시 온라인 지원으로 좋은 개발 습관을 팀 문화로 만듭니다.">
-    <meta name="author" content="장성균 (Soto)">
+    <title>SotoLab | 기업 AI 업무혁신</title>
+    <meta name="description" content="기업이 AI로 업무 효율을 높이고, 직원이 직접 업무 툴을 만들 수 있도록 돕는 실무형 멘토링입니다.">
+    <meta name="keywords" content="기업 AI 도입, 업무 효율화, AI 멘토링, 사내 AI 교육, 업무 자동화, 업무 툴 제작">
+    <meta name="author" content="박성규(Soto)">
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="https://sotolab.github.io/">
-
-    <!-- 한국어 / 지역 정보 -->
-    <meta name="content-language" content="ko">
-    <meta property="og:locale" content="ko_KR">
-
-    <!-- 키워드 (요즘 영향은 적지만, 정리 차원에서) -->
-    <meta name="keywords" content="기업 개발팀 멘토링, 스타트업 개발팀 멘토링, 개발자 온보딩, 코드 리뷰, 기술 자문, MVP 개발, 컴퓨터 사이언스 교육, 소프트웨어 아키텍처, SotoLab, 소토랩">
-
-    <!-- Open Graph / SNS 공유 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SotoLab 기업 개발팀 빌딩 | 좋은 개발 습관을 만드는 멘토링">
-    <meta property="og:description" content="개발팀 진단, 빌딩, 역량 레벨업, MVP 서비스 배포까지. 주간 미션과 주 1회 방문 피드백으로 기업 개발팀의 좋은 습관을 만듭니다.">
+    <meta property="og:title" content="SotoLab | 기업 AI 업무혁신">
+    <meta property="og:description" content="직원이 AI를 실제 업무에 쓰고, 필요한 도구까지 직접 만들 수 있도록 돕습니다.">
     <meta property="og:url" content="https://sotolab.github.io/">
-    <meta property="og:site_name" content="SotoLab Mentoring">
+    <meta property="og:site_name" content="SotoLab">
     <meta property="og:image" content="https://sotolab.github.io/img/logo.png">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SotoLab 기업 개발팀 빌딩 | 좋은 개발 습관을 만드는 멘토링">
-    <meta name="twitter:description" content="개발팀 진단, 빌딩, 역량 레벨업, MVP 서비스 배포를 주간 미션과 방문 피드백으로 지원합니다.">
+    <meta name="twitter:title" content="SotoLab | 기업 AI 업무혁신">
+    <meta name="twitter:description" content="기업이 AI를 업무에 적용하고, 직원이 직접 업무 툴을 만들 수 있도록 돕습니다.">
     <meta name="twitter:image" content="https://sotolab.github.io/img/logo.png">
-
-    <!-- Favicon -->
     <link rel="icon" href="img/favicon.png">
-
-    <!-- 폰트 & 아이콘 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- 메인 CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- 구조화 데이터 (JSON-LD) : Organization + Person + Service -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://sotolab.github.io/#organization",
-          "name": "SotoLab",
-          "url": "https://sotolab.github.io/",
-          "logo": "https://sotolab.github.io/img/favicon.png",
-          "description": "22년 경력 소프트웨어 개발자가 운영하는 기업 개발팀 빌딩, 역량 레벨업, MVP 서비스 배포 멘토링.",
-          "founder": {
-            "@type": "Person",
-            "name": "장성균",
-            "jobTitle": "Software Developer & Mentor"
-          },
-          "sameAs": [
-            "https://www.instagram.com/mentor.soto",
-            "https://open.kakao.com/o/sK8hYXfb"
-          ]
-        },
-        {
-          "@type": "Person",
-          "@id": "https://sotolab.github.io/#founder",
-          "name": "장성균",
-          "alternateName": "Soto",
-          "jobTitle": "개발 멘토",
-          "affiliation": {
-            "@id": "https://sotolab.github.io/#organization"
-          }
-        },
-        {
-          "@type": "Service",
-          "@id": "https://sotolab.github.io/#mentoring-service",
-          "name": "SotoLab 기업 개발팀 빌딩 멘토링",
-          "provider": {
-            "@id": "https://sotolab.github.io/#organization"
-          },
-          "serviceType": "개발팀 진단, 개발팀 빌딩, 역량 레벨업, MVP 서비스 배포, 주간 미션, 방문 피드백, 상시 온라인 지원",
-          "areaServed": {
-            "@type": "Country",
-            "name": "대한민국"
-          }
-        }
-      ]
-    }
-    </script>
 </head>
-
 <body>
     <nav class="nav">
         <div class="container">
@@ -104,411 +34,290 @@
                 <span class="logo-icon">S</span>
                 <span class="logo-text">SotoLab</span>
             </a>
-            
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
                 <span></span><span></span><span></span>
             </button>
-            
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
-                <li><a href="curriculum.html">커리큘럼</a></li>
-                <li><a href="books.html">출판도서</a></li>
-                <li><a href="online.html">기술교육</a></li>
-                <li><a href="reviews.html">사례</a></li>
-                <li><a href="contact.html">기업문의</a></li>
+                <li><a href="curriculum.html">도입 방식</a></li>
+                <li><a href="mvp-projects.html">업무 툴 사례</a></li>
+                <li><a href="online.html">기업 교육</a></li>
+                <li><a href="reviews.html">도입 사례</a></li>
+                <li><a href="books.html">인사이트</a></li>
+                <li><a href="contact.html">문의하기</a></li>
             </ul>
-            
-            <button class="theme-toggle" id="themeToggle">
+            <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
                 <i class="fas fa-moon"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
+        <div class="hero-orb hero-orb-left"></div>
+        <div class="hero-orb hero-orb-right"></div>
+        <div class="container hero-layout">
+            <div class="hero-copy">
                 <span class="hero-badge">
-                    <i class="fas fa-star"></i> SOTOLAB MENTORING
+                    <i class="fas fa-bolt"></i>
+                    요즘 성장하는 회사의 특징
                 </span>
                 <h1 class="hero-title">
-                    좋은 개발 습관이<br>
-                    좋은 개발팀을 만듭니다
+                    직원이 AI를 잘 쓰는 회사는
+                    더 빠르게 움직입니다.
                 </h1>
                 <p class="hero-subtitle">
-                    개발팀 진단부터 빌딩, 역량 레벨업, MVP 서비스 배포까지 주간 미션과 방문 피드백으로 함께합니다
+                    직원이 AI 업무도구를 잘 쓰면 업무효율이 극대화 됩니다.<br>
+                    AI 교육에서 끝나지 않고, 실제 업무 적용과 내부 툴 제작까지 연결합니다.
                 </p>
+                <div class="hero-urgency">
+                    <i class="fas fa-clock"></i>
+                    <span>현재 3개월 이상 대기 중인 업체가 많아, 지금 문의하셔도 바로 시작은 어렵습니다.</span>
+                </div>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn btn-primary btn-large">
-                        개발팀 진단 상담
+                        문의하기
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#packages" class="btn btn-outline btn-large">
-                        패키지 보기
-                        <i class="fas fa-arrow-down"></i>
+                    <a href="curriculum.html" class="btn btn-outline btn-large">
+                        도입 방식
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <i class="fas fa-users"></i>
-                        <span class="stat-number" data-target="70">0</span>+
-                        <span class="stat-label">개발자 멘토링</span>
+                        <span class="stat-number" data-target="1">0</span>명부터
+                        <span class="stat-label">핵심 인력부터 시작</span>
                     </div>
                     <div class="stat">
-                        <i class="fas fa-heart"></i>
-                        <span class="stat-number" data-target="98">0</span>%
-                        <span class="stat-label">만족도</span>
+                        <span class="stat-number" data-target="3">0</span>단계
+                        <span class="stat-label">SotoFlow 운영 방식</span>
                     </div>
                     <div class="stat">
-                        <i class="fas fa-award"></i>
-                        <span class="stat-number" data-target="22">0</span>년
-                        <span class="stat-label">멘토링 경력</span>
+                        <span class="stat-number" data-target="100">0</span>% 맞춤
+                        <span class="stat-label">업무 기준 설계</span>
                     </div>
-                    <div class="stat">
-                        <i class="fas fa-rocket"></i>
-                        <span class="stat-number" data-target="6">0</span>개월
-                        <span class="stat-label">핵심 패키지</span>
-                    </div>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <div class="signal-card">
+                    <p class="signal-label">이런 기업에 맞습니다</p>
+                    <h2>바로 문의해보세요</h2>
+                    <ul class="signal-list">
+                        <li>AI를 도입했지만 실제 업무에는 잘 안 붙는 회사</li>
+                        <li>개발자 없이 내부 업무 툴을 만들고 싶은 회사</li>
+                        <li>한 명의 핵심 인력부터 시작하고 싶은 회사</li>
+                    </ul>
+                </div>
+                <div class="hero-mini-grid">
+                    <article class="mini-card">
+                        <span>01</span>
+                        <h3>누가 맞나</h3>
+                        <p>AI가 업무에 안 붙는 회사</p>
+                    </article>
+                    <article class="mini-card">
+                        <span>02</span>
+                        <h3>어떻게 시작하나</h3>
+                        <p>핵심 인력 1명부터 시작</p>
+                    </article>
+                    <article class="mini-card">
+                        <span>03</span>
+                        <h3>왜 지금인가</h3>
+                        <p>대기 업체가 많아 올해 일정이 빠듯합니다</p>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fit Section -->
-    <section class="impact-section">
-        <div class="container">
-            <h2 class="section-title text-center">이런 기업에 필요합니다</h2>
-            <div class="impact-grid">
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <h3>개발팀을 처음 만드는 기업</h3>
-                    <p class="impact-result">채용부터 온보딩까지 개발팀 구조가 잡힙니다.</p>
-                    <p>개발 인재 채용, 역할 정의, 협업 방식, 온보딩 구조가 필요한 기업에 맞습니다.</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3>운영이 흔들리는 개발팀</h3>
-                    <p class="impact-result">코드 품질과 협업 속도, 서비스 안정성이 높아집니다.</p>
-                    <p>코드 리뷰, CS, 협업, 성능 개선을 팀 문화로 정착시킵니다.</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>MVP 배포·안정화 기업</h3>
-                    <p class="impact-result">출시 리스크를 줄이고 유지보수 방향이 선명해집니다.</p>
-                    <p>기능 정의, 기술 설계, 개발 우선순위, 출시 점검, 유지보수 방향을 함께 잡습니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section class="clients-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Clients</span>
-                <h2 class="section-title">대표 기업 멘토링 사례</h2>
-                <p class="section-description">
-                    소토랩 멘토링은 다양한 기업과 함께 개발팀 빌딩, 기술 의사결정, 프로젝트 실행 피드백을 진행해왔습니다. 아래는 그중 일부 대표 사례입니다.
-                </p>
-            </div>
-
-            <div class="client-grid" aria-label="대표 기업 멘토링 사례 업체">
-                <div class="client-card">지텐션</div>
-                <div class="client-card">닛픽</div>
-                <div class="client-card">토킹</div>
-                <div class="client-card">이퓨인터네셔널</div>
-                <div class="client-card">디오비스튜디오</div>
-                <div class="client-card">도그롤로</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section class="services-section" id="packages">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Packages</span>
-                <h2 class="section-title">기업 개발팀 성장 패키지</h2>
-                <p class="section-description">
-                    개발팀의 현재 단계에 맞춰 진단, 빌딩, 역량 레벨업, MVP 서비스 배포 패키지로 제공합니다.<br>
-                    모든 패키지는 주간 미션, 주 1회 방문 피드백, 상시 온라인 지원을 기본으로 합니다.
-                </p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <span class="package-kicker">01</span>
-                    <h3>개발팀 진단 패키지</h3>
-                    <p>현재 개발팀과 프로젝트 상태를 진단하고 기술/조직 리스크와 개선 로드맵을 제시합니다.</p>
-                    <ul class="package-list">
-                        <li>개발팀/프로젝트 상태 진단</li>
-                        <li>기술 스택과 코드 구조 점검</li>
-                        <li>개선 우선순위와 실행 로드맵</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users-cog"></i>
-                    </div>
-                    <span class="package-kicker">02</span>
-                    <h3>개발팀 빌딩 패키지</h3>
-                    <p>개발 인재 채용 공고 작성, 면접 대행, 채용 후 온보딩, 직원 R&R, 정착 지원을 함께합니다.</p>
-                    <ul class="package-list">
-                        <li>채용 공고와 면접 기준 설계</li>
-                        <li>기술 면접 대행 또는 동석</li>
-                        <li>온보딩, R&R, 정착 지원</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <span class="package-kicker">03</span>
-                    <h3>역량 레벨업 패키지</h3>
-                    <p>현재 개발 중인 서비스를 기준으로 성능 개선, CS 기본기, 코드 리뷰, 협업 강화, 프로세스 안정화를 진행합니다.</p>
-                    <ul class="package-list">
-                        <li>성능 개선 포인트 점검</li>
-                        <li>CS 기본기와 코드 리뷰</li>
-                        <li>협업 방식과 프로세스 안정화</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
-                    <span class="package-kicker">04</span>
-                    <h3>MVP 서비스 배포 패키지</h3>
-                    <p>MVP 기능 정의, 기술 설계, 개발 우선순위, 출시/안정화 자문, 유지보수 방향까지 지원합니다.</p>
-                    <ul class="package-list">
-                        <li>MVP 기능 범위와 우선순위</li>
-                        <li>기술 구조와 배포 체크리스트</li>
-                        <li>출시 후 안정화와 유지보수</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Operating Method Section -->
     <section class="method-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Method</span>
-                <h2 class="section-title">주간 미션과 방문 피드백으로 운영합니다</h2>
-                <p class="section-description">
-                    소토랩 멘토링은 강의만 하고 끝나는 방식이 아닙니다. 매주 실행 미션을 제공하고, 주 1회 기업을 방문해 결과물을 함께 점검합니다.
-                </p>
+                <span class="section-label">SotoFlow</span>
+                <h2 class="section-title">SotoFlow 운영 방식</h2>
+                <p class="section-description">교육에서 끝나지 않고, 실제 적용과 내부 도구 제작까지 하나의 흐름으로 운영합니다.</p>
             </div>
-
             <div class="method-grid">
-                <div class="method-card">
-                    <div class="method-number">01</div>
-                    <h3>주간 미션 제공</h3>
-                    <p>팀 수준과 프로젝트 목표에 맞는 실무 미션을 매주 제공합니다.</p>
-                </div>
-                <div class="method-card">
-                    <div class="method-number">02</div>
-                    <h3>주 1회 방문 피드백</h3>
-                    <p>기업 현장을 방문해 코드, 설계, 문서, 협업 방식, 프로세스를 직접 리뷰합니다.</p>
-                </div>
-                <div class="method-card">
-                    <div class="method-number">03</div>
-                    <h3>상시 온라인 지원</h3>
-                    <p>개발 중 막히는 질문과 기술 의사결정은 온라인으로 언제든지 피드백합니다.</p>
-                </div>
-                <div class="method-card">
-                    <div class="method-number">04</div>
-                    <h3>다음 액션 정리</h3>
-                    <p>방문 피드백 후 다음 주에 실행할 개선 과제와 우선순위를 명확하게 정리합니다.</p>
-                </div>
+                <article class="method-card">
+                    <span class="method-number">01</span>
+                    <h3>진단</h3>
+                    <p>어떤 업무부터 바꾸는 것이 가장 효과적인지 먼저 정리합니다.</p>
+                </article>
+                <article class="method-card">
+                    <span class="method-number">02</span>
+                    <h3>적용</h3>
+                    <p>직원이 AI를 실제 업무에 바로 붙여 쓰는 방식까지 함께 맞춥니다.</p>
+                </article>
+                <article class="method-card">
+                    <span class="method-number">03</span>
+                    <h3>내재화</h3>
+                    <p>필요한 업무 도구를 직접 만들고, 팀 안에 남는 방식으로 확장합니다.</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
+    <section class="pricing-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-placeholder">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="about-badge">
-                        <i class="fas fa-award"></i> 22년 경력
-                    </div>
-                </div>
-                <div class="about-content">
-                    <span class="section-label">Introducing Soto</span>
-                    <h2 class="section-title">소토</h2>
-                    <p class="about-description">
-                        22년 경력의 개발 멘토링 전문가로, 기업 개발팀의 좋은 개발 습관과 실무 실행력을 만드는 일을 돕습니다.
-                    </p>
-                    
-                    <div class="about-details">
-                        <h4><i class="fas fa-briefcase"></i> 약력</h4>
-                        <ul>
-                            <li>컴퓨터소프트웨어 전공, 공학박사</li>
-                            <li>관심사: 멘토링, 글 쓰기, 책 출판</li>
-                            <li>소토랩 SW스쿨 운영</li>
-                            <li>아트센터 나비 미술관, 기술멘토</li>
-                            <li>제주산학융합원, 기술멘토</li>
-                            <li>제주ICT협동조합, 기술멘토</li>
-                            <li>IOT융합센터, 기술센터장</li>
-                            <li>한양대학교 공학대학원 겸임교수</li>
-                            <li>한양사이버대학교 강의</li>
-                            <li>한컴MDS</li>
-                            <li>아카라라이프</li>
-                            <li>폰드메이커스</li>
-                           
-                        </ul>
-                    </div>
-
-                    <br>
-
-                    <blockquote class="about-quote">
-                        <i class="fas fa-quote-left"></i>
-                        배워서 남주자
-                        <i class="fas fa-quote-right"></i>
-                    </blockquote>
-
-                    <a href="mvp-projects.html" class="btn btn-primary">
-                        MVP 사례 보기 <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+            <div class="section-header">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">도입 비용</h2>
+                <p class="section-description">시작 기간에 따라 선택할 수 있도록 3가지 방식으로 운영합니다.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Reviews Preview Section -->
-    <section class="reviews-preview-section">
-        <div class="container">
-            <h2 class="section-title text-center">멘토링과 프로젝트 사례</h2>
-            <p class="section-description text-center">개발자 성장, 프로젝트 수행, 기술 학습을 좋은 개발 습관으로 연결한 사례입니다</p>
-            
-            <div class="reviews-slider" id="reviewsSlider">
-                <!-- Review 1 -->
-                <div class="review-slide">
-                    <div class="review-content-box">
-                        <div class="review-author">
-                            <div class="review-avatar-small">박</div>
-                            <div>
-                                <h4>박OO님</h4>
-                                <p>스타트업 프론트엔드 개발자</p>
-                            </div>
-                        </div>
-                        <p class="review-text">
-                            "스타트업에서 프론트엔드 개발자로 일하며 기술 선택과 성장 방향에 대한 고민이 많았습니다.
-                            멘토링을 통해 백엔드, 앱 개발, AI까지 서비스 전체를 보는 관점이 생겼고,
-                            팀 안에서 더 넓은 역할을 맡을 수 있다는 자신감을 얻었습니다."
-                        </p>
-                        <div class="review-tags-small">
-                            <span>기술 성장</span>
-                            <span>역할 확장</span>
-                            <span>스타트업</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="review-slide">
-                    <div class="review-content-box">
-                        <div class="review-author">
-                            <div class="review-avatar-small">김</div>
-                            <div>
-                                <h4>김OO님</h4>
-                                <p>주니어 개발자 온보딩</p>
-                            </div>
-                        </div>
-                        <p class="review-text">
-                            "개발 기초가 부족한 상태에서 무엇을 먼저 익혀야 할지 막막했습니다.
-                            매주 학습 범위와 과제를 정하고 피드백을 받으면서 CS와 프로그래밍 기초를 정리했습니다.
-                            혼자 공부할 때보다 훨씬 빠르게 개발 업무에 필요한 기본기를 만들 수 있었습니다."
-                        </p>
-                        <div class="review-tags-small">
-                            <span>온보딩</span>
-                            <span>CS 기초</span>
-                            <span>주니어 성장</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <p class="pricing-kicker">1개월</p>
+                    <h3 class="pricing-price">150만원</h3>
+                    <p class="pricing-caption">가볍게 시작해보는 단기 적용</p>
+                    <ul class="package-list pricing-list">
+                        <li>핵심 인력 중심으로 시작</li>
+                        <li>업무 적용 가능성 빠른 점검</li>
+                        <li>첫 업무 도구 설계 방향 정리</li>
+                    </ul>
+                </article>
+                <article class="pricing-card pricing-card-featured">
+                    <span class="pricing-badge">추천</span>
+                    <p class="pricing-kicker">3개월</p>
+                    <h3 class="pricing-price">400만원</h3>
+                    <p class="pricing-caption">가장 많이 선택하는 기본 도입</p>
+                    <p class="pricing-discount">정상가 450만원 대비 50만원 할인</p>
+                    <ul class="package-list pricing-list">
+                        <li>진단 · 적용 · 내재화 흐름 시작</li>
+                        <li>실제 업무 도구 제작까지 연결</li>
+                        <li>팀 안에 남는 실무형 방식 구축</li>
+                    </ul>
+                </article>
+                <article class="pricing-card">
+                    <p class="pricing-kicker">6개월</p>
+                    <h3 class="pricing-price">800만원</h3>
+                    <p class="pricing-caption">여러 업무에 넓게 확장하는 방식</p>
+                    <p class="pricing-discount">정상가 900만원 대비 100만원 할인</p>
+                    <ul class="package-list pricing-list">
+                        <li>여러 직무로 적용 범위 확장</li>
+                        <li>내부 업무 도구 축적</li>
+                        <li>반복 업무 효율 체계화</li>
+                    </ul>
+                </article>
             </div>
-
-            <div class="slider-dots" id="sliderDots"></div>
-
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="reviews.html" class="btn btn-outline">
-                    더 많은 후기 보기 <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">우리 회사 개발팀에 맞는 패키지를 설계하세요</h2>
-                <p class="cta-description">개발팀 진단, 빌딩, 역량 레벨업, MVP 서비스 배포 중 현재 단계에 맞는 실행 계획을 함께 정리합니다</p>
-                <a href="https://open.kakao.com/o/sK8hYXfb" class="btn btn-primary btn-large">
-                    패키지 상담 요청
+            <p class="pricing-note text-center">부가세 별도 기준이며, 실제 진행 범위는 회사 상황에 맞게 조정됩니다.</p>
+            <div class="text-center section-action">
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    비용 문의하기
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Why SotoLab</span>
+                <h2 class="section-title">이런 회사가 문의합니다</h2>
+                <p class="section-description">대표가 빠르게 보고 판단할 수 있도록 핵심만 남겼습니다.</p>
+            </div>
+            <div class="impact-grid">
+                <article class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-user-cog"></i></div>
+                    <h3>개발자가 없는 회사</h3>
+                    <p class="impact-result">내부에서 먼저 시작하고 싶은 경우</p>
+                    <p>외주 전에 실무자 중심으로 가능한 업무부터 붙입니다.</p>
+                </article>
+                <article class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>AI를 써도 일이 안 빨라진 회사</h3>
+                    <p class="impact-result">실제 업무에 안 붙는 경우</p>
+                    <p>검색 수준이 아니라 업무 도구처럼 쓰는 방식으로 바꿉니다.</p>
+                </article>
+                <article class="impact-card">
+                    <div class="impact-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                    <h3>직접 업무 툴까지 만들고 싶은 회사</h3>
+                    <p class="impact-result">교육에서 끝나면 아쉬운 경우</p>
+                    <p>작은 자동화, 보고서, 정산, 파일 관리 도구까지 직접 만듭니다.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-preview-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Proof</span>
+                <h2 class="section-title text-center">도입 사례</h2>
+                <p class="section-description text-center">대표와 실무자가 체감한 변화를 짧게 확인할 수 있습니다.</p>
+            </div>
+            <div class="reviews-slider" id="reviewsSlider">
+                <div class="review-slide">
+                    <div class="review-content-box">
+                        <div class="review-author">
+                            <div class="review-avatar-small">기</div>
+                            <div>
+                                <h4>기업 대표 사례</h4>
+                                <p>핵심 인력 1명부터 시작</p>
+                            </div>
+                        </div>
+                        <p class="review-text">"한 명의 실무자가 움직이기 시작하자 회사 전체 가능성이 보이기 시작했습니다."</p>
+                    </div>
+                </div>
+                <div class="review-slide">
+                    <div class="review-content-box">
+                        <div class="review-author">
+                            <div class="review-avatar-small">실</div>
+                            <div>
+                                <h4>실무자 사례</h4>
+                                <p>AI 기반 업무 툴 제작</p>
+                            </div>
+                        </div>
+                        <p class="review-text">"혼자 하던 불안이 줄고, 실제로 쓸 수 있는 방향이 훨씬 선명해졌습니다."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-dots" id="sliderDots"></div>
+            <div class="text-center section-action">
+                <a href="reviews.html" class="btn btn-outline">
+                    사례 더 보기
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <span class="section-label">Ready To Start</span>
+                <h2 class="cta-title">올해 안에 진행하려면 지금 문의를 남기셔야 합니다</h2>
+                <p class="cta-description">이미 여러 업체가 3개월 이상 대기 중입니다. 올해 안에 도입을 생각하고 있다면 지금 먼저 문의를 남겨주셔야 일정 확인이 가능합니다.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    문의하기
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4 class="footer-title">SotoLab</h4>
-                    <p class="footer-description">
-                        22년 경력의 전문가와 함께하는<br>
-                        기업 개발팀 성장 파트너
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/mentor.soto" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://open.kakao.com/o/sK8hYXfb" aria-label="KakaoTalk"><i class="fas fa-comment"></i></a>
-                    </div>
+                    <p class="footer-description">기업이 AI를 업무에 붙이고 내부 실행력을 높이도록 돕습니다.</p>
                 </div>
-                
                 <div class="footer-col">
-                    <h4 class="footer-title">바로가기</h4>
+                    <h4 class="footer-title">Explore</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="mvp-projects.html">MVP 프로젝트</a></li>
-                        <li><a href="curriculum.html">커리큘럼</a></li>
-                        <li><a href="books.html">출판도서</a></li>
+                        <li><a href="curriculum.html">도입 방식</a></li>
+                        <li><a href="mvp-projects.html">업무 툴 사례</a></li>
+                        <li><a href="online.html">기업 교육</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
-                    <h4 class="footer-title">멘토링</h4>
+                    <h4 class="footer-title">Action</h4>
                     <ul class="footer-links">
-                        <li><a href="online.html">기술교육</a></li>
-                        <li><a href="reviews.html">사례</a></li>
-                        <li><a href="contact.html">기업문의</a></li>
+                        <li><a href="reviews.html">도입 사례</a></li>
+                        <li><a href="contact.html">문의하기</a></li>
                     </ul>
                 </div>
-                
-
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2026 SotoLab. All rights reserved.</p>
             </div>

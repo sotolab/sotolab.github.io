@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 툴 사례 | SotoLab</title>
+    <meta name="description" content="직원이 직접 만들 수 있는 업무 툴 사례를 보여줍니다.">
+    <meta name="author" content="박성규(Soto)">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://sotolab.github.io/mvp-projects.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="업무 툴 사례 | SotoLab">
+    <meta property="og:description" content="실제 회사에서 자주 쓰는 업무를 AI로 어떻게 도구화할 수 있는지 보여줍니다.">
+    <meta property="og:url" content="https://sotolab.github.io/mvp-projects.html">
+    <meta property="og:site_name" content="SotoLab">
+    <meta property="og:image" content="https://sotolab.github.io/img/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="업무 툴 사례 | SotoLab">
+    <meta name="twitter:description" content="발주, 계산서, 파일관리, 엑셀 자동화, 콘텐츠 생성 등 실제 업무 도구 예시를 확인해보세요.">
+    <meta name="twitter:image" content="https://sotolab.github.io/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link href="img/favicon.png" rel="icon">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-logo"><span class="logo-icon">S</span><span class="logo-text">SotoLab</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">도입 방식</a></li>
+                <li><a href="mvp-projects.html" class="active">업무 툴 사례</a></li>
+                <li><a href="online.html">기업 교육</a></li>
+                <li><a href="reviews.html">도입 사례</a></li>
+                <li><a href="books.html">인사이트</a></li>
+                <li><a href="contact.html">문의하기</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="테마 전환"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a><span>/</span><span>업무 툴 사례</span>
+            </div>
+            <h1 class="page-title">업무 툴 사례</h1>
+            <p class="page-description">직원이 직접 만들 수 있는 업무 도구 예시를 확인해보세요.</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-th"></i><span>전체</span></button>
+                <button class="filter-btn" data-filter="automation"><i class="fas fa-gears"></i><span>자동화</span></button>
+                <button class="filter-btn" data-filter="document"><i class="fas fa-file-lines"></i><span>문서/정산</span></button>
+                <button class="filter-btn" data-filter="data"><i class="fas fa-table"></i><span>엑셀/데이터</span></button>
+                <button class="filter-btn" data-filter="content"><i class="fas fa-bullhorn"></i><span>콘텐츠</span></button>
+                <button class="filter-btn" data-filter="ops"><i class="fas fa-briefcase"></i><span>운영</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Real Use Cases</span>
+                <h2 class="section-title">이런 업무를 AI 툴로 만들 수 있습니다</h2>
+                <p class="section-description">중요한 것은 예쁜 데모가 아니라, 실제 회사에서 자주 쓰는 업무를 자기 회사에 맞게 구현할 수 있게 만드는 것입니다.</p>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <article class="project-card" data-category="document">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-cart-shopping"></i> 문서/정산</div>
+                        <h3 class="project-title">발주서 작성 도구</h3>
+                        <p class="project-description">품목, 단가, 수량, 거래처 정보를 넣으면 발주서 초안을 빠르게 정리해주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 발주서 초안</span>
+                            <span><i class="fas fa-check"></i> 항목 정리</span>
+                            <span><i class="fas fa-check"></i> 작성 시간 단축</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="document">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-receipt"></i> 문서/정산</div>
+                        <h3 class="project-title">계산서 발행 보조 도구</h3>
+                        <p class="project-description">거래 내역을 바탕으로 계산서 발행 전 필요한 정보를 정리하고 누락을 줄여주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 거래 정보 정리</span>
+                            <span><i class="fas fa-check"></i> 누락 방지</span>
+                            <span><i class="fas fa-check"></i> 발행 전 검토</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ops">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-folder-tree"></i> 운영</div>
+                        <h3 class="project-title">대량 파일 관리 도구</h3>
+                        <p class="project-description">파일명을 규칙에 맞게 바꾸고, 폴더별로 분류하고, 필요한 문서를 빠르게 찾게 도와주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 파일명 정리</span>
+                            <span><i class="fas fa-check"></i> 폴더 자동 분류</span>
+                            <span><i class="fas fa-check"></i> 검색 효율 향상</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="data">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-table"></i> 엑셀/데이터</div>
+                        <h3 class="project-title">엑셀 정리 자동화 도구</h3>
+                        <p class="project-description">엑셀이나 시트의 데이터를 정리, 병합, 분류, 요약해 반복적인 수작업을 줄여주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 데이터 정리</span>
+                            <span><i class="fas fa-check"></i> 분류 자동화</span>
+                            <span><i class="fas fa-check"></i> 수작업 감소</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="content">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-bullhorn"></i> 콘텐츠</div>
+                        <h3 class="project-title">홍보 콘텐츠 생성 도구</h3>
+                        <p class="project-description">제품 소개, SNS 게시물, 블로그 초안, 이벤트 문구를 빠르게 만드는 콘텐츠 보조 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 초안 생성</span>
+                            <span><i class="fas fa-check"></i> 채널별 문구</span>
+                            <span><i class="fas fa-check"></i> 반복 제작 단축</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="automation">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-gears"></i> 자동화</div>
+                        <h3 class="project-title">반복 업무 처리 자동화</h3>
+                        <p class="project-description">매일 반복되는 입력, 정리, 복사, 분류 작업을 줄여 담당자의 시간을 확보하는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 반복 감소</span>
+                            <span><i class="fas fa-check"></i> 누락 방지</span>
+                            <span><i class="fas fa-check"></i> 속도 향상</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="document">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-file-signature"></i> 문서/정산</div>
+                        <h3 class="project-title">제안서·견적서 초안 도구</h3>
+                        <p class="project-description">기존 자료를 바탕으로 제안서 문안과 견적서 설명을 빠르게 정리해주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 문안 초안</span>
+                            <span><i class="fas fa-check"></i> 형식 통일</span>
+                            <span><i class="fas fa-check"></i> 작성 속도 향상</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ops">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-headset"></i> 운영</div>
+                        <h3 class="project-title">상담/문의 요약 도구</h3>
+                        <p class="project-description">상담 내용이나 고객 문의를 요약하고, 다음 액션을 정리해 운영팀 업무를 가볍게 해주는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 문의 요약</span>
+                            <span><i class="fas fa-check"></i> 후속조치 정리</span>
+                            <span><i class="fas fa-check"></i> 응대 품질 개선</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="data">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-chart-column"></i> 엑셀/데이터</div>
+                        <h3 class="project-title">매출/현황 요약 도구</h3>
+                        <p class="project-description">엑셀 데이터나 거래 데이터를 바탕으로 매출 현황, 진행 현황, 리포트 요약본을 만드는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 요약 리포트</span>
+                            <span><i class="fas fa-check"></i> 숫자 정리</span>
+                            <span><i class="fas fa-check"></i> 보고 간소화</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="content">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-image"></i> 콘텐츠</div>
+                        <h3 class="project-title">상품 설명/상세페이지 문구 도구</h3>
+                        <p class="project-description">제품 특징을 넣으면 상품 소개 문구, 상세페이지 문안, 광고용 짧은 카피를 정리하는 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 상품 문안</span>
+                            <span><i class="fas fa-check"></i> 광고 카피</span>
+                            <span><i class="fas fa-check"></i> 콘텐츠 생산성 향상</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="automation">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-list-check"></i> 자동화</div>
+                        <h3 class="project-title">체크리스트 운영 도구</h3>
+                        <p class="project-description">부서별 반복 체크리스트를 디지털화하고, 누락 없이 운영하도록 돕는 내부 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 진행 상태 확인</span>
+                            <span><i class="fas fa-check"></i> 누락 감소</span>
+                            <span><i class="fas fa-check"></i> 협업 가시성</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ops">
+                    <div class="project-content">
+                        <div class="project-category"><i class="fas fa-boxes-stacked"></i> 운영</div>
+                        <h3 class="project-title">재고/입출고 정리 보조 도구</h3>
+                        <p class="project-description">입출고 내역을 정리하고, 재고 현황을 빠르게 파악하게 도와주는 간단한 운영 보조 도구입니다.</p>
+                        <div class="project-features">
+                            <span><i class="fas fa-check"></i> 입출고 기록 정리</span>
+                            <span><i class="fas fa-check"></i> 재고 현황 파악</span>
+                            <span><i class="fas fa-check"></i> 운영 실수 감소</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-inline">
+                <div>
+                    <h3>우리 회사에 필요한 업무가 보이시나요?</h3>
+                    <p>이런 업무를 귀사 방식에 맞게 직접 만들 수 있도록 돕는 것이 목표입니다.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">문의하기</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 SotoLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/pages.js"></script>
+</body>
+</html>

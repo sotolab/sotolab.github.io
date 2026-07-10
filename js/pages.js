@@ -42,6 +42,31 @@ if (filterTabs && projectsGrid) {
     });
 }
 
+// Project Cards Reveal Animation
+const animatedProjectCards = document.querySelectorAll('.project-card');
+
+if (animatedProjectCards.length) {
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay || '0', 10);
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, delay);
+                projectObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    animatedProjectCards.forEach((card, index) => {
+        card.dataset.delay = String(index * 70);
+        projectObserver.observe(card);
+    });
+}
+
 // SOTE Timeline Animation
 const soteSteps = document.querySelectorAll('.sote-step');
 
