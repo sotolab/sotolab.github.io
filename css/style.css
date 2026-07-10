@@ -641,6 +641,8 @@ p {
 
 .pricing-section {
     padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: color-mix(in srgb, var(--surface-muted) 42%, transparent);
 }
 
 .pricing-grid {
@@ -654,7 +656,11 @@ p {
 
 .pricing-card {
     position: relative;
-    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-height: 100%;
+    padding: 2rem 1.8rem 1.8rem;
     border-radius: 1.8rem;
     background: var(--surface);
     border: 1px solid var(--border);
@@ -671,9 +677,10 @@ p {
 
 .pricing-card-featured {
     background:
-        linear-gradient(160deg, rgba(23, 71, 255, 0.1), rgba(255, 106, 61, 0.08)),
+        linear-gradient(160deg, rgba(23, 71, 255, 0.12), rgba(255, 106, 61, 0.1)),
         var(--surface);
     border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+    box-shadow: 0 24px 56px rgba(23, 71, 255, 0.14);
 }
 
 .pricing-badge {
@@ -694,24 +701,25 @@ p {
 
 .pricing-kicker {
     color: var(--primary);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
 }
 
 .pricing-price {
     font-family: "Space Grotesk", sans-serif;
     font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1;
-    margin-bottom: 0.85rem;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.7rem;
 }
 
 .pricing-caption {
     color: var(--text);
     font-weight: 700;
-    margin-bottom: 0.55rem;
+    min-height: 3.2rem;
+    margin-bottom: 0.45rem;
 }
 
 .pricing-discount,
@@ -720,16 +728,18 @@ p {
 }
 
 .pricing-discount {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.92rem;
 }
 
 .pricing-list {
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
 }
 
 .pricing-note {
-    margin-top: 1.25rem;
+    margin-top: 1.35rem;
     margin-bottom: 0;
     font-size: 0.95rem;
 }
