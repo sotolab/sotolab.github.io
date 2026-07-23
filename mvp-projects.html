@@ -22,15 +22,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20260710-1">
-    <link rel="stylesheet" href="css/pages.css?v=20260710-1">
+    <link rel="stylesheet" href="css/style.css?v=20260723-2">
+    <link rel="stylesheet" href="css/pages.css?v=20260723-2">
     <link href="img/favicon.png" rel="icon">
 </head>
 <body>
+    <canvas id="webgl"></canvas><div class="shade"></div><div class="grid"></div>
     <nav class="nav">
         <div class="container">
-            <a href="index.html" class="nav-logo"><span class="logo-icon">S</span><span class="logo-text">SotoLab</span></a>
-            <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+            <a href="index.html" class="nav-logo">Soto<b>LAB</b></a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="curriculum.html">도입 방식</a></li>
@@ -40,7 +40,6 @@
                 <li><a href="books.html">인사이트</a></li>
                 <li><a href="contact.html">문의하기</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="테마 전환"><i class="fas fa-moon"></i></button>
         </div>
     </nav>
 
@@ -71,7 +70,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Real Use Cases</span>
-                <h2 class="section-title">이런 업무를 AI 툴로 만들 수 있습니다</h2>
+                <h2 class="section-title single-line-desktop">이런 업무를 AI 툴로 만들 수 있습니다</h2>
                 <p class="section-description">실제 회사에서 자주 나오는 업무를 각 회사 방식에 맞게 직접 쓰는 도구로 만드는 것이 목표입니다.</p>
             </div>
 
@@ -259,7 +258,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="js/main.js?v=20260710-1"></script>
-    <script src="js/pages.js?v=20260710-1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="js/main.js?v=20260723-3"></script>
+    <script src="js/pages.js?v=20260723-3"></script>
 </body>
 </html>

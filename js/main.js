@@ -6,6 +6,78 @@
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
+function initGlobalWebglBackground() {
+    const canvas = document.getElementById('webgl');
+    if (!canvas || !window.THREE || window.__sotolabBgInitialized) {
+        return;
+    }
+
+    window.__sotolabBgInitialized = true;
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 8;
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const geo = new THREE.IcosahedronGeometry(1.55, 1);
+    const mat = new THREE.MeshBasicMaterial({
+        color: 0x8f6bff,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.22
+    });
+    group.add(new THREE.Mesh(geo, mat));
+
+    const pts = [];
+    for (let i = 0; i < 180; i += 1) {
+        const v = new THREE.Vector3().randomDirection().multiplyScalar(2.2 + Math.random() * 2.8);
+        pts.push(v.x, v.y, v.z);
+    }
+
+    const pgeo = new THREE.BufferGeometry();
+    pgeo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+    const pmat = new THREE.PointsMaterial({
+        color: 0xc9ff3d,
+        size: 0.035,
+        transparent: true,
+        opacity: 0.7
+    });
+    group.add(new THREE.Points(pgeo, pmat));
+
+    let mx = 0;
+    let my = 0;
+
+    window.addEventListener('pointermove', (event) => {
+        mx = (event.clientX / window.innerWidth - 0.5) * 0.35;
+        my = (event.clientY / window.innerHeight - 0.5) * 0.25;
+    });
+
+    function resize() {
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function tick() {
+        group.rotation.y += 0.0018;
+        group.rotation.x += 0.0006;
+        group.position.x += (mx - group.position.x) * 0.025;
+        group.position.y += (-my - group.position.y) * 0.025;
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+    }
+
+    tick();
+}
+
 // Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
@@ -87,6 +159,8 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements
 document.addEventListener('DOMContentLoaded', () => {
+    initGlobalWebglBackground();
+
     const animateElements = document.querySelectorAll('.hero-stats, .impact-grid, .services-grid, .reviews-preview-section');
     animateElements.forEach(el => observer.observe(el));
 });
