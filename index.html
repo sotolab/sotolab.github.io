@@ -1,947 +1,567 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SotoLab | 기업 AI 멘토링 · 업무 도구 구축</title>
-  <meta name="description" content="개인에서 팀으로, 팀에서 조직으로. AI를 실제로 일하는 방식에 붙이고 내부 업무 도구까지 만들 수 있도록 돕는 SotoLab의 기업 AI 멘토링 서비스입니다.">
-  <meta name="keywords" content="SotoLab, 기업 AI 멘토링, AI 업무 도구, 업무 자동화, 기업 AI 교육, AI 도입, 업무 효율화, 내부 툴 구축">
-  <meta name="author" content="SotoLab">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://sotolab.github.io/">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="SotoLab | 기업 AI 멘토링 · 업무 도구 구축">
-  <meta property="og:description" content="AI 교육에서 끝나지 않고, 실제 업무 적용과 내부 업무 도구 제작까지 연결하는 기업 AI 멘토링 서비스입니다.">
-  <meta property="og:url" content="https://sotolab.github.io/">
-  <meta property="og:site_name" content="SotoLab">
-  <meta property="og:image" content="https://sotolab.github.io/img/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SotoLab | 기업 AI 멘토링 · 업무 도구 구축">
-  <meta name="twitter:description" content="직원이 AI를 잘 쓰는 회사는 더 빠르게 움직입니다. SotoLab이 실제 업무 적용과 내부 도구 제작까지 함께합니다.">
-  <meta name="twitter:image" content="https://sotolab.github.io/img/logo.png">
-
-  <link rel="icon" href="img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260723-4">
-  <style>
-    :root {
-      --bg: #07070a;
-      --panel: rgba(18, 18, 24, 0.66);
-      --line: rgba(255, 255, 255, 0.12);
-      --text: #f7f7fa;
-      --muted: #aaaab5;
-      --lime: #c9ff3d;
-      --violet: #8f6bff;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
-    }
-
-    #webgl {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -3;
-      display: block;
-    }
-
-    .shade {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(143, 107, 255, 0.11), transparent 32%),
-        linear-gradient(180deg, rgba(7, 7, 10, 0.05), #07070a 86%);
-      pointer-events: none;
-    }
-
-    .grid {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.2;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
-      pointer-events: none;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      align-items: center;
-      padding: 130px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 13px;
-      color: #dddde6;
-    }
-
-    .eyebrow i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 18px var(--lime);
-    }
-
-    h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      margin: 20px 0 18px;
-    }
-
-    .hero-first-line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .hero-second-line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .accent { color: var(--lime); }
-
-    .line-lock {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .hero p {
-      font-size: clamp(18px, 2vw, 22px);
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 0 32px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      min-height: 52px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 19px;
-      border-radius: 14px;
-      text-decoration: none;
-      color: white;
-      border: 1px solid var(--line);
-      font-weight: 800;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .btn.primary {
-      background: var(--lime);
-      color: #111;
-      border-color: transparent;
-      box-shadow: 0 16px 48px rgba(201, 255, 61, 0.18);
-    }
-
-    .scene-shell {
-      height: 590px;
-      position: relative;
-      perspective: 1200px;
-    }
-
-    .scene-stage {
-      position: absolute;
-      inset: 0;
-      transform-style: preserve-3d;
-      transition: transform 0.2s ease-out;
-    }
-
-    .core {
-      position: absolute;
-      left: 50%;
-      top: 47%;
-      width: 210px;
-      height: 210px;
-      transform: translate(-50%, -50%) translateZ(70px);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.95) 0 7%, rgba(255, 255, 255, 0.18) 8% 16%, transparent 17%),
-        radial-gradient(circle at 68% 70%, rgba(143, 107, 255, 0.42), transparent 24%),
-        radial-gradient(circle at 50% 48%, #f1ffb9 0 10%, var(--lime) 22%, #9ddf30 40%, #6c47ff 72%, #13131a 100%);
-      box-shadow:
-        0 0 42px rgba(201, 255, 61, 0.24),
-        0 0 110px rgba(143, 107, 255, 0.26),
-        inset -30px -30px 55px rgba(0, 0, 0, 0.42),
-        inset 18px 18px 34px rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: #111;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
-      font-weight: 950;
-      font-size: 26px;
-      line-height: 1.05;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .ring {
-      position: absolute;
-      left: 50%;
-      top: 47%;
-      border: 1px solid rgba(201, 255, 61, 0.3);
-      border-radius: 50%;
-      transform-style: preserve-3d;
-      box-shadow:
-        0 0 22px rgba(143, 107, 255, 0.12),
-        inset 0 0 18px rgba(201, 255, 61, 0.08);
-    }
-
-    .r1 {
-      width: 370px;
-      height: 370px;
-      transform: translate(-50%, -50%) rotateX(72deg);
-      animation: spin 14s linear infinite;
-    }
-
-    .r2 {
-      width: 470px;
-      height: 470px;
-      transform: translate(-50%, -50%) rotateY(68deg) rotateZ(18deg);
-      animation: spin2 18s linear infinite;
-    }
-
-    .ring:before,
-    .ring:after {
-      content: "";
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ffffff, var(--lime) 50%, var(--violet));
-      box-shadow:
-        0 0 14px rgba(255, 255, 255, 0.55),
-        0 0 28px rgba(201, 255, 61, 0.38),
-        0 0 36px rgba(143, 107, 255, 0.22);
-    }
-
-    .ring:before { left: 8%; top: 46%; }
-    .ring:after { right: 8%; top: 46%; }
-
-    .float-card {
-      position: absolute;
-      width: 190px;
-      padding: 19px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(28, 28, 36, 0.9), rgba(11, 11, 16, 0.72));
-      backdrop-filter: blur(16px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-      transform-style: preserve-3d;
-      z-index: 2;
-    }
-
-    .float-card small {
-      display: block;
-      color: var(--lime);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .float-card strong {
-      font-size: 24px;
-      line-height: 1.15;
-    }
-
-    .float-card p {
-      font-size: 13px;
-      line-height: 1.55;
-      margin: 10px 0 0;
-      color: #aaaab5;
-    }
-
-    .fc1 { left: 1%; top: 15%; transform: translateZ(130px) rotateY(18deg) rotateX(4deg); }
-    .fc2 { right: -4%; top: 13%; transform: translateZ(34px) rotateY(-16deg) rotateX(-2deg); }
-    .fc3 { left: 10%; bottom: 5%; transform: translateZ(-40px) rotateY(14deg) rotateX(-5deg); }
-    .fc4 { right: 5%; bottom: 2%; transform: translateZ(115px) rotateY(-14deg) rotateX(5deg); }
-
-
-    section { padding: 120px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 28px;
-      margin-bottom: 38px;
-    }
-
-    .section-head h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 5vw, 66px);
-      line-height: 1.04;
-      letter-spacing: -0.05em;
-      margin: 0;
-    }
-
-    .section-head p {
-      max-width: 480px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .cards.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cards.four {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
-      padding: 28px;
-      min-height: 270px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) rotateX(2deg);
-      border-color: rgba(201, 255, 61, 0.35);
-    }
-
-    .card .num {
-      color: var(--lime);
-      font-weight: 900;
-      margin-bottom: 55px;
-    }
-
-    .card h3 {
-      font-size: 28px;
-      margin: 0 0 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .card ul {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .card li {
-      position: relative;
-      padding-left: 18px;
-      line-height: 1.6;
-    }
-
-    .card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 14px rgba(201, 255, 61, 0.32);
-    }
-
-    .card.risk {
-      border-color: rgba(255, 132, 132, 0.22);
-      background: linear-gradient(145deg, rgba(34, 18, 22, 0.92), rgba(12, 9, 12, 0.78));
-    }
-
-    .card.risk .num {
-      color: #ff8a8a;
-    }
-
-    .card.emphasis {
-      border-color: rgba(201, 255, 61, 0.26);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(201, 255, 61, 0.08) inset;
-    }
-
-    .strip-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .strip {
-      padding: 26px 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(28, 28, 36, 0.9), rgba(11, 11, 16, 0.72));
-      backdrop-filter: blur(16px);
-    }
-
-    .strip strong {
-      display: block;
-      font-size: 34px;
-      line-height: 1;
-      margin-bottom: 14px;
-      color: var(--lime);
-      font-family: "Space Grotesk", sans-serif;
-      letter-spacing: -0.05em;
-    }
-
-    .strip h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .strip p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .statement {
-      padding: 70px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(143, 107, 255, 0.22), rgba(201, 255, 61, 0.08), rgba(15, 15, 20, 0.8));
-      text-align: center;
-    }
-
-    .statement h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 6vw, 78px);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin: 0 0 22px;
-    }
-
-    .statement p {
-      font-size: 20px;
-      color: #c7c7d0;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    footer {
-      padding: 30px 0 44px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @keyframes float {
-      50% { transform: translate(-50%, -54%) translateZ(90px); }
-    }
-
-    @keyframes spin {
-      to { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
-    }
-
-    @keyframes spin2 {
-      to { transform: translate(-50%, -50%) rotateY(68deg) rotateZ(378deg); }
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .scene-shell { height: 510px; }
-      .core { width: 160px; height: 160px; font-size: 21px; }
-      .r1 { width: 300px; height: 300px; }
-      .r2 { width: 380px; height: 380px; }
-      .float-card { width: 150px; padding: 15px; }
-      .float-card strong { font-size: 19px; }
-      .float-card p { display: none; }
-      .cards { grid-template-columns: 1fr; }
-      .cards.two,
-      .cards.four,
-      .strip-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: flex-start; flex-direction: column; }
-      .statement { padding: 42px 24px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunstar | 기업 멘토링 · 아카데미 운영 · IoT 플랫폼 개발</title>
+    <meta name="description" content="Sunstar는 기업 멘토링, 아카데미 운영, IoT 플랫폼 개발을 중심으로 사람과 현장, 시스템을 연결하는 회사입니다.">
+    <meta name="keywords" content="Sunstar, 기업 멘토링, 아카데미, IoT 교육, IoT 플랫폼 개발, SotoLAB">
+    <meta name="author" content="Sunstar">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://sotolab.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sunstar | 기업 멘토링 · 아카데미 운영 · IoT 플랫폼 개발">
+    <meta property="og:description" content="Sunstar의 핵심 사업인 기업 멘토링, 아카데미 운영, IoT 플랫폼 개발을 한눈에 확인해보세요.">
+    <meta property="og:url" content="https://sotolab.github.io/">
+    <meta property="og:site_name" content="Sunstar">
+    <meta property="og:image" content="https://sotolab.github.io/img/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sunstar | 기업 멘토링 · 아카데미 운영 · IoT 플랫폼 개발">
+    <meta name="twitter:description" content="사람을 성장시키는 멘토링, 현장을 이해하는 아카데미, 실제 운영으로 이어지는 플랫폼 개발. Sunstar의 방향을 소개합니다.">
+    <meta name="twitter:image" content="https://sotolab.github.io/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=20260803-3">
+    <link rel="stylesheet" href="css/pages.css?v=20260803-3">
+    <link href="img/favicon.png" rel="icon">
+    <style>
+        .corp-home {
+            padding-top: 7.5rem;
+        }
+
+        .corp-hero {
+            position: relative;
+            padding: 8.5rem 0 4rem;
+            overflow: hidden;
+        }
+
+        .corp-hero::before,
+        .corp-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(22px);
+            opacity: 0.52;
+        }
+
+        .corp-hero::before {
+            width: 24rem;
+            height: 24rem;
+            top: -7rem;
+            left: -7rem;
+            background: radial-gradient(circle, rgba(201, 255, 61, 0.18), transparent 68%);
+        }
+
+        .corp-hero::after {
+            width: 28rem;
+            height: 28rem;
+            top: -5rem;
+            right: -9rem;
+            background: radial-gradient(circle, rgba(143, 107, 255, 0.22), transparent 68%);
+        }
+
+        .corp-grid {
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 1.2rem;
+            align-items: stretch;
+        }
+
+        .corp-copy h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3.1rem, 6vw, 6rem);
+            line-height: 0.94;
+            letter-spacing: -0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .corp-copy p {
+            max-width: 43rem;
+            color: var(--text-soft);
+            font-size: 1.08rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+        }
+
+        .corp-actions {
+            display: flex;
+            gap: 0.9rem;
+            flex-wrap: wrap;
+        }
+
+        .corp-actions .btn:not(.btn-primary) {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+        }
+
+        .corp-panel,
+        .corp-card,
+        .corp-feature,
+        .corp-brand,
+        .corp-cta {
+            background: linear-gradient(145deg, rgba(28, 28, 36, 0.9), rgba(11, 11, 16, 0.72));
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(16px);
+        }
+
+        .corp-panel {
+            border-radius: 1.9rem;
+            padding: 1.7rem;
+        }
+
+        .corp-panel-label,
+        .corp-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.42rem 0.72rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .corp-panel h2,
+        .corp-section-title {
+            font-family: "Space Grotesk", sans-serif;
+            letter-spacing: -0.04em;
+        }
+
+        .corp-panel h2 {
+            font-size: clamp(1.8rem, 3vw, 2.8rem);
+            line-height: 1.04;
+            margin-bottom: 1rem;
+        }
+
+        .corp-panel p {
+            color: var(--text-soft);
+        }
+
+        .corp-highlights {
+            display: grid;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
+        }
+
+        .corp-highlight {
+            padding: 1rem 1.05rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .corp-highlight strong {
+            display: block;
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .corp-stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.1rem;
+        }
+
+        .corp-stat {
+            padding: 1.2rem 1rem;
+            border-radius: 1.2rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .corp-stat strong {
+            display: block;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .corp-section {
+            padding: 5.5rem 0;
+        }
+
+        .corp-section-head {
+            max-width: 840px;
+            margin-bottom: 2rem;
+        }
+
+        .corp-section-title {
+            font-size: clamp(2.1rem, 4vw, 3.8rem);
+            line-height: 1.02;
+            margin-bottom: 0.9rem;
+        }
+
+        .corp-section-desc {
+            color: var(--text-soft);
+            font-size: 1.04rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .corp-cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .corp-card {
+            border-radius: 1.6rem;
+            padding: 1.6rem;
+        }
+
+        .corp-icon {
+            width: 3.15rem;
+            height: 3.15rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: #111;
+            margin-bottom: 1rem;
+        }
+
+        .corp-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .corp-card p {
+            color: var(--text-soft);
+            margin-bottom: 1rem;
+        }
+
+        .corp-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .corp-list li {
+            position: relative;
+            padding-left: 1rem;
+            color: var(--text-soft);
+        }
+
+        .corp-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62rem;
+            width: 0.38rem;
+            height: 0.38rem;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .corp-split {
+            display: grid;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: 1rem;
+        }
+
+        .corp-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .corp-feature {
+            border-radius: 1.4rem;
+            padding: 1.4rem;
+        }
+
+        .corp-feature h4 {
+            margin: 0 0 0.55rem;
+            font-size: 1.02rem;
+            color: var(--primary);
+        }
+
+        .corp-feature p {
+            margin: 0;
+            color: var(--text-soft);
+            line-height: 1.7;
+        }
+
+        .corp-brands {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .corp-brand {
+            display: block;
+            text-decoration: none;
+            border-radius: 1.6rem;
+            padding: 1.6rem;
+            transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+        }
+
+        .corp-brand:hover {
+            transform: translateY(-6px);
+            border-color: color-mix(in srgb, var(--primary) 28%, var(--border));
+            box-shadow: 0 24px 54px rgba(0, 0, 0, 0.28);
+        }
+
+        .corp-brand h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.45rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .corp-brand p {
+            color: var(--text-soft);
+            margin-bottom: 1rem;
+        }
+
+        .corp-link {
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .corp-cta {
+            border-radius: 2rem;
+            padding: 2.1rem;
+            text-align: center;
+        }
+
+        .corp-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.7rem);
+            line-height: 1.03;
+            margin-bottom: 1rem;
+        }
+
+        .corp-cta p {
+            max-width: 44rem;
+            margin: 0 auto 1.4rem;
+            color: var(--text-soft);
+        }
+
+        @media (max-width: 1080px) {
+            .corp-grid,
+            .corp-cards,
+            .corp-split,
+            .corp-brands,
+            .corp-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .corp-feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <canvas id="webgl"></canvas>
-  <div class="shade"></div>
-  <div class="grid"></div>
-
-  <nav class="nav">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Soto<b>LAB</b></a>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="curriculum.html">도입 방식</a></li>
-        <li><a href="mvp-projects.html">업무 도구 예시</a></li>
-        <li><a href="online.html">기업 교육</a></li>
-        <li><a href="reviews.html">도입 사례</a></li>
-        <li><a href="books.html">인사이트</a></li>
-        <li><a href="contact.html">문의하기</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow"><i></i> AI · PEOPLE · ORGANIZATION</div>
-          <h1>
-            <span class="hero-first-line">AI를 잘 쓰는 사람보다</span>
-            <span class="accent hero-second-line">AI가 실제로 일하는 조직</span>
-          </h1>
-          <p>
-            SotoLab은 개인의 활용을 넘어 팀의 실행력으로, 팀의 실행력을 조직의 성장 시스템으로 연결하는
-            기업 AI 멘토링 서비스입니다.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="contact.html">문의하기</a>
-            <a class="btn" href="#framework">M2G 프레임워크</a>
-          </div>
-        </div>
-
-        <div class="scene-shell" id="sceneShell">
-          <div class="scene-stage" id="stage">
-            <div class="ring r1"></div>
-            <div class="ring r2"></div>
-            <div class="core">SOTO<br>FLOW</div>
-
-            <div class="float-card fc1">
-              <small>01 · PERSON</small>
-              <strong>개인 실행력</strong>
-              <p>직원이 AI를 묻고 쓰는 수준을 넘어 실제 업무 도구로 활용하게 만듭니다.</p>
-            </div>
-
-            <div class="float-card fc2">
-              <small>02 · TEAM</small>
-              <strong>팀 적용</strong>
-              <p>한 명의 핵심 인력부터 시작해 팀 안의 반복 업무 흐름에 붙입니다.</p>
-            </div>
-
-            <div class="float-card fc3">
-              <small>03 · SYSTEM</small>
-              <strong>업무 도구 구축</strong>
-              <p>발주, 정산, 보고서, 파일 관리 같은 내부 업무 도구를 직접 만듭니다.</p>
-            </div>
-
-            <div class="float-card fc4">
-              <small>04 · ORGANIZATION</small>
-              <strong>조직 전환</strong>
-              <p>좋은 강의가 아니라 실제로 적용되는 방식이 회사 안에 남게 만듭니다.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="framework">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>개인에서 팀으로,<br>팀에서 조직으로</h2>
-          <p>
-            M2G는 단순한 AI 교육이 아닙니다.
-            사람과 사람의 성장을 연결하고, 그 연결이 실제 업무와 조직의 일하는 방식으로 남도록 만드는 SotoLab의 핵심 프레임워크입니다.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <div class="num">M · MENTORING</div>
-            <h3>서로를 성장하게</h3>
-            <p>회사 안에서 누구나 멘토가 되고 동시에 멘티가 됩니다. 지식과 경험이 한 사람에게 머물지 않게 합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">2 · CONNECTION</div>
-            <h3>사람과 업무를 연결</h3>
-            <p>개인의 노하우를 팀의 프로세스로 전환하고, 실제 업무에서 바로 활용할 수 있는 AI 업무 방식을 설계합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">G · GROWTH</div>
-            <h3>조직의 성장 시스템</h3>
-            <p>일회성 교육이 아니라 조직이 스스로 배우고 개선하는 반복 가능한 성장 구조를 만듭니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="problem">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>많은 회사가<br><span class="accent">여기서 멈춥니다</span></h2>
-          <p>
-            직원들이 AI를 쓰기 시작해도, 회사의 방식으로 남지 않으면 성과는 개인의 채팅창에서 끝납니다.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card risk">
-            <div class="num">01</div>
-            <h3>개인만 쓰고 끝납니다</h3>
-            <p>잘 쓰는 직원은 생기지만, 그 방식이 팀 표준으로 정리되지 않아 확산이 멈춥니다.</p>
-          </article>
-
-          <article class="card risk">
-            <div class="num">02</div>
-            <h3>좋은 결과가 남지 않습니다</h3>
-            <p>프롬프트, 템플릿, 판단 기준이 정리되지 않으면 퇴사나 이동과 함께 노하우가 사라집니다.</p>
-          </article>
-
-          <article class="card risk">
-            <div class="num">03</div>
-            <h3>효과를 설명하기 어렵습니다</h3>
-            <p>도입은 했는데 무엇이 얼마나 좋아졌는지 말하기 어려우면 다음 확산 결정도 늦어집니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="difference">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>일반 교육과<br><span class="accent">SotoLab은 다릅니다</span></h2>
-          <p>
-            중요한 것은 많이 배우는 것이 아니라, 실제 업무가 바뀌고 회사 안에 결과물이 남는 것입니다.
-          </p>
-        </div>
-
-        <div class="cards two">
-          <article class="card risk">
-            <div class="num">GENERAL</div>
-            <h3>일반 AI 교육</h3>
-            <ul>
-              <li>도구 소개와 1회성 실습 중심</li>
-              <li>개인 생산성 향상에서 종료</li>
-              <li>교육 후 회사에 남는 구조가 약함</li>
-              <li>업무 도구 제작까지 연결되지 않음</li>
+    <canvas id="webgl"></canvas><div class="shade"></div><div class="grid"></div>
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Sun<b>star</b></a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">회사소개</a></li>
+                <li><a href="academy.html">아카데미</a></li>
+                <li><a href="sotolab.html">SotoLAB</a></li>
             </ul>
-          </article>
-
-          <article class="card emphasis">
-            <div class="num">SOTOLAB</div>
-            <h3>실행형 AI 멘토링</h3>
-            <ul>
-              <li>업무 분석을 먼저 하고 적용 대상을 정함</li>
-              <li>직원이 자기 업무용 툴을 직접 만듦</li>
-              <li>템플릿, 체크리스트, 리뷰 기준이 남음</li>
-              <li>개인의 성과를 팀과 조직의 방식으로 확장함</li>
-            </ul>
-          </article>
         </div>
-      </div>
-    </section>
+    </nav>
 
-    <section id="program">
-      <div class="wrap">
-        <div class="statement">
-          <h2>AI를 가르치는 것이 아니라<br><span class="accent">일하는 방식을 바꿉니다</span></h2>
-          <p>
-            발주서 검토, 송장 정리, 성과분석 보고서, 파일 관리, 일정관리, 콘텐츠 제작 자동화까지.
-            회사마다 필요한 업무 도구를 실제로 만들고 적용할 수 있도록 함께합니다.
-          </p>
+    <main class="corp-home">
+        <section class="corp-hero">
+            <div class="container corp-grid">
+                <div class="corp-copy">
+                    <span class="corp-kicker">Sunstar Company</span>
+                    <h1>실무 중심 교육과<br>플랫폼을 만드는 Sunstar</h1>
+                    <p>Sunstar는 기업 멘토링, 아카데미 운영, IoT 플랫폼 개발을 중심으로 움직입니다. 교육만 하는 회사가 아니라, 실제 현장에서 적용되고 운영까지 이어지는 구조를 만드는 것이 Sunstar의 역할입니다.</p>
+                    <div class="corp-actions">
+                        <a href="sotolab.html" class="btn btn-primary">SotoLAB 보기</a>
+                        <a href="academy.html" class="btn">아카데미 보기</a>
+                        <a href="contact.html" class="btn">문의하기</a>
+                    </div>
+
+                    <div class="corp-stats">
+                        <div class="corp-stat">
+                            <strong>3</strong>
+                            <span>핵심 사업 축</span>
+                        </div>
+                        <div class="corp-stat">
+                            <strong>1</strong>
+                            <span>SotoLAB 체계</span>
+                        </div>
+                        <div class="corp-stat">
+                            <strong>4+</strong>
+                            <span>아카데미 과정</span>
+                        </div>
+                        <div class="corp-stat">
+                            <strong>B2B</strong>
+                            <span>기업·현장 중심</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="corp-panel">
+                    <span class="corp-panel-label">Company Overview</span>
+                    <h2>Sunstar가 하는 일</h2>
+                    <p>Sunstar는 각각의 사업을 따로 운영하는 것이 아니라, 하나의 흐름으로 연결합니다. 사람을 움직이는 멘토링, 현장을 이해하는 아카데미, 운영을 가능하게 하는 플랫폼 개발이 함께 맞물립니다.</p>
+                    <div class="corp-highlights">
+                        <div class="corp-highlight">
+                            <strong>기업 멘토링</strong>
+                            실무자가 실제로 적용하고, 조직이 그 방식을 남길 수 있게 돕습니다.
+                        </div>
+                        <div class="corp-highlight">
+                            <strong>아카데미 운영</strong>
+                            장비를 직접 다루고 이해하는 실습형 IoT 교육을 운영합니다.
+                        </div>
+                        <div class="corp-highlight">
+                            <strong>IoT 플랫폼 개발</strong>
+                            교육과 현장 경험이 일회성으로 끝나지 않도록 플랫폼으로 연결합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section">
+            <div class="container">
+                <div class="corp-section-head">
+                    <span class="corp-kicker">Business Areas</span>
+                    <h2 class="corp-section-title">사업 영역</h2>
+                    <p class="corp-section-desc">Sunstar의 홈페이지가 회사답게 보여야 하는 핵심은, 무엇을 하는 회사인지 한눈에 보이는 것입니다. 메인 사업을 3개의 독립된 영역으로 분명하게 보여주되 서로 연결되는 구조로 설계했습니다.</p>
+                </div>
+
+                <div class="corp-cards">
+                    <article class="corp-card">
+                        <div class="corp-icon"><i class="fas fa-user-group"></i></div>
+                        <h3>기업 멘토링</h3>
+                        <p>실무자와 조직이 실제로 움직이는 방식에 초점을 맞춘 실행형 멘토링입니다.</p>
+                        <ul class="corp-list">
+                            <li>핵심 인력 중심 시작</li>
+                            <li>실무 적용 중심 피드백</li>
+                            <li>조직 안에 남는 운영 방식 설계</li>
+                        </ul>
+                    </article>
+
+                    <article class="corp-card">
+                        <div class="corp-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>SotoLAB</h3>
+                        <p>기업 실행 멘토링과 업무 도구 설계, 조직 적용 방식까지 연결하는 Sunstar의 핵심 실행 브랜드입니다.</p>
+                        <ul class="corp-list">
+                            <li>기업 AI 멘토링</li>
+                            <li>업무 도구 설계 및 적용</li>
+                            <li>조직 안에 남는 실행 구조</li>
+                        </ul>
+                    </article>
+
+                    <article class="corp-card">
+                        <div class="corp-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>아카데미 운영</h3>
+                        <p>IoT를 직접 다루고 이해할 수 있는 실습형 아카데미 과정을 운영합니다.</p>
+                        <ul class="corp-list">
+                            <li>IoT 실습교육</li>
+                            <li>IoT 방문 교육</li>
+                            <li>IoT 사업자 교육 및 실습 특강</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section">
+            <div class="container corp-split">
+                <div class="corp-panel">
+                    <span class="corp-panel-label">How We Work</span>
+                    <h2>Sunstar의 운영 방식</h2>
+                    <p>Sunstar는 단순히 서비스 목록을 늘어놓는 회사가 아니라, 현장을 이해하고 사람을 훈련시키며 실제 운영으로 이어지게 만드는 구조를 중요하게 봅니다.</p>
+                    <p>그래서 교육은 교육으로 끝나지 않고, 멘토링은 아이디어로 끝나지 않으며, 플랫폼은 기술 소개로 끝나지 않습니다. 각 영역이 실제 실행과 운영으로 이어질 수 있게 설계합니다.</p>
+                </div>
+
+                <div class="corp-feature-grid">
+                    <article class="corp-feature">
+                        <h4>현장 중심</h4>
+                        <p>현장에서 실제 쓰는 장비와 업무를 기준으로 설명하고 설계합니다.</p>
+                    </article>
+                    <article class="corp-feature">
+                        <h4>실습 중심</h4>
+                        <p>직접 연결하고 다루고 확인하는 과정을 통해 이해도를 높입니다.</p>
+                    </article>
+                    <article class="corp-feature">
+                        <h4>운영 중심</h4>
+                        <p>교육 이후에도 실제 운영으로 이어질 수 있는 구조를 함께 봅니다.</p>
+                    </article>
+                    <article class="corp-feature">
+                        <h4>확장 중심</h4>
+                        <p>한 번의 프로젝트보다 다음 단계까지 이어지는 확장성을 중요하게 생각합니다.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section">
+            <div class="container">
+                <div class="corp-section-head">
+                    <span class="corp-kicker">Brands & Services</span>
+                    <h2 class="corp-section-title">Sunstar의 주요 서비스</h2>
+                    <p class="corp-section-desc">Sunstar는 아카데미와 SotoLAB을 중심으로 각기 다른 목적의 고객에게 맞는 서비스를 제공합니다. 필요한 영역을 바로 확인할 수 있도록 핵심 서비스를 분명하게 나누어 두었습니다.</p>
+                </div>
+
+                <div class="corp-brands">
+                    <a class="corp-brand" href="sotolab.html">
+                        <span class="corp-panel-label">SotoLAB</span>
+                        <h3>SotoLAB</h3>
+                        <p>기업 멘토링과 실행 체계, 업무 도구 설계, 조직 적용 방식까지 SotoLAB의 독립 브랜드 화면으로 이동합니다.</p>
+                        <span class="corp-link">SotoLAB 바로가기</span>
+                    </a>
+
+                    <a class="corp-brand" href="academy.html">
+                        <span class="corp-panel-label">Academy</span>
+                        <h3>아카데미</h3>
+                        <p>IoT 실습교육, 방문 교육, 사업자 교육, 실습 특강까지 실습형 교육을 체계적으로 확인할 수 있습니다.</p>
+                        <span class="corp-link">아카데미 바로가기</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="corp-section">
+            <div class="container">
+                <div class="corp-cta">
+                    <h2>회사 소개를 보셨다면</h2>
+                    <p>IoT 교육이 필요하면 아카데미로, 기업 실행 멘토링이 필요하면 SotoLAB으로 바로 이어질 수 있게 구성했습니다.</p>
+                    <div class="corp-actions" style="justify-content:center;">
+                        <a href="sotolab.html" class="btn btn-primary">SotoLAB</a>
+                        <a href="academy.html" class="btn">아카데미</a>
+                        <a href="contact.html" class="btn">문의하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sunstar. All rights reserved.</p>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="system">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>SotoFlow가 팀에 남기는<br><span class="accent">4가지 운영 장치</span></h2>
-          <p>
-            한 명이 잘하는 수준을 넘어서기 위해서는 결과물을 다시 쓰고, 판단하고, 공유할 수 있는 구조가 필요합니다.
-          </p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="num">01</div>
-            <h3>Template</h3>
-            <p>다시 쓸 수 있는 질문 방식과 업무 양식을 남깁니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">02</div>
-            <h3>Checklist</h3>
-            <p>좋은 결과물인지 판단할 기준을 팀 안에 정리합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">03</div>
-            <h3>Review</h3>
-            <p>동료가 함께 보고 교정하는 리뷰 흐름을 만듭니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">04</div>
-            <h3>Workflow</h3>
-            <p>사람과 AI가 함께 일하는 반복 가능한 업무 흐름을 구축합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="culture">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>누구나 멘토이고<br><span class="accent">누구나 멘티가 됩니다</span></h2>
-          <p>
-            SotoLab이 만들고 싶은 변화는 AI를 잘 쓰는 몇 사람이 아니라,
-            서로의 업무와 도구 사용법을 나누며 함께 성장하는 조직 문화입니다.
-          </p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="num">01</div>
-            <h3>업무 멘토</h3>
-            <p>현장의 흐름과 판단 기준을 잘 아는 사람이 업무의 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">02</div>
-            <h3>AI 멘토</h3>
-            <p>AI 활용법과 도구 제작 경험이 있는 사람이 도구의 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">03</div>
-            <h3>변화 멘토</h3>
-            <p>새로운 시각과 질문을 던지는 사람이 팀의 변화를 움직이는 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">04</div>
-            <h3>성장 문화</h3>
-            <p>역할이 고정되지 않고 프로젝트마다 서로 배우고 가르치는 구조가 조직 안에 정착합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="outcomes">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>문의 후 회사에<br><span class="accent">남는 것</span></h2>
-          <p>
-            상담의 끝이 강의가 아니라, 실제로 써볼 수 있는 결과물과 운영 기준이 남아야 합니다.
-          </p>
-        </div>
-
-        <div class="strip-grid">
-          <article class="strip">
-            <strong>01</strong>
-            <h3>AI 업무 템플릿</h3>
-            <p>자주 쓰는 질문 방식과 업무 템플릿이 남아 반복 활용이 가능합니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>02</strong>
-            <h3>업무 분석 결과</h3>
-            <p>어떤 업무부터 바꿔야 효과가 큰지 우선순위가 선명해집니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>03</strong>
-            <h3>업무툴</h3>
-            <p>발주, 정산, 보고서, 파일 관리 같은 실무 도구를 실제 테스트 가능한 수준으로 만듭니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>04</strong>
-            <h3>운영 기준</h3>
-            <p>누가 관리하고 어떻게 개선할지까지 포함한 유지보수 기준을 잡습니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="metrics">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>성과는 감이 아니라<br><span class="accent">기준으로 봅니다</span></h2>
-          <p>
-            대표는 분위기보다 결과를 봅니다. SotoLab은 실제 변화가 보이도록 확인 기준까지 함께 설계합니다.
-          </p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="num">A</div>
-            <h3>시간 절감</h3>
-            <p>업무당 평균 소요 시간이 얼마나 줄었는지 전후 변화를 확인합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">B</div>
-            <h3>재작업 감소</h3>
-            <p>오입력, 수정 요청, 검토 시간 같은 낭비가 얼마나 줄었는지 봅니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">C</div>
-            <h3>팀 재사용</h3>
-            <p>템플릿과 업무툴이 한 사람을 넘어 팀 안에서 반복 사용되는지 봅니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">D</div>
-            <h3>조직 확산</h3>
-            <p>공유, 멘토링, 추가 도입이 이어지는지까지 확인해 다음 확산 판단에 연결합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <h2><span class="line-lock">우리 회사도 적용할 수 있겠다면</span><span class="line-lock">SotoLab에 문의하시면 됩니다</span></h2>
-          <p>
-            현재 대기 중인 업체가 많아 바로 시작은 어렵습니다.
-            올해 안에 도입을 고려하고 있다면 먼저 문의를 남겨주셔야 일정 확인이 가능합니다.
-          </p>
-        </div>
-        <a class="btn primary" href="contact.html">문의하기</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">© 2026 SotoLab · Enterprise AI Mentoring Service</div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script>
-    const stage = document.getElementById('stage');
-    const shell = document.getElementById('sceneShell');
-
-    shell.addEventListener('mousemove', (e) => {
-      const rect = shell.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      stage.style.transform = `rotateY(${x * 16}deg) rotateX(${-y * 12}deg)`;
-    });
-
-    shell.addEventListener('mouseleave', () => {
-      stage.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-
-    if (window.THREE) {
-      const canvas = document.getElementById('webgl');
-      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
-      camera.position.z = 8;
-
-      const group = new THREE.Group();
-      scene.add(group);
-
-      const geo = new THREE.IcosahedronGeometry(1.55, 1);
-      const mat = new THREE.MeshBasicMaterial({
-        color: 0x8f6bff,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.22
-      });
-      const mesh = new THREE.Mesh(geo, mat);
-      group.add(mesh);
-
-      const pts = [];
-      for (let i = 0; i < 180; i += 1) {
-        const v = new THREE.Vector3().randomDirection().multiplyScalar(2.2 + Math.random() * 2.8);
-        pts.push(v.x, v.y, v.z);
-      }
-
-      const pgeo = new THREE.BufferGeometry();
-      pgeo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-      const pmat = new THREE.PointsMaterial({
-        color: 0xc9ff3d,
-        size: 0.035,
-        transparent: true,
-        opacity: 0.7
-      });
-      group.add(new THREE.Points(pgeo, pmat));
-
-      let mx = 0;
-      let my = 0;
-
-      window.addEventListener('pointermove', (e) => {
-        mx = (e.clientX / window.innerWidth - 0.5) * 0.35;
-        my = (e.clientY / window.innerHeight - 0.5) * 0.25;
-      });
-
-      function resize() {
-        renderer.setSize(window.innerWidth, window.innerHeight, false);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-      }
-
-      window.addEventListener('resize', resize);
-      resize();
-
-      function tick() {
-        group.rotation.y += 0.0018;
-        group.rotation.x += 0.0006;
-        group.position.x += (mx - group.position.x) * 0.025;
-        group.position.y += (-my - group.position.y) * 0.025;
-        renderer.render(scene, camera);
-        requestAnimationFrame(tick);
-      }
-
-      tick();
-    }
-  </script>
+    <button class="scroll-top" id="scrollTop" aria-label="맨 위로 이동"><i class="fas fa-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="js/main.js?v=20260723-3"></script>
+    <script src="js/pages.js?v=20260723-3"></script>
 </body>
 </html>
