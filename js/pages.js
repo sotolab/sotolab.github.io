@@ -3,6 +3,8 @@
 // 서브 페이지 전용 스크립트
 // ============================================
 
+const enableEntranceEffects = false;
+
 // Project Filtering
 const filterTabs = document.getElementById('filterTabs');
 const projectsGrid = document.getElementById('projectsGrid');
@@ -45,7 +47,7 @@ if (filterTabs && projectsGrid) {
 // Project Cards Reveal Animation
 const animatedProjectCards = document.querySelectorAll('.project-card');
 
-if (animatedProjectCards.length) {
+if (enableEntranceEffects && animatedProjectCards.length) {
     const projectObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -70,72 +72,78 @@ if (animatedProjectCards.length) {
 // SOTE Timeline Animation
 const soteSteps = document.querySelectorAll('.sote-step');
 
-const soteObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateX(0)';
-            }, index * 200);
-            soteObserver.unobserve(entry.target);
-        }
+if (enableEntranceEffects && soteSteps.length) {
+    const soteObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }, index * 200);
+                soteObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2
     });
-}, {
-    threshold: 0.2
-});
 
-soteSteps.forEach((step, index) => {
-    step.style.opacity = '0';
-    step.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
-    step.style.transition = 'all 0.6s ease';
-    soteObserver.observe(step);
-});
+    soteSteps.forEach((step, index) => {
+        step.style.opacity = '0';
+        step.style.transform = index % 2 === 0 ? 'translateX(-50px)' : 'translateX(50px)';
+        step.style.transition = 'all 0.6s ease';
+        soteObserver.observe(step);
+    });
+}
 
 // Book Cards Animation
 const bookCards = document.querySelectorAll('.book-card, .book-card-small');
 
-const bookObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'scale(1)';
-            bookObserver.unobserve(entry.target);
-        }
+if (enableEntranceEffects && bookCards.length) {
+    const bookObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'scale(1)';
+                bookObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
     });
-}, {
-    threshold: 0.1
-});
 
-bookCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'scale(0.9)';
-    card.style.transition = 'all 0.5s ease';
-    bookObserver.observe(card);
-});
+    bookCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'scale(0.9)';
+        card.style.transition = 'all 0.5s ease';
+        bookObserver.observe(card);
+    });
+}
 
 // Review Cards Animation
 const reviewCards = document.querySelectorAll('.review-card');
 
-const reviewObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            reviewObserver.unobserve(entry.target);
-        }
+if (enableEntranceEffects && reviewCards.length) {
+    const reviewObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                reviewObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
     });
-}, {
-    threshold: 0.1
-});
 
-reviewCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    reviewObserver.observe(card);
-});
+    reviewCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        reviewObserver.observe(card);
+    });
+}
 
 // Stats Counter Animation (for reviews page)
 const statsSection = document.querySelector('.stats-section');
@@ -182,15 +190,17 @@ function animateCounter(element) {
 
 // Course Highlights Toggle
 const courseHighlights = document.querySelectorAll('.course-highlights ul li');
-courseHighlights.forEach((item, index) => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateX(-20px)';
-    setTimeout(() => {
-        item.style.transition = 'all 0.5s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateX(0)';
-    }, index * 100);
-});
+if (enableEntranceEffects) {
+    courseHighlights.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(-20px)';
+        setTimeout(() => {
+            item.style.transition = 'all 0.5s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+        }, index * 100);
+    });
+}
 
 // Contact Method Cards Hover Effect
 const contactMethods = document.querySelectorAll('.contact-method');
@@ -248,24 +258,26 @@ document.querySelectorAll('iframe[data-src]').forEach(iframe => {
 // Smooth reveal on scroll
 const revealElements = document.querySelectorAll('.service-card, .impact-card, .key-card, .core-card, .benefit-item');
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            revealObserver.unobserve(entry.target);
-        }
+if (enableEntranceEffects && revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
 
-revealElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'all 0.6s ease';
-    revealObserver.observe(element);
-});
+    revealElements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
+        revealObserver.observe(element);
+    });
+}
 
 console.log('📄 Pages script loaded successfully!');

@@ -5,6 +5,7 @@
 // Theme Management
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
+const enableEntranceEffects = false;
 
 function initGlobalWebglBackground() {
     const canvas = document.getElementById('webgl');
@@ -141,8 +142,6 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            
             // Animate counters
             const counters = entry.target.querySelectorAll('.stat-number[data-target]');
             counters.forEach(counter => {
@@ -162,7 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initGlobalWebglBackground();
 
     const animateElements = document.querySelectorAll('.hero-stats, .impact-grid, .services-grid, .reviews-preview-section');
-    animateElements.forEach(el => observer.observe(el));
+    if (enableEntranceEffects) {
+        animateElements.forEach(el => observer.observe(el));
+    }
 });
 
 // Reviews Slider
@@ -299,11 +300,6 @@ document.querySelectorAll('.btn').forEach(button => {
         
         setTimeout(() => ripple.remove(), 600);
     });
-});
-
-// Scroll to top on page load
-window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
 });
 
 console.log('🚀 SotoLab 2026 loaded successfully!');
