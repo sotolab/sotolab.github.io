@@ -637,6 +637,27 @@ a.course-card {
     margin-left: auto;
 }
 
+.academy-copy-note {
+    margin-top: 1.1rem;
+    display: grid;
+    gap: 0.45rem;
+    max-width: 36rem;
+}
+
+.academy-copy-note strong {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: 0.02em;
+}
+
+.academy-copy-note p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.7;
+}
+
 .academy-hero-visual img {
     width: 100%;
     height: 100%;
