@@ -21,7 +21,7 @@ document.addEventListener('keydown', event => {
   }
 });
 const scenes = {
-  study: { title: '집중하는 시간,<br>또렷한 빛으로.', status: '밝은 조명 · 학습 장면' },
+  study: { title: '집중하는 시간,<br>또렷한 빛으로', status: '밝은 조명 · 학습 장면' },
   rest: { title: '머무는 순간,<br>공간이 달라집니다.', status: '따뜻한 조명 · 휴식 장면' },
   away: { title: '떠난 자리,<br>조명도 쉬어갑니다.', status: '조명 OFF · 외출 장면' }
 };
