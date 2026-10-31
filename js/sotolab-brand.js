@@ -1,5 +1,9 @@
 'use strict';
 (() => {
+  const siteMap = document.getElementById('brand-site-map');
+  if (siteMap && typeof window !== 'undefined' && window.matchMedia?.('(max-width: 760px)').matches) {
+    siteMap.open = false;
+  }
   const toggle = document.getElementById('brand-menu-toggle');
   const menu = document.getElementById('brand-menu');
   if (toggle && menu) {

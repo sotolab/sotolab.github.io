@@ -1,25 +1,4 @@
 'use strict';
-const menuButton = document.querySelector('.menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-menuButton.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
-  mobileMenu.hidden = !open;
-});
-mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  mobileMenu.hidden = true;
-  menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.setAttribute('aria-label', '메뉴 열기');
-}));
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !mobileMenu.hidden) {
-    mobileMenu.hidden = true;
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', '메뉴 열기');
-    menuButton.focus();
-  }
-});
 const scenes = {
   study: { title: '집중하는 시간,<br>또렷한 빛으로', status: '밝은 조명 · 학습 장면' },
   rest: { title: '머무는 순간,<br>공간이 달라집니다.', status: '따뜻한 조명 · 휴식 장면' },

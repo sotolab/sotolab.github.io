@@ -1,4 +1,9 @@
 /* SotoLAB — practitioner, educator, mentor */
+.s-header,.s-site-map,.s-skip{--ink:#f4f5ef;--muted:#a5aca7;--lime:#c9ff3d;--line:#30372f;--panel:#161c17;color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+.s-header *,.s-site-map *{box-sizing:border-box}
+.s-header a,.s-site-map a{color:inherit;text-decoration:none}
+.s-header button{font:inherit}
+.s-header a:focus-visible,.s-header button:focus-visible,.s-site-map a:focus-visible,.s-site-map summary:focus-visible{outline:3px solid var(--lime);outline-offset:4px}
 .s-hero-art{margin:0}
 .story-page fieldset{border:0;padding:0;margin:0;min-width:0}
 .story-page{--ink:#f4f5ef;--muted:#a5aca7;--lime:#c9ff3d;--line:#30372f;--panel:#161c17;margin:0;background:#0c110e;color:var(--ink);font-family:Inter,"Noto Sans KR",Arial,sans-serif;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
@@ -47,3 +52,25 @@
 .story-page p>a:not([class]){text-decoration:underline;text-underline-offset:4px}
 @media(max-width:1000px){.s-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.s-grid-2,.s-grid-4,.s-course-grid{grid-template-columns:1fr}.s-course{padding:23px}.s-course-top{display:block}.s-course-meta{text-align:left;margin-top:18px}.s-course h3{font-size:23px}.s-course-cover{margin-left:0;max-width:180px}.s-flow-overview{margin-top:30px}}
+
+/* Full site navigation stays in document flow below the sticky primary header. */
+.s-site-map{background:#111812;border-bottom:1px solid var(--line)}
+.s-map-summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px;cursor:pointer;list-style:none;font-size:13px;font-weight:600}
+.s-map-summary::-webkit-details-marker{display:none}
+.s-map-summary small{font-size:11px;color:var(--muted);font-weight:400;margin-left:13px}
+.s-map-state{font-size:11px;font-weight:400;color:var(--muted);white-space:nowrap}
+.s-map-state::after{content:'펼치기 ＋'}
+.s-site-map[open] .s-map-state::after{content:'접기 −'}
+.s-map-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:26px;padding-top:7px;padding-bottom:27px}
+.s-map-group{min-width:0;margin:0;padding:0}
+.s-map-group h2{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:-.02em;margin:0 0 13px;color:#e0edce}
+.s-map-group h2>a{color:inherit}
+.s-map-group ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.s-map-group li{padding:0;margin:0;font-size:12px;line-height:1.6}
+.s-map-group li a{color:#9ead98;display:inline-block;padding:2px 0}
+.s-map-group a:hover,.s-map-summary:hover{color:var(--lime)}
+.s-legacy-page .page-header{padding-top:3.5rem}
+.s-legacy-page .hero{padding-top:3.5rem}
+.s-legacy-page section[id],.s-legacy-page main[id],.s-form{scroll-margin-top:110px}
+@media(max-width:1000px){.s-map-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 30px}}
+@media(max-width:760px){.s-map-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 20px}.s-map-summary{padding-block:13px}.s-map-summary small{display:block;margin:0;font-size:10px}.s-map-group li{font-size:12px}.s-map-group li a{padding:4px 0}}
