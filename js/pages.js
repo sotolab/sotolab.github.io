@@ -3,6 +3,9 @@
 // 서브 페이지 전용 스크립트
 // ============================================
 
+(() => {
+'use strict';
+
 const enableEntranceEffects = false;
 
 // Project Filtering
@@ -13,35 +16,28 @@ if (filterTabs && projectsGrid) {
     const filterButtons = filterTabs.querySelectorAll('.filter-btn');
     const projectCards = projectsGrid.querySelectorAll('.project-card');
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Get filter value
-            const filter = button.getAttribute('data-filter');
-            
-            // Filter projects
-            projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
+    const applyFilter = button => {
+        const filter = button.getAttribute('data-filter');
+        filterButtons.forEach(btn => {
+            const selected = btn === button;
+            btn.classList.toggle('active', selected);
+            btn.setAttribute('aria-pressed', String(selected));
         });
+
+        projectCards.forEach(card => {
+            const visible = filter === 'all' || card.getAttribute('data-category') === filter;
+            card.hidden = !visible;
+            card.style.display = visible ? '' : 'none';
+            card.style.opacity = '1';
+            card.style.transform = '';
+        });
+    };
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => applyFilter(button));
     });
+    const initialFilter = filterTabs.querySelector('.filter-btn.active') || filterButtons[0];
+    if (initialFilter) applyFilter(initialFilter);
 }
 
 // Project Cards Reveal Animation
@@ -281,3 +277,5 @@ if (enableEntranceEffects && revealElements.length) {
 }
 
 console.log('📄 Pages script loaded successfully!');
+
+})();
