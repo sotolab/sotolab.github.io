@@ -1,21 +1,43 @@
 'use strict';
 (() => {
-  const siteMap = document.getElementById('brand-site-map');
-  if (siteMap && typeof window !== 'undefined' && window.matchMedia?.('(max-width: 760px)').matches) {
-    siteMap.open = false;
-  }
   const toggle = document.getElementById('brand-menu-toggle');
   const menu = document.getElementById('brand-menu');
   if (toggle && menu) {
-    const close = () => { menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = '메뉴'; };
+    const groups = [...menu.querySelectorAll('.s-nav-group')];
+    const closeGroups = except => groups.forEach(group => { if (group !== except) group.open = false; });
+    const close = () => {
+      closeGroups();
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '메뉴';
+    };
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
+      closeGroups();
       toggle.setAttribute('aria-expanded', String(open));
       toggle.textContent = open ? '닫기' : '메뉴';
       menu.classList.toggle('is-open', open);
     });
+    groups.forEach(group => {
+      group.addEventListener('toggle', () => { if (group.open) closeGroups(group); });
+    });
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-    document.addEventListener('keydown', event => { if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { close(); toggle.focus(); } });
+    document.addEventListener('click', event => {
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) close();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      const active = groups.find(group => group.open);
+      if (active) {
+        active.open = false;
+        active.querySelector('summary').focus();
+      } else if (toggle.getAttribute('aria-expanded') === 'true') {
+        close(); toggle.focus();
+      }
+    });
+    document.addEventListener('focusin', event => {
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) close();
+    });
   }
   const records = [...document.querySelectorAll('.s-record')];
   if (records.length) {
@@ -46,9 +68,8 @@
     search.addEventListener('input', update);
     document.getElementById('archive-reset').addEventListener('click', () => { category = 'all'; search.value = ''; update(); search.focus(); });
     update();
-    // A category link should land on its results rather than the expanded site map.
+    // Category links land directly on the selected results.
     if ((initial && valid.has(initial)) || location.hash === '#archive-results') {
-      if (siteMap) siteMap.open = false;
       requestAnimationFrame(() => {
         document.getElementById('archive-results')?.scrollIntoView({ block: 'start', behavior: 'auto' });
         title?.focus({ preventScroll: true });

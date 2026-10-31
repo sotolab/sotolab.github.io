@@ -5,7 +5,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BRAND_ASSET_VERSION = '20261031-9'
+BRAND_ASSET_VERSION = '20261031-11'
 ROWS = json.loads((ROOT / 'data/experience.json').read_text(encoding='utf-8'))
 MENU = [('profile.html', '강사 소개'), ('academy.html', '교육·강연'), ('sotolab.html', '기업 멘토링'), ('experience.html', '연구·성과'), ('books.html', '저서'), ('contact.html', '문의')]
 CATEGORIES = {'education': '교육·강연', 'mentoring': '멘토링', 'research': '연구개발', 'product': '개발 서비스', 'patent': '특허·발명'}
@@ -20,18 +20,15 @@ SUBMENUS = {
 }
 
 
-def site_map():
-    groups = []
-    for url, label in MENU:
-        links = ''.join(f'<li><a href="{escape(href, quote=True)}"' + (' target="_blank" rel="noopener noreferrer"' if href.startswith('https:') else '') + f'>{escape(text)}</a></li>' for href, text in SUBMENUS[url])
-        groups.append(f'<section class="s-map-group"><h2><a href="{url}">{label}</a></h2><ul>{links}</ul></section>')
-    return '<details class="s-site-map" id="brand-site-map" open><summary class="s-wrap s-map-summary"><span>전체 메뉴 <small>하위 페이지 한눈에 보기</small></span><span class="s-map-state" aria-hidden="true"></span></summary><nav class="s-wrap s-map-grid" aria-label="전체 사이트 메뉴">' + ''.join(groups) + '</nav></details>'
-
-
 def nav(page):
-    links = ''.join(f'<li><a href="{url}"' + (' aria-current="page"' if url == page else '') + (' class="s-nav-cta"' if url == 'contact.html' else '') + f'>{label}</a></li>' for url, label in MENU)
-    header = f'''<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><div class="s-wrap s-nav"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈">Soto<b>LAB</b></a><button class="s-menu-toggle" id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu">메뉴</button><ul aria-label="주요 메뉴" id="brand-menu" class="s-menu">{links}</ul></div></header>'''
-    return '<!-- SOTOLAB_NAV_START -->' + header + site_map() + '<!-- SOTOLAB_NAV_END -->'
+    items = []
+    for index, (url, label) in enumerate(MENU):
+        current = ' aria-current="page"' if url == page else ''
+        links = [(url, label + ' 전체 보기')] + SUBMENUS[url]
+        submenu = ''.join(f'<li><a href="{escape(href, quote=True)}"' + (' target="_blank" rel="noopener noreferrer"' if href.startswith('https:') else '') + f'>{escape(text)}</a></li>' for href, text in links)
+        items.append(f'<li><details class="s-nav-group" name="brand-navigation"><summary{current} aria-controls="brand-submenu-{index}">{label}<span aria-hidden="true">⌄</span></summary><ul class="s-submenu" id="brand-submenu-{index}" aria-label="{label} 하위 메뉴">{submenu}</ul></details></li>')
+    header = f'<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><nav class="s-wrap s-nav" aria-label="주요 메뉴"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈">Soto<b>LAB</b></a><button class="s-menu-toggle" id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu">메뉴</button><ul id="brand-menu" class="s-menu">{"".join(items)}</ul></nav></header>'
+    return '<!-- SOTOLAB_NAV_START -->' + header + '<!-- SOTOLAB_NAV_END -->'
 
 
 def footer():
