@@ -26,7 +26,7 @@ def page(filename, title, description, body):
         person = {'@context': 'https://schema.org', '@type': 'Person', 'name': '장성균', 'alternateName': 'SOTO', 'url': 'https://sotolab.github.io/profile.html', 'jobTitle': 'AI·AIoT 실전 교육자', 'knowsAbout': ['인공지능', '사물인터넷', '임베디드 시스템', '블록체인', '기술 멘토링'], 'alumniOf': {'@type': 'CollegeOrUniversity', 'name': '한양대학교'}}
         schema = '<script type="application/ld+json">' + json.dumps(person, ensure_ascii=False) + '</script>'
     html = f'''<!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v=20261031-4"><script src="js/sotolab-brand.js?v=20261031-2" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v=20261031-6"><script src="js/sotolab-brand.js?v=20261031-2" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
@@ -118,6 +118,15 @@ def build_education_cases():
     page('reviews.html', '교육 사례와 활동 기록', '강의확인서와 대학 공식 기사, 교육 교재로 살펴보는 SotoLAB 장성균 박사의 교육·강의 사례', body + cta())
 
 
+def build_service_pages():
+    page('academy.html', '교육·강연 아카데미',
+         'AI·AIoT, 임베디드, 블록체인 실습교육과 맞춤 강연을 장성균 박사의 실무·연구 경험으로 연결합니다.',
+         (ROOT / 'data/academy-content.html').read_text(encoding='utf-8'))
+    page('sotolab.html', '기업 AI 멘토링 · 업무 도구 구축',
+         '개인에서 팀으로, 팀에서 조직으로 연결하는 SotoLAB 기업 AI 멘토링 · 업무 적용과 내부 업무 도구 제작을 함께합니다.',
+         (ROOT / 'data/mentoring-content.html').read_text(encoding='utf-8'))
+
+
 if __name__ == '__main__':
     build_home()
     build_profile()
@@ -125,4 +134,5 @@ if __name__ == '__main__':
     build_books()
     build_contact()
     build_education_cases()
-    print(f'Built six brand pages with {len(ROWS)} activity records.')
+    build_service_pages()
+    print(f'Built eight brand pages with {len(ROWS)} activity records.')

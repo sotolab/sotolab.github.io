@@ -15,3 +15,35 @@
 
 /* Text-only instructor introduction. */
 .s-person-text{display:block}.s-person-text>div{max-width:960px}
+
+/* Service content shares the brand pages' typography, spacing and surfaces. */
+.s-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.s-grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.s-content-title{font-size:clamp(27px,3vw,40px);margin-bottom:24px}
+.s-accent{color:var(--lime)}.s-title-line{display:block}
+.s-flow-overview{margin-top:44px;border-top:1px solid var(--line);padding-top:30px}
+.s-flow-overview>.s-eyebrow{margin-bottom:20px}
+.s-course-cover{display:block;width:min(220px,100%);margin-left:auto;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.s-course-cover img{width:100%;height:auto}
+.s-course-list{display:grid;gap:20px}
+.s-course{display:block;padding:30px;border:1px solid var(--line);border-radius:5px;background:var(--panel)}
+.s-course:hover,.s-course:focus-visible{border-color:#718a52}
+.s-course-featured,.s-card-featured{border-color:#647f45}
+.s-course-top{display:flex;justify-content:space-between;align-items:start;gap:35px}
+.s-course-top>div:first-child{max-width:760px}
+.s-course h3{font-size:26px;margin:12px 0 15px}
+.s-course p{font-size:14px;color:#b7bfb7}
+.s-course-meta{min-width:185px;text-align:right;font-size:13px;color:var(--muted)}
+.s-course-meta strong{display:block;font-size:21px;line-height:1.5;color:var(--lime);margin-bottom:7px}
+.s-course-meta span{display:block}
+.s-course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.s-course-item h4{font-size:14px;margin:0 0 8px;color:#d6e6c8}
+.s-course-item p{margin:0;font-size:13px}
+.s-media img{width:100%;height:auto;aspect-ratio:1.62;object-fit:cover}
+.s-cta-content .s-actions{justify-content:center}
+.s-callout h2{font-size:clamp(27px,3vw,40px)}
+.s-intro>strong{display:block;color:var(--ink);margin-bottom:12px}
+.s-intro .s-text-link{display:block}
+.story-page p>a:not([class]){text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1000px){.s-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.s-grid-2,.s-grid-4,.s-course-grid{grid-template-columns:1fr}.s-course{padding:23px}.s-course-top{display:block}.s-course-meta{text-align:left;margin-top:18px}.s-course h3{font-size:23px}.s-course-cover{margin-left:0;max-width:180px}.s-flow-overview{margin-top:30px}}

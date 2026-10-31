@@ -1,317 +1,238 @@
-﻿<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교육·강연 아카데미 | SotoLAB 장성균 박사</title>
-    <meta name="description" content="AI·AIoT, 임베디드, 블록체인 실습교육과 맞춤 강연 · 장성균 박사의 실무·연구 경험을 대상별 교육으로 연결합니다.">
-    <meta name="author" content="장성균 · SotoLAB">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://sotolab.github.io/academy.html">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="아카데미 | SotoLAB AIoT 교육">
-    <meta property="og:description" content="AIoT 실습교육, 실습 연계교육, 방문교육, 사업자교육 중 맞는 과정을 먼저 고르고 상세 내용을 확인해보세요.">
-    <meta property="og:url" content="https://sotolab.github.io/academy.html">
-    <meta property="og:site_name" content="SotoLAB">
-    <meta property="og:image" content="https://sotolab.github.io/img/academy-cover-iot-interior.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="아카데미 | SotoLAB AIoT 교육">
-    <meta name="twitter:description" content="아카데미 내용은 각 교육 상세에서 확인할 수 있도록 구성했습니다.">
-    <meta name="twitter:image" content="https://sotolab.github.io/img/academy-cover-iot-interior.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css?v=20261031-3">
-    <link rel="stylesheet" href="css/pages.css?v=20260803-7">
-    <link href="img/favicon.png" rel="icon">
-</head>
-<body>
-    <canvas id="webgl"></canvas>
-    <div class="shade"></div>
-    <div class="grid"></div>
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>교육·강연 아카데미 | SotoLAB</title><meta name="description" content="AI·AIoT, 임베디드, 블록체인 실습교육과 맞춤 강연을 장성균 박사의 실무·연구 경험으로 연결합니다."><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="https://sotolab.github.io/academy.html"><meta property="og:type" content="website"><meta property="og:title" content="교육·강연 아카데미 | SotoLAB"><meta property="og:description" content="AI·AIoT, 임베디드, 블록체인 실습교육과 맞춤 강연을 장성균 박사의 실무·연구 경험으로 연결합니다."><meta property="og:url" content="https://sotolab.github.io/academy.html"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="교육·강연 아카데미 | SotoLAB"><meta name="twitter:description" content="AI·AIoT, 임베디드, 블록체인 실습교육과 맞춤 강연을 장성균 박사의 실무·연구 경험으로 연결합니다."><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v=20261031-6"><script src="js/sotolab-brand.js?v=20261031-2" defer></script><noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head><body class="story-page"><a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><div class="s-wrap s-nav"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈">Soto<b>LAB</b></a><button class="s-menu-toggle" id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu">메뉴</button><ul aria-label="주요 메뉴" id="brand-menu" class="s-menu"><li><a href="profile.html">강사 소개</a></li><li><a href="academy.html" aria-current="page">교육·강연</a></li><li><a href="sotolab.html">기업 멘토링</a></li><li><a href="experience.html">연구·성과</a></li><li><a href="books.html">저서</a></li><li><a href="contact.html" class="s-nav-cta">문의</a></li></ul></div></header><main id="main"><section class="s-page-head">
+<div class="s-wrap"><p class="s-eyebrow">SOTOLAB ACADEMY</p>
 
-    <nav class="nav">
-        <div class="container">
-            <a href="index.html" class="nav-logo">Soto<b>LAB</b></a>
-            <ul class="nav-menu" id="navMenu"><li><a href="profile.html">강사 소개</a></li><li><a href="academy.html" class="active" aria-current="page">교육·강연</a></li><li><a href="sotolab.html">기업 멘토링</a></li><li><a href="experience.html">연구·성과</a></li><li><a href="books.html">저서</a></li><li><a href="contact.html">문의</a></li></ul>
-        </div>
-    </nav>
-
-    <section class="page-header">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html"><i class="fas fa-home"></i> Home</a>
-                <span>/</span>
-                <span>아카데미</span>
-            </div>
-            <h1 class="page-title">교육·강연 아카데미</h1>
-            <p class="page-description">기업 실무자, 대학생, 공공기관과 현업 관계자를 위한 기술 교육 · 원리를 이해하고 직접 구현하며 자신의 문제에 적용합니다.</p>
-        </div>
-    </section>
-
-    <section class="philosophy-section">
-        <div class="container">
-            <div class="split-hero academy-split-hero">
-                <div>
-                    <span class="section-label">SotoLAB Academy</span>
-                    <h2 class="section-title">실무와 연구를,<br>직접 해내는 배움으로</h2>
-                    <p class="section-description">기업 실무자, 대학생, 공공기관과 현업 관계자를 위한 기술 교육 · 원리를 이해하고 직접 구현하며 자신의 문제에 적용합니다.</p>
-                    <div class="academy-copy-note">
-                        <strong>AI · AIoT · Embedded · Blockchain</strong>
-                        <p>장성균 박사의 개발·연구·교육 경험을 바탕으로 구성합니다. 현업 개발자부터 비개발자까지, 대상과 교육 목표에 맞춰 깊이를 조정합니다.</p><a href="profile.html" class="academy-program-link">강사 소개와 출강 이력 보기 →</a>
-                        <a href="academy-interior.html" class="academy-program-link">AIoT 인테리어 실습 교육·대학 연계 교육 상세 보기 →</a>
-                    </div>
-                </div>
-                <a href="academy-interior.html" class="academy-hero-visual academy-hero-visual-home" aria-label="AIoT 인테리어 실습 교육 교재 상세 보기">
-                    <img src="img/academy-cover-iot-interior.png" alt="AIoT 인테리어 실습 교육 교재 표지">
-                </a>
-            </div>
-        </div>
-    </section>
+<h1>교육·강연 아카데미</h1>
+<p>기업 실무자, 대학생, 공공기관과 현업 관계자를 위한 기술 교육 · 원리를 이해하고 직접 구현하며 자신의 문제에 적용합니다.</p>
+</div>
+</section><section class="s-section s-section-tint">
+<div class="s-wrap">
+<div class="s-split">
+<div>
+<span class="s-eyebrow">SotoLAB Academy</span>
+<h2 class="s-content-title">실무와 연구를,<br/>직접 해내는 배움으로</h2>
+<p class="s-intro">기업 실무자, 대학생, 공공기관과 현업 관계자를 위한 기술 교육 · 원리를 이해하고 직접 구현하며 자신의 문제에 적용합니다.</p>
+<div class="s-intro">
+<strong>AI · AIoT · Embedded · Blockchain</strong>
+<p>장성균 박사의 개발·연구·교육 경험을 바탕으로 구성합니다. 현업 개발자부터 비개발자까지, 대상과 교육 목표에 맞춰 깊이를 조정합니다.</p><a class="s-text-link" href="profile.html">강사 소개와 출강 이력 보기 →</a>
+<a class="s-text-link" href="academy-interior.html">AIoT 인테리어 실습 교육·대학 연계 교육 상세 보기 →</a>
+</div>
+</div>
+<a aria-label="AIoT 인테리어 실습 교육 교재 상세 보기" class="s-course-cover" href="academy-interior.html">
+<img alt="AIoT 인테리어 실습 교육 교재 표지" loading="lazy" src="img/academy-cover-iot-interior.png"/>
+</a>
+</div>
+</div>
+</section><section class="s-section"><div class="s-wrap"><div class="s-section-heading"><div><p class="s-eyebrow">Custom Lectures &amp; Workshops</p><h2>목표에 맞춰 설계하는 교육·특강</h2></div><p>아래는 맞춤 교육으로 협의할 수 있는 분야입니다. 실제 운영 시간, 난이도와 결과물은 대상·인원·환경에 맞춰 제안합니다.</p></div><div class="s-grid-2">
+<article class="s-card"><h3>AI 활용과 업무 도구</h3><p>기업 재직자와 공공부문 실무자를 위한 AI 이해·업무 적용 · 반복 업무를 정리하고 작은 업무 도구를 만드는 방향을 실습합니다.</p><p><strong>학습 목표</strong> · 자신의 업무 과제와 적용 계획</p></article>
+<article class="s-card"><h3>AIoT와 스마트 공간</h3><p>전공 학생, 공간·인테리어 실무자를 위한 센서·조명·앱 연결과 자동화 · 공간 시나리오에서 시작해 실제 동작을 확인합니다.</p><p><strong>학습 목표</strong> · 공간 설계안과 자동화 검증</p></article>
+<article class="s-card"><h3>임베디드와 IoT 플랫폼</h3><p>개발자와 대학생을 위한 임베디드 SW, 장치 통신, 플랫폼 구조 · 디바이스부터 데이터와 서비스까지 연결해 이해합니다.</p><p><strong>학습 목표</strong> · 시스템 구조 이해와 구현 방향</p></article>
+<article class="s-card"><h3>블록체인과 서비스 구현</h3><p>기술 이해가 필요한 실무자와 개발자를 위한 블록체인 구조·스마트 계약·DApp · 실제 서비스 사례와 구현 흐름을 연결합니다.</p><p><strong>학습 목표</strong> · 기술 적용 판단과 프로젝트 기획</p></article>
+</div><p><a class="s-button s-button-primary" href="contact.html">맞춤 교육·강연 문의</a> <a class="s-text-link" href="experience.html?category=education">교육 이력과 결과 살펴보기 →</a></p></div></section><section class="s-section">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">IoTPlacement</p><h2>시뮬레이터도 함께 활용합니다</h2></div>
 
 
-    <section class="online-course-section"><div class="container"><div class="section-header"><span class="section-label">Custom Lectures & Workshops</span><h2 class="section-title">목표에 맞춰 설계하는 교육·특강</h2><p class="section-description">아래는 맞춤 교육으로 협의할 수 있는 분야입니다. 실제 운영 시간, 난이도와 결과물은 대상·인원·환경에 맞춰 제안합니다.</p></div><div class="lecture-grid">
-    <article class="lecture-item"><h3>AI 활용과 업무 도구</h3><p>기업 재직자와 공공부문 실무자를 위한 AI 이해·업무 적용 · 반복 업무를 정리하고 작은 업무 도구를 만드는 방향을 실습합니다.</p><p><strong>학습 목표</strong> · 자신의 업무 과제와 적용 계획</p></article>
-    <article class="lecture-item"><h3>AIoT와 스마트 공간</h3><p>전공 학생, 공간·인테리어 실무자를 위한 센서·조명·앱 연결과 자동화 · 공간 시나리오에서 시작해 실제 동작을 확인합니다.</p><p><strong>학습 목표</strong> · 공간 설계안과 자동화 검증</p></article>
-    <article class="lecture-item"><h3>임베디드와 IoT 플랫폼</h3><p>개발자와 대학생을 위한 임베디드 SW, 장치 통신, 플랫폼 구조 · 디바이스부터 데이터와 서비스까지 연결해 이해합니다.</p><p><strong>학습 목표</strong> · 시스템 구조 이해와 구현 방향</p></article>
-    <article class="lecture-item"><h3>블록체인과 서비스 구현</h3><p>기술 이해가 필요한 실무자와 개발자를 위한 블록체인 구조·스마트 계약·DApp · 실제 서비스 사례와 구현 흐름을 연결합니다.</p><p><strong>학습 목표</strong> · 기술 적용 판단과 프로젝트 기획</p></article>
-    </div><p><a href="contact.html" class="btn btn-primary">맞춤 교육·강연 문의</a> <a href="experience.html?category=education" class="academy-program-link">교육 이력과 결과 살펴보기 →</a></p></div></section>
-    <section class="online-course-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">IoTPlacement</span>
-                <h2 class="section-title">시뮬레이터도 함께 활용합니다</h2>
-                <p class="section-description">iotplacement 시뮬레이터로 공간 배치, 조명 연출, 제어 흐름을 더 직관적으로 이해할 수 있습니다. <a href="https://iotplacement.com" target="_blank" rel="noopener noreferrer">iotplacement.com</a></p>
-            </div>
-            <div class="academy-simulator-grid">
-                <div class="academy-simulator-card">
-                    <div class="academy-simulator-image">
-                        <img src="img/academy-simulator-3d.png" alt="iotplacement 3D 시뮬레이터 예시 화면">
-                    </div>
-                    <div class="academy-simulator-copy">
-                        <h4>3D 공간 예시</h4>
-                        <p>조명과 장치가 공간 안에서 어떻게 반응하는지 한눈에 확인할 수 있습니다.</p>
-                    </div>
-                </div>
-                <div class="academy-simulator-card">
-                    <div class="academy-simulator-image">
-                        <img src="img/academy-simulator-plan.png" alt="iotplacement 평면 시뮬레이터 예시 화면">
-                    </div>
-                    <div class="academy-simulator-copy">
-                        <h4>평면 배치 예시</h4>
-                        <p>공간 구조를 기준으로 장치 위치와 제어 구성을 쉽게 설명할 수 있습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<p>iotplacement 시뮬레이터로 공간 배치, 조명 연출, 제어 흐름을 더 직관적으로 이해할 수 있습니다. <a href="https://iotplacement.com" rel="noopener noreferrer" target="_blank">iotplacement.com</a></p>
+</div>
+<div class="s-grid-2">
+<div class="s-card s-card-image">
+<div class="s-media">
+<img alt="iotplacement 3D 시뮬레이터 예시 화면" loading="lazy" src="img/academy-simulator-3d.png"/>
+</div>
+<div class="s-card-body">
+<h3>3D 공간 예시</h3>
+<p>조명과 장치가 공간 안에서 어떻게 반응하는지 한눈에 확인할 수 있습니다.</p>
+</div>
+</div>
+<div class="s-card s-card-image">
+<div class="s-media">
+<img alt="iotplacement 평면 시뮬레이터 예시 화면" loading="lazy" src="img/academy-simulator-plan.png"/>
+</div>
+<div class="s-card-body">
+<h3>평면 배치 예시</h3>
+<p>공간 구조를 기준으로 장치 위치와 제어 구성을 쉽게 설명할 수 있습니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section class="s-section">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">Programs</p><h2>AIoT 실습 과정 소개</h2></div>
 
-    <section class="online-course-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Programs</span>
-                <h2 class="section-title">AIoT 실습 과정 소개</h2>
-                <p class="section-description">과정별 대상과 진행 방식, 핵심 내용을 카드에서 바로 확인하실 수 있습니다.</p>
-            </div>
 
-            <div class="academy-programs">
+<p>과정별 대상과 진행 방식, 핵심 내용을 카드에서 바로 확인하실 수 있습니다.</p>
+</div>
+<div class="s-course-list">
+<a class="s-course s-course-featured" href="academy-interior.html">
+<div class="s-course-top">
+<div>
+<span class="s-tag">대학 연계·공간디자인</span>
+<h3>AIoT 인테리어 실습 교육·대학 연계 교육</h3>
+<p>실내건축·디자인·주거환경 전공을 위해 교육키트, 학생 실습, 학기 중 특강, 캡스톤 멘토링을 연결합니다. 교재와 IoTPlacement로 공간 설계와 자동화를 함께 배웁니다.</p>
+</div>
+<div class="s-course-meta"><strong>구성별 견적 상담</strong><span>실습 4시간 · 1회 최대 15명</span></div>
+</div>
+<div class="s-course-grid">
+<div class="s-course-item"><h4>교육패키지</h4><p>아카라 홈키트, RGB 전구, 스탠드 조명, 조명 소켓</p></div>
+<div class="s-course-item"><h4>전공 연계 운영</h4><p>4시간 학생 실습 + 학기 중 하루 2시간 특강</p></div>
+<div class="s-course-item"><h4>작품으로 확장</h4><p>캡스톤 진행 시 멘티 연계 및 설계·구현 자문</p></div>
+</div>
+<span class="s-text-link">교재 및 대학 연계 교육 상세 보기 →</span>
+</a>
+<a class="s-course" href="academy-practice.html">
+<div class="s-course-top">
+<div>
+<span class="s-tag">입문교육</span>
+<h3>AIoT 실습교육</h3>
+<p>스마트홈키트를 직접 연결하고 작동해보며 AIoT 기본 구조와 제어 흐름을 실습 중심으로 익히는 입문 교육입니다.</p>
+</div>
+<div class="s-course-meta">
+<strong>50만원(VAT별도)</strong>
+<span>3시간 · 입문교육</span>
+</div>
+</div>
+<div class="s-course-grid">
+<div class="s-course-item">
+<h4>이런 팀에 맞습니다</h4>
+<p>AIoT를 처음 배우는 직원, 내부 교육 시작점이 필요한 팀</p>
+</div>
+<div class="s-course-item">
+<h4>진행 방식</h4>
+<p>스마트홈키트 기반 실습 중심 교육</p>
+</div>
+<div class="s-course-item">
+<h4>핵심 포인트</h4>
+<p>연결, 제어, 자동화 흐름을 직접 이해</p>
+</div>
+</div>
+<span class="s-text-link">상세 페이지 보기</span>
+</a>
+<a class="s-course s-course-featured" href="academy-special.html">
+<div class="s-course-top">
+<div>
+<span class="s-tag">실습연계</span>
+<h3>AIoT 실습 연계 교육</h3>
+<p>실습키트와 SotoLAB이 개발한 AI 에이전트 기반 AIoT 교육·설계 툴을 함께 제공하는 4시간 연계 교육입니다.</p>
+</div>
+<div class="s-course-meta">
+<strong>80만원(VAT별도)</strong>
+<span>4시간 · 실습연계</span>
+</div>
+</div>
+<div class="s-course-grid">
+<div class="s-course-item">
+<h4>이런 팀에 맞습니다</h4>
+<p>짧고 강하게 체험하고, 교육 후 반복 학습까지 이어가고 싶은 팀</p>
+</div>
+<div class="s-course-item">
+<h4>진행 방식</h4>
+<p>실습키트 제공과 AI 에이전트 기반 시뮬레이터 활용 병행</p>
+</div>
+<div class="s-course-item">
+<h4>핵심 포인트</h4>
+<p>한 번의 교육으로 실습과 복습 환경까지 확보</p>
+</div>
+</div>
+<span class="s-text-link">상세 페이지 보기</span>
+</a>
+<a class="s-course" href="academy-visit.html">
+<div class="s-course-top">
+<div>
+<span class="s-tag">컨설팅 포함</span>
+<h3>AIoT 방문 교육</h3>
+<p>사업장에 설치된 실제 장치를 기준으로 현장에서 바로 배우고, 운영 방향까지 함께 정리하는 방문형 교육입니다.</p>
+</div>
+<div class="s-course-meta">
+<strong>90만원(VAT별도)</strong>
+<span>6시간 · 컨설팅 포함</span>
+</div>
+</div>
+<div class="s-course-grid">
+<div class="s-course-item">
+<h4>이런 팀에 맞습니다</h4>
+<p>설치 장치가 이미 있고 현장 기준 교육이 필요한 팀</p>
+</div>
+<div class="s-course-item">
+<h4>진행 방식</h4>
+<p>현장 방문 교육과 운영 방향 컨설팅 병행</p>
+</div>
+<div class="s-course-item">
+<h4>핵심 포인트</h4>
+<p>설치 환경을 기준으로 바로 이해하고 적용</p>
+</div>
+</div>
+<span class="s-text-link">상세 페이지 보기</span>
+</a>
+<a class="s-course" href="academy-business.html">
+<div class="s-course-top">
+<div>
+<span class="s-tag">창업과정</span>
+<h3>AIoT 사업자 교육</h3>
+<p>스마트홈키트, 조명, 스위치, AI 센서까지 다루며 실제 제안과 적용, 고객 설명까지 연결하는 심화 교육입니다.</p>
+</div>
+<div class="s-course-meta">
+<strong>160만원(VAT별도)</strong>
+<span>14시간 · 창업과정</span>
+</div>
+</div>
+<div class="s-course-grid">
+<div class="s-course-item">
+<h4>이런 팀에 맞습니다</h4>
+<p>제안, 시공, 고객 설명까지 맡아야 하는 사업자 팀</p>
+</div>
+<div class="s-course-item">
+<h4>진행 방식</h4>
+<p>제품 이해와 사업 적용 시나리오를 함께 교육</p>
+</div>
+<div class="s-course-item">
+<h4>핵심 포인트</h4>
+<p>실제 사업 적용 기준으로 넓게 이해</p>
+</div>
+</div>
+<span class="s-text-link">상세 페이지 보기</span>
+</a>
+</div>
+</div>
+</section><section class="s-section s-section-tint">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">Guide</p><h2>이렇게 선택하시면 됩니다</h2></div>
 
-                <a class="academy-program-card academy-program-card-accent" href="academy-interior.html">
-                    <div class="academy-program-top">
-                        <div>
-                            <span class="academy-program-label">대학 연계·공간디자인</span>
-                            <h3 class="academy-program-title">AIoT 인테리어 실습 교육·대학 연계 교육</h3>
-                            <p class="academy-program-description">실내건축·디자인·주거환경 전공을 위해 교육키트, 학생 실습, 학기 중 특강, 캡스톤 멘토링을 연결합니다. 교재와 IoTPlacement로 공간 설계와 자동화를 함께 배웁니다.</p>
-                        </div>
-                        <div class="academy-program-price"><strong>구성별 견적 상담</strong><span>실습 4시간 · 1회 최대 15명</span></div>
-                    </div>
-                    <div class="academy-program-grid">
-                        <div class="academy-program-item"><h4>교육패키지</h4><p>아카라 홈키트, RGB 전구, 스탠드 조명, 조명 소켓</p></div>
-                        <div class="academy-program-item"><h4>전공 연계 운영</h4><p>4시간 학생 실습 + 학기 중 하루 2시간 특강</p></div>
-                        <div class="academy-program-item"><h4>작품으로 확장</h4><p>캡스톤 진행 시 멘티 연계 및 설계·구현 자문</p></div>
-                    </div>
-                    <span class="academy-program-link">교재 및 대학 연계 교육 상세 보기 →</span>
-                </a>
 
-                <a class="academy-program-card" href="academy-practice.html">
-                    <div class="academy-program-top">
-                        <div>
-                            <span class="academy-program-label">입문교육</span>
-                            <h3 class="academy-program-title">AIoT 실습교육</h3>
-                            <p class="academy-program-description">스마트홈키트를 직접 연결하고 작동해보며 AIoT 기본 구조와 제어 흐름을 실습 중심으로 익히는 입문 교육입니다.</p>
-                        </div>
-                        <div class="academy-program-price">
-                            <strong>50만원(VAT별도)</strong>
-                            <span>3시간 · 입문교육</span>
-                        </div>
-                    </div>
-                    <div class="academy-program-grid">
-                        <div class="academy-program-item">
-                            <h4>이런 팀에 맞습니다</h4>
-                            <p>AIoT를 처음 배우는 직원, 내부 교육 시작점이 필요한 팀</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>진행 방식</h4>
-                            <p>스마트홈키트 기반 실습 중심 교육</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>핵심 포인트</h4>
-                            <p>연결, 제어, 자동화 흐름을 직접 이해</p>
-                        </div>
-                    </div>
-                    <span class="academy-program-link">상세 페이지 보기</span>
-                </a>
-
-                <a class="academy-program-card academy-program-card-accent" href="academy-special.html">
-                    <div class="academy-program-top">
-                        <div>
-                            <span class="academy-program-label">실습연계</span>
-                            <h3 class="academy-program-title">AIoT 실습 연계 교육</h3>
-                            <p class="academy-program-description">실습키트와 SotoLAB이 개발한 AI 에이전트 기반 AIoT 교육·설계 툴을 함께 제공하는 4시간 연계 교육입니다.</p>
-                        </div>
-                        <div class="academy-program-price">
-                            <strong>80만원(VAT별도)</strong>
-                            <span>4시간 · 실습연계</span>
-                        </div>
-                    </div>
-                    <div class="academy-program-grid">
-                        <div class="academy-program-item">
-                            <h4>이런 팀에 맞습니다</h4>
-                            <p>짧고 강하게 체험하고, 교육 후 반복 학습까지 이어가고 싶은 팀</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>진행 방식</h4>
-                            <p>실습키트 제공과 AI 에이전트 기반 시뮬레이터 활용 병행</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>핵심 포인트</h4>
-                            <p>한 번의 교육으로 실습과 복습 환경까지 확보</p>
-                        </div>
-                    </div>
-                    <span class="academy-program-link">상세 페이지 보기</span>
-                </a>
-
-                <a class="academy-program-card" href="academy-visit.html">
-                    <div class="academy-program-top">
-                        <div>
-                            <span class="academy-program-label">컨설팅 포함</span>
-                            <h3 class="academy-program-title">AIoT 방문 교육</h3>
-                            <p class="academy-program-description">사업장에 설치된 실제 장치를 기준으로 현장에서 바로 배우고, 운영 방향까지 함께 정리하는 방문형 교육입니다.</p>
-                        </div>
-                        <div class="academy-program-price">
-                            <strong>90만원(VAT별도)</strong>
-                            <span>6시간 · 컨설팅 포함</span>
-                        </div>
-                    </div>
-                    <div class="academy-program-grid">
-                        <div class="academy-program-item">
-                            <h4>이런 팀에 맞습니다</h4>
-                            <p>설치 장치가 이미 있고 현장 기준 교육이 필요한 팀</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>진행 방식</h4>
-                            <p>현장 방문 교육과 운영 방향 컨설팅 병행</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>핵심 포인트</h4>
-                            <p>설치 환경을 기준으로 바로 이해하고 적용</p>
-                        </div>
-                    </div>
-                    <span class="academy-program-link">상세 페이지 보기</span>
-                </a>
-
-                <a class="academy-program-card" href="academy-business.html">
-                    <div class="academy-program-top">
-                        <div>
-                            <span class="academy-program-label">창업과정</span>
-                            <h3 class="academy-program-title">AIoT 사업자 교육</h3>
-                            <p class="academy-program-description">스마트홈키트, 조명, 스위치, AI 센서까지 다루며 실제 제안과 적용, 고객 설명까지 연결하는 심화 교육입니다.</p>
-                        </div>
-                        <div class="academy-program-price">
-                            <strong>160만원(VAT별도)</strong>
-                            <span>14시간 · 창업과정</span>
-                        </div>
-                    </div>
-                    <div class="academy-program-grid">
-                        <div class="academy-program-item">
-                            <h4>이런 팀에 맞습니다</h4>
-                            <p>제안, 시공, 고객 설명까지 맡아야 하는 사업자 팀</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>진행 방식</h4>
-                            <p>제품 이해와 사업 적용 시나리오를 함께 교육</p>
-                        </div>
-                        <div class="academy-program-item">
-                            <h4>핵심 포인트</h4>
-                            <p>실제 사업 적용 기준으로 넓게 이해</p>
-                        </div>
-                    </div>
-                    <span class="academy-program-link">상세 페이지 보기</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Guide</span>
-                <h2 class="section-title">이렇게 선택하시면 됩니다</h2>
-                <p class="section-description">교육 목적에 따라 필요한 과정을 빠르게 선택하실 수 있습니다.</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-number">01</div>
-                    <h3>처음 배우는 경우</h3>
-                    <p>장치 연결과 기본 제어 흐름부터 익히고 싶다면 AIoT 실습교육부터 시작하시면 됩니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-number">02</div>
-                    <h3>짧고 강한 체험이 필요한 경우</h3>
-                    <p>빠르게 실습 경험을 쌓고 실습키트와 AI 에이전트 기반 시뮬레이터까지 함께 활용하고 싶다면 AIoT 실습 연계 교육이 적합합니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-number">03</div>
-                    <h3>현장 기준이 필요한 경우</h3>
-                    <p>설치된 장치와 운영 환경을 중심으로 교육이 필요하다면 AIoT 방문 교육이 맞습니다.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-number">04</div>
-                    <h3>사업 적용까지 봐야 하는 경우</h3>
-                    <p>고객 설명, 제안, 시공 범위까지 함께 이해해야 한다면 AIoT 사업자 교육이 적합합니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-banner">
-        <div class="container">
-            <div class="cta-inline">
-                <div>
-                    <h3>어떤 과정이 맞는지 먼저 정리해보시겠어요?</h3>
-                    <p>문의하시면 대상자, 시간, 현장 조건에 맞는 아카데미 과정을 바로 안내해드립니다.</p>
-                </div>
-                <a href="https://open.kakao.com/o/sK8hYXfb" class="btn btn-primary" target="_blank" rel="noopener noreferrer">문의하기</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 SotoLAB · All rights reserved <span>운영: 썬스타</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <button class="scroll-top" id="scrollTop" aria-label="맨 위로 이동">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-    <script src="js/main.js?v=20260723-3"></script>
-    <script src="js/pages.js?v=20260723-3"></script>
-</body>
-</html>
-
+<p>교육 목적에 따라 필요한 과정을 빠르게 선택하실 수 있습니다.</p>
+</div>
+<div class="s-steps">
+<div class="s-step">
+<span class="s-card-number">01</span>
+<h3>처음 배우는 경우</h3>
+<p>장치 연결과 기본 제어 흐름부터 익히고 싶다면 AIoT 실습교육부터 시작하시면 됩니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">02</span>
+<h3>짧고 강한 체험이 필요한 경우</h3>
+<p>빠르게 실습 경험을 쌓고 실습키트와 AI 에이전트 기반 시뮬레이터까지 함께 활용하고 싶다면 AIoT 실습 연계 교육이 적합합니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">03</span>
+<h3>현장 기준이 필요한 경우</h3>
+<p>설치된 장치와 운영 환경을 중심으로 교육이 필요하다면 AIoT 방문 교육이 맞습니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">04</span>
+<h3>사업 적용까지 봐야 하는 경우</h3>
+<p>고객 설명, 제안, 시공 범위까지 함께 이해해야 한다면 AIoT 사업자 교육이 적합합니다.</p>
+</div>
+</div>
+</div>
+</section><section class="s-cta">
+<div class="s-wrap">
+<div class="s-cta-content">
+<div>
+<h2>어떤 과정이 맞는지 먼저 정리해보시겠어요?</h2>
+<p>문의하시면 대상자, 시간, 현장 조건에 맞는 아카데미 과정을 바로 안내해드립니다.</p>
+</div>
+<a class="s-button s-button-primary" href="https://open.kakao.com/o/sK8hYXfb" rel="noopener noreferrer" target="_blank">문의하기</a>
+</div>
+</div>
+</section>
+</main><footer class="s-footer"><div class="s-wrap"><div class="s-footer-top"><div><a class="s-logo" href="index.html">Soto<b>LAB</b></a><p>직접 만든 기술을, 사람의 실력으로<br>AI · AIoT · 임베디드 · 블록체인 실전 교육과 멘토링</p></div><div class="s-footer-links"><a href="profile.html">장성균 박사 소개</a><a href="experience.html">활동·성과 기록</a><a href="books.html">저서</a><a href="contact.html">교육·강연 문의</a></div></div><div class="s-footer-bottom"><span>© 2026 SotoLAB · All rights reserved</span><span>운영: 썬스타 · 문의: <a href="mailto:sotolabedu@gmail.com">sotolabedu@gmail.com</a></span></div></div></footer></body></html>

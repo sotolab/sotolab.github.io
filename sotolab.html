@@ -1,940 +1,289 @@
-﻿<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>기업 AI 멘토링 · 업무 도구 구축 | SotoLAB</title>
-  <meta name="description" content="개인에서 팀으로, 팀에서 조직으로 · AI를 실제로 일하는 방식에 붙이고 내부 업무 도구까지 만들 수 있도록 돕는 SotoLAB의 기업 실무자를 위한 실행 과정입니다.">
-  <meta name="keywords" content="SotoLAB, 기업 AI 멘토링, AI 업무 도구, 업무 자동화, 기업 AI 교육, AI 도입, 업무 효율화, 내부 툴 구축">
-  <meta name="author" content="장성균 · SotoLAB">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://sotolab.github.io/sotolab.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="SotoLAB | 기업 AI 멘토링 · 업무 도구 구축">
-  <meta property="og:description" content="AI 교육에서 끝나지 않고, 실제 업무 적용과 내부 업무 도구 제작까지 연결하는 기업 실무자를 위한 실행 과정입니다.">
-  <meta property="og:url" content="https://sotolab.github.io/sotolab.html">
-  <meta property="og:site_name" content="SotoLAB">
-  <meta property="og:image" content="https://sotolab.github.io/img/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SotoLAB | 기업 AI 멘토링 · 업무 도구 구축">
-  <meta name="twitter:description" content="직원이 AI를 잘 쓰는 회사는 더 빠르게 움직입니다. SotoLAB이 실제 업무 적용과 내부 도구 제작까지 함께합니다.">
-  <meta name="twitter:image" content="https://sotolab.github.io/img/logo.png">
-
-  <link rel="icon" href="img/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261031-3">
-  <style>
-    :root {
-      --bg: #07070a;
-      --panel: rgba(18, 18, 24, 0.66);
-      --line: rgba(255, 255, 255, 0.12);
-      --text: #f7f7fa;
-      --muted: #aaaab5;
-      --lime: #c9ff3d;
-      --violet: #8f6bff;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Inter", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x: hidden;
-    }
-
-    #webgl {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -3;
-      display: block;
-    }
-
-    .shade {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(143, 107, 255, 0.11), transparent 32%),
-        linear-gradient(180deg, rgba(7, 7, 10, 0.05), #07070a 86%);
-      pointer-events: none;
-    }
-
-    .grid {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.2;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
-      pointer-events: none;
-    }
-
-    .wrap {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      align-items: center;
-      padding: 130px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.04);
-      font-size: 13px;
-      color: #dddde6;
-    }
-
-    .eyebrow i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 18px var(--lime);
-    }
-
-    h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 5vw, 68px);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
-      margin: 20px 0 18px;
-    }
-
-    .hero-first-line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .hero-second-line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .accent { color: var(--lime); }
-
-    .line-lock {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .hero p {
-      font-size: clamp(18px, 2vw, 22px);
-      line-height: 1.7;
-      color: var(--muted);
-      max-width: 650px;
-      margin: 0 0 32px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      min-height: 52px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 19px;
-      border-radius: 14px;
-      text-decoration: none;
-      color: white;
-      border: 1px solid var(--line);
-      font-weight: 800;
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .btn.primary {
-      background: var(--lime);
-      color: #111;
-      border-color: transparent;
-      box-shadow: 0 16px 48px rgba(201, 255, 61, 0.18);
-    }
-
-    .scene-shell {
-      height: 590px;
-      position: relative;
-      perspective: 1200px;
-    }
-
-    .scene-stage {
-      position: absolute;
-      inset: 0;
-      transform-style: preserve-3d;
-      transition: transform 0.2s ease-out;
-    }
-
-    .core {
-      position: absolute;
-      left: 50%;
-      top: 47%;
-      width: 210px;
-      height: 210px;
-      transform: translate(-50%, -50%) translateZ(70px);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.95) 0 7%, rgba(255, 255, 255, 0.18) 8% 16%, transparent 17%),
-        radial-gradient(circle at 68% 70%, rgba(143, 107, 255, 0.42), transparent 24%),
-        radial-gradient(circle at 50% 48%, #f1ffb9 0 10%, var(--lime) 22%, #9ddf30 40%, #6c47ff 72%, #13131a 100%);
-      box-shadow:
-        0 0 42px rgba(201, 255, 61, 0.24),
-        0 0 110px rgba(143, 107, 255, 0.26),
-        inset -30px -30px 55px rgba(0, 0, 0, 0.42),
-        inset 18px 18px 34px rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      color: #111;
-      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
-      font-weight: 950;
-      font-size: 26px;
-      line-height: 1.05;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .ring {
-      position: absolute;
-      left: 50%;
-      top: 47%;
-      border: 1px solid rgba(201, 255, 61, 0.3);
-      border-radius: 50%;
-      transform-style: preserve-3d;
-      box-shadow:
-        0 0 22px rgba(143, 107, 255, 0.12),
-        inset 0 0 18px rgba(201, 255, 61, 0.08);
-    }
-
-    .r1 {
-      width: 370px;
-      height: 370px;
-      transform: translate(-50%, -50%) rotateX(72deg);
-      animation: spin 14s linear infinite;
-    }
-
-    .r2 {
-      width: 470px;
-      height: 470px;
-      transform: translate(-50%, -50%) rotateY(68deg) rotateZ(18deg);
-      animation: spin2 18s linear infinite;
-    }
-
-    .ring:before,
-    .ring:after {
-      content: "";
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ffffff, var(--lime) 50%, var(--violet));
-      box-shadow:
-        0 0 14px rgba(255, 255, 255, 0.55),
-        0 0 28px rgba(201, 255, 61, 0.38),
-        0 0 36px rgba(143, 107, 255, 0.22);
-    }
-
-    .ring:before { left: 8%; top: 46%; }
-    .ring:after { right: 8%; top: 46%; }
-
-    .float-card {
-      position: absolute;
-      width: 190px;
-      padding: 19px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(28, 28, 36, 0.9), rgba(11, 11, 16, 0.72));
-      backdrop-filter: blur(16px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-      transform-style: preserve-3d;
-      z-index: 2;
-    }
-
-    .float-card small {
-      display: block;
-      color: var(--lime);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .float-card strong {
-      font-size: 24px;
-      line-height: 1.15;
-    }
-
-    .float-card p {
-      font-size: 13px;
-      line-height: 1.55;
-      margin: 10px 0 0;
-      color: #aaaab5;
-    }
-
-    .fc1 { left: 1%; top: 15%; transform: translateZ(130px) rotateY(18deg) rotateX(4deg); }
-    .fc2 { right: -4%; top: 13%; transform: translateZ(34px) rotateY(-16deg) rotateX(-2deg); }
-    .fc3 { left: 10%; bottom: 5%; transform: translateZ(-40px) rotateY(14deg) rotateX(-5deg); }
-    .fc4 { right: 5%; bottom: 2%; transform: translateZ(115px) rotateY(-14deg) rotateX(5deg); }
-
-
-    section { padding: 120px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 28px;
-      margin-bottom: 38px;
-    }
-
-    .section-head h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 5vw, 66px);
-      line-height: 1.04;
-      letter-spacing: -0.05em;
-      margin: 0;
-    }
-
-    .section-head p {
-      max-width: 480px;
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .cards.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cards.four {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
-      padding: 28px;
-      min-height: 270px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px) rotateX(2deg);
-      border-color: rgba(201, 255, 61, 0.35);
-    }
-
-    .card .num {
-      color: var(--lime);
-      font-weight: 900;
-      margin-bottom: 55px;
-    }
-
-    .card h3 {
-      font-size: 28px;
-      margin: 0 0 12px;
-    }
-
-    .card p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .card ul {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .card li {
-      position: relative;
-      padding-left: 18px;
-      line-height: 1.6;
-    }
-
-    .card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 14px rgba(201, 255, 61, 0.32);
-    }
-
-    .card.risk {
-      border-color: rgba(255, 132, 132, 0.22);
-      background: linear-gradient(145deg, rgba(34, 18, 22, 0.92), rgba(12, 9, 12, 0.78));
-    }
-
-    .card.risk .num {
-      color: #ff8a8a;
-    }
-
-    .card.emphasis {
-      border-color: rgba(201, 255, 61, 0.26);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(201, 255, 61, 0.08) inset;
-    }
-
-    .strip-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .strip {
-      padding: 26px 24px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(28, 28, 36, 0.9), rgba(11, 11, 16, 0.72));
-      backdrop-filter: blur(16px);
-    }
-
-    .strip strong {
-      display: block;
-      font-size: 34px;
-      line-height: 1;
-      margin-bottom: 14px;
-      color: var(--lime);
-      font-family: "Space Grotesk", sans-serif;
-      letter-spacing: -0.05em;
-    }
-
-    .strip h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-
-    .strip p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .statement {
-      padding: 70px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: linear-gradient(135deg, rgba(143, 107, 255, 0.22), rgba(201, 255, 61, 0.08), rgba(15, 15, 20, 0.8));
-      text-align: center;
-    }
-
-    .statement h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 6vw, 78px);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-      margin: 0 0 22px;
-    }
-
-    .statement p {
-      font-size: 20px;
-      color: #c7c7d0;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    footer {
-      padding: 30px 0 44px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @keyframes float {
-      50% { transform: translate(-50%, -54%) translateZ(90px); }
-    }
-
-    @keyframes spin {
-      to { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
-    }
-
-    @keyframes spin2 {
-      to { transform: translate(-50%, -50%) rotateY(68deg) rotateZ(378deg); }
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .scene-shell { height: 510px; }
-      .core { width: 160px; height: 160px; font-size: 21px; }
-      .r1 { width: 300px; height: 300px; }
-      .r2 { width: 380px; height: 380px; }
-      .float-card { width: 150px; padding: 15px; }
-      .float-card strong { font-size: 19px; }
-      .float-card p { display: none; }
-      .cards { grid-template-columns: 1fr; }
-      .cards.two,
-      .cards.four,
-      .strip-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: flex-start; flex-direction: column; }
-      .statement { padding: 42px 24px; }
-    }
-  </style>
-</head>
-<body>
-  <canvas id="webgl"></canvas>
-  <div class="shade"></div>
-  <div class="grid"></div>
-
-  <nav class="nav">
-    <div class="container">
-      <a href="index.html" class="nav-logo">Soto<b>LAB</b></a>
-      <ul class="nav-menu" id="navMenu"><li><a href="profile.html">강사 소개</a></li><li><a href="academy.html">교육·강연</a></li><li><a href="sotolab.html" class="active" aria-current="page">기업 멘토링</a></li><li><a href="experience.html">연구·성과</a></li><li><a href="books.html">저서</a></li><li><a href="contact.html">문의</a></li></ul>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow"><i></i> AI · PEOPLE · ORGANIZATION</div>
-          <h1>
-            <span class="hero-first-line">AI를 잘 쓰는 사람보다</span>
-            <span class="accent hero-second-line">AI가 실제로 일하는 조직</span>
-          </h1>
-          <p>
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>기업 AI 멘토링 · 업무 도구 구축 | SotoLAB</title><meta name="description" content="개인에서 팀으로, 팀에서 조직으로 연결하는 SotoLAB 기업 AI 멘토링 · 업무 적용과 내부 업무 도구 제작을 함께합니다."><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="https://sotolab.github.io/sotolab.html"><meta property="og:type" content="website"><meta property="og:title" content="기업 AI 멘토링 · 업무 도구 구축 | SotoLAB"><meta property="og:description" content="개인에서 팀으로, 팀에서 조직으로 연결하는 SotoLAB 기업 AI 멘토링 · 업무 적용과 내부 업무 도구 제작을 함께합니다."><meta property="og:url" content="https://sotolab.github.io/sotolab.html"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="기업 AI 멘토링 · 업무 도구 구축 | SotoLAB"><meta name="twitter:description" content="개인에서 팀으로, 팀에서 조직으로 연결하는 SotoLAB 기업 AI 멘토링 · 업무 적용과 내부 업무 도구 제작을 함께합니다."><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v=20261031-6"><script src="js/sotolab-brand.js?v=20261031-2" defer></script><noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head><body class="story-page"><a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><div class="s-wrap s-nav"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈">Soto<b>LAB</b></a><button class="s-menu-toggle" id="brand-menu-toggle" type="button" aria-expanded="false" aria-controls="brand-menu">메뉴</button><ul aria-label="주요 메뉴" id="brand-menu" class="s-menu"><li><a href="profile.html">강사 소개</a></li><li><a href="academy.html">교육·강연</a></li><li><a href="sotolab.html" aria-current="page">기업 멘토링</a></li><li><a href="experience.html">연구·성과</a></li><li><a href="books.html">저서</a></li><li><a href="contact.html" class="s-nav-cta">문의</a></li></ul></div></header><main id="main">
+<section class="s-page-head">
+<div class="s-wrap">
+<div>
+<div class="s-eyebrow"><i></i> AI · PEOPLE · ORGANIZATION</div>
+<h1>
+<span class="s-title-line">AI를 잘 쓰는 사람보다</span>
+<span class="s-accent s-title-line">AI가 실제로 일하는 조직</span>
+</h1>
+<p>
             SotoLAB의 기업 AI 멘토링은 개인의 활용을 넘어 팀의 실행력으로, 팀의 실행력을 조직의 성장 시스템으로 연결하는
             기업 실무자를 위한 실행 과정입니다.
           </p>
-          <div class="actions">
-            <a class="btn primary" href="contact.html">문의하기</a>
-            <a class="btn" href="#framework">M2G 프레임워크</a><a class="btn" href="profile.html">장성균 박사·멘토 이력</a>
-          </div>
-        </div>
+<div class="s-actions">
+<a class="s-button s-button-primary" href="contact.html">문의하기</a>
+<a class="s-button" href="#framework">M2G 프레임워크</a><a class="s-button" href="profile.html">장성균 박사·멘토 이력</a>
+</div>
+</div>
+<div class="s-flow-overview"><p class="s-eyebrow">SOTO<br/>FLOW</p>
+<div class="s-steps">
 
-        <div class="scene-shell" id="sceneShell">
-          <div class="scene-stage" id="stage">
-            <div class="ring r1"></div>
-            <div class="ring r2"></div>
-            <div class="core">SOTO<br>FLOW</div>
 
-            <div class="float-card fc1">
-              <small>01 · PERSON</small>
-              <strong>개인 실행력</strong>
-              <p>직원이 AI를 묻고 쓰는 수준을 넘어 실제 업무 도구로 활용하게 만듭니다.</p>
-            </div>
 
-            <div class="float-card fc2">
-              <small>02 · TEAM</small>
-              <strong>팀 적용</strong>
-              <p>한 명의 핵심 인력부터 시작해 팀 안의 반복 업무 흐름에 붙입니다.</p>
-            </div>
+<div class="s-step">
+<span class="s-card-number">01 · PERSON</span>
+<h3>개인 실행력</h3>
+<p>직원이 AI를 묻고 쓰는 수준을 넘어 실제 업무 도구로 활용하게 만듭니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">02 · TEAM</span>
+<h3>팀 적용</h3>
+<p>한 명의 핵심 인력부터 시작해 팀 안의 반복 업무 흐름에 붙입니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">03 · SYSTEM</span>
+<h3>업무 도구 구축</h3>
+<p>발주, 정산, 보고서, 파일 관리 같은 내부 업무 도구를 직접 만듭니다.</p>
+</div>
+<div class="s-step">
+<span class="s-card-number">04 · ORGANIZATION</span>
+<h3>조직 전환</h3>
+<p>좋은 강의가 아니라 실제로 적용되는 방식이 회사 안에 남게 만듭니다.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="s-section" id="framework">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">01 / M2G FRAMEWORK</p><h2>개인에서 팀으로,<br/>팀에서 조직으로</h2></div>
 
-            <div class="float-card fc3">
-              <small>03 · SYSTEM</small>
-              <strong>업무 도구 구축</strong>
-              <p>발주, 정산, 보고서, 파일 관리 같은 내부 업무 도구를 직접 만듭니다.</p>
-            </div>
-
-            <div class="float-card fc4">
-              <small>04 · ORGANIZATION</small>
-              <strong>조직 전환</strong>
-              <p>좋은 강의가 아니라 실제로 적용되는 방식이 회사 안에 남게 만듭니다.</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="framework">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>개인에서 팀으로,<br>팀에서 조직으로</h2>
-          <p>
+<p>
             M2G는 단순한 AI 교육이 아닙니다.
             사람과 사람의 성장을 연결하고, 그 연결이 실제 업무와 조직의 일하는 방식으로 남도록 만드는 SotoLAB의 핵심 프레임워크입니다.
           </p>
-        </div>
+</div>
+<div class="s-grid-3">
+<article class="s-card">
+<div class="s-card-number">M · MENTORING</div>
+<h3>서로를 성장하게</h3>
+<p>회사 안에서 누구나 멘토가 되고 동시에 멘티가 됩니다. 지식과 경험이 한 사람에게 머물지 않게 합니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">2 · CONNECTION</div>
+<h3>사람과 업무를 연결</h3>
+<p>개인의 노하우를 팀의 프로세스로 전환하고, 실제 업무에서 바로 활용할 수 있는 AI 업무 방식을 설계합니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">G · GROWTH</div>
+<h3>조직의 성장 시스템</h3>
+<p>일회성 교육이 아니라 조직이 스스로 배우고 개선하는 반복 가능한 성장 구조를 만듭니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section s-section-tint" id="problem">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">02 / STARTING POINT</p><h2>많은 회사가<br/><span class="s-accent">여기서 멈춥니다</span></h2></div>
 
-        <div class="cards">
-          <article class="card">
-            <div class="num">M · MENTORING</div>
-            <h3>서로를 성장하게</h3>
-            <p>회사 안에서 누구나 멘토가 되고 동시에 멘티가 됩니다. 지식과 경험이 한 사람에게 머물지 않게 합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">2 · CONNECTION</div>
-            <h3>사람과 업무를 연결</h3>
-            <p>개인의 노하우를 팀의 프로세스로 전환하고, 실제 업무에서 바로 활용할 수 있는 AI 업무 방식을 설계합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">G · GROWTH</div>
-            <h3>조직의 성장 시스템</h3>
-            <p>일회성 교육이 아니라 조직이 스스로 배우고 개선하는 반복 가능한 성장 구조를 만듭니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="problem">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>많은 회사가<br><span class="accent">여기서 멈춥니다</span></h2>
-          <p>
+<p>
             직원들이 AI를 쓰기 시작해도, 회사의 방식으로 남지 않으면 성과는 개인의 채팅창에서 끝납니다.
           </p>
-        </div>
+</div>
+<div class="s-grid-3">
+<article class="s-card">
+<div class="s-card-number">01</div>
+<h3>개인만 쓰고 끝납니다</h3>
+<p>잘 쓰는 직원은 생기지만, 그 방식이 팀 표준으로 정리되지 않아 확산이 멈춥니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">02</div>
+<h3>좋은 결과가 남지 않습니다</h3>
+<p>프롬프트, 템플릿, 판단 기준이 정리되지 않으면 퇴사나 이동과 함께 노하우가 사라집니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">03</div>
+<h3>효과를 설명하기 어렵습니다</h3>
+<p>도입은 했는데 무엇이 얼마나 좋아졌는지 말하기 어려우면 다음 확산 결정도 늦어집니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section" id="difference">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">03 / PRACTICAL MENTORING</p><h2>일반 교육과<br/><span class="s-accent">SotoLAB은 다릅니다</span></h2></div>
 
-        <div class="cards">
-          <article class="card risk">
-            <div class="num">01</div>
-            <h3>개인만 쓰고 끝납니다</h3>
-            <p>잘 쓰는 직원은 생기지만, 그 방식이 팀 표준으로 정리되지 않아 확산이 멈춥니다.</p>
-          </article>
-
-          <article class="card risk">
-            <div class="num">02</div>
-            <h3>좋은 결과가 남지 않습니다</h3>
-            <p>프롬프트, 템플릿, 판단 기준이 정리되지 않으면 퇴사나 이동과 함께 노하우가 사라집니다.</p>
-          </article>
-
-          <article class="card risk">
-            <div class="num">03</div>
-            <h3>효과를 설명하기 어렵습니다</h3>
-            <p>도입은 했는데 무엇이 얼마나 좋아졌는지 말하기 어려우면 다음 확산 결정도 늦어집니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="difference">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>일반 교육과<br><span class="accent">SotoLAB은 다릅니다</span></h2>
-          <p>
+<p>
             중요한 것은 많이 배우는 것이 아니라, 실제 업무가 바뀌고 회사 안에 결과물이 남는 것입니다.
           </p>
-        </div>
-
-        <div class="cards two">
-          <article class="card risk">
-            <div class="num">GENERAL</div>
-            <h3>일반 AI 교육</h3>
-            <ul>
-              <li>도구 소개와 1회성 실습 중심</li>
-              <li>개인 생산성 향상에서 종료</li>
-              <li>교육 후 회사에 남는 구조가 약함</li>
-              <li>업무 도구 제작까지 연결되지 않음</li>
-            </ul>
-          </article>
-
-          <article class="card emphasis">
-            <div class="num">SOTOLAB</div>
-            <h3>실행형 AI 멘토링</h3>
-            <ul>
-              <li>업무 분석을 먼저 하고 적용 대상을 정함</li>
-              <li>직원이 자기 업무용 툴을 직접 만듦</li>
-              <li>템플릿, 체크리스트, 리뷰 기준이 남음</li>
-              <li>개인의 성과를 팀과 조직의 방식으로 확장함</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="program">
-      <div class="wrap">
-        <div class="statement">
-          <h2>AI를 가르치는 것이 아니라<br><span class="accent">일하는 방식을 바꿉니다</span></h2>
-          <p>
+</div>
+<div class="s-grid-2">
+<article class="s-card">
+<div class="s-card-number">GENERAL</div>
+<h3>일반 AI 교육</h3>
+<ul>
+<li>도구 소개와 1회성 실습 중심</li>
+<li>개인 생산성 향상에서 종료</li>
+<li>교육 후 회사에 남는 구조가 약함</li>
+<li>업무 도구 제작까지 연결되지 않음</li>
+</ul>
+</article>
+<article class="s-card s-card-featured">
+<div class="s-card-number">SOTOLAB</div>
+<h3>실행형 AI 멘토링</h3>
+<ul>
+<li>업무 분석을 먼저 하고 적용 대상을 정함</li>
+<li>직원이 자기 업무용 툴을 직접 만듦</li>
+<li>템플릿, 체크리스트, 리뷰 기준이 남음</li>
+<li>개인의 성과를 팀과 조직의 방식으로 확장함</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section s-section-tint" id="program">
+<div class="s-wrap">
+<div class="s-callout">
+<h2>AI를 가르치는 것이 아니라<br/><span class="s-accent">일하는 방식을 바꿉니다</span></h2>
+<p>
             발주서 검토, 송장 정리, 성과분석 보고서, 파일 관리, 일정관리, 콘텐츠 제작 자동화까지 ·
             회사마다 필요한 업무 도구를 실제로 만들고 적용할 수 있도록 함께합니다.
           </p>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+</section>
+<section class="s-section" id="system">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">05 / TEAM TOOLS</p><h2>SotoFlow가 팀에 남기는<br/><span class="s-accent">4가지 운영 장치</span></h2></div>
 
-    <section id="system">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>SotoFlow가 팀에 남기는<br><span class="accent">4가지 운영 장치</span></h2>
-          <p>
+<p>
             한 명이 잘하는 수준을 넘어서기 위해서는 결과물을 다시 쓰고, 판단하고, 공유할 수 있는 구조가 필요합니다.
           </p>
-        </div>
+</div>
+<div class="s-grid-4">
+<article class="s-card">
+<div class="s-card-number">01</div>
+<h3>Template</h3>
+<p>다시 쓸 수 있는 질문 방식과 업무 양식을 남깁니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">02</div>
+<h3>Checklist</h3>
+<p>좋은 결과물인지 판단할 기준을 팀 안에 정리합니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">03</div>
+<h3>Review</h3>
+<p>동료가 함께 보고 교정하는 리뷰 흐름을 만듭니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">04</div>
+<h3>Workflow</h3>
+<p>사람과 AI가 함께 일하는 반복 가능한 업무 흐름을 구축합니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section s-section-tint" id="culture">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">06 / LEARNING CULTURE</p><h2>누구나 멘토이고<br/><span class="s-accent">누구나 멘티가 됩니다</span></h2></div>
 
-        <div class="cards four">
-          <article class="card">
-            <div class="num">01</div>
-            <h3>Template</h3>
-            <p>다시 쓸 수 있는 질문 방식과 업무 양식을 남깁니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">02</div>
-            <h3>Checklist</h3>
-            <p>좋은 결과물인지 판단할 기준을 팀 안에 정리합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">03</div>
-            <h3>Review</h3>
-            <p>동료가 함께 보고 교정하는 리뷰 흐름을 만듭니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">04</div>
-            <h3>Workflow</h3>
-            <p>사람과 AI가 함께 일하는 반복 가능한 업무 흐름을 구축합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="culture">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>누구나 멘토이고<br><span class="accent">누구나 멘티가 됩니다</span></h2>
-          <p>
+<p>
             SotoLAB이 만들고 싶은 변화는 AI를 잘 쓰는 몇 사람이 아니라,
             서로의 업무와 도구 사용법을 나누며 함께 성장하는 조직 문화입니다.
           </p>
-        </div>
+</div>
+<div class="s-grid-4">
+<article class="s-card">
+<div class="s-card-number">01</div>
+<h3>업무 멘토</h3>
+<p>현장의 흐름과 판단 기준을 잘 아는 사람이 업무의 멘토가 됩니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">02</div>
+<h3>AI 멘토</h3>
+<p>AI 활용법과 도구 제작 경험이 있는 사람이 도구의 멘토가 됩니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">03</div>
+<h3>변화 멘토</h3>
+<p>새로운 시각과 질문을 던지는 사람이 팀의 변화를 움직이는 멘토가 됩니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">04</div>
+<h3>성장 문화</h3>
+<p>역할이 고정되지 않고 프로젝트마다 서로 배우고 가르치는 구조가 조직 안에 정착합니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section" id="outcomes">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">07 / DELIVERABLES</p><h2>문의 후 회사에<br/><span class="s-accent">남는 것</span></h2></div>
 
-        <div class="cards four">
-          <article class="card">
-            <div class="num">01</div>
-            <h3>업무 멘토</h3>
-            <p>현장의 흐름과 판단 기준을 잘 아는 사람이 업무의 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">02</div>
-            <h3>AI 멘토</h3>
-            <p>AI 활용법과 도구 제작 경험이 있는 사람이 도구의 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">03</div>
-            <h3>변화 멘토</h3>
-            <p>새로운 시각과 질문을 던지는 사람이 팀의 변화를 움직이는 멘토가 됩니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">04</div>
-            <h3>성장 문화</h3>
-            <p>역할이 고정되지 않고 프로젝트마다 서로 배우고 가르치는 구조가 조직 안에 정착합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="outcomes">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>문의 후 회사에<br><span class="accent">남는 것</span></h2>
-          <p>
+<p>
             상담의 끝이 강의가 아니라, 실제로 써볼 수 있는 결과물과 운영 기준이 남아야 합니다.
           </p>
-        </div>
+</div>
+<div class="s-grid-4">
+<article class="s-card">
+<strong>01</strong>
+<h3>AI 업무 템플릿</h3>
+<p>자주 쓰는 질문 방식과 업무 템플릿이 남아 반복 활용이 가능합니다.</p>
+</article>
+<article class="s-card">
+<strong>02</strong>
+<h3>업무 분석 결과</h3>
+<p>어떤 업무부터 바꿔야 효과가 큰지 우선순위가 선명해집니다.</p>
+</article>
+<article class="s-card">
+<strong>03</strong>
+<h3>업무툴</h3>
+<p>발주, 정산, 보고서, 파일 관리 같은 실무 도구를 실제 테스트 가능한 수준으로 만듭니다.</p>
+</article>
+<article class="s-card">
+<strong>04</strong>
+<h3>운영 기준</h3>
+<p>누가 관리하고 어떻게 개선할지까지 포함한 유지보수 기준을 잡습니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-section s-section-tint" id="metrics">
+<div class="s-wrap">
+<div class="s-section-heading"><div><p class="s-eyebrow">08 / MEASURING CHANGE</p><h2>성과는 감이 아니라<br/><span class="s-accent">기준으로 봅니다</span></h2></div>
 
-        <div class="strip-grid">
-          <article class="strip">
-            <strong>01</strong>
-            <h3>AI 업무 템플릿</h3>
-            <p>자주 쓰는 질문 방식과 업무 템플릿이 남아 반복 활용이 가능합니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>02</strong>
-            <h3>업무 분석 결과</h3>
-            <p>어떤 업무부터 바꿔야 효과가 큰지 우선순위가 선명해집니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>03</strong>
-            <h3>업무툴</h3>
-            <p>발주, 정산, 보고서, 파일 관리 같은 실무 도구를 실제 테스트 가능한 수준으로 만듭니다.</p>
-          </article>
-
-          <article class="strip">
-            <strong>04</strong>
-            <h3>운영 기준</h3>
-            <p>누가 관리하고 어떻게 개선할지까지 포함한 유지보수 기준을 잡습니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="metrics">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>성과는 감이 아니라<br><span class="accent">기준으로 봅니다</span></h2>
-          <p>
+<p>
             대표는 분위기보다 결과를 봅니다. SotoLAB은 실제 변화가 보이도록 확인 기준까지 함께 설계합니다.
           </p>
-        </div>
-
-        <div class="cards four">
-          <article class="card">
-            <div class="num">A</div>
-            <h3>시간 절감</h3>
-            <p>업무당 평균 소요 시간이 얼마나 줄었는지 전후 변화를 확인합니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">B</div>
-            <h3>재작업 감소</h3>
-            <p>오입력, 수정 요청, 검토 시간 같은 낭비가 얼마나 줄었는지 봅니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">C</div>
-            <h3>팀 재사용</h3>
-            <p>템플릿과 업무툴이 한 사람을 넘어 팀 안에서 반복 사용되는지 봅니다.</p>
-          </article>
-
-          <article class="card">
-            <div class="num">D</div>
-            <h3>조직 확산</h3>
-            <p>공유, 멘토링, 추가 도입이 이어지는지까지 확인해 다음 확산 판단에 연결합니다.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <h2><span class="line-lock">우리 회사도 적용할 수 있겠다면</span><span class="line-lock">SotoLAB에 문의하시면 됩니다</span></h2>
-          <p>
+</div>
+<div class="s-grid-4">
+<article class="s-card">
+<div class="s-card-number">A</div>
+<h3>시간 절감</h3>
+<p>업무당 평균 소요 시간이 얼마나 줄었는지 전후 변화를 확인합니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">B</div>
+<h3>재작업 감소</h3>
+<p>오입력, 수정 요청, 검토 시간 같은 낭비가 얼마나 줄었는지 봅니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">C</div>
+<h3>팀 재사용</h3>
+<p>템플릿과 업무툴이 한 사람을 넘어 팀 안에서 반복 사용되는지 봅니다.</p>
+</article>
+<article class="s-card">
+<div class="s-card-number">D</div>
+<h3>조직 확산</h3>
+<p>공유, 멘토링, 추가 도입이 이어지는지까지 확인해 다음 확산 판단에 연결합니다.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="s-cta" id="contact">
+<div class="s-wrap">
+<div class="s-cta-content">
+<h2><span class="s-title-line">우리 회사도 적용할 수 있겠다면</span><span class="s-title-line">SotoLAB에 문의하시면 됩니다</span></h2>
+<p>
             현재 대기 중인 업체가 많아 바로 시작은 어렵습니다.
             올해 안에 도입을 고려하고 있다면 먼저 문의를 남겨주셔야 일정 확인이 가능합니다.
           </p>
-        </div>
-        <a class="btn primary" href="contact.html">문의하기</a>
-      </div>
-    </section>
-  </main>
+</div>
+<a class="s-button s-button-primary" href="contact.html">문의하기</a>
+</div>
+</section>
 
-  <footer>
-    <div class="wrap">© 2026 SotoLAB · All rights reserved <span>운영: 썬스타</span></div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-  <script>
-    const stage = document.getElementById('stage');
-    const shell = document.getElementById('sceneShell');
-
-    shell.addEventListener('mousemove', (e) => {
-      const rect = shell.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      stage.style.transform = `rotateY(${x * 16}deg) rotateX(${-y * 12}deg)`;
-    });
-
-    shell.addEventListener('mouseleave', () => {
-      stage.style.transform = 'rotateY(0deg) rotateX(0deg)';
-    });
-
-    if (window.THREE) {
-      const canvas = document.getElementById('webgl');
-      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
-      camera.position.z = 8;
-
-      const group = new THREE.Group();
-      scene.add(group);
-
-      const geo = new THREE.IcosahedronGeometry(1.55, 1);
-      const mat = new THREE.MeshBasicMaterial({
-        color: 0x8f6bff,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.22
-      });
-      const mesh = new THREE.Mesh(geo, mat);
-      group.add(mesh);
-
-      const pts = [];
-      for (let i = 0; i < 180; i += 1) {
-        const v = new THREE.Vector3().randomDirection().multiplyScalar(2.2 + Math.random() * 2.8);
-        pts.push(v.x, v.y, v.z);
-      }
-
-      const pgeo = new THREE.BufferGeometry();
-      pgeo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
-      const pmat = new THREE.PointsMaterial({
-        color: 0xc9ff3d,
-        size: 0.035,
-        transparent: true,
-        opacity: 0.7
-      });
-      group.add(new THREE.Points(pgeo, pmat));
-
-      let mx = 0;
-      let my = 0;
-
-      window.addEventListener('pointermove', (e) => {
-        mx = (e.clientX / window.innerWidth - 0.5) * 0.35;
-        my = (e.clientY / window.innerHeight - 0.5) * 0.25;
-      });
-
-      function resize() {
-        renderer.setSize(window.innerWidth, window.innerHeight, false);
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-      }
-
-      window.addEventListener('resize', resize);
-      resize();
-
-      function tick() {
-        group.rotation.y += 0.0018;
-        group.rotation.x += 0.0006;
-        group.position.x += (mx - group.position.x) * 0.025;
-        group.position.y += (-my - group.position.y) * 0.025;
-        renderer.render(scene, camera);
-        requestAnimationFrame(tick);
-      }
-
-      tick();
-    }
-  </script>
-</body>
-</html>
-
+</main><footer class="s-footer"><div class="s-wrap"><div class="s-footer-top"><div><a class="s-logo" href="index.html">Soto<b>LAB</b></a><p>직접 만든 기술을, 사람의 실력으로<br>AI · AIoT · 임베디드 · 블록체인 실전 교육과 멘토링</p></div><div class="s-footer-links"><a href="profile.html">장성균 박사 소개</a><a href="experience.html">활동·성과 기록</a><a href="books.html">저서</a><a href="contact.html">교육·강연 문의</a></div></div><div class="s-footer-bottom"><span>© 2026 SotoLAB · All rights reserved</span><span>운영: 썬스타 · 문의: <a href="mailto:sotolabedu@gmail.com">sotolabedu@gmail.com</a></span></div></div></footer></body></html>
