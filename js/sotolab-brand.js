@@ -24,6 +24,11 @@
     const valid = new Set(filters.map(button => button.dataset.archiveFilter));
     const initial = new URLSearchParams(location.search).get('category');
     let category = valid.has(initial) ? initial : 'all';
+    const titles = {
+      all: '전체 활동 기록', education: '교육·강연 기록', mentoring: '멘토링 기록',
+      research: '연구개발 기록', product: '개발 서비스 기록', patent: '특허·발명 기록'
+    };
+    const title = document.getElementById('archive-title');
     const update = () => {
       const query = search.value.trim().toLocaleLowerCase('ko');
       let count = 0;
@@ -33,6 +38,7 @@
         if (matches) count++;
       });
       filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.archiveFilter === category)));
+      if (title) title.textContent = titles[category];
       document.getElementById('archive-count').textContent = `${records.length}개 기록 중 ${count}개를 보고 있습니다.`;
       document.getElementById('archive-empty').hidden = count !== 0;
     };
@@ -40,6 +46,14 @@
     search.addEventListener('input', update);
     document.getElementById('archive-reset').addEventListener('click', () => { category = 'all'; search.value = ''; update(); search.focus(); });
     update();
+    // A category link should land on its results rather than the expanded site map.
+    if ((initial && valid.has(initial)) || location.hash === '#archive-results') {
+      if (siteMap) siteMap.open = false;
+      requestAnimationFrame(() => {
+        document.getElementById('archive-results')?.scrollIntoView({ block: 'start', behavior: 'auto' });
+        title?.focus({ preventScroll: true });
+      });
+    }
   }
   const form = document.getElementById('brand-inquiry');
   if (form) {
