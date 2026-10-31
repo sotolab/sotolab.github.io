@@ -43,7 +43,7 @@ def record(row, i):
     cat = row['category']
     dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')])
     link = f'<a class="s-text-link" href="{escape(row["public_url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(row["link_label"])}</a>' if row.get('public_url') else ''
-    return f'''<article class="s-record" data-category="{cat}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES[cat]}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}<details><summary>기록의 근거</summary><p>{escape(row['source'])}</p></details></article>'''
+    return f'''<article class="s-record" data-category="{cat}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES[cat]}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
 
 
 def build_home():
