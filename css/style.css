@@ -2023,3 +2023,12 @@ p {
         display: none;
     }
 }
+
+/* Unified SotoLAB navigation, including legacy course pages. */
+.nav-menu { gap: 1.1rem; font-size: .9rem; }
+.nav-logo { flex-shrink: 0; }
+@media (max-width: 900px) {
+    .nav .container { flex-direction: column; align-items: center; gap: .4rem; padding-top: .65rem; padding-bottom: .65rem; }
+    .nav-menu { justify-content: center; flex-wrap: wrap; gap: .35rem 1rem; font-size: .8rem; }
+    .page-header { padding-top: 10rem; }
+}
