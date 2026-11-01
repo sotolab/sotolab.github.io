@@ -5,7 +5,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BRAND_ASSET_VERSION = '20261101-5'
+BRAND_ASSET_VERSION = '20261101-6'
 ROWS = json.loads((ROOT / 'data/experience.json').read_text(encoding='utf-8'))
 MENU = [('profile.html', '강사 소개'), ('academy.html', '교육·강연'), ('sotolab.html', '기업 멘토링'), ('experience.html', '연구·성과'), ('books.html', '저서'), ('contact.html', '문의')]
 CATEGORIES = {'education': '교육·강연', 'mentoring': '멘토링', 'research': '연구개발', 'product': '개발 서비스', 'patent': '특허·발명'}
