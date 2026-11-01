@@ -1,6 +1,5 @@
 'use strict';
 (() => {
-  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const active = new Set();
   const counters = new Map();
@@ -8,12 +7,25 @@
   progress.className = 's-reading-progress';
   progress.setAttribute('aria-hidden', 'true');
   document.body.append(progress);
+  const backToTop = document.createElement('button');
+  backToTop.type = 'button';
+  backToTop.className = 's-back-to-top';
+  backToTop.setAttribute('aria-label', '페이지 맨 위로 이동');
+  backToTop.title = '맨 위로';
+  backToTop.textContent = '↑';
+  backToTop.hidden = true;
+  backToTop.addEventListener('click', () => {
+    document.querySelector('.s-logo')?.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: motion.matches ? 'instant' : 'smooth' });
+  });
+  document.body.append(backToTop);
   let scrollFrame = 0;
   function updateProgress() {
     scrollFrame = 0;
     const distance = document.documentElement.scrollHeight - window.innerHeight;
     const fraction = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
     progress.style.transform = `scaleX(${fraction})`;
+    backToTop.hidden = window.scrollY < 400;
   }
   function scheduleProgress() {
     if (!scrollFrame) scrollFrame = requestAnimationFrame(updateProgress);
@@ -21,6 +33,8 @@
   window.addEventListener('scroll', scheduleProgress, { passive: true });
   window.addEventListener('resize', scheduleProgress);
   updateProgress();
+
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
 
   function count(element) {
     const target = Number(element.dataset.countTo);

@@ -90,3 +90,9 @@
 .s-archive-total{display:flex;align-items:baseline;gap:12px}
 .s-archive-total strong{font-family:"Space Grotesk",sans-serif;color:var(--lime);font-size:54px;line-height:1.2;font-variant-numeric:tabular-nums}
 [data-count-to]{font-variant-numeric:tabular-nums}
+.s-back-to-top{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:calc(24px + env(safe-area-inset-bottom));z-index:80;width:52px;height:52px;display:grid;place-items:center;padding:0;border:1px solid #c9ff3d;border-radius:50%;background:#c9ff3d;color:#10160a;font:28px/1 Arial,sans-serif;box-shadow:0 6px 24px #0006;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.s-back-to-top[hidden]{display:none!important}
+.s-back-to-top:hover{transform:translateY(-3px);box-shadow:0 9px 28px #0008}
+.s-back-to-top:focus-visible{outline:3px solid #f4f5ef;outline-offset:4px}
+@media(max-width:760px){.s-back-to-top{right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));width:48px;height:48px}}
+@media(prefers-reduced-motion:reduce){.s-back-to-top{transition:none}.s-back-to-top:hover{transform:none}}
