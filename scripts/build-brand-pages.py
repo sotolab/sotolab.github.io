@@ -5,7 +5,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-BRAND_ASSET_VERSION = '20261031-11'
+BRAND_ASSET_VERSION = '20261101-1'
 ROWS = json.loads((ROOT / 'data/experience.json').read_text(encoding='utf-8'))
 MENU = [('profile.html', '강사 소개'), ('academy.html', '교육·강연'), ('sotolab.html', '기업 멘토링'), ('experience.html', '연구·성과'), ('books.html', '저서'), ('contact.html', '문의')]
 CATEGORIES = {'education': '교육·강연', 'mentoring': '멘토링', 'research': '연구개발', 'product': '개발 서비스', 'patent': '특허·발명'}
@@ -42,7 +42,7 @@ def page(filename, title, description, body):
         person = {'@context': 'https://schema.org', '@type': 'Person', 'name': '장성균', 'alternateName': 'SOTO', 'url': 'https://sotolab.github.io/profile.html', 'jobTitle': 'AI·AIoT 실전 교육자', 'knowsAbout': ['인공지능', '사물인터넷', '임베디드 시스템', '블록체인', '기술 멘토링'], 'alumniOf': {'@type': 'CollegeOrUniversity', 'name': '한양대학교'}}
         schema = '<script type="application/ld+json">' + json.dumps(person, ensure_ascii=False) + '</script>'
     html = f'''<!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-space.js?v={BRAND_ASSET_VERSION}" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
@@ -148,10 +148,12 @@ def update_detail_navigation():
     names = ['academy-interior.html', 'academy-practice.html', 'academy-special.html',
              'academy-visit.html', 'academy-business.html', 'curriculum.html',
              'online.html', 'mvp-projects.html']
-    assets = f'''<!-- SOTOLAB_NAV_ASSETS --><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><noscript><style>.s-menu{{display:flex!important}}.s-menu-toggle{{display:none!important}}</style></noscript><!-- /SOTOLAB_NAV_ASSETS -->'''
+    assets = f'''<!-- SOTOLAB_NAV_ASSETS --><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-space.js?v={BRAND_ASSET_VERSION}" defer></script><noscript><style>.s-menu{{display:flex!important}}.s-menu-toggle{{display:none!important}}</style></noscript><!-- /SOTOLAB_NAV_ASSETS -->'''
     for name in names:
         path = ROOT / name
         html = path.read_text(encoding='utf-8-sig')
+        html = re.sub(r'<canvas\b[^>]*\bid="webgl"[^>]*></canvas>', '', html)
+        html = re.sub(r'<div class="(?:shade|grid)"></div>', '', html)
         parent = 'academy.html' if name.startswith('academy-') else 'sotolab.html'
         shared = nav(parent)
         if '<!-- SOTOLAB_NAV_START -->' in html:
@@ -175,6 +177,7 @@ def update_detail_navigation():
                 raise ValueError(f'Cannot locate main content in {name}')
         if name == 'academy-interior.html':
             html = re.sub(r'js/academy-interior.js\?v=[^"\s]+', f'js/academy-interior.js?v={BRAND_ASSET_VERSION}', html)
+        html = re.sub(r'(?m)^[ \t]+$', '', html)
         path.write_text(html, encoding='utf-8')
 
 

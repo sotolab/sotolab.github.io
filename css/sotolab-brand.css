@@ -77,3 +77,9 @@
   .s-submenu,.s-menu>li:last-child .s-submenu,.s-menu>li:nth-last-child(2) .s-submenu{position:static;width:100%;min-width:0;max-width:none;max-height:none;overflow:visible;box-shadow:none;margin:0 0 10px;padding:6px}
   .s-menu .s-submenu a{padding:10px 12px;font-size:14px}
 }
+
+/* Shared space backdrop sits behind content and never intercepts input. */
+.story-page,.s-legacy-page{isolation:isolate}
+#s-space-background{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.story-page .s-section-tint{background:rgba(17,24,18,.72)}
+.story-page .s-cta{background:rgba(27,41,22,.82)}
