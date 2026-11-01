@@ -53,8 +53,8 @@
     function tick(time) {
       if (motion.matches) { finish(); return; }
       start ??= time;
-      const fraction = Math.min(1, (time - start) / 1300);
-      const value = Math.round(target * (1 - Math.pow(1 - fraction, 3)));
+      const fraction = Math.min(1, (time - start) / 2600);
+      const value = Math.floor(target * (1 - Math.pow(1 - fraction, 2)));
       visual.textContent = original.replace(/[\d,]+/, value.toLocaleString('ko-KR'));
       if (fraction < 1) state.frame = requestAnimationFrame(tick);
       else finish();
@@ -70,16 +70,16 @@
       const element = entry.target;
       if (element.hasAttribute('data-count-to')) { count(element); return; }
       const animation = element.animate([
-        { opacity: 0.35, transform: 'translateY(22px)' },
+        { opacity: 0.15, transform: 'translateY(36px)' },
         { opacity: 1, transform: 'translateY(0)' }
-      ], { duration: 650, delay: Number(element.dataset.scrollDelay || 0), easing: 'cubic-bezier(.2,.7,.2,1)' });
+      ], { duration: 1200, delay: Number(element.dataset.scrollDelay || 0), fill: 'backwards', easing: 'cubic-bezier(.25,.46,.45,.94)' });
       active.add(animation);
       animation.onfinish = animation.oncancel = () => active.delete(animation);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -25px 0px' });
+  }, { threshold: 0.18, rootMargin: '0px 0px -12% 0px' });
   document.querySelectorAll('.s-section-heading,.s-card,.s-course,.s-step,.s-book,.s-record,.s-fact,.s-callout,.project-card').forEach(element => {
     const siblings = [...element.parentElement.children];
-    element.dataset.scrollDelay = String(Math.min(siblings.indexOf(element) % 3, 2) * 70);
+    element.dataset.scrollDelay = String(80 + Math.min(siblings.indexOf(element) % 3, 2) * 180);
     observer.observe(element);
   });
   document.querySelectorAll('[data-count-to]').forEach(element => observer.observe(element));
