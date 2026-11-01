@@ -152,6 +152,8 @@ def update_detail_navigation():
     for name in names:
         path = ROOT / name
         html = path.read_text(encoding='utf-8-sig')
+        # Shared scroll controls replace the original page-specific top button.
+        html = re.sub(r'<button\b[^>]*\bid="scrollTop"[^>]*>.*?</button>', '', html, flags=re.S)
         html = re.sub(r'<canvas\b[^>]*\bid="webgl"[^>]*></canvas>', '', html)
         html = re.sub(r'<div class="(?:shade|grid)"></div>', '', html)
         parent = 'academy.html' if name.startswith('academy-') else 'sotolab.html'
