@@ -155,3 +155,8 @@
 .s-logo-variant figcaption{padding:22px}.s-logo-variant h3{font-size:18px;margin:0 0 16px}
 .s-logo-variant dl{margin:0}.s-logo-variant dl>div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}.s-logo-variant dd{margin:0}.s-logo-variant code{font-size:13px}
 @media(max-width:760px){.s-logo-variants{grid-template-columns:1fr}}
+.s-legacy-page .sote-content{background:#faf9f4;background-image:none;border:1px solid #d9ddd1;box-shadow:0 10px 24px #243c310b;color:#243c31}
+.s-legacy-page .sote-title{color:#315c43}
+.s-legacy-page .sote-subtitle{color:#243c31}
+.s-legacy-page .sote-text{color:#536157}
+.s-legacy-page .sote-features span{background:#e8ecdf;color:#315c43}
