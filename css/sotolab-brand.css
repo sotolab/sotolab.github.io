@@ -137,3 +137,7 @@
 .s-legacy-page .academy-hero-visual-contain img{background:#faf9f4}
 .s-legacy-page :is(.academy-simulator-image,.academy-simulator-image img){background:#0b0c09}
 @media(max-width:760px){.s-menu{background:#f5f3ec}}
+.s-logo:has(img){display:inline-flex;align-items:center;flex-shrink:0;line-height:1}
+.s-logo img{display:block;width:170px;max-width:100%;height:auto;mix-blend-mode:multiply}
+.s-brand-lockup .s-logo:has(img){width:min(640px,100%)}
+.s-brand-lockup .s-logo img{width:100%;height:auto}
