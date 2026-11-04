@@ -1,0 +1,49 @@
+/* Quiet editorial surfaces for the research-to-education story. */
+.esg-home{--ink:#243c31;--muted:#647066;--lime:#315c43;--line:#d9ddd1;--panel:#eeeee5;background:#f5f3ec;color:var(--ink);font-family:Georgia,"Noto Serif KR",serif}
+.esg-home .s-header{--ink:#243c31;--muted:#647066;--lime:#315c43;--line:#d9ddd1;--panel:#eeeee5;background:rgba(245,243,236,.97);font-family:Inter,"Noto Sans KR",sans-serif}
+.esg-home .s-menu a,.esg-home .s-nav-group summary{color:#435748}
+.esg-home .s-submenu{background:#faf9f4;box-shadow:0 15px 35px #243c3112}
+.esg-home .s-submenu a:hover{background:#e6ebdf;color:#24432e}
+.esg-home .s-button{border-color:#9caa98;color:#243c31;border-radius:2px;font-family:Inter,"Noto Sans KR",sans-serif;padding:14px 22px;transform:none}
+.esg-home .s-button-primary{background:#315c43;border-color:#315c43;color:#fff!important}
+.esg-home .s-button:hover{background:#e2e9dc}
+.esg-home .s-button-primary:hover{background:#254a35}
+.esg-home .s-text-link{color:#315c43!important;font-family:Inter,"Noto Sans KR",sans-serif;text-decoration:underline;text-underline-offset:6px}
+.e-label{font-family:Inter,"Noto Sans KR",sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:#61755e;margin-bottom:22px}
+.e-hero{padding:96px 0 80px;background:radial-gradient(ellipse at 95% 10%,#e5e9d9 0,transparent 55%)}
+.e-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center}
+.esg-home h1{font-size:clamp(35px,3.9vw,54px);line-height:1.45;letter-spacing:-.055em;margin-bottom:28px;font-weight:600}
+.esg-home h1 em{font-style:normal;color:#52754a}
+.e-lead{font-family:Inter,"Noto Sans KR",sans-serif;font-size:17px;line-height:1.95;color:#566457}
+.e-caption{margin:25px 0 0;font:12px/1.9 Inter,"Noto Sans KR",sans-serif;color:#6c7569}
+.e-intro{border:1px solid #d2d9c9;padding:36px;background:#faf9f080;box-shadow:12px 12px 0 #e8ebdf}
+.e-intro h2{font-size:28px;line-height:1.6;font-weight:500}
+.e-intro>p:not(.e-label){font:14px/1.9 Inter,"Noto Sans KR",sans-serif;color:#59665b}
+.e-intro>.e-label{display:block;font-size:10px}
+.e-credentials{margin:28px 0 0;font-family:Inter,"Noto Sans KR",sans-serif}
+.e-credentials>div{padding:13px 0;border-top:1px solid var(--line)}
+.e-credentials dt{font-size:14px;font-weight:700}.e-credentials dd{font-size:12px;margin:4px 0 0;color:var(--muted)}
+.e-section{padding:90px 0;border-top:1px solid var(--line)}
+.e-heading{max-width:720px;margin-bottom:40px}
+.e-heading h2,.e-product h2,.e-philosophy h2,.e-contact h2{font-size:clamp(30px,3.3vw,44px);font-weight:500;line-height:1.5;margin-bottom:20px}
+.e-heading>p:last-child,.e-product-copy>p:not(.e-label){font:16px/1.95 Inter,"Noto Sans KR",sans-serif;color:var(--muted)}
+.e-research{background:#eeeee5}.e-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.e-case{border-top:2px solid #7c9270;padding-top:26px}.e-case-index{font:12px Inter,"Noto Sans KR",sans-serif;letter-spacing:.08em;color:#65785a}
+.e-case h3{font-size:29px;font-weight:500;line-height:1.5;margin:20px 0}
+.e-case>p{font:14px/1.9 Inter,"Noto Sans KR",sans-serif;color:#5c695c;max-width:475px}
+.e-case .e-case-learning{padding-top:20px;border-top:1px solid #d5daca;margin-top:24px;font-size:12px}.e-case-learning strong{display:block;margin-top:8px;font-size:14px;font-weight:500;color:#344c37}
+.e-research-note{display:flex;align-items:center;gap:28px;border-top:1px solid #ced6c5;margin-top:40px;padding-top:24px;font:14px/1.9 Inter,"Noto Sans KR",sans-serif}.e-research-note p{margin:0;flex:1}.e-research-note strong{display:block}.e-research-note a{white-space:nowrap;margin:0}
+.e-fine{font:12px/1.8 Inter,"Noto Sans KR",sans-serif;color:#6e786d;margin:22px 0 0}
+.e-product{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}.e-product .s-button{margin-top:10px}
+.e-product-figure{margin:0;background:#0b0c09;padding:20px 15px 0;border:1px solid #d1d6c9}.e-product-figure img{width:100%;height:auto;object-fit:contain}.e-product-figure figcaption{font:11px/1.8 Inter,"Noto Sans KR",sans-serif;padding:16px 6px;color:#c2ccbc}
+.e-philosophy{background:#284637;color:#f5f3ec}.e-philosophy .e-label{color:#c2d1b4}.e-philosophy h2{font-size:clamp(32px,3.8vw,48px)}
+.e-philosophy-lead{font:17px/2 Inter,"Noto Sans KR",sans-serif;color:#d1dbca;max-width:780px}
+.e-principles{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:45px 0 0}.e-principles li{border-top:1px solid #647c64;padding-top:18px}.e-principles span{font:11px Inter,sans-serif;color:#bdd0ae}.e-principles h3{font-size:21px;font-weight:500;margin:16px 0 12px}.e-principles p{font:14px/1.9 Inter,"Noto Sans KR",sans-serif;color:#c4d0be}
+.e-principle-note{display:flex;gap:32px;padding-top:24px;border-top:1px solid #647c64;margin-top:32px;font:13px/1.9 Inter,"Noto Sans KR",sans-serif;color:#cad6c4}.e-principle-note strong{white-space:nowrap;font-weight:500}.e-principle-note p{margin:0;max-width:720px}
+.e-teaching-feature{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;border-top:1px solid #a8b59d;border-bottom:1px solid #a8b59d;padding:35px 0}.e-teaching-feature h3{font-size:30px;font-weight:500;line-height:1.5}.e-teaching-feature p:not(.e-label){font:15px/1.9 Inter,"Noto Sans KR",sans-serif;color:#5c695c}
+.e-teaching-path{background:#e9eddf;padding:28px;text-align:center;align-self:center}.e-teaching-path p{margin:5px 0}.e-teaching-path>span{color:#71866a}
+.e-offerings{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:35px}.e-offerings>a{display:block;border-bottom:1px solid var(--line);padding:0 0 25px}.e-offerings>a>span:first-child{font:12px Inter,"Noto Sans KR",sans-serif;color:#687d5d}.e-offerings h3{font-size:25px;font-weight:500;margin:16px 0 12px}.e-offerings p{font:14px/1.9 Inter,"Noto Sans KR",sans-serif;color:var(--muted)}.e-link{font:13px Inter,"Noto Sans KR",sans-serif;color:#315c43}
+.e-contact{background:#e8ecdf;text-align:center}.e-contact>div>p:not(.e-label):not(.e-fine){font:17px/1.9 Inter,"Noto Sans KR",sans-serif;color:#5b6d55}.e-contact .s-actions{justify-content:center}
+.esg-home .s-footer{background:#f5f3ec;font-family:Inter,"Noto Sans KR",sans-serif}.esg-home .s-footer-links{color:#4b614b}.esg-home .s-footer p,.esg-home .s-footer small{color:#657362}
+@media(max-width:1000px){.e-hero-grid{gap:30px;grid-template-columns:1.2fr 1fr}.e-intro{padding:24px}.e-product{gap:30px}.e-teaching-feature{gap:35px}}
+@media(max-width:760px){.e-hero{padding:48px 0}.e-hero-grid,.e-case-grid,.e-product,.e-teaching-feature,.e-offerings{grid-template-columns:1fr;gap:30px}.esg-home h1{font-size:clamp(30px,7.4vw,45px)}.e-lead{font-size:15px}.e-desktop{display:none}.e-intro{box-shadow:6px 6px 0 #e8ebdf;margin-right:6px}.e-section{padding:55px 0}.e-heading h2,.e-product h2,.e-contact h2{font-size:31px}.e-research-note,.e-principle-note{display:block}.e-research-note a{margin-top:15px}.e-principle-note p{margin-top:12px}.e-principles{grid-template-columns:1fr;gap:18px}.e-principles h3{margin:10px 0}.e-principles p{margin-bottom:0}.esg-home .s-menu{background:#f5f3ec}.esg-home .s-button{font-size:13px;padding:13px 17px}.e-teaching-feature h3{font-size:27px}}
