@@ -317,7 +317,9 @@
     "role": "IoT 설계·위치 관제 도구 개발",
     "result": "공간별 IoT 장치 배치, 평면·3D 공간 확인, AI 설계 검수와 견적 요약으로 연결하는 도구",
     "lesson": "수업에서 익힌 장치 지식을 공간 설계와 반복 실습으로 확장합니다.",
-    "source": "개발 포트폴리오(2026.05) · 기존 아카데미 도구 소개"
+    "source": "개발 포트폴리오(2026.05) · 기존 아카데미 도구 소개",
+    "public_url": "https://iotplacement.com",
+    "link_label": "서비스 바로가기 ↗"
   },
   {
     "category": "product",
@@ -327,10 +329,12 @@
     "role": "플랫폼 총괄 개발·서비스 관리",
     "result": "AI 무인 회수 로봇과 연계한 웹 기반 통합 관리 시스템 개발 경험",
     "lesson": "장치 데이터, 사용자 서비스, 관리 시스템이 연결되는 전체 흐름을 설명합니다.",
-    "source": "개발 포트폴리오(2026.05)"
+    "source": "개발 포트폴리오(2026.05)",
+    "public_url": "https://ecobrity.com",
+    "link_label": "서비스 바로가기 ↗"
   },
   {
-    "category": "product",
+    "category": "research",
     "period": "2026 소개",
     "title": "객체 인식 앱·지문인증 파일 관리",
     "organization": "개발 포트폴리오 수록 프로젝트",
@@ -347,7 +351,9 @@
     "role": "웹 플랫폼 개발",
     "result": "아티스트와 곡을 탐색하는 디지털 음악 라이브러리 서비스 개발 사례",
     "lesson": "콘텐츠 탐색, 데이터 구성, 웹 인터페이스를 서비스로 묶는 과정을 다룹니다.",
-    "source": "개발 포트폴리오(2026.05)"
+    "source": "개발 포트폴리오(2026.05)",
+    "public_url": "https://grabmusic.net",
+    "link_label": "서비스 바로가기 ↗"
   },
   {
     "category": "patent",
@@ -506,5 +512,29 @@
     "source": "인프런 공개 강의 소개 · 2026.11.04 확인",
     "public_url": "https://www.inflearn.com/course/아두이노와-node-red-활용한-사물인터넷실습",
     "link_label": "인프런 강의 보기 ↗"
+  },
+  {
+    "category": "product",
+    "period": "현재 서비스 중",
+    "title": "입찰비서 · 나라장터 입찰 업무 관리",
+    "organization": "Sunstar",
+    "role": "공공입찰 업무 웹 서비스 개발·운영",
+    "result": "관심 조건에 맞는 나라장터 공고 검색·수집부터 공고 검토, 검토 결과와 마감 일정 관리까지 한곳에서 이어주는 웹 서비스",
+    "lesson": "공개 데이터를 실무자의 검색·검토·일정 관리 흐름으로 연결하는 서비스 설계 경험을 전합니다.",
+    "source": "입찰비서 공개 서비스 소개(2026.11.04 확인) · 현재 운영 중이라는 사용자 제공 정보",
+    "public_url": "https://pps-web-eight.vercel.app",
+    "link_label": "입찰비서 바로가기 ↗"
+  },
+  {
+    "category": "research",
+    "period": "연구개발 프로젝트",
+    "title": "터치라인(TOUCHLINE) · 축구 움직임 기록",
+    "organization": "Sunstar",
+    "role": "GPS 보드 연동 운동 기록 웹 앱 연구개발",
+    "result": "보드가 업로드한 GPS 좌표로 이동 경로·거리·운동 시간·속도를 시각화하고, 운동장 기준 경로 보정과 저장 기록 조회를 제공하는 축구 활동 기록 프로젝트",
+    "lesson": "센서 좌표를 보정하고 실제 공간의 움직임을 웹 화면과 운동 기록으로 연결하는 개발 경험을 나눕니다.",
+    "source": "터치라인 공개 웹 앱의 기록·운동장·연결 설정 화면(2026.11.04 확인)",
+    "public_url": "https://my-tracker-six-rho.vercel.app",
+    "link_label": "터치라인 프로젝트 보기 ↗"
   }
 ]
