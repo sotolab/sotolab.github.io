@@ -470,5 +470,41 @@
     "result": "스마트홈 구조, 센서와 제어, GPT 기반 사용자 시나리오, 자동화, UX 설계와 최종 프로젝트를 연결한 15주 강의계획서 구성",
     "lesson": "전공 과목의 목표를 주차별 실습과 종합 결과물로 연결하는 교육 설계 관점을 나눕니다.",
     "source": "AI and Intelligent Space Design 강의계획서. 과목 설계 자료로, 해당 대학의 개설·운영 완료를 의미하지 않음"
+  },
+  {
+    "category": "education",
+    "period": "온라인 강의",
+    "title": "장박사의 빅데이터와 인공지능 입문",
+    "organization": "인프런 · 멘토티멘토링",
+    "role": "빅데이터 · 인공지능 온라인 강의",
+    "result": "데이터 시각화와 인공지능의 기본 원리를 익히고, 딥러닝 모델 구현을 실습합니다.",
+    "lesson": "원리를 실제 구현과 연결하고 자신의 속도로 반복 학습할 수 있도록 돕습니다.",
+    "source": "인프런 공개 강의 소개 · 2026.11.04 확인",
+    "public_url": "https://www.inflearn.com/course/장박사-빅데이터-인공지능입문",
+    "link_label": "인프런 강의 보기 ↗"
+  },
+  {
+    "category": "education",
+    "period": "온라인 강의",
+    "title": "장박사의 메타버스와 NFT",
+    "organization": "인프런 · 멘토티멘토링",
+    "role": "메타버스 · NFT 온라인 강의",
+    "result": "메타버스의 개념을 이해하고 코딩 없이 가상 공간 제작과 NFT 발행 과정을 경험합니다.",
+    "lesson": "원리를 실제 구현과 연결하고 자신의 속도로 반복 학습할 수 있도록 돕습니다.",
+    "source": "인프런 공개 강의 소개 · 2026.11.04 확인",
+    "public_url": "https://www.inflearn.com/course/장박사-메타버스-블록체인",
+    "link_label": "인프런 강의 보기 ↗"
+  },
+  {
+    "category": "education",
+    "period": "온라인 강의",
+    "title": "아두이노와 Node-RED 활용한 사물인터넷 실습",
+    "organization": "인프런 · 멘토티멘토링",
+    "role": "아두이노 · Node-RED 온라인 강의",
+    "result": "센서와 장치를 제어하고 Node-RED 화면과 MQTT 통신으로 연결하는 실습 과정입니다.",
+    "lesson": "원리를 실제 구현과 연결하고 자신의 속도로 반복 학습할 수 있도록 돕습니다.",
+    "source": "인프런 공개 강의 소개 · 2026.11.04 확인",
+    "public_url": "https://www.inflearn.com/course/아두이노와-node-red-활용한-사물인터넷실습",
+    "link_label": "인프런 강의 보기 ↗"
   }
 ]

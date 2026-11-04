@@ -96,3 +96,36 @@
 .s-back-to-top:focus-visible{outline:3px solid #f4f5ef;outline-offset:4px}
 @media(max-width:760px){.s-back-to-top{right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));width:48px;height:48px}}
 @media(prefers-reduced-motion:reduce){.s-back-to-top{transition:none}.s-back-to-top:hover{transform:none}}
+
+/* A short continuation connects each chapter back to the teaching story. */
+.s-story-next{padding:52px 0;background:#eeeee5;border-top:1px solid #d9ddd1}.s-story-next .s-wrap{max-width:1200px}.s-story-next h2{font-size:clamp(24px,2.7vw,34px);font-weight:500;line-height:1.5;margin-bottom:14px}.s-story-next p:not(.s-eyebrow){max-width:720px;color:#647066;font-size:15px}.s-story-next .s-eyebrow{margin-bottom:16px}.s-story-next .s-text-link{margin-top:6px}
+
+/* Shared warm palette across the home, brand pages and course details. */
+.story-page,.s-legacy-page,.s-header,.s-skip{--ink:#243c31;--muted:#647066;--lime:#315c43;--line:#d9ddd1;--panel:#eeeee5}
+.story-page,.s-legacy-page{--primary:#315c43;--secondary:#52754a;--accent:#52754a;--bg:#f5f3ec;--surface:#faf9f4;--surface-strong:#eeeee5;--surface-muted:#e8ecdf;--text:#243c31;--text-soft:#647066;--border:#d9ddd1;--heading:#243c31;--shadow:0 18px 40px #243c3110;--shadow-soft:0 10px 24px #243c310b;background:#f5f3ec;color:#243c31;transition:none}
+.s-header{background:rgba(245,243,236,.97)}
+.s-menu a,.s-nav-group summary{color:#435748}
+.s-submenu{background:#faf9f4;box-shadow:0 15px 35px #243c3112}
+.s-submenu a:hover,.s-submenu a:focus-visible{background:#e6ebdf;color:#24432e}
+.s-skip{color:#fff!important}
+.story-page .s-section-tint{background:#eeeee5}
+.story-page .s-cta{background:#e8ecdf}
+.s-hero-art,.s-callout{background:#e8ecdf;border-color:#cbd5c1}
+.s-button{border-color:#9caa98}.s-button-primary{color:#fff!important}
+.s-lead,.s-card p,.s-card li,.s-person p,.s-callout p,.s-cta p,.s-record dd,.s-course p,.s-course-item p{color:#647066}
+.s-art-top,.s-tag,.s-card .s-outcome,.s-quote,.s-table td:first-child,.s-record dt,.s-record summary,.s-book-meta,.s-form label,.s-course-item h4{color:#315c43}
+.s-tag{border-color:#b4c1aa}.s-portrait figcaption{background:#e8ecdf;color:#315c43}
+.s-search input,.s-form input,.s-form select,.s-form textarea{background:#faf9f4;border-color:#c4cebc;color:#243c31}
+.s-filter{border-color:#b4c1aa;color:#435748}.s-filter[aria-pressed=true]{color:#fff}
+.s-reading-progress{background:#52754a}
+.s-back-to-top{background:#315c43;border-color:#315c43;color:#fff;box-shadow:0 6px 24px #243c3125}
+#s-space-background,.s-legacy-page #webgl,.s-legacy-page>.shade,.s-legacy-page>.grid{display:none}
+.s-legacy-page .page-header,.s-legacy-page .philosophy-section,.s-legacy-page .online-course-section,.s-legacy-page .benefits-section,.s-legacy-page .reviews-section,.s-legacy-page .faq-section{background:transparent}
+.s-legacy-page .cta-banner{background:#e8ecdf}
+.s-legacy-page :is(.lecture-block,.lecture-item,.academy-hero-visual,.academy-product-image,.academy-simulator-card,.academy-simulator-copy,.review-card,.benefit-card,.course-card,.project-card,.key-card,.core-card,.callout-card){background:#faf9f4;border-color:#d9ddd1}
+.s-legacy-page :is(.academy-hero-caption,.review-badge,.lecture-meta,.section-label){background:#e8ecdf;color:#315c43}
+.s-legacy-page :is(.btn-primary,.scroll-top){background:#315c43;color:#fff}
+.s-legacy-page .btn-secondary{background:#faf9f4;border-color:#b4c1aa;color:#315c43}
+.s-legacy-page .academy-hero-visual-contain img{background:#faf9f4}
+.s-legacy-page :is(.academy-simulator-image,.academy-simulator-image img){background:#0b0c09}
+@media(max-width:760px){.s-menu{background:#f5f3ec}}

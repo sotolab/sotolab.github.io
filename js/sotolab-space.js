@@ -1,5 +1,7 @@
 'use strict';
 (() => {
+  // The editorial palette uses a static background on every public page.
+  if (document.body.matches('.story-page, .s-legacy-page')) return;
   if (document.getElementById('s-space-background')) return;
   const canvas = document.createElement('canvas');
   canvas.id = 's-space-background';

@@ -8,6 +8,7 @@ const html = document.documentElement;
 const enableEntranceEffects = false;
 
 function initGlobalWebglBackground() {
+    if (document.body.classList.contains('s-legacy-page')) return;
     const canvas = document.getElementById('webgl');
     if (!canvas || !window.THREE || window.__sotolabBgInitialized) {
         return;

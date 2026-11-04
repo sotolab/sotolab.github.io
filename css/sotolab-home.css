@@ -1,4 +1,5 @@
 /* Quiet editorial surfaces for the research-to-education story. */
+.e-story{background:#eeeee5}.e-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}.e-story h2{font-size:clamp(29px,3.3vw,43px);font-weight:500;line-height:1.55}.e-story-copy{font:16px/2 Inter,"Noto Sans KR",sans-serif;color:#586856}.e-story-copy p{margin-bottom:24px}.e-story-conclusion{border-top:1px solid #cbd4c0;padding-top:24px}.e-story-conclusion strong{display:block;margin-top:10px;color:#315c43;font-weight:500}@media(max-width:760px){.e-story-grid{grid-template-columns:1fr;gap:24px}.e-story-copy{font-size:15px}}
 .esg-home{--ink:#243c31;--muted:#647066;--lime:#315c43;--line:#d9ddd1;--panel:#eeeee5;background:#f5f3ec;color:var(--ink);font-family:Georgia,"Noto Serif KR",serif}
 .esg-home .s-header{--ink:#243c31;--muted:#647066;--lime:#315c43;--line:#d9ddd1;--panel:#eeeee5;background:rgba(245,243,236,.97);font-family:Inter,"Noto Sans KR",sans-serif}
 .esg-home .s-menu a,.esg-home .s-nav-group summary{color:#435748}
