@@ -131,7 +131,11 @@ def build_education_cases():
     for i in (1, 4, 11):
         row = ROWS[i]
         body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p><p>{escape(row["result"])}</p><p class="s-outcome">{escape(row["lesson"])}</p></article>'
-    body += '</div><div class="s-actions"><a class="s-button" href="experience.html?category=education#archive-results">전체 교육 이력 보기 →</a><a class="s-button" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">대학 공식 기사 보기 ↗</a></div></div></section>'
+        if row['organization'].startswith('가톨릭대학교'):
+            links = '<div class="s-actions"><a class="s-text-link" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">교육 기사 보기 ↗</a><a class="s-text-link" href="academy-interior.html">교육 구성 보기 →</a></div>'
+            body = body.removesuffix('</article>') + links + '</article>'
+    body += '''<article class="s-card" id="bucheon-mou"><span class="s-card-number">2026.11.03</span><h2 style="font-size:24px">부천대학교 AIoT 리빙랩 산학협력 MOU</h2><p>부천대학교 · 썬스타</p><p>AIoT 리빙랩 개소에 맞춰 산학협력 업무협약을 체결했습니다. IoT·데이터베이스·시스템 구축과 기술개발을 연결해 실무 중심 교육에 협력합니다.</p><p class="s-outcome">공간디자인과 전기·정보통신을 잇는 융합교육과 산학 공동 프로젝트를 함께 추진합니다.</p><a class="s-text-link" href="https://www.e2news.com/news/articleView.html?idxno=335816" target="_blank" rel="noopener noreferrer">리빙랩·MOU 기사 보기 ↗</a><a class="s-text-link" href="academy-interior.html">대학 연계 AIoT 교육 보기 →</a></article>'''
+    body += '</div><div class="s-actions"><a class="s-button" href="experience.html?category=education#archive-results">전체 교육 이력 보기 →</a><a class="s-button" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">가톨릭대학교 교육 기사 보기 ↗</a><a class="s-button" href="academy-interior.html">AIoT 실습교육 안내 →</a></div></div></section>'
     page('reviews.html', '교육 사례와 활동 기록', 'SotoLAB 장성균 박사의 교육·강의 사례와 현장 경험', body + cta())
 
 
