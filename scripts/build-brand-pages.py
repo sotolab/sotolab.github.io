@@ -128,6 +128,7 @@ def build_contact():
 
 def build_education_cases():
     body = '<section class="s-page-head"><div class="s-wrap"><p class="s-eyebrow">TEACHING IN PRACTICE</p><h1>교육의 현장과,<br>배움으로 남긴 기록</h1><p>대상에 맞게 구성한 수업과 실제 교육 현장에서 다룬 내용을 소개합니다.</p></div></section><section class="s-section" style="padding-top:10px"><div class="s-wrap"><div class="s-grid-3">'
+    body += '''<article class="s-card" id="jeju-namwon"><span class="s-card-number">2018 여름방학</span><h2 style="font-size:24px">제주 남원 지역 학생 소프트웨어 교육</h2><p>썬스타 · 남원읍 한남리 정보화마을</p><p>지역 학생들을 위한 무료 교육에서 웹서비스와 채팅 프로그램을 만드는 실습을 진행했습니다. 학생들이 텍스트 코딩으로 자신의 아이디어를 구현하는 시간을 마련했습니다.</p><p class="s-outcome">직접 프로그램을 만들며 창의적으로 문제를 해결하는 경험을 나눕니다.</p><a class="s-text-link" href="https://www.ijejutoday.com/news/articleView.html?idxno=210963" target="_blank" rel="noopener noreferrer">제주투데이 교육 기사 보기 ↗</a></article>'''
     for i in (1, 4, 11):
         row = ROWS[i]
         body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p><p>{escape(row["result"])}</p><p class="s-outcome">{escape(row["lesson"])}</p></article>'
