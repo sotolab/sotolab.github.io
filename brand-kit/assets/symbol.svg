@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">SotoLAB 나무 심벌</title>
+  <g fill="none" stroke="#244330" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 211V88M128 152l-48-35M128 152l48-35"/>
+  </g>
+  <g fill="#2F6241"><circle cx="128" cy="65" r="30"/><circle cx="72" cy="105" r="25"/><circle cx="184" cy="105" r="25"/></g>
+</svg>

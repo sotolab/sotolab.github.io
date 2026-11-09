@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">SotoLAB 앱 아이콘</title>
+  <path fill="#244330" d="M0 0h512v512H0z"/>
+  <g fill="none" stroke="#F5F3EC" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M256 398V166M256 292l-91-66M256 292l91-66"/>
+  </g>
+  <g fill="#A8C5A4"><circle cx="256" cy="126" r="54"/><circle cx="153" cy="202" r="45"/><circle cx="359" cy="202" r="45"/></g>
+</svg>
