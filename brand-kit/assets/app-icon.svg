@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 256 256" role="img" aria-labelledby="title">
   <title id="title">SotoLAB 앱 아이콘</title>
-  <rect width="512" height="512" rx="104" fill="#244330"/>
-  <g fill="none" stroke="#F5F3EC" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M256 398V166M256 292l-91-66M256 292l91-66"/>
+  <rect width="256" height="256" rx="52" fill="#244330"/>
+  <g fill="none" stroke="#A8C5A4" stroke-width="5" stroke-linecap="butt">
+    <path d="M54 194H202M62 179V194M128 152V194M194 179V194"/>
   </g>
-  <circle fill="#A8C5A4" cx="256" cy="126" r="54"/>
-  <g fill="#6D9775"><circle cx="153" cy="202" r="45"/><circle cx="359" cy="202" r="45"/></g>
+  <circle fill="#A8C5A4" cx="128" cy="112" r="40"/>
+  <g fill="#6D9775"><circle cx="62" cy="153" r="26"/><circle cx="194" cy="153" r="26"/></g>
 </svg>
