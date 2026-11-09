@@ -4,5 +4,6 @@
   <g fill="none" stroke="#F5F3EC" stroke-width="15" stroke-linecap="round" stroke-linejoin="round">
     <path d="M256 398V166M256 292l-91-66M256 292l91-66"/>
   </g>
-  <g fill="#A8C5A4"><circle cx="256" cy="126" r="54"/><circle cx="153" cy="202" r="45"/><circle cx="359" cy="202" r="45"/></g>
+  <circle fill="#A8C5A4" cx="256" cy="126" r="54"/>
+  <g fill="#6D9775"><circle cx="153" cy="202" r="45"/><circle cx="359" cy="202" r="45"/></g>
 </svg>
