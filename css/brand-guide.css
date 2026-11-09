@@ -1,0 +1,141 @@
+.brand-guide *{box-sizing: border-box;}
+html{scroll-behavior: smooth; scroll-padding-top: 88px;}
+.brand-guide{margin: 0px; background: var(--white); color: var(--ink); font-family: var(--body-font); font-size: 18px; line-height: 1.8; word-break: keep-all; overflow-wrap: anywhere; letter-spacing: 0px;}
+.brand-guide h1,.brand-guide h2,.brand-guide h3,.brand-guide p,.brand-guide figure{margin: 0px;}
+.brand-guide a{color: inherit; text-underline-offset: 5px;}
+.brand-guide button{font: inherit; cursor: pointer;}
+.brand-guide img{display: block; max-width: 100%; height: auto;}
+.brand-guide a:focus-visible,.brand-guide button:focus-visible{outline: 3px solid var(--growth); outline-offset: 5px;}
+.brand-guide .skip{position: fixed; top: -100px; background: white; padding: 12px; z-index: 50;}
+.brand-guide .skip:focus{top: 8px;}
+.brand-guide .wrap{width: min(var(--content-width),calc(100% - 48px)); margin-inline: auto;}
+.brand-guide header{position: sticky; top: 0px; z-index: 10; background: rgba(255, 255, 255, 0.96); border-bottom: 1px solid rgb(215, 222, 212);}
+.brand-guide .nav{min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 24px;}
+.brand-guide .brand-name{font-size: 24px; color: var(--forest); font-weight: 700; text-decoration: none;}
+.brand-guide .brand-name span{font-size: 14px; font-weight: 400; margin-left: 12px;}
+.brand-guide nav{display: flex; gap: 24px; font-size: 15px;}
+.brand-guide nav a{text-decoration: none;}
+.brand-guide section{padding: 96px 0px; border-bottom: 1px solid rgb(215, 222, 212);}
+.brand-guide .tint{background: var(--ivory);}
+.brand-guide .eyebrow{font: 500 13px/1.6 var(--label-font); color: var(--growth); margin-bottom: 24px;}
+.brand-guide h2{font-size: 36px; line-height: 1.4; font-weight: 600; margin-bottom: 24px;}
+.brand-guide h3{font-size: 23px; line-height: 1.5; font-weight: 600; margin-bottom: 16px;}
+.brand-guide p + p{margin-top: 16px;}
+.brand-guide .intro{max-width: 780px; margin-bottom: 40px; color: rgb(82, 99, 84);}
+.brand-guide .lead{font-size: 21px;}
+.brand-guide .split{display: grid; grid-template-columns: 1fr 1fr; gap: 64px;}
+.brand-guide .hero{background: var(--black); color: var(--ivory); padding: 36px 0px 56px;}
+.brand-guide .edition{display: flex; justify-content: space-between; gap: 16px; font: 14px/1.6 var(--label-font); color: var(--sage);}
+.brand-guide .edition h1{font: inherit;}
+.brand-guide .hero-logo{width: 100%; margin: 32px 0px;}
+.brand-guide .hero-bottom{display: flex; justify-content: space-between; align-items: end; gap: 32px;}
+.brand-guide .hero-bottom p{font-size: 26px; line-height: 1.5;}
+.brand-guide .hero-bottom span{font-size: 14px; color: var(--sage); display: block; margin-top: 16px;}
+.brand-guide .button{display: inline-flex; justify-content: center; align-items: center; background: var(--forest); color: white; padding: 14px 22px; border-radius: 4px; text-decoration: none; font-size: 16px; min-height: 52px;}
+.brand-guide .button.light{background: var(--ivory); color: var(--forest);}
+.brand-guide .facts{margin: 32px 0px 0px;}
+.brand-guide .facts > div{display: grid; grid-template-columns: 150px 1fr; border-top: 1px solid rgb(215, 222, 212); padding: 14px 0px; font-size: 16px;}
+.brand-guide .facts dd{margin: 0px;}
+.brand-guide .facts dt{color: rgb(82, 99, 84);}
+.brand-guide .logo-grid{display: grid; grid-template-columns: 1fr 1fr; gap: 24px;}
+.brand-guide .logo-board{min-height: 240px; display: flex; align-items: center; justify-content: center; padding: 40px; border: 1px solid rgb(215, 222, 212);}
+.brand-guide .white{background: white;}
+.brand-guide .dark{background: black;}
+.brand-guide .logo-board img{width: 100%;}
+.brand-guide figcaption{display: flex; gap: 16px; justify-content: space-between; font-size: 15px; padding: 16px 0px;}
+.brand-guide .rules{margin-top: 56px;}
+.brand-guide .rules p{font-size: 16px; color: rgb(82, 99, 84);}
+.brand-guide .rules h3:not(:first-child){margin-top: 28px;}
+.brand-guide .clearspace{position: relative; padding: 40px; background: white; border: 1px dashed var(--growth); margin: 24px 0px;}
+.brand-guide .clearspace span{display: block; text-align: center; font-size: 14px; color: var(--growth); margin-top: 16px;}
+.brand-guide .palette{display: grid; grid-template-columns: repeat(5, minmax(0px, 1fr)); gap: 8px;}
+.brand-guide .swatch{border: 1px solid rgb(215, 222, 212); padding: 22px 16px; min-height: 220px; text-align: left; display: flex; flex-direction: column; justify-content: end; color: white; border-radius: 0px;}
+.brand-guide .swatch span{margin-bottom: auto; font-size: 14px;}
+.brand-guide .swatch strong{font-size: 20px;}
+.brand-guide .swatch small{font-size: 12px;}
+.brand-guide .forest{background: var(--forest);}
+.brand-guide .green{background: var(--growth);}
+.brand-guide .ivory{background: var(--ivory); color: var(--ink);}
+.brand-guide .ink{background: var(--ink);}
+.brand-guide .sage{background: var(--sage); color: var(--ink);}
+.brand-guide #copy-status{font-size: 14px; min-height: 28px; margin: 20px 0px; color: var(--growth);}
+.brand-guide .specimen{margin: 48px 0px;}
+.brand-guide .sample{font-size: 36px; line-height: 1.5; color: var(--forest); font-weight: 700;}
+.brand-guide .sample-en{font-size: 22px;}
+.brand-guide .table-wrap{overflow-x: auto;}
+.brand-guide table{width: 100%; border-collapse: collapse; text-align: left; font-size: 16px;}
+.brand-guide caption{text-align: left; margin-bottom: 16px;}
+.brand-guide td,.brand-guide th{padding: 16px; border-bottom: 1px solid rgb(203, 213, 198); white-space: nowrap;}
+.brand-guide .voice-list{margin: 40px 0px;}
+.brand-guide .voice-list article{padding: 28px 0px; border-top: 1px solid rgb(215, 222, 212);}
+.brand-guide .voice-list span{font-size: 14px; color: var(--growth);}
+.brand-guide .voice-list h3{margin: 12px 0px;}
+.brand-guide .voice-list p{max-width: 800px; color: rgb(82, 99, 84);}
+.brand-guide .application-grid{display: grid; grid-template-columns: 1fr 1fr; gap: 24px;}
+.brand-guide .application-grid article{aspect-ratio: 1.414 / 1; padding: 32px; display: flex; flex-direction: column; justify-content: space-between;}
+.brand-guide .application-grid span,.brand-guide .application-grid small{font-size: 12px;}
+.brand-guide .application-grid h3{font-size: 28px;}
+.brand-guide .application-grid p{font-size: 14px;}
+.brand-guide .slide-sample{background: var(--forest); color: var(--ivory);}
+.brand-guide .proposal-sample{background: white; border-top: 8px solid var(--growth); color: var(--forest);}
+.brand-guide .download-list > div{display: grid; grid-template-columns: 1fr 1.2fr 1.2fr; gap: 24px; align-items: center; padding: 28px 0px; border-top: 1px solid rgb(215, 222, 212);}
+.brand-guide .download-list h3{font-size: 19px; margin: 0px;}
+.brand-guide .download-list p,.brand-guide .download-list a{font-size: 15px;}
+.brand-guide .download-list > div > div{display: flex; gap: 20px; flex-wrap: wrap;}
+.brand-guide .download-list{margin-bottom: 32px;}
+.brand-guide footer{padding: 32px 0px; font-size: 14px;}
+.brand-guide footer .wrap{display: flex; justify-content: space-between; gap: 20px;}
+.brand-guide body:has(.template-page){background: var(--ivory);}
+.brand-guide .template-page{padding: 32px;}
+.brand-guide .template-page article{max-width: 1000px; margin: 24px auto; aspect-ratio: 1.414 / 1; padding: 60px; display: flex; flex-direction: column; justify-content: space-between;}
+.brand-guide .template-page img{width: 200px;}
+.brand-guide .template-page h1{font-size: 42px;}
+.brand-guide .template-page p{font-size: 20px;}
+.brand-guide .template-toolbar{max-width: 1000px; margin: auto; display: flex; justify-content: space-between; gap: 16px;}
+.brand-guide .template-toolbar button{border: 0px;}
+.brand-guide .symbol-board img{width: 144px; height: 144px;}
+.brand-guide .app-board{background: rgb(229, 235, 226);}
+.brand-guide .app-board img{width: 160px; height: 160px;}
+.brand-guide .asset-note{font-size: 15px; color: rgb(82, 99, 84);}
+.brand-guide .logo-grid figcaption{flex-wrap: wrap; align-items: start;}
+.brand-guide .logo-grid figcaption > div{display: flex; gap: 16px;}
+@media (max-width: 760px) {.brand-guide .wrap{width: calc(100% - 40px);}
+.brand-guide .nav{min-height: 68px; gap: 12px;}
+.brand-guide .brand-name{font-size: 21px;}
+.brand-guide .brand-name span{display: none;}
+.brand-guide nav{gap: 16px; font-size: 14px;}
+.brand-guide section{padding: 64px 0px;}
+.brand-guide .split,.brand-guide .logo-grid,.brand-guide .application-grid{grid-template-columns: 1fr; gap: 32px;}
+.brand-guide h2{font-size: 28px;}
+.brand-guide .lead{font-size: 18px;}
+.brand-guide{font-size: 17px;}
+.brand-guide .hero{padding: 24px 0px 40px;}
+.brand-guide .hero-bottom{display: block;}
+.brand-guide .hero-bottom p{font-size: 23px;}
+.brand-guide .hero-bottom .button{margin-top: 28px;}
+.brand-guide .hero-logo{margin: 36px 0px;}
+.brand-guide .logo-board{min-height: 180px; padding: 24px;}
+.brand-guide .palette{grid-template-columns: 1fr 1fr;}
+.brand-guide .swatch:first-child{grid-column: 1 / -1; min-height: 170px;}
+.brand-guide .swatch{min-height: 190px;}
+.brand-guide .sample{font-size: 28px;}
+.brand-guide .download-list > div{grid-template-columns: 1fr; gap: 12px;}
+.brand-guide .facts > div{grid-template-columns: 110px 1fr;}
+.brand-guide .application-grid article{aspect-ratio: auto; min-height: 310px; padding: 24px;}
+.brand-guide .rules{margin-top: 40px;}
+.brand-guide footer .wrap{flex-wrap: wrap;}
+.brand-guide .template-page{padding: 20px;}
+.brand-guide .template-page article{aspect-ratio: auto; min-height: 480px; padding: 28px;}
+.brand-guide .template-page h1{font-size: 30px;}}
+@media (prefers-reduced-motion: reduce) {html{scroll-behavior: auto;}}
+@media print {.brand-guide header,.brand-guide .skip,.brand-guide .template-toolbar{display: none;}
+.brand-guide .wrap{width: 100%;}
+.brand-guide section{padding: 32px 0px;}
+.brand-guide .hero{padding: 24px;}
+.brand-guide .hero-logo{width: 70%; margin: 20px 0px;}
+.brand-guide article,.brand-guide figure,.brand-guide .rules > div{break-inside: avoid;}
+.brand-guide{print-color-adjust: exact;}
+.brand-guide .template-page{padding: 0px;}
+.brand-guide .template-page article{break-after: page; margin: 0px; min-height: 0px; height: 180mm;}
+.brand-guide footer{display: none;}}
+.brand-guide{font-family:var(--body-font);letter-spacing:0}.brand-guide h1,.brand-guide h2,.brand-guide h3{letter-spacing:0}.brand-guide .guide-links{display:flex;flex-wrap:wrap;gap:12px 24px;border-bottom:1px solid #526354;padding-bottom:24px;margin-bottom:28px;font-size:14px}.brand-guide .guide-links a{text-decoration:none}
