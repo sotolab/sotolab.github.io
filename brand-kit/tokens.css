@@ -1,0 +1,12 @@
+:root {
+  --forest: #244330;
+  --growth: #2F6241;
+  --ivory: #F5F3EC;
+  --ink: #101B14;
+  --sage: #A8C5A4;
+  --white: #FFFFFF;
+  --black: #000000;
+  --body-font: Inter, 'Noto Sans KR', Arial, sans-serif;
+  --label-font: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+  --content-width: 1120px;
+}
