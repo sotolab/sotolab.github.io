@@ -12,12 +12,12 @@
 .esg-home .s-button-primary:hover{background:#254a35}
 .esg-home .s-text-link{color:#315c43!important;font-family:Inter,"Noto Sans KR",sans-serif;text-decoration:underline;text-underline-offset:6px}
 .e-label{font-family:Inter,"Noto Sans KR",sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:#61755e;margin-bottom:22px}
-.e-hero{padding:96px 0 80px;background:radial-gradient(ellipse at 95% 10%,#e5e9d9 0,transparent 55%)}
+.e-hero{padding:64px 0 56px;background:radial-gradient(ellipse at 95% 10%,#e5e9d9 0,transparent 55%)}
 .e-hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center}
 .esg-home h1{font-size:clamp(35px,3.9vw,54px);line-height:1.45;letter-spacing:-.055em;margin-bottom:28px;font-weight:600}
 .esg-home h1 em{font-style:normal;color:#52754a}
 .e-lead{font-family:Inter,"Noto Sans KR",sans-serif;font-size:17px;line-height:1.95;color:#566457}
-.e-caption{margin:25px 0 0;font:12px/1.9 Inter,"Noto Sans KR",sans-serif;color:#6c7569}
+.esg-home .e-caption{margin:25px 0 0;font:12px/1.9 Inter,"Noto Sans KR",sans-serif;color:#6c7569}
 .e-intro{border:1px solid #d2d9c9;padding:36px;background:#faf9f080;box-shadow:12px 12px 0 #e8ebdf}
 .e-intro h2{font-size:28px;line-height:1.6;font-weight:500}
 .e-intro>p:not(.e-label){font:14px/1.9 Inter,"Noto Sans KR",sans-serif;color:#59665b}
@@ -29,6 +29,13 @@
 .e-heading{max-width:720px;margin-bottom:40px}
 .e-heading h2,.e-product h2,.e-philosophy h2,.e-contact h2{font-size:clamp(30px,3.3vw,44px);font-weight:500;line-height:1.5;margin-bottom:20px}
 .e-heading>p:last-child,.e-product-copy>p:not(.e-label){font:16px/1.95 Inter,"Noto Sans KR",sans-serif;color:var(--muted)}
+.e-fusion-steps{list-style:none;padding:0;margin:0 0 32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;font-family:Inter,"Noto Sans KR",sans-serif;letter-spacing:0}
+.e-fusion-steps li{border-top:2px solid #7c9270;padding-top:22px}
+.e-fusion-steps span{font-size:12px;color:#61755e}
+.e-fusion-steps h3{font-size:22px;line-height:1.5;margin:16px 0 12px;letter-spacing:0}
+.e-fusion-steps p{font-size:16px;line-height:1.9;color:#566457;margin:0}
+.esg-home h1{font-size:46px;letter-spacing:0}
+@media(max-width:760px){.e-fusion-steps{grid-template-columns:1fr;gap:24px}.esg-home h1{font-size:30px!important;letter-spacing:0}}
 .e-research{background:#eeeee5}.e-case-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .e-case{border-top:2px solid #7c9270;padding-top:26px}.e-case-index{font:12px Inter,"Noto Sans KR",sans-serif;letter-spacing:.08em;color:#65785a}
 .e-case h3{font-size:29px;font-weight:500;line-height:1.5;margin:20px 0}
