@@ -624,20 +624,29 @@ def reference(guide):
 
 def contact(guide):
     opening(guide, 'contact', 'SotoLAB 교육 상담', '함께 풀어볼\n과제 하나를 알려주세요.', dark=True)
-    guide.paragraph('누가 참여하는지, 무엇을 만들어 보고 싶은지 알려주세요. 교육 시간과 참여자의 경험에 맞춰 첫 실습에서 어디까지 만들어 볼지 함께 정합니다.',
-                    216, size=13, leading=23, width=425, color=SAGE)
-    guide.box(M, 320, CONTENT, .7, HexColor('#758977'))
-    guide.paragraph('교육 대상   /   해보고 싶은 과제   /   희망 시기',
-                    347, size=11, bold=True, color=WARM)
-    guide.y = 408
+    guide.paragraph('교육 문의부터 진행까지', 218, size=12, bold=True, color=WARM)
+    for i, (title, description) in enumerate([
+        ('교육 문의', '교육 대상, 해보고 싶은 과제, 희망 일정을 알려주세요.'),
+        ('목표와 현장 확인', '상담에서 참여자의 경험과 교육 환경을 확인합니다.'),
+        ('커리큘럼과 일정 확정', '실습 주제와 결과물 범위를 정하고, 교육 시간과 장소를 확정합니다.'),
+        ('교육 진행', '정한 과제로 실습하고, 결과를 함께 확인하며 피드백을 나눕니다.'),
+    ]):
+        x = M + (i % 2) * 251
+        top = 255 + (i // 2) * 116
+        guide.box(x, top, 236, 101, HexColor('#304c3b'))
+        guide.paragraph(f'{i + 1:02}  {title}', top + 15, x=x + 14, width=208, size=14,
+                        leading=20, font='Display', color=PAPER)
+        guide.paragraph(description, top + 48, x=x + 14, width=208, size=10.5,
+                        leading=17, color=SAGE)
+    guide.y = 525
     for label, url in [
         ('SotoLAB 교육 문의 페이지', INQUIRY),
         ('카카오톡 문의', 'https://open.kakao.com/o/sK8hYXfb'),
         ('이메일  sotolabedu@gmail.com', 'mailto:sotolabedu@gmail.com'),
     ]:
         guide.y += guide.link(label, guide.y, url, dark=True, width=320) + 20
-    size = 116
-    qr_x, qr_y = W - M - size, 407
+    size = 105
+    qr_x, qr_y = W - M - size, 524
     code = QrCodeWidget(INQUIRY)
     x0, y0, x1, y1 = code.getBounds()
     drawing = Drawing(size, size, transform=[size / (x1 - x0), 0, 0, size / (y1 - y0), 0, 0])
@@ -647,8 +656,8 @@ def contact(guide):
     guide.pdf.linkURL(INQUIRY, (qr_x, H - qr_y - size, qr_x + size, H - qr_y), thickness=0)
     guide.paragraph('QR로 교육 문의 열기', qr_y + size + 11, x=qr_x, width=size,
                     size=9, color=SAGE)
-    guide.box(M, 651, CONTENT, .7, HexColor('#758977'))
-    guide.link('목차와 상세 이력 보기', 682, 'contents', dark=True, internal=True)
+    guide.box(M, 683, CONTENT, .7, HexColor('#758977'))
+    guide.link('목차와 상세 이력 보기', 704, 'contents', dark=True, internal=True)
     guide.paragraph('표지·작업대·센서·공간 이미지는 교육 맥락을 표현한 연출 이미지입니다.',
                     755, size=9, color=SAGE)
 
