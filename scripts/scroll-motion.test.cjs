@@ -24,12 +24,20 @@ test('desktop and mobile scroll motion preserves content and handles hidden tabs
       const visit = name => page.goto(pathToFileURL(path.resolve(__dirname, '..', name)).href);
       await visit('index.html');
       await page.waitForFunction(() => window.motionCalls.length > 0);
-      await page.locator('.e-fusion-steps li').first().scrollIntoViewIfNeeded();
-      await page.waitForFunction(() => window.motionCalls.some(call => call.text.includes('01 / PLAN')));
-      await page.waitForTimeout(900);
+      await page.locator('.hero a[href="#inquiry"]').click();
+      await page.waitForFunction(() => window.motionCalls.some(call => call.className === 'contact-copy'));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      await page.locator('.s-back-to-top').click();
-      await page.waitForFunction(() => scrollY === 0);
+      assert.equal(new URL(page.url()).hash, '#inquiry');
+      if (width < 500) {
+        await page.locator('.s-back-to-top').click();
+        await page.waitForFunction(() => scrollY === 0);
+      }
+      const landingDownload = page.locator('.hero a[download]');
+      assert.match(await landingDownload.getAttribute('href'), /sotolab-education-guide\.pdf$/);
+      await page.locator('nav a[href="brand-kit/guide.html"]').click();
+      await page.waitForURL('**/brand-kit/guide.html');
+      assert.equal(await page.locator('.hero a[download]').getAttribute('href'), 'sotolab-brand-kit.zip');
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
 
       await visit('sotolab.html');
       await page.locator('#mentor-story-title').scrollIntoViewIfNeeded();

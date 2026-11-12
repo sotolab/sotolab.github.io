@@ -63,31 +63,6 @@ def record(row, i):
     return f'''<article class="s-record" data-category="{cat}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES[cat]}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
 
 
-def build_home():
-    body = '''<section class="s-hero"><div class="s-wrap"><div class="s-hero-grid"><div><p class="s-eyebrow">SOTOLAB / BUILD · TEACH · MENTOR</p><h1>현장에서 만든 기술을,<br><em>사람의 실력으로</em></h1><p class="s-lead">AI·AIoT 실전 교육자 장성균 박사<br>임베디드 개발부터 AI 서비스와 스마트 공간까지, 직접 연구하고 개발한 경험을 교육과 멘토링으로 연결합니다.</p><div class="s-actions"><a class="s-button s-button-primary" href="contact.html">강연·교육 문의하기 ↗</a><a class="s-button" href="experience.html">해온 일과 결과 보기 →</a></div><p class="s-hero-note">기업 실무자 · 대학·대학원 · 공공기관 · 창업팀을 위한 맞춤 교육</p></div><figure class="s-hero-art"><div class="s-art-top"><span>FROM THE LAB TO THE CLASSROOM</span><span>01 / AIoT</span></div><img src="img/academy-simulator-3d.png" alt="SotoLAB의 IoTPlacement 3D 공간 설계 시뮬레이터 예시" width="680" height="386"><figcaption class="s-art-caption"><strong>설명하는 기술에, 만든 경험을 더합니다.</strong><p>직접 개발한 IoTPlacement로 장치 배치와 공간 설계를 수업의 실습 도구로 연결합니다.</p></figcaption></figure></div><div class="s-facts"><div class="s-fact"><strong>2002</strong><span>임베디드 실무 경력의 시작</span></div><div class="s-fact"><strong>2009</strong><span>IT 프로젝트 멘토링 수행</span></div><div class="s-fact"><strong>2013</strong><span>한컴아카데미 전문 교육</span></div><div class="s-fact"><strong data-count-to="7">7권</strong><span>기술·멘토링 저서와 공저</span></div></div></div></section>
-<section class="s-section s-section-tint"><div class="s-wrap">'''
-    body += heading('01 / YOUR INSTRUCTOR', '개발자, 연구자,<br>그리고 끝까지 함께하는 교육자', '기술을 실제로 만드는 경험과 학습자의 성장을 돕는 경험 · 두 가지를 함께 쌓아 왔습니다.')
-    body += '''<div class="s-person s-person-text"><div><h2>장성균 <small>AI·AIoT 실전 교육 · 기술 멘토</small></h2><p>스마트폰 OS와 임베디드 시스템을 개발하고, IoT 플랫폼과 블록체인 서비스를 연구했습니다. 달 탐사 통신 소프트웨어, ESG 자원순환 AIoT, 시니어 케어 등 여러 현장에서 기술이 실제로 쓰이는 과정을 경험했습니다.</p><p>그 경험을 기업 개발자와 재직자, 대학생, 창업자, 농업인에게 전해 왔습니다. SotoLAB의 수업은 원리를 이해하고 직접 구현하며, 자신의 문제에 적용하는 과정을 지향합니다.</p><div class="s-credentials"><div>공학박사<small>컴퓨터소프트웨어</small></div><div>한컴아카데미 전문 교육 경력<small>AI·IoT·블록체인·임베디드 과정 개발 및 강의</small></div><div>대학과 산업 현장을 잇는 교육<small>한양대 겸임교수·한양사이버대 비전임 교수 역임</small></div><div>연구개발과 서비스 구축 경험<small>플랫폼·장치·앱·클라우드를 연결하는 실무</small></div></div><a class="s-text-link" href="profile.html">강사 소개와 전체 경력 보기 →</a></div></div></div></section>
-<section class="s-section" id="programs"><div class="s-wrap">'''
-    body += heading('02 / LEARNING THAT CONNECTS', '기술을 이해하고,<br>자신의 결과물을 만드는 수업', '특강, 집중 실습, 학기 연계, 기업 멘토링 · 대상자의 수준과 끝내 도달할 결과에서 교육을 설계합니다.')
-    programs = [
-        ('01 / AI & WORK', 'AI 활용 · 기업 멘토링', '생성형 AI를 업무에 적용하고, 반복 업무를 줄이는 도구를 만들어 봅니다.', ['대상: 기업 재직자·팀 리더·실무자', '주제: AI 업무 적용, 업무 도구, 자동화', '학습 목표: 자신의 업무 과제와 실행 계획'], 'sotolab.html', '기업 멘토링'),
-        ('02 / AIoT & SPACE', 'AIoT · 스마트 공간 실습', '센서와 조명을 직접 연결하고, 사용자 행동에 반응하는 공간을 설계합니다.', ['대상: 공간디자인 전공·현업·기관', '주제: 장치 연결, 공간 배치, 자동화', '학습 목표: 공간 시나리오와 동작 검증'], 'academy.html', '아카데미'),
-        ('03 / ENGINEERING', '임베디드 · 블록체인 · 기술 강연', '디바이스와 플랫폼의 원리를 배우고, 구현 사례로 시스템의 구조를 이해합니다.', ['대상: 개발자·대학생·공공기관·창업팀', '주제: 임베디드, IoT 플랫폼, 블록체인', '학습 목표: 구조 이해와 프로젝트 방향'], 'contact.html', '맞춤 강연 상담')]
-    body += '<div class="s-grid-3">'
-    for n, title, desc, points, url, link in programs:
-        body += f'<article class="s-card"><span class="s-card-number">{n}</span><h3>{title}</h3><p>{desc}</p><ul>' + ''.join(f'<li>{p}</li>' for p in points) + f'</ul><a class="s-text-link" href="{url}">{link} →</a></article>'
-    body += '</div><p class="s-small">온라인에서도 수업을 만나보세요. <a class="s-text-link" href="https://www.inflearn.com/course/블록체인-이해-구조" target="_blank" rel="noopener noreferrer">인프런의 장박사 블록체인 강의·수강평 보기 ↗</a></p></div></section><section class="s-section s-section-tint" id="research"><div class="s-wrap">'
-    body += heading('03 / EXPERIENCE INTO EVIDENCE', '어떤 일을 했고,<br>무엇으로 남겼는가', '과제별 역할과 결과를 살펴보세요. 개인의 실무·연구 참여와 SotoLAB의 개발·교육 사례를 함께 기록합니다.')
-    body += '''<div class="s-grid-3"><article class="s-card"><span class="s-card-number">RESEARCH / 2015–2017</span><h3>달 탐사 통신<br>소프트웨어 포팅</h3><p>ETRI의 DTN 시험환경과 기능 검증 플랫폼, 지상노드 제작 과제에서 임베디드 소프트웨어 포팅 업무를 맡았습니다.</p><p class="s-outcome">수업으로 연결: 통신 제약, 실행 환경, 시스템 검증을 함께 생각하는 개발 관점</p><a class="s-text-link" href="experience.html?category=research#archive-results">연구개발 이력 보기 →</a></article><article class="s-card"><span class="s-card-number">FIELD / 2020–2023</span><h3>ESG 자원순환 AIoT와<br>시니어 케어</h3><p>폐플라스틱 회수의 장치·웹·앱 연동, 시범운영 데이터 분석, 사회약자 안전 모니터링 구축과 실증에 참여했습니다.</p><p class="s-outcome">수업으로 연결: 장치가 작동한 뒤 사용자의 생활과 서비스 운영까지 살펴보는 시각</p><a class="s-text-link" href="experience.html?category=research#archive-results">역할과 결과 살펴보기 →</a></article><article class="s-card s-card-image"><img src="img/academy-simulator-plan.png" alt="IoTPlacement 평면 장치 배치 도구 예시" loading="lazy"><div class="s-card-body"><span class="s-card-number">PRODUCT / IoTPLACEMENT</span><h3>직접 만든 도구로<br>더 깊어지는 실습</h3><p>공간 설계·장치 배치·AI 검수를 연결하는 IoTPlacement · 개발 경험을 실제 수업과 반복 학습에 활용합니다.</p><a class="s-text-link" href="experience.html?category=product#archive-results">개발 서비스 보기 →</a></div></article></div><div class="s-actions"><a class="s-button" href="experience.html">교육·멘토링·연구·발명 전체 기록 보기 →</a><a class="s-button" href="books.html">지식으로 남긴 저서 보기 →</a></div></div></section>
-<section class="s-section"><div class="s-wrap">'''
-    body += heading('04 / HOW I TEACH', '알게 되는 순간에서,<br>스스로 해내는 순간까지', '질문하고, 만들고, 검증하고, 다시 적용합니다. 수업의 마지막에는 다음 행동이 남도록 합니다.')
-    steps = [('01', '문제에서 출발', '누구를 위해 무엇을 만들지, 지금 업무와 전공에서 필요한 질문을 정합니다.'), ('02', '원리를 연결', '용어와 개념을 장치·데이터·서비스의 전체 흐름 안에서 이해합니다.'), ('03', '직접 구현·검증', '작은 기능을 만들고 예상과 다른 동작을 확인하며 개선합니다.'), ('04', '자기 일에 적용', '결과를 설명하고, 자신의 업무·설계·프로젝트로 확장할 계획을 세웁니다.')]
-    body += '<div class="s-steps">' + ''.join(f'<article class="s-step"><span>{n}</span><h3>{t}</h3><p>{d}</p></article>' for n,t,d in steps) + '</div></div></section>'
-    body += '''<section class="s-section s-section-tint"><div class="s-wrap s-split"><div><p class="s-eyebrow">05 / UNIVERSITY FIELD NOTE</p><h2 style="font-size:36px">전공의 아이디어가<br>스마트 공간으로 이어지다</h2><p class="s-intro">2026년 가톨릭대학교 AIoT 스마트홈 인테리어 특강 · 공간과 기술이 만나는 실제 교육 사례입니다.</p><a class="s-text-link" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">가톨릭대학교 공식 기사 보기 ↗</a></div><div class="s-callout"><span class="s-tag">2026.08.11–12</span><span class="s-tag">관련 전공 학생 30명</span><h3>공간 시나리오 설계부터<br>실제 기기 자동화까지</h3><p>학생들이 공간의 사용 장면을 생각하고 실제 IoT 장치로 구현하는 교육을 진행했습니다. 대학 공식 뉴스룸에 자동화 실습과 쇼룸 체험이 소개됐습니다.</p><a class="s-button" href="academy-interior.html">대학 연계 교육 구성 보기 →</a><p class="s-small">위 내용은 기존 운영 사례입니다. 현재 대학 연계 상품의 실습은 회당 최대 15명이며, 쇼룸 방문은 별도 협의합니다.</p></div></div></section>'''
-    page('index.html', 'AI·AIoT 실전 교육자 장성균', '임베디드 개발, IoT 플랫폼, AI·블록체인 연구 경험을 교육과 멘토링으로 연결합니다. SotoLAB 장성균 박사의 강의·연구·개발·저서를 만나보세요.', body + cta())
-
-
 def build_profile():
     body = '''<section class="s-page-head"><div class="s-wrap"><p class="s-eyebrow">THE PRACTITIONER WHO TEACHES</p><h1>만들어 본 기술을,<br>함께 성장하는 배움으로</h1><p>AI·AIoT 실전 교육자 장성균 박사 · 개발 현장의 문제를 연구하고, 그 경험을 이해할 수 있는 언어와 직접 해보는 실습으로 바꿉니다.</p><div class="s-subnav"><a href="#about">강사 소개</a><a href="#career">경력</a><a href="#teaching">강의 이력</a><a href="#mentoring">멘토링 철학</a><a href="experience.html">활동·성과 기록 →</a></div></div></section><section class="s-section s-section-tint" id="about"><div class="s-wrap s-person s-person-text"><div><p class="s-eyebrow">ENGINEER · RESEARCHER · EDUCATOR</p><h2>장성균 <small>직접 만든 기술을, 사람의 실력으로</small></h2><p>임베디드 시스템과 스마트폰 OS 개발 현장을 경험했습니다. 이후 IoT 플랫폼, 보안, 블록체인, 머신러닝으로 연구와 개발의 범위를 넓혔습니다. 컴퓨터소프트웨어 전공 공학박사 학위를 취득했습니다.</p><p>달 탐사 DTN 소프트웨어 포팅, 스마트 장치 개발, ESG 자원순환 AIoT, 시니어 케어와 플랫폼 서비스까지 · 개별 기술이 실제 환경에서 연결되고 검증되는 일을 해 왔습니다.</p><p>기업 개발자와 재직자, 대학·대학원생, 공공부문 실무자, 창업자와 농업인을 대상으로 교육하고 멘토링했습니다. 학습자의 배경에 맞춰 기술을 풀어내고, 스스로 만들어 볼 수 있는 과정으로 연결합니다.</p><div class="s-credentials"><div>공학박사<small>컴퓨터소프트웨어</small></div><div>관심·교육 분야<small>AI·AIoT, 임베디드, 보안, 블록체인</small></div></div></div></div></section><section class="s-section" id="career"><div class="s-wrap">'''
     body += heading('01 / CAREER', '현장의 경험이 쌓여,<br>수업의 깊이가 되었습니다.')
@@ -190,7 +165,6 @@ def update_detail_navigation():
 
 
 if __name__ == '__main__':
-    build_home()
     build_profile()
     build_experience()
     build_books()
@@ -198,4 +172,4 @@ if __name__ == '__main__':
     build_education_cases()
     build_service_pages()
     update_detail_navigation()
-    print(f'Built eight brand pages and eight detail menus with {len(ROWS)} activity records.')
+    print(f'Built seven brand pages and eight detail menus with {len(ROWS)} activity records.')
