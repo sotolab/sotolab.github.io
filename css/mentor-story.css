@@ -1,0 +1,7 @@
+.s-mentor-letter{border-top:1px solid var(--line);background:#f2f5ef}
+.s-mentor-letter-body{max-width:760px;margin:0 auto;letter-spacing:0}
+.s-mentor-letter h2{font-size:32px;line-height:1.5;letter-spacing:0;margin:0 0 32px}
+.s-mentor-letter-body>p:not(.s-eyebrow){font-size:17px;line-height:2.05;margin:0 0 26px;word-break:keep-all;overflow-wrap:anywhere}
+.s-mentor-letter-body .s-mentor-letter-closing{font-weight:600;color:#315c43}
+.s-mentor-letter-body .s-mentor-letter-signature{font-size:15px;text-align:right;margin:32px 0 0}
+@media(max-width:600px){.s-mentor-letter h2{font-size:26px}.s-mentor-letter-body>p:not(.s-eyebrow){font-size:16px;line-height:2}}
