@@ -77,7 +77,8 @@
     '.e-hero-grid > div', '.e-intro', '.e-history-intro', '.e-history li',
     '.e-heading', '.e-case', '.e-product > *', '.e-teaching-feature > *',
     '.e-offerings > *', '.e-story-grid > *', '.e-contact .s-wrap',
-    '.e-principles li', '.e-teaching-path li', '.page-title', '.page-description',
+    '.e-principles li', '.e-teaching-path li', '.e-fusion-steps li',
+    '.s-mentor-letter-body > *', '.page-title', '.page-description',
     '.section-header', '.core-card', '.sote-step', '.benefit-item',
     '.project-card', '.course-card', '.book-card', '.review-card',
     '.academy-course-card', '.academy-benefit-card', '.academy-simulator-card',
@@ -93,11 +94,11 @@
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       // A pixel-based trigger also works for cards taller than a phone screen.
-      if (!entry.isIntersecting || played.has(entry.target)) return;
+      if (!entry.isIntersecting || played.has(entry.target) || document.hidden) return;
       const element = entry.target;
       played.add(element);
       observer.unobserve(element);
-      if (motion.matches || document.hidden) return;
+      if (motion.matches) return;
       if (element.hasAttribute('data-count-to')) { count(element); return; }
       const siblings = [...element.parentElement.children];
       const delay = Math.max(0, siblings.indexOf(element) % 3) * 65;
@@ -115,7 +116,10 @@
 
   function observeContent() {
     document.querySelectorAll(selector).forEach(element => {
-      if (!played.has(element)) observer.observe(element);
+      if (!played.has(element)) {
+        observer.unobserve(element);
+        observer.observe(element);
+      }
     });
   }
   observeContent();
@@ -129,7 +133,7 @@
     counters.forEach(state => { cancelAnimationFrame(state.frame); state.finish(); });
   });
   document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) return;
+    if (!document.hidden) { observeContent(); return; }
     active.forEach(animation => animation.finish());
     counters.forEach(state => { cancelAnimationFrame(state.frame); state.finish(); });
   });
