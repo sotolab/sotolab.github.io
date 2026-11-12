@@ -368,31 +368,39 @@ def story(guide):
     opening(guide, 'technology', '분야별 기술 교육', '각 기술을 깊이 알아야\n연결할 곳이 보입니다')
     guide.paragraph('업무에서 풀어야 할 문제를 먼저 살피고, 아래 기술은 각각 독립 실습으로 다루거나 프로젝트 목표에 맞춰 연결합니다.',
                     206, size=12, leading=21, width=470, color=MUTED)
-    for i, (title, question, body, evidence) in enumerate([
+    for i, (title, question, body, teaching_label, teaching, project) in enumerate([
         ('블록체인', '여러 기관이 같은 이력을 검증하려면',
          '거래 상태와 권한을 설계하고 스마트 계약으로 규칙을 구현합니다. 데이터베이스와 비교해 어떤 조건에서 블록체인을 쓸지 검토합니다.',
-         '수업의 근거  /  스마트 계약 모듈 개발과 블록체인 교육'),
+         '강의 이력', '한국인터넷진흥원 핀테크아카데미\n블록체인 개요·실습',
+         '스마트 계약 플랫폼 통합 모듈 개발'),
         ('모바일 앱', '현장에서 쓰는 화면과 기능을 어떻게 만들까',
          '사용 흐름을 그린 뒤 화면과 서버 API를 연결합니다. 기기 권한, 네트워크 단절, 예외 화면까지 시험합니다.',
-         '수업의 근거  /  스마트폰 OS 포팅과 객체 인식 앱 개발'),
+         '멘토링 이력', '동명대 안드로이드·웹 대리운전\n프로젝트 멘토링',
+         '모바일 카메라 기반 객체 인식 앱 개발'),
         ('IoT', '센서가 읽은 값이 기기 동작이 되기까지',
          '감지 범위와 통신 단절을 확인하고, 장치·서버·운영 화면을 연결합니다. 센서와 조명을 직접 작동시켜 결과를 비교합니다.',
-         '수업의 근거  /  IoTPlacement 개발과 대학 실습'),
+         '강의 이력', '가톨릭대 AIoT 스마트홈\n인테리어 실습 특강',
+         'IoTPlacement 공간 설계 도구 개발'),
         ('정보보안', '누가 어떤 데이터와 기능에 접근할 수 있을까',
          '인증과 권한을 구분하고 허용·차단 시나리오를 시험합니다. 개인정보 노출을 줄이는 설계와 운영 기록을 다룹니다.',
-         '수업의 근거  /  보안 소프트웨어공학 강의와 NFC 인증 검증'),
+         '강의 이력', '한양사이버대 보안 소프트웨어공학',
+         'NFC 카드·인증 서버·웹 연동 검증'),
     ]):
         x = M + (i % 2) * 251
-        top = 278 + (i // 2) * 221
-        guide.box(x, top, 236, 201, HexColor('#e6e8d9'))
+        top = 261 + (i // 2) * 239
+        guide.box(x, top, 236, 223, HexColor('#e6e8d9'))
         guide.paragraph(title, top + 14, x=x + 15, width=204, size=17,
                         leading=24, font='Display', color=FOREST)
-        guide.paragraph(question, top + 49, x=x + 15, width=204, size=10.5,
+        guide.paragraph(question, top + 46, x=x + 15, width=204, size=10.5,
                         leading=16, bold=True, color=CLAY)
-        guide.paragraph(body, top + 86, x=x + 15, width=204, size=10.5,
+        guide.paragraph(body, top + 81, x=x + 15, width=204, size=10.5,
                         leading=17, color=MUTED)
-        guide.paragraph(evidence, top + 164, x=x + 15, width=204, size=8.5,
-                        leading=13, bold=True, color=FOREST)
+        guide.box(x + 15, top + 154, 206, .55, LINE)
+        for offset, label, value in [(164, teaching_label, teaching), (194, '프로젝트', project)]:
+            guide.paragraph(label, top + offset, x=x + 15, width=50, size=8.5,
+                            leading=12, bold=True, color=FOREST)
+            guide.paragraph(value, top + offset, x=x + 69, width=151, size=9,
+                            leading=12, color=INK)
     guide.link('교육 과정별 상세 안내', 741, 'course-details', internal=True)
 
     opening(guide, 'operate', '융합 실습 사례  /  스마트 공간', '센서에서 시작해\n공간이 반응하기까지')
