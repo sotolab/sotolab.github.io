@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SotoLAB 소토랩 | 수업이 끝나면, 무엇이 남나요?</title>
-  <meta name="description" content="반복 업무를 줄일 작은 도구부터 센서로 작동하는 스마트 공간까지. 팀과 학생이 자기 문제를 직접 설계하고 구현하는 SotoLAB 프로젝트 교육.">
+  <title>SotoLAB 소토랩 | 맞춤 실습교육 커리큘럼 개발</title>
+  <meta name="description" content="장성균 공학박사가 프로젝트·서비스 운영·특허·멘토링·저서 경험을 바탕으로 기업·대학·기관의 과제에 맞춰 실습 커리큘럼을 설계하고 진행합니다.">
   <link rel="canonical" href="https://sotolab.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SotoLAB | 수업이 끝나면, 무엇이 남나요?">
-  <meta property="og:description" content="다음 날 직접 써볼 수 있는 도구를 만드는 프로젝트 교육.">
+  <meta property="og:title" content="SotoLAB | 현장의 과제로, 수업을 만듭니다">
+  <meta property="og:description" content="실제 개발과 사업 운영에서 쌓은 경험으로, 참여자의 수준과 목표에 맞는 실습교육을 설계하고 진행합니다.">
   <meta property="og:url" content="https://sotolab.github.io/">
   <meta property="og:image" content="https://sotolab.github.io/img/sotolab-workbench.webp">
   <meta name="theme-color" content="#f4efe4">
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/landing.css?v=2">
+  <link rel="stylesheet" href="css/landing.css?v=3">
   <script src="js/sotolab-scroll.js?v=20261112-2" defer></script>
 </head>
 <body>
@@ -37,42 +37,139 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">기업·대학·기관 프로젝트 교육</p>
-          <h1>수업이 끝나면,<br><em>무엇이 남나요?</em></h1>
-          <p class="hero-description">매주 쓰는 보고서를 정리하는 도구. 사람이 들어오면 조명이 켜지는 공간. 팀이나 학생들이 자기 과제를 가져와 첫 결과물을 직접 만듭니다.</p>
+          <p class="eyebrow">맞춤 실습교육 커리큘럼 개발</p>
+          <h1>현장의 과제로,<br><em>수업을 만듭니다.</em></h1>
+          <p class="hero-description">기업의 반복 업무부터 대학의 졸업작품까지, <strong>장성균 공학박사</strong>가 실제 과제와 참여자의 경험에 맞춰 커리큘럼을 설계하고 필요한 기능을 직접 만들어 보는 실습을 진행합니다.</p>
           <div class="actions">
             <a class="button button-dark" href="#inquiry">우리 과제로 교육 문의 <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="output/pdf/sotolab-education-guide.pdf" download>브로셔 받기 <span aria-hidden="true">↓</span></a>
           </div>
+          <a class="story-jump" href="#work">왜 맞춤 실습교육이 가능한가요? <span aria-hidden="true">↓</span></a>
         </div>
         <figure class="hero-visual">
           <img src="img/sotolab-workbench.webp" width="1536" height="1024" alt="" fetchpriority="high">
         </figure>
       </div>
     </section>
-    <section id="brand" class="brand-section">
+    <section id="brand" class="origin-section">
+      <div class="wrap">
+        <div class="story-heading section-heading">
+          <div>
+            <p class="eyebrow">장성균의 이야기</p>
+            <h2>개발하던 사람이,<br>가르치는 사람이 되기까지</h2>
+          </div>
+          <p>2002년 개발 현장에서 시작했습니다. 몇 년 뒤 대학생들의 프로젝트를 함께하며, 기술이 낯선 사람에게는 첫 기능을 완성하는 경험이 얼마나 큰지 배웠습니다. 그때부터 현장에서 만난 문제와 그 문제를 푸는 과정을 수업으로 가져왔습니다.</p>
+        </div>
+        <ol class="timeline" aria-label="장성균과 SotoLAB의 주요 연혁">
+          <li><article>
+            <p class="timeline-year">2002</p>
+            <h3>기계를 움직이는 코드를 쓰다</h3>
+            <p>한컴MDS에서 임베디드 시스템을 개발하고 스마트폰 OS를 기기에 맞춰 포팅했습니다.</p>
+          </article></li>
+          <li><article>
+            <p class="timeline-year">2009–2010</p>
+            <h3>학생들의 첫 프로젝트를 함께하다</h3>
+            <p>대학생들과 위치기반 서비스, 안드로이드·웹 서비스, 근전도 신호로 기기를 제어하는 프로젝트를 진행했습니다.</p>
+          </article></li>
+          <li><article>
+            <p class="timeline-year">2013–2015</p>
+            <h3>현장의 문제를 수업으로 옮기다</h3>
+            <p>한컴아카데미 전문 과정 개발과 강의를 시작했습니다. 2015년부터 한양대 공학대학원에서 가르치고, 썬스타·SotoLAB 활동을 시작했습니다.</p>
+          </article></li>
+          <li><article>
+            <p class="timeline-year">2026</p>
+            <h3>수업에 쓸 도구도 직접 만들다</h3>
+            <p>스마트 공간을 설계하는 IoTPlacement를 개발했습니다. 가톨릭대학교 특강에서는 학생들과 기기를 연결하고 공간이 반응하도록 구현했습니다.</p>
+          </article></li>
+        </ol>
+      </div>
+    </section>
+    <section id="work" class="work-section">
+      <div class="wrap work-grid">
+        <div class="work-feature">
+          <div class="section-heading">
+            <p class="eyebrow">연구개발 · 서비스 운영 · 특허</p>
+            <h2>직접 풀어본 문제에서<br>커리큘럼을 만듭니다.</h2>
+            <p>프로젝트를 기획하고 구현한 경험, 서비스를 운영하며 얻은 판단 기준, 멘토링과 집필 과정에서 다듬은 설명을 실습 설계에 씁니다.</p>
+          </div>
+          <figure class="work-visual">
+            <img src="img/academy-simulator-3d.png" width="680" height="386" loading="lazy" alt="IoTPlacement로 조명과 기기 배치를 확인하는 3D 공간 설계 화면">
+            <figcaption>IoTPlacement · 기기를 연결하기 전에 배치와 동작을 검토하는 실습 도구</figcaption>
+          </figure>
+        </div>
+        <div class="examples work-examples">
+          <article>
+            <span>연구개발</span>
+            <h3>연결이 끊겨도 어떻게 데이터를 보낼까?</h3>
+            <p>한국전자통신연구원 달 탐사 통신 과제에서 지상노드 소프트웨어 포팅을 맡았습니다. 그 경험을 바탕으로 수업에서 통신 환경을 가정하고, 장치가 어떻게 동작하는지 검증합니다.</p>
+          </article>
+          <article>
+            <span>서비스 개발·운영</span>
+            <h3>기술이 실제 업무에 쓰이려면?</h3>
+            <p>에코브리티의 회수 로봇과 웹 관리 시스템을 연결하는 개발을 총괄했습니다. 입찰비서를 개발·운영하면서는 공고 검색부터 검토와 마감 관리까지 실무자의 흐름을 다뤘습니다. 두 경험은 필요한 기능을 고르고 사용자 화면으로 연결하는 수업의 바탕입니다.</p>
+          </article>
+          <article>
+            <span>특허·발명</span>
+            <h3>장치가 그렇게 움직이게 하려면?</h3>
+            <p>BLE 다중 패킷 수신과 무선 장치 제어 기술은 특허로 등록됐고, 재활용 플라스틱 보상 장치 발명에도 참여했습니다. 실습에서는 무선 장치가 어떤 신호를 받고 어떤 조건에서 움직이는지 직접 확인합니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="philosophy" class="philosophy-section">
+      <div class="wrap philosophy-grid">
+        <div class="section-heading">
+          <p class="eyebrow">교육철학</p>
+          <h2>배워서 남주자</h2>
+          <p>공부한 것을 동료에게 자기 말로 설명해 보면, 어디까지 이해했는지 알게 됩니다. SotoLAB에서는 직접 만든 것을 보여주고, 어떤 판단을 했는지 설명하고, 서로의 피드백으로 다시 고칩니다.</p>
+        </div>
+        <figure class="letter">
+          <blockquote>“앞으로 뭘 하며 살지 아직 모르겠다면, 오늘 할 수 있는 일 하나부터 해봐도 좋겠습니다.”</blockquote>
+          <figcaption>장성균의 편지 「오늘은 여기까지 왔네」 중</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="mentoring" class="mentoring-section">
+      <div class="wrap">
+        <div class="story-heading section-heading">
+          <div>
+            <p class="eyebrow">멘토링과 저서</p>
+            <h2>함께 배운 경험을,<br>다음 사람에게</h2>
+          </div>
+          <p>개발자로 옮겨가려던 QA 엔지니어, AI 졸업작품을 준비하던 학생, 첫 실무를 맡은 인턴을 만났습니다. 출발점이 다른 사람들과 그날 할 수 있는 과제부터 정하고, 막힌 곳을 함께 살폈습니다.</p>
+        </div>
+        <div class="mentoring-grid">
+          <figure class="proof">
+            <blockquote>“마지막에는 주어진 업무도 해내는 나를 볼 수 있었다.”</blockquote>
+            <figcaption>첫 IT 인턴십에 참여한 멘티의 소감</figcaption>
+          </figure>
+          <div class="book-note">
+            <h3>함께 해본 것을 책으로 남겼습니다.</h3>
+            <p>『임베디드 스케치』와 『오늘부터 나도 블록체인 앱 메이커』에는 따라 해볼 수 있는 기술을, 『멘토티 멘토링』에는 멘토와 멘티가 배움을 이어온 이야기를 담았습니다.</p>
+            <a class="text-link" href="output/pdf/sotolab-education-guide.pdf" download>저서와 멘토링 소감문 5편 보기 <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="classes" class="brand-section">
       <div class="wrap brand-grid">
         <div class="section-heading">
-          <p class="eyebrow">실습에서 만드는 것</p>
-          <h2>지금 막혀 있는 일에서<br>수업이 시작됩니다.</h2>
-          <p>서비스를 만들어 온 장성균 공학박사가 과제를 작게 나누고, 필요한 기능부터 만들고 검증하는 과정을 함께합니다.</p>
+          <p class="eyebrow">맞춤 커리큘럼 설계</p>
+          <h2>같은 기술도,<br>과제에 따라 다르게 배웁니다.</h2>
+          <p>교육 대상과 과제를 먼저 확인합니다. 참여자의 경험과 교육 시간에 맞춰 실습 순서와 결과물 범위를 정하고, 직접 만든 결과가 어떻게 동작하는지 함께 검증합니다.</p>
         </div>
         <div class="examples">
           <article>
             <span>기업</span>
-            <h3>매주 모으는 보고서, 초안부터 자동으로.</h3>
+            <h3>매주 모으는 보고서, 초안부터 자동으로</h3>
             <p>샘플 자료를 읽어 정해진 양식의 초안을 만들고, 사람이 확인할 항목을 정합니다.</p>
           </article>
           <article>
             <span>대학·기관</span>
-            <h3>설계한 공간, 센서에 반응하도록.</h3>
+            <h3>설계한 공간, 센서에 반응하도록</h3>
             <p>센서와 조명을 연결해 설계한 장면을 실제로 작동시키고 확인합니다.</p>
           </article>
         </div>
-      </div>
-      <div class="wrap proof">
-        <blockquote>“마지막에는 주어진 업무도 해내는 나를 볼 수 있었다.”</blockquote>
-        <p>IT 인턴 멘티의 소감 · <a href="output/pdf/sotolab-education-guide.pdf" download>브로셔에서 원문 읽기 <span aria-hidden="true">↓</span></a></p>
       </div>
     </section>
     <section id="inquiry" class="contact-section">
@@ -89,7 +186,7 @@
     </section>
   </main>
   <footer class="wrap landing-footer">
-    <p>SotoLAB · 썬스타의 교육·멘토링 브랜드</p>
+    <p>SotoLAB · 직접 해온 경험을, 함께 해내는 배움으로</p>
     <p>© 2026 Sunstar</p>
   </footer>
 </body>

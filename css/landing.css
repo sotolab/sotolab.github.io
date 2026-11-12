@@ -29,11 +29,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid #b06b42; outline-offs
 .hero-copy { padding-block: 22px; }
 .eyebrow { font-size: 13px; font-weight: 700; color: var(--clay); }
 h1, h2, blockquote { font-family: var(--serif); letter-spacing: -.066em; }
-h1 { margin-top: 19px; font-size: clamp(50px, 5.85vw, 87px); font-weight: 700; line-height: 1.21; }
+h1 { margin-top: 19px; font-size: clamp(46px, 5vw, 76px); font-weight: 700; line-height: 1.21; }
 h1 em { font-style: normal; color: var(--forest); }
 .hero-description { max-width: 430px; margin-top: 23px; color: var(--muted); font-size: 17px; line-height: 1.85; }
+.hero-description strong { color: var(--ink); }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 19px; }
 .hero .actions { margin-top: 28px; }
+.story-jump { display: inline-block; margin-top: 23px; font-size: 13px; color: var(--muted); }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 19px; min-height: 50px; padding: 12px 16px; text-decoration: none; font-size: 14px; font-weight: 700; }
 .button:hover { text-decoration: underline; }
 .button-dark { background: var(--forest); color: #fffaf0; }
@@ -42,18 +44,54 @@ h1 em { font-style: normal; color: var(--forest); }
 .hero-visual { align-self: stretch; min-height: clamp(440px, 44vw, 640px); position: relative; background: #293b2e; }
 .hero-visual img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 55% center; }
 .brand-section { background: #fcf9f1; border-top: 1px solid var(--rule); }
-.brand-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(34px, 8vw, 125px); padding-block: 88px 64px; }
+.brand-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: clamp(34px, 8vw, 125px); padding-block: 79px; }
 h2 { font-size: clamp(32px, 4.3vw, 60px); font-weight: 700; line-height: 1.32; }
-.brand-grid h2 { margin-top: 13px; }
+.section-heading h2 { margin-top: 12px; }
 .section-heading > p:last-child, .contact-copy > p { margin-top: 18px; max-width: 430px; color: var(--muted); line-height: 1.8; font-size: 16px; }
 .examples article { padding: 15px 0 20px; border-top: 1px solid var(--rule); }
 .examples article:last-child { border-bottom: 1px solid var(--rule); }
 .examples span { color: var(--clay); font-weight: 700; font-size: 12px; }
 .examples h3 { font-size: 19px; margin-block: 5px 7px; }
 .examples p { color: var(--muted); font-size: 15px; line-height: 1.7; }
-.proof { padding-block: 0 65px; }
-.proof blockquote { font-size: clamp(21px, 3vw, 39px); font-weight: 600; line-height: 1.5; }
-.proof p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+.origin-section, .mentoring-section { background: #fcf9f1; border-top: 1px solid var(--rule); }
+.origin-section .wrap, .mentoring-section .wrap, .work-grid, .philosophy-grid {
+  padding-block: clamp(60px, 7vw, 104px);
+}
+.story-heading, .work-grid, .philosophy-grid, .mentoring-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: start;
+  gap: clamp(32px, 6vw, 96px);
+}
+.story-heading { align-items: end; }
+.story-heading > p:last-child { margin-block: 0 5px; }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  gap: 28px;
+  padding: 0;
+  margin: 52px 0 0;
+}
+.timeline li { border-top: 1px solid var(--rule); padding-top: 15px; }
+.timeline-year { color: var(--clay); font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.timeline h3, .book-note h3 { margin-block: 9px 8px; font-size: 18px; line-height: 1.5; }
+.timeline h3 + p, .book-note p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+.work-section { border-top: 1px solid var(--rule); }
+.work-visual { margin-top: 28px; }
+.work-visual img { width: 100%; }
+.work-visual figcaption, .proof figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.work-examples { align-self: center; }
+.philosophy-section { background: #e7ebdf; }
+.philosophy-grid { align-items: center; }
+.letter { border-left: 1px solid #a3af9f; padding-left: clamp(19px, 3vw, 45px); }
+.letter blockquote { font-size: clamp(22px, 2.65vw, 37px); font-weight: 600; line-height: 1.55; }
+.letter figcaption { margin-top: 17px; color: var(--muted); font-size: 13px; }
+.mentoring-grid { margin-top: 39px; align-items: center; }
+.proof { background: #e7ebdf; padding: clamp(23px, 4vw, 48px); }
+.proof blockquote { font-size: clamp(22px, 2.9vw, 40px); font-weight: 600; line-height: 1.5; }
+.book-note h3 { margin-top: 0; }
+.book-note .text-link { display: inline-block; margin-top: 15px; }
 .contact-section { background: var(--forest); color: var(--paper); }
 .contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 27px; align-items: end; padding-block: 70px; }
 .contact-copy > p { color: #e4e9dc; }
@@ -64,8 +102,9 @@ h2 { font-size: clamp(32px, 4.3vw, 60px); font-weight: 700; line-height: 1.32; }
 @media (max-width: 950px) {
   .wrap { width: calc(100% - 64px); }
   .hero-grid { gap: 28px; }
-  h1 { font-size: clamp(42px, 7vw, 66px); }
+  h1 { font-size: clamp(37px, 5.4vw, 51px); }
   .hero-visual { min-height: 410px; }
+  .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 680px) {
   .wrap { width: calc(100% - 40px); }
@@ -73,15 +112,21 @@ h2 { font-size: clamp(32px, 4.3vw, 60px); font-weight: 700; line-height: 1.32; }
   .s-logo { width: 102px; }
   .landing-header nav { gap: 12px; font-size: 12px; }
   .nav-inquiry { padding-left: 9px; }
-  .hero-grid, .brand-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-grid, .brand-grid, .contact-grid, .story-heading, .work-grid,
+  .philosophy-grid, .mentoring-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-grid { padding-block: 26px 35px; gap: 25px; }
   .hero-copy { padding-block: 12px 0; }
   h1 { margin-top: 12px; font-size: clamp(42px, 10vw, 62px); }
   .hero-description { font-size: 15px; line-height: 1.75; margin-top: 15px; }
   .hero .actions { margin-top: 20px; }
+  .story-jump { margin-top: 15px; }
   .hero-visual { min-height: 0; aspect-ratio: 1.35; }
   .brand-grid, .contact-grid { padding-block: 49px; }
-  .proof { padding-bottom: 49px; }
+  .story-heading { gap: 17px; }
+  .timeline { margin-top: 32px; gap: 18px; }
+  .timeline h3 { font-size: 16px; }
+  .timeline h3 + p { font-size: 14px; }
+  .mentoring-grid { margin-top: 28px; gap: 23px; }
 }
 @media (max-width: 350px) {
   .wrap { width: calc(100% - 30px); }
