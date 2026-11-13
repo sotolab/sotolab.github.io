@@ -43,19 +43,29 @@
   if (records.length) {
     const filters = [...document.querySelectorAll('[data-archive-filter]')];
     const search = document.getElementById('archive-search');
+    const year = document.getElementById('archive-year');
+    const order = document.getElementById('archive-order');
+    const archive = records[0].parentElement;
     const valid = new Set(filters.map(button => button.dataset.archiveFilter));
     const initial = new URLSearchParams(location.search).get('category');
     let category = valid.has(initial) ? initial : 'all';
     const titles = {
-      all: '전체 활동 기록', education: '교육·강연 기록', mentoring: '멘토링 기록',
-      research: '연구개발 기록', product: '개발 서비스 기록', patent: '특허·발명 기록'
+      all: '전체 활동·경력', education: '교육·강연 기록', mentoring: '멘토링 기록',
+      research: '연구개발 기록', product: '개발 서비스 기록', patent: '특허·발명 기록',
+      career: '주요 경력'
     };
     const title = document.getElementById('archive-title');
     const update = () => {
       const query = search.value.trim().toLocaleLowerCase('ko');
+      const selectedYear = year?.value || 'all';
       let count = 0;
       records.forEach(record => {
-        const matches = (category === 'all' || record.dataset.category === category) && record.textContent.toLocaleLowerCase('ko').includes(query);
+        const { startYear, endYear } = record.dataset;
+        const matchesYear = selectedYear === 'all' || (selectedYear === 'undated'
+          ? Number(startYear) === 0
+          : Number(startYear) <= Number(selectedYear) && Number(endYear) >= Number(selectedYear));
+        const matches = matchesYear && (category === 'all' || record.dataset.category === category)
+          && record.textContent.toLocaleLowerCase('ko').includes(query);
         record.hidden = !matches;
         if (matches) count++;
       });
@@ -64,13 +74,41 @@
       document.getElementById('archive-count').textContent = `${records.length}개 기록 중 ${count}개를 보고 있습니다.`;
       document.getElementById('archive-empty').hidden = count !== 0;
     };
+    const sort = () => {
+      if (!order) return;
+      const direction = order.value === 'oldest' ? 1 : -1;
+      const dated = direction === 1 ? 'startYear' : 'endYear';
+      const ordered = [...records].sort((a, b) => {
+        const left = Number(a.dataset[dated]);
+        const right = Number(b.dataset[dated]);
+        return !left || !right ? Number(!left) - Number(!right) : direction * (left - right);
+      });
+      archive.append(...ordered);
+    };
     filters.forEach(button => button.addEventListener('click', () => { category = button.dataset.archiveFilter; update(); }));
     search.addEventListener('input', update);
-    document.getElementById('archive-reset').addEventListener('click', () => { category = 'all'; search.value = ''; update(); search.focus(); });
+    year?.addEventListener('change', update);
+    order?.addEventListener('change', sort);
+    document.getElementById('archive-reset').addEventListener('click', () => {
+      category = 'all';
+      search.value = '';
+      if (year) year.value = 'all';
+      if (order) order.value = 'newest';
+      sort();
+      update();
+      search.focus();
+    });
     update();
+    const controls = document.getElementById('archive-controls');
+    if (controls) controls.hidden = false;
     // Category links land directly on the selected results.
     if ((initial && valid.has(initial)) || location.hash === '#archive-results') {
       requestAnimationFrame(() => {
+        const target = document.getElementById(location.hash.slice(1));
+        if (target?.classList.contains('s-record') && !target.hidden) {
+          target.scrollIntoView({ block: 'start', behavior: 'auto' });
+          return;
+        }
         document.getElementById('archive-results')?.scrollIntoView({ block: 'start', behavior: 'auto' });
         title?.focus({ preventScroll: true });
       });

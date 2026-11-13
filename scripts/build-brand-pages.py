@@ -10,6 +10,7 @@ ROWS = json.loads((ROOT / 'data/experience.json').read_text(encoding='utf-8'))
 MENU = [('brand.html', 'SotoLAB'), ('profile.html', '교육자 소개'), ('academy.html', '교육 안내'), ('sotolab.html', '현장 멘토링'), ('experience.html', '수업의 바탕'), ('books.html', '교재·저서'), ('contact.html', '교육 섭외')]
 CATEGORIES = {'education': '교육·강연', 'mentoring': '멘토링', 'research': '연구개발', 'product': '개발 서비스', 'patent': '특허·발명'}
 ROWS.sort(key=lambda row: list(CATEGORIES).index(row['category']))
+CAREER = [('2002–2012', '한컴MDS', '임베디드 시스템 개발·스마트폰 OS 포팅'), ('2013–2015', 'MNI Lab', 'IoT 플랫폼 설계·연구개발'), ('2013년부터', '한컴아카데미 전문 교육', 'AI·IoT·블록체인·임베디드·통신 과정 개발 및 강의'), ('2015년부터', '썬스타 · SotoLAB 활동', '기술 개발·교육 콘텐츠·멘토링 서비스'), ('교수 경력', '한양대학교 · 한양사이버대학교', '공학대학원 겸임교수·해킹보안 분야 비전임 교수 역임'), ('2017–2019', '블로코', '사외 교육전담 이사'), ('2021–2022', '디오비스튜디오', 'AI 버추얼휴먼 분야 사외 기술이사'), ('2021.12–2025.04', '아카라라이프', 'AIoT 관련 기술지원 이사·연구개발 및 교육'), ('2025–2026', '폰드메이커스', '비가청 주파수 워터마크 기반 디지털 콘텐츠 마켓 과제 총괄 이력'), ('현재의 SotoLAB', '기술 교육·강연·기업 멘토링', '실무와 연구에서 얻은 경험을 학습자의 구현과 적용으로 연결')]
 SUBMENUS = {
     'brand.html': [('brand.html', '브랜드 소개'), ('history.html', '주요 연혁')],
     'profile.html': [('profile.html#about', '교육자 프로필'), ('profile.html#career', '주요 경력'), ('profile.html#teaching', '강의 이력'), ('profile.html#mentoring', '멘토링 철학')],
@@ -45,6 +46,9 @@ def page(filename, title, description, body):
     html = f'''<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-space.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-scroll.js?v=20261112-2" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
+    if filename == 'experience.html':
+        html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-2')
+        html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css"></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
 
@@ -56,18 +60,23 @@ def cta():
     return '''<section class="s-cta"><div class="s-wrap"><p class="s-eyebrow">LET’S BUILD THE NEXT CLASS</p><h2>다음 교육이,<br>실제 변화의 시작이 되도록</h2><p>기관과 대상, 관심 기술과 교육 목표를 알려 주세요.<br>강연부터 실습, 프로젝트 멘토링까지 함께 설계합니다.</p><div class="s-actions"><a class="s-button s-button-primary" href="contact.html">교육·강연 문의하기 ↗</a><a class="s-button" href="sotolab.html">기업 멘토링 살펴보기 →</a></div></div></section>'''
 
 
+def period_years(period):
+    years = [int(year) for year in re.findall(r'\b(?:19|20)\d{2}(?!\d)', period)]
+    return (min(years), max(years)) if years else (0, 0)
+
+
 def record(row, i):
     cat = row['category']
-    dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')])
+    start, end = period_years(row['period'])
+    dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')] if row.get(key))
     link = f'<a class="s-text-link" href="{escape(row["public_url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(row["link_label"])}</a>' if row.get('public_url') else ''
-    return f'''<article class="s-record" data-category="{cat}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES[cat]}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
+    return f'''<article class="s-record" data-category="{cat}" data-start-year="{start}" data-end-year="{end}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES.get(cat, '주요 경력')}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
 
 
 def build_profile():
     body = '''<section class="s-page-head"><div class="s-wrap"><p class="s-eyebrow">THE PRACTITIONER WHO TEACHES</p><h1>만들어 본 기술을,<br>함께 성장하는 배움으로</h1><p>AI·AIoT 실전 교육자 장성균 박사 · 개발 현장의 문제를 연구하고, 그 경험을 이해할 수 있는 언어와 직접 해보는 실습으로 바꿉니다.</p><div class="s-subnav"><a href="#about">강사 소개</a><a href="#career">경력</a><a href="#teaching">강의 이력</a><a href="#mentoring">멘토링 철학</a><a href="experience.html">활동·성과 기록 →</a></div></div></section><section class="s-section s-section-tint" id="about"><div class="s-wrap s-person s-person-text"><div><p class="s-eyebrow">ENGINEER · RESEARCHER · EDUCATOR</p><h2>장성균 <small>직접 만든 기술을, 사람의 실력으로</small></h2><p>임베디드 시스템과 스마트폰 OS 개발 현장을 경험했습니다. 이후 IoT 플랫폼, 보안, 블록체인, 머신러닝으로 연구와 개발의 범위를 넓혔습니다. 컴퓨터소프트웨어 전공 공학박사 학위를 취득했습니다.</p><p>달 탐사 DTN 소프트웨어 포팅, 스마트 장치 개발, ESG 자원순환 AIoT, 시니어 케어와 플랫폼 서비스까지 · 개별 기술이 실제 환경에서 연결되고 검증되는 일을 해 왔습니다.</p><p>기업 개발자와 재직자, 대학·대학원생, 공공부문 실무자, 창업자와 농업인을 대상으로 교육하고 멘토링했습니다. 학습자의 배경에 맞춰 기술을 풀어내고, 스스로 만들어 볼 수 있는 과정으로 연결합니다.</p><div class="s-credentials"><div>공학박사<small>컴퓨터소프트웨어</small></div><div>관심·교육 분야<small>AI·AIoT, 임베디드, 보안, 블록체인</small></div></div></div></div></section><section class="s-section" id="career"><div class="s-wrap">'''
     body += heading('01 / CAREER', '현장의 경험이 쌓여,<br>수업의 깊이가 되었습니다.')
-    career = [('2002–2012', '한컴MDS', '임베디드 시스템 개발·스마트폰 OS 포팅'), ('2013–2015', 'MNI Lab', 'IoT 플랫폼 설계·연구개발'), ('2013년부터', '한컴아카데미 전문 교육', 'AI·IoT·블록체인·임베디드·통신 과정 개발 및 강의'), ('2015년부터', '썬스타 · SotoLAB 활동', '기술 개발·교육 콘텐츠·멘토링 서비스'), ('교수 경력', '한양대학교 · 한양사이버대학교', '공학대학원 겸임교수·해킹보안 분야 비전임 교수 역임'), ('2017–2019', '블로코', '사외 교육전담 이사'), ('2021–2022', '디오비스튜디오', 'AI 버추얼휴먼 분야 사외 기술이사'), ('2021.12–2025.04', '아카라라이프', 'AIoT 관련 기술지원 이사·연구개발 및 교육'), ('2025–2026', '폰드메이커스', '비가청 주파수 워터마크 기반 디지털 콘텐츠 마켓 과제 총괄 이력'), ('현재의 SotoLAB', '기술 교육·강연·기업 멘토링', '실무와 연구에서 얻은 경험을 학습자의 구현과 적용으로 연결')]
-    body += '<ol class="s-list">' + ''.join(f'<li><strong>{name}</strong><span>{desc}</span></li>' for date,name,desc in career) + '</ol><p class="s-small">대표 개인의 경력과 참여 프로젝트를 포함합니다. 기관명은 재직·출강·참여 이력을 설명하며 현재의 제휴 관계를 뜻하지 않습니다.</p></div></section><section class="s-section s-section-tint" id="teaching"><div class="s-wrap">'
+    body += '<ol class="s-list">' + ''.join(f'<li><strong>{name}</strong><span>{desc}</span></li>' for date,name,desc in CAREER) + '</ol><p class="s-small">대표 개인의 경력과 참여 프로젝트를 포함합니다. 기관명은 재직·출강·참여 이력을 설명하며 현재의 제휴 관계를 뜻하지 않습니다.</p></div></section><section class="s-section s-section-tint" id="teaching"><div class="s-wrap">'
     body += heading('02 / TEACHING EXPERIENCE', '대상은 달라도,<br>스스로 해내는 수업이라는 기준')
     body += '<div class="s-table-wrap"><table class="s-table"><thead><tr><th scope="col">시기</th><th scope="col">기관·대상</th><th scope="col">강의·교육 내용</th></tr></thead><tbody>'
     courses = [('2005–2010', 'LG 아카데미·삼성전자 상생협력아카데미', '개발자 대상 임베디드 SW'), ('2013–2022', '한컴MDS·한컴아카데미', 'IoT·AI·블록체인·임베디드·통신'), ('2015–2017', '한양대학교 공학대학원', '소프트웨어공학·시스템 설계'), ('2016–2023', '한양사이버대학교', '보안 소프트웨어공학'), ('2017–2020', '한국인터넷진흥원 핀테크아카데미', '블록체인 개요·실습'), ('2018–2019', '연세대 · 선문대 · 포항공대 · 동명대 · 제주대 · 한양대 등', '블록체인 개발 특강'), ('2019–2020', 'KT DS·KB데이터시스템 등', '기업 재직자 대상 블록체인 구조'), ('2018–2020', '강원·대구·포항 창조경제혁신센터·아트센터 나비', '블록체인 개발·프로젝트 멘토링'), ('2019–2021', 'ETRI·경북SW융합진흥센터', '블록체인 개발·클라우드 컴퓨팅'), ('출강 이력', '제주산학융합원', '블록체인 강의'), ('출강 이력', '제주산학융합원', 'ICT 웹 서비스 강의'), ('2019–2026', '한국전파진흥협회', '공공부문을 위한 신기술·블록체인'), ('2020–2022', '제주ICT 협동조합·서귀포농업기술센터', '농업인 대상 스마트팜'), ('2025–2026', '한국지능형사물인터넷협회·IoT 융합센터', 'IoT 인테리어 실무'), ('2026.08', '가톨릭대학교 관련 전공 학생', 'AIoT 스마트홈 인테리어 실습 특강')]
@@ -76,11 +85,34 @@ def build_profile():
 
 
 def build_experience():
-    filters = '<button type="button" class="s-filter" data-archive-filter="all" aria-pressed="true">전체</button>' + ''.join(f'<button type="button" class="s-filter" data-archive-filter="{key}" aria-pressed="false">{label}</button>' for key,label in CATEGORIES.items())
-    body = f'''<section class="s-page-head"><div class="s-wrap"><p class="s-eyebrow">SOTOLAB EXPERIENCE ARCHIVE</p><h1>해온 일과,<br>그 일이 남긴 결과</h1><p class="s-archive-total"><strong data-count-to="{len(ROWS)}">{len(ROWS)}</strong>개의 활동 기록</p><p>교육, 멘토링, 연구개발, 서비스와 발명 · 장성균 박사의 개인 경력과 SotoLAB의 활동을 분야별로 모았습니다. 역할과 결과, 그리고 그 경험이 교육에 어떻게 연결되는지 살펴보세요.</p><p class="s-small">기관 발급 확인서·프로젝트 보고서·이력서·포트폴리오에 근거한 기록입니다. 수행기관의 공동 성과와 개인의 참여 역할을 구분하고, 출원·초안·등록 이력은 각각의 근거에 맞춰 표시했습니다.</p></div></section><section class="s-section" id="archive-results" aria-labelledby="archive-title" style="padding-top:20px"><div class="s-wrap"><h2 class="s-content-title" id="archive-title" tabindex="-1">전체 활동 기록</h2><div class="s-filter-bar"><div class="s-filters" role="group" aria-label="활동 분야 선택">{filters}</div><label class="s-search" for="archive-search">기록 검색<input id="archive-search" type="search" placeholder="예: IoT, 멘토링, 한컴, 달 탐사"></label></div><p class="s-result-count" id="archive-count" role="status" aria-live="polite">총 {len(ROWS)}개 활동 기록</p><noscript><p class="s-small">검색과 분야 필터는 JavaScript 사용 시 제공됩니다. 아래에서 전체 기록을 읽을 수 있습니다.</p></noscript><div class="s-archive">'''
-    body += ''.join(record(row,i+1) for i,row in enumerate(ROWS))
-    body += '</div><div class="s-empty" id="archive-empty" hidden><p>검색 조건에 맞는 기록이 없습니다.</p><button type="button" class="s-button" id="archive-reset">전체 기록 다시 보기</button></div><p class="s-small">기록 정리 기준: 2026.10.31 · 포트폴리오의 소개 시점은 실제 개발 완료 연도와 다를 수 있습니다. 과거의 활동은 현재의 운영·제휴·특허 권리 상태를 뜻하지 않습니다.</p></div></section>'
-    page('experience.html', '교육·멘토링·연구개발 · 활동과 성과 기록', '교육·강연, 기술 멘토링, 달 탐사 통신, IoT·AI 플랫폼, 블록체인과 특허·발명까지 · 역할과 결과를 연결한 활동 기록입니다.', body + cta())
+    categories = {**CATEGORIES, 'career': '주요 경력'}
+    filters = '<button type="button" class="s-filter" data-archive-filter="all" aria-pressed="true">전체</button>' + ''.join(f'<button type="button" class="s-filter" data-archive-filter="{key}" aria-pressed="false">{label}</button>' for key,label in categories.items())
+    indexed = [(row["id"], row) for row in ROWS]
+    indexed.extend(
+        (f'career-{i}', {'category': 'career', 'period': period, 'title': title,
+                          'organization': '장성균 · 주요 경력', 'role': role})
+        for i, (period, title, role) in enumerate(CAREER, 1)
+    )
+    indexed.sort(key=lambda item: period_years(item[1]['period'])[1], reverse=True)
+    years = sorted({year for _, row in indexed for first, last in [period_years(row['period'])]
+                    for year in range(first, last + 1) if year}, reverse=True)
+    options = ''.join(f'<option value="{year}">{year}년</option>' for year in years)
+    total = len(indexed)
+    body = f'''<section class="s-page-head"><div class="s-wrap"><h1>활동과 경력</h1><p>장성균 박사의 경력과 SotoLAB의 교육·멘토링·연구개발·서비스·특허 기록을 한곳에서 살펴보세요.</p><p><a class="s-text-link" href="index.html#classes">맞춤 실습교육 보기 →</a></p></div></section>
+<section class="s-section" id="archive-results" aria-labelledby="archive-title" style="padding-top:20px"><div class="s-wrap">
+<h2 class="s-content-title" id="archive-title" tabindex="-1">전체 활동·경력</h2>
+<div class="s-archive-controls" id="archive-controls" hidden>
+<div class="s-filters" role="group" aria-label="활동 분야 선택">{filters}</div>
+<div class="s-archive-fields">
+<label class="s-search" for="archive-year">연도<select id="archive-year"><option value="all">전체 연도</option>{options}<option value="undated">연도 미표기</option></select></label>
+<label class="s-search" for="archive-order">정렬<select id="archive-order"><option value="newest">최근 연도순</option><option value="oldest">오래된 연도순</option></select></label>
+<label class="s-search" for="archive-search">기록 검색<input id="archive-search" type="search" placeholder="예: AI, 한컴, 달 탐사"></label>
+</div></div>
+<p class="s-result-count" id="archive-count" role="status" aria-live="polite">총 {total}건</p>
+<div class="s-archive">'''
+    body += ''.join(record(row, i) for i, row in indexed)
+    body += '</div><div class="s-empty" id="archive-empty" hidden><p>검색 조건에 맞는 기록이 없습니다.</p><button type="button" class="s-button" id="archive-reset">전체 기록 다시 보기</button></div><p class="s-small">기간으로 표시한 기록은 해당 기간의 연도에서 찾을 수 있습니다. 일부 포트폴리오의 연도는 소개 시점입니다.</p></div></section>'
+    page('experience.html', '활동과 경력', '장성균 박사와 SotoLAB의 교육, 멘토링, 연구개발, 서비스, 특허와 경력 기록을 연도와 분야별로 확인하세요.', body + (ROOT / 'data/fusion-cases.html').read_text(encoding='utf-8') + cta())
 
 
 def build_books():
