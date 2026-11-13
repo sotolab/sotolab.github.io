@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/landing.css?v=5">
+  <link rel="stylesheet" href="css/landing.css?v=6">
   <script src="js/sotolab-scroll.js?v=20261112-2" defer></script>
 </head>
 <body>
@@ -27,9 +27,13 @@
         <img src="brand-kit/assets/logo-light.png" width="2170" height="725" alt="SotoLAB">
       </a>
       <nav aria-label="주요 메뉴">
-        <a href="#classes">교육 과정</a>
-        <a href="experience.html">활동·경력</a>
-        <a class="nav-inquiry" href="#inquiry">교육 문의 <span aria-hidden="true">↗</span></a>
+        <a href="./" aria-current="page">홈</a>
+        <a href="experience.html?category=education#archive-results">강의 이력</a>
+        <a href="experience.html?category=research#archive-results">프로젝트 이력</a>
+        <a href="experience.html?category=mentoring#archive-results">멘토링 이력</a>
+        <a href="experience.html?category=product#archive-results">서비스 이력</a>
+        <a href="experience.html?category=patent#archive-results">자격증·특허 이력</a>
+        <a class="nav-inquiry" href="#inquiry">문의하기 <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -42,7 +46,7 @@
           <p class="hero-description">기업과 공공기관에는 <strong>AI 업무 자동화</strong>, 대학과 교육기관에는 <strong>AI 앱·웹 개발과 기술융합 실습</strong>, 창업팀에는 <strong>서비스 기획과 시제품 멘토링</strong>을 제공합니다.</p>
           <div class="actions">
             <a class="button button-dark" href="#inquiry">우리 과제로 교육 문의 <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="output/pdf/sotolab-education-guide.pdf" download>브로셔 받기 <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="output/pdf/sotolab-institution-overview.pdf" download>기관용 교육 안내 PDF <span aria-hidden="true">↓</span></a>
           </div>
           <a class="story-jump" href="#classes">대상별 교육 과정 보기 <span aria-hidden="true">↓</span></a>
         </div>
@@ -219,7 +223,8 @@
   <footer class="wrap landing-footer">
     <p>SotoLAB · 직접 해온 경험을, 함께 해내는 배움으로</p>
     <nav aria-label="자료 다운로드">
-      <a href="output/pdf/sotolab-education-guide.pdf" download>브로셔 PDF</a>
+      <a href="output/pdf/sotolab-institution-overview.pdf" download>기관용 요약 PDF</a>
+      <a href="output/pdf/sotolab-education-guide.pdf" download>상세 브로셔</a>
       <a href="brand-kit/guide.html">브랜드킷</a>
     </nav>
     <p>© 2026 Sunstar</p>

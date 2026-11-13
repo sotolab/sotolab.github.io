@@ -33,7 +33,7 @@ test('desktop and mobile scroll motion preserves content and handles hidden tabs
         await page.waitForFunction(() => scrollY === 0);
       }
       const landingDownload = page.locator('.hero a[download]');
-      assert.match(await landingDownload.getAttribute('href'), /sotolab-education-guide\.pdf$/);
+      assert.match(await landingDownload.getAttribute('href'), /sotolab-institution-overview\.pdf$/);
       await page.locator('footer nav a[href="brand-kit/guide.html"]').click();
       await page.waitForURL('**/brand-kit/guide.html');
       assert.equal(await page.locator('.hero a[download]').getAttribute('href'), 'sotolab-brand-kit.zip');

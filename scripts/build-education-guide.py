@@ -72,10 +72,10 @@ def excerpts():
 
 
 class Guide:
-    def __init__(self):
-        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-        self.pdf = Canvas(str(OUTPUT), pagesize=A4, pageCompression=1)
-        self.pdf.setTitle('SotoLAB · 기술의 깊이에서, 현장의 수업으로')
+    def __init__(self, output=OUTPUT, title='SotoLAB · 기술의 깊이에서, 현장의 수업으로'):
+        output.parent.mkdir(parents=True, exist_ok=True)
+        self.pdf = Canvas(str(output), pagesize=A4, pageCompression=1)
+        self.pdf.setTitle(title)
         self.pdf.setAuthor('SotoLAB · Sunstar')
         self.page = 0
         self.y = 0

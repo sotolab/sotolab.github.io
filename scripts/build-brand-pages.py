@@ -23,6 +23,15 @@ SUBMENUS = {
 
 
 def nav(page):
+    if page == 'experience.html':
+        menu = [('index.html', '홈'), ('?category=education#archive-results', '강의 이력'),
+                ('?category=research#archive-results', '프로젝트 이력'),
+                ('?category=mentoring#archive-results', '멘토링 이력'),
+                ('?category=product#archive-results', '서비스 이력'),
+                ('?category=patent#archive-results', '자격증·특허 이력'),
+                ('index.html#inquiry', '문의하기')]
+        links = ''.join(f'<a href="{href}">{label}</a>' for href, label in menu)
+        return f'<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><nav class="s-wrap s-archive-nav" aria-label="주요 메뉴"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈"><img src="brand-kit/assets/logo-light.png" width="2170" height="725" alt="SotoLAB"></a><div>{links}</div></nav></header>'
     items = []
     for index, (url, label) in enumerate(MENU):
         current = ' aria-current="page"' if url == page or (url == 'brand.html' and page == 'history.html') else ''
@@ -47,8 +56,8 @@ def page(filename, title, description, body):
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-space.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-scroll.js?v=20261112-2" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
     if filename == 'experience.html':
-        html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-2')
-        html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css"></head>')
+        html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-3')
+        html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css?v=2"></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
 
@@ -85,7 +94,9 @@ def build_profile():
 
 
 def build_experience():
-    categories = {**CATEGORIES, 'career': '주요 경력'}
+    categories = {**CATEGORIES, 'education': '강의 이력', 'research': '프로젝트 이력',
+                  'mentoring': '멘토링 이력', 'product': '서비스 이력', 'patent': '자격증·특허 이력',
+                  'career': '주요 경력'}
     filters = '<button type="button" class="s-filter" data-archive-filter="all" aria-pressed="true">전체</button>' + ''.join(f'<button type="button" class="s-filter" data-archive-filter="{key}" aria-pressed="false">{label}</button>' for key,label in categories.items())
     indexed = [(row["id"], row) for row in ROWS]
     indexed.extend(
@@ -108,6 +119,11 @@ def build_experience():
 <label class="s-search" for="archive-order">정렬<select id="archive-order"><option value="newest">최근 연도순</option><option value="oldest">오래된 연도순</option></select></label>
 <label class="s-search" for="archive-search">기록 검색<input id="archive-search" type="search" placeholder="예: AI, 한컴, 달 탐사"></label>
 </div></div>
+<aside id="archive-credentials" class="s-callout s-archive-credentials" hidden>
+<h3>학위와 자격증</h3>
+<p><strong>학위</strong> 컴퓨터소프트웨어 전공 공학박사</p>
+<p>공개된 자격증 이력은 아직 없습니다.</p>
+</aside>
 <p class="s-result-count" id="archive-count" role="status" aria-live="polite">총 {total}건</p>
 <div class="s-archive">'''
     body += ''.join(record(row, i) for i, row in indexed)

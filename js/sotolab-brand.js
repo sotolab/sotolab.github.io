@@ -49,11 +49,8 @@
     const valid = new Set(filters.map(button => button.dataset.archiveFilter));
     const initial = new URLSearchParams(location.search).get('category');
     let category = valid.has(initial) ? initial : 'all';
-    const titles = {
-      all: '전체 활동·경력', education: '교육·강연 기록', mentoring: '멘토링 기록',
-      research: '연구개발 기록', product: '개발 서비스 기록', patent: '특허·발명 기록',
-      career: '주요 경력'
-    };
+    const credentials = document.getElementById('archive-credentials');
+    const categoryLabels = new Map(filters.map(button => [button.dataset.archiveFilter, button.textContent]));
     const title = document.getElementById('archive-title');
     const update = () => {
       const query = search.value.trim().toLocaleLowerCase('ko');
@@ -70,7 +67,8 @@
         if (matches) count++;
       });
       filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.archiveFilter === category)));
-      if (title) title.textContent = titles[category];
+      if (title) title.textContent = category === 'all' ? '전체 활동·경력' : categoryLabels.get(category);
+      if (credentials) credentials.hidden = category !== 'patent';
       document.getElementById('archive-count').textContent = `${records.length}개 기록 중 ${count}개를 보고 있습니다.`;
       document.getElementById('archive-empty').hidden = count !== 0;
     };
