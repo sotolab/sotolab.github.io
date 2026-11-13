@@ -24,10 +24,10 @@ SUBMENUS = {
 
 def nav(page):
     if page == 'experience.html':
-        menu = [('index.html', '홈'), ('?category=education&v=7#archive-results', '강의'),
-                ('?category=research&v=7#archive-results', '프로젝트'),
-                ('?category=mentoring&v=7#archive-results', '멘토링'),
-                ('?category=product&v=7#archive-results', '서비스'),
+        menu = [('index.html', '홈'), ('?category=education&v=8#archive-results', '강의'),
+                ('?category=research&v=8#archive-results', '프로젝트'),
+                ('?category=mentoring&v=8#archive-results', '멘토링'),
+                ('?category=product&v=8#archive-results', '서비스'),
                 ('index.html#inquiry', '문의하기')]
         links = ''.join(f'<a href="{escape(href, quote=True)}">{label}</a>' for href, label in menu)
         return f'<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><nav class="s-wrap s-archive-nav" aria-label="주요 메뉴"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈"><img src="brand-kit/assets/logo-light.png" width="2170" height="725" alt="SotoLAB"></a><div>{links}</div></nav></header>'
@@ -78,6 +78,9 @@ def record(row, i):
     start, end = period_years(row['period'])
     dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')] if row.get(key))
     link = f'<a class="s-text-link" href="{escape(row["public_url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(row["link_label"])}</a>' if row.get('public_url') else ''
+    if row.get('download_url'):
+        download = f'<a class="s-text-link" href="{escape(row["download_url"], quote=True)}" download>커리큘럼·교육비 PDF 다운로드</a>'
+        link = f'<div class="s-actions">{download}{link}</div>'
     return f'''<article class="s-record" data-category="{cat}" data-start-year="{start}" data-end-year="{end}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES.get(cat, '주요 경력')}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
 
 
