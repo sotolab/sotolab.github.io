@@ -118,7 +118,7 @@ h2 { font-size: clamp(32px, 4.3vw, 60px); font-weight: 700; line-height: 1.32; }
 .contact-steps h4 { display: inline; margin: 0 0 0 5px; font-size: 15px; }
 .contact-steps p { margin-top: 7px; color: #e4e9dc; font-size: 14px; line-height: 1.65; }
 .landing-footer { display: flex; justify-content: space-between; gap: 12px; padding-block: 23px; font-size: 12px; color: var(--muted); }
-.landing-footer nav { display: flex; gap: 14px; }
+.landing-footer nav { display: flex; flex-wrap: wrap; gap: 8px 14px; }
 .s-reading-progress { position: fixed; inset: 0 0 auto; z-index: 2; height: 3px; transform: scaleX(0); transform-origin: left; pointer-events: none; background: #af623e; }
 .s-back-to-top { position: fixed; right: 17px; bottom: 17px; z-index: 2; width: 43px; height: 43px; border: 1px solid var(--rule); border-radius: 50%; background: var(--paper); color: var(--forest); cursor: pointer; font-size: 20px; }
 @media (max-width: 950px) {
