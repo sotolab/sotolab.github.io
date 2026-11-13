@@ -55,7 +55,7 @@ def page(filename, title, description, body):
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(title)} | SotoLAB</title><meta name="description" content="{escape(description, quote=True)}"><meta name="author" content="장성균 · SotoLAB"><meta name="robots" content="index,follow"><link rel="canonical" href="{canonical}"><meta property="og:type" content="website"><meta property="og:title" content="{escape(title, quote=True)} | SotoLAB"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{canonical}"><meta property="og:site_name" content="SotoLAB"><meta property="og:image" content="https://sotolab.github.io/img/logo.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)} | SotoLAB"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="https://sotolab.github.io/img/logo.png"><meta name="theme-color" content="#0c110e"><link rel="icon" href="img/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/sotolab-brand.css?v={BRAND_ASSET_VERSION}"><script src="js/sotolab-brand.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-space.js?v={BRAND_ASSET_VERSION}" defer></script><script src="js/sotolab-scroll.js?v=20261112-2" defer></script></head><body class="story-page">{nav(filename)}<main id="main">{body}</main>{footer()}</body></html>'''
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
     if filename == 'experience.html':
-        html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-4')
+        html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-5')
         html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css?v=3"></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
@@ -93,9 +93,6 @@ def build_profile():
 
 
 def build_experience():
-    categories = {'education': '강의', 'research': '프로젝트', 'mentoring': '멘토링',
-                  'product': '서비스', 'career': '주요 경력'}
-    filters = '<button type="button" class="s-filter" data-archive-filter="all" aria-pressed="true">전체</button>' + ''.join(f'<button type="button" class="s-filter" data-archive-filter="{key}" aria-pressed="false">{label}</button>' for key,label in categories.items())
     indexed = [(row["id"], row) for row in ROWS]
     indexed.extend(
         (f'career-{i}', {'category': 'career', 'period': period, 'title': title,
@@ -111,7 +108,6 @@ def build_experience():
 <section class="s-section" id="archive-results" aria-labelledby="archive-title" style="padding-top:20px"><div class="s-wrap">
 <h2 class="s-content-title" id="archive-title" tabindex="-1">전체 활동·경력</h2>
 <div class="s-archive-controls" id="archive-controls" hidden>
-<div class="s-filters" role="group" aria-label="활동 분야 선택">{filters}</div>
 <div class="s-archive-fields">
 <label class="s-search" for="archive-year">연도<select id="archive-year"><option value="all">전체 연도</option>{options}<option value="undated">연도 미표기</option></select></label>
 <label class="s-search" for="archive-order">정렬<select id="archive-order"><option value="newest">최근 연도순</option><option value="oldest">오래된 연도순</option></select></label>
@@ -123,7 +119,7 @@ def build_experience():
     body += '</div><section id="archive-patents" class="s-archive-patents" aria-labelledby="archive-patents-title"><h3 class="s-content-title" id="archive-patents-title">특허·발명</h3><div class="s-archive" id="archive-patent-records">'
     body += ''.join(record(row, i) for i, row in indexed if row['category'] == 'patent')
     body += '</div><p class="s-small" id="archive-credentials">학위 · 컴퓨터소프트웨어 전공 공학박사</p></section>'
-    body += '<div class="s-empty" id="archive-empty" hidden><p>검색 조건에 맞는 기록이 없습니다.</p><button type="button" class="s-button" id="archive-reset">전체 기록 다시 보기</button></div><p class="s-small">기간으로 표시한 기록은 해당 기간의 연도에서 찾을 수 있습니다. 일부 포트폴리오의 연도는 소개 시점입니다.</p></div></section>'
+    body += '<div class="s-empty" id="archive-empty" hidden><p>검색 조건에 맞는 기록이 없습니다.</p><button type="button" class="s-button" id="archive-reset">검색 조건 초기화</button></div><p class="s-small">기간으로 표시한 기록은 해당 기간의 연도에서 찾을 수 있습니다. 일부 포트폴리오의 연도는 소개 시점입니다.</p></div></section>'
     page('experience.html', '활동과 경력', '장성균 박사와 SotoLAB의 교육, 멘토링, 연구개발, 서비스, 특허와 경력 기록을 연도와 분야별로 확인하세요.', body + (ROOT / 'data/fusion-cases.html').read_text(encoding='utf-8') + cta())
 
 
