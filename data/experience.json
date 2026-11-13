@@ -129,6 +129,8 @@
     "result": "관련 전공 학생 30명이 참여한 8월 11–12일 교육 · 공간 시나리오 설계, 실제 기기 자동화 실습과 쇼룸 체험이 대학 공식 뉴스룸에 소개됐습니다.",
     "lesson": "전공 설계 의도를 실제 공간의 반응으로 연결합니다.",
     "source": "가톨릭대학교 공식 뉴스룸(2026.08.20)",
+    "public_url": "https://www.catholic.ac.kr/ko/newsroom/photonews.do?articleNo=274897&mode=view",
+    "link_label": "가톨릭대학교 특강 기사 보기 ↗",
     "id": 12
   },
   {
@@ -643,5 +645,42 @@
     "lesson": "실물 장치와 서버·웹을 연결하며, 인증과 소유권·콘텐츠 접근 권한을 구분하는 보안 설계 관점을 전합니다.",
     "source": "NTAG424_DNA_Project_Report.docx(2026.11.05) · 로컬 기술 검증 결과 및 서비스 확장 설계",
     "id": 57
+  },
+  {
+    "category": "education",
+    "period": "2026.11",
+    "title": "부천대학교 AIoT 리빙랩 산학협력",
+    "organization": "부천대학교 · 썬스타",
+    "role": "실무 중심 교육을 위한 산학협력 협약",
+    "result": "리빙랩 개소에 맞춰 공간디자인과 IoT 기술을 연결하는 실무교육 및 공동 프로젝트 추진 기반 마련",
+    "source": "부천대학교 공식 뉴스(2026.11.04)",
+    "public_url": "https://dept.bc.ac.kr/bcu/pr/news.do?articleNo=247520&mode=view",
+    "link_label": "부천대학교 리빙랩 기사 보기 ↗",
+    "id": 58
+  },
+  {
+    "category": "education",
+    "period": "2019",
+    "title": "블로코 아카데미 블록체인 입문 강의",
+    "organization": "블로코 아카데미 · 디스트리트",
+    "role": "블록체인 101 입문 과정 강사",
+    "result": "블록체인 기본 개념과 비즈니스 활용을 다루는 무료 입문 과정",
+    "source": "매일경제(2019.09.23)",
+    "public_url": "https://www.mk.co.kr/news/economy/8992271",
+    "link_label": "매일경제 강의 기사 보기 ↗",
+    "id": 59
+  },
+  {
+    "category": "product",
+    "period": "2019",
+    "title": "제주 감귤나무 분양 앱",
+    "organization": "SotoLAB",
+    "role": "블록체인 기반 모바일 서비스 제공",
+    "result": "소비자가 앱에서 감귤나무를 선택하고 스마트 계약으로 분양받아 관리·수확 체험으로 이어지는 서비스",
+    "lesson": "모바일 앱과 스마트 계약을 연결한 실제 서비스 사례입니다.",
+    "source": "아주대학교 창업지원단 창업소식(2019.04.22)",
+    "public_url": "https://changup.ajou.ac.kr/sub/sub04_01.php?boardid=notice&idx=116&mNum=4&mode=view&sNum=1",
+    "link_label": "아주대학교 창업지원단 서비스 소개 보기 ↗",
+    "id": 60
   }
 ]
