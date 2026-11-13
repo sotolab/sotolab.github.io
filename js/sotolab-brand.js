@@ -40,75 +40,28 @@
     });
   }
   const records = [...document.querySelectorAll('.s-record')];
-  const search = document.getElementById('archive-search');
-  if (records.length && search) {
+  const archive = document.getElementById('archive-results');
+  if (records.length && archive) {
     const categoryLinks = [...document.querySelectorAll('.s-archive-nav a[href^="?category="]')];
     const categoryLabels = new Map([['all', '전체 활동·경력'], ['career', '주요 경력']]);
     categoryLinks.forEach(link => {
       categoryLabels.set(new URL(link.href).searchParams.get('category'), link.textContent);
     });
-    const year = document.getElementById('archive-year');
-    const order = document.getElementById('archive-order');
     const patents = document.getElementById('archive-patents');
-    const recordGrids = [...new Set(records.map(record => record.parentElement))];
     const initial = new URLSearchParams(location.search).get('category');
     const category = patents && initial === 'patent' ? 'product' : categoryLabels.has(initial) ? initial : 'all';
     const credentials = document.getElementById('archive-credentials');
     const title = document.getElementById('archive-title');
     categoryLinks.find(link => new URL(link.href).searchParams.get('category') === category)
       ?.setAttribute('aria-current', 'page');
-    const update = () => {
-      const query = search.value.trim().toLocaleLowerCase('ko');
-      const selectedYear = year?.value || 'all';
-      let count = 0;
-      let patentCount = 0;
-      records.forEach(record => {
-        const { startYear, endYear } = record.dataset;
-        const matchesYear = selectedYear === 'all' || (selectedYear === 'undated'
-          ? Number(startYear) === 0
-          : Number(startYear) <= Number(selectedYear) && Number(endYear) >= Number(selectedYear));
-        const isPatent = record.dataset.category === 'patent';
-        const matchesCategory = category === 'all' || record.dataset.category === category
-          || (patents && category === 'product' && isPatent);
-        const matches = matchesYear && matchesCategory
-          && record.textContent.toLocaleLowerCase('ko').includes(query);
-        record.hidden = !matches;
-        if (matches) {
-          count++;
-          if (isPatent) patentCount++;
-        }
-      });
-      if (title) title.textContent = categoryLabels.get(category);
-      if (patents) patents.hidden = patentCount === 0;
-      if (credentials) credentials.hidden = patents ? category !== 'product' : category !== 'patent';
-      document.getElementById('archive-count').textContent = `${records.length}개 기록 중 ${count}개를 보고 있습니다.`;
-      document.getElementById('archive-empty').hidden = count !== 0;
-    };
-    const sort = () => {
-      if (!order) return;
-      const direction = order.value === 'oldest' ? 1 : -1;
-      const dated = direction === 1 ? 'startYear' : 'endYear';
-      const ordered = [...records].sort((a, b) => {
-        const left = Number(a.dataset[dated]);
-        const right = Number(b.dataset[dated]);
-        return !left || !right ? Number(!left) - Number(!right) : direction * (left - right);
-      });
-      recordGrids.forEach(grid => grid.append(...ordered.filter(record => record.parentElement === grid)));
-    };
-    search.addEventListener('input', update);
-    year?.addEventListener('change', update);
-    order?.addEventListener('change', sort);
-    document.getElementById('archive-reset').addEventListener('click', () => {
-      search.value = '';
-      if (year) year.value = 'all';
-      if (order) order.value = 'newest';
-      sort();
-      update();
-      search.focus();
+    const showPatents = category === 'all' || category === 'product';
+    records.forEach(record => {
+      record.hidden = category !== 'all' && record.dataset.category !== category
+        && !(showPatents && record.dataset.category === 'patent');
     });
-    update();
-    const controls = document.getElementById('archive-controls');
-    if (controls) controls.hidden = false;
+    if (title) title.textContent = categoryLabels.get(category);
+    if (patents) patents.hidden = !showPatents;
+    if (credentials) credentials.hidden = category !== 'product';
     // Category links land directly on the selected results.
     if (category !== 'all' || location.hash === '#archive-results') {
       requestAnimationFrame(() => {
@@ -121,8 +74,7 @@
           patents.scrollIntoView({ block: 'start', behavior: 'auto' });
           return;
         }
-        document.getElementById('archive-results')?.scrollIntoView({ block: 'start', behavior: 'auto' });
-        title?.focus({ preventScroll: true });
+        archive.scrollIntoView({ block: 'start', behavior: 'auto' });
       });
     }
   }

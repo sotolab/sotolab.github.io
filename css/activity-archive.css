@@ -13,34 +13,8 @@
   .s-archive-nav { flex-wrap: wrap; padding-block: 8px 12px; }
   .s-archive-nav > div { flex-basis: 100%; }
 }
-.s-archive-controls {
-  display: grid;
-  gap: 18px;
-  margin: 20px 0;
-}
-.s-archive-controls[hidden] { display: none; }
-.s-archive-fields {
-  display: grid;
-  grid-template-columns: 10rem 11rem minmax(0, 1fr);
-  gap: 12px;
-}
-.s-archive-fields input, .s-archive-fields select {
-  width: 100%;
-  min-width: 0;
-  padding: 9px 12px;
-  border: 1px solid #b7c2b8;
-  border-radius: 5px;
-  background: #fff;
-  color: #212d24;
-  font: inherit;
-}
-.s-archive-fields :focus-visible { outline: 2px solid #315c43; outline-offset: 2px; }
 .s-record { scroll-margin-top: 90px; }
 @media (min-width: 761px) and (max-width: 1000px) {
   .s-nav { flex-wrap: wrap; padding-block: 10px; }
   .s-nav .s-menu { flex-wrap: wrap; }
-}
-@media (max-width: 620px) {
-  .s-archive-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .s-archive-fields label:last-child { grid-column: 1 / -1; }
 }
