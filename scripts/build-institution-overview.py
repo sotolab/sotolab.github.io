@@ -28,10 +28,10 @@ def main():
     guide.photograph(source['AI_DESK'], 0, 304, page_width, 365, focus=.55)
     guide.paragraph('직접 해온 경험을, 함께 해내는 배움으로', 707, size=16,
                     font='Display', color=paper)
-    guide.paragraph('장성균 공학박사 · 기업·공공기관 · 대학·교육기관 · 프로젝트팀',
+    guide.paragraph('기업·공공기관 · 대학·교육기관 · 프로젝트팀 맞춤 실습',
                     756, size=10, color=warm)
 
-    guide.start('기업·공공기관  /  생성형 AI 업무 적용')
+    guide.start('SotoLAB  /  기업·공공기관을 위한 생성형 AI 실습')
     guide.word_wrap = None
     guide.paragraph('보고서 초안부터\n팀이 다시 쓰는 도구까지', 91, size=35, leading=46,
                     font='Display', color=forest)
@@ -62,7 +62,7 @@ def main():
     guide.paragraph('다른 실습 주제  /  회의록 후속 작업 정리 · 사내 규정 질의응답',
                     747, size=10, bold=True, color=forest)
 
-    guide.start('대학·교육기관과 프로젝트팀  /  구현과 검증')
+    guide.start('SotoLAB  /  대학·교육기관과 프로젝트팀을 위한 실습')
     guide.word_wrap = None
     guide.paragraph('아이디어를 설명하는 데서\n작동을 보여주는 데까지', 91, size=34, leading=46,
                     font='Display', color=forest)
@@ -90,6 +90,8 @@ def main():
     guide.word_wrap = None
     guide.paragraph('직접 해본 일에서\n수업에 필요한 판단을 고릅니다', 88, size=32, leading=44,
                     font='Display', color=forest)
+    guide.paragraph('장성균 공학박사 · SotoLAB 교육 설계와 강의', 188, size=11,
+                    bold=True, color=clay)
     for i, (label, evidence, connection, category) in enumerate([
         ('강의', '한컴아카데미 AI·IoT 과정 개발과 강의',
          '참여자의 수준에 맞춰 개념 설명과 실습 순서를 조정합니다.', 'education'),
@@ -100,7 +102,7 @@ def main():
         ('멘토링', '대학생 IT 프로젝트 · 청년 ICT 기술 멘토링',
          '스스로 해결할 수 있도록 과제를 나누고 다음 시도를 함께 정합니다.', 'mentoring'),
     ]):
-        top = 209 + i * 84
+        top = 229 + i * 80
         guide.rule(top)
         guide.link(label, top + 12, site + f'experience.html?category={category}#archive-results', width=75)
         guide.paragraph(evidence, top + 12, x=137, width=404, size=10.5, bold=True, color=forest)
