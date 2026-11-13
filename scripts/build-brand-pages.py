@@ -24,12 +24,12 @@ SUBMENUS = {
 
 def nav(page):
     if page == 'experience.html':
-        menu = [('index.html', '홈'), ('?category=education#archive-results', '강의'),
-                ('?category=research#archive-results', '프로젝트'),
-                ('?category=mentoring#archive-results', '멘토링'),
-                ('?category=product#archive-results', '서비스'),
+        menu = [('index.html', '홈'), ('?category=education&v=6#archive-results', '강의'),
+                ('?category=research&v=6#archive-results', '프로젝트'),
+                ('?category=mentoring&v=6#archive-results', '멘토링'),
+                ('?category=product&v=6#archive-results', '서비스'),
                 ('index.html#inquiry', '문의하기')]
-        links = ''.join(f'<a href="{href}">{label}</a>' for href, label in menu)
+        links = ''.join(f'<a href="{escape(href, quote=True)}">{label}</a>' for href, label in menu)
         return f'<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><nav class="s-wrap s-archive-nav" aria-label="주요 메뉴"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈"><img src="brand-kit/assets/logo-light.png" width="2170" height="725" alt="SotoLAB"></a><div>{links}</div></nav></header>'
     items = []
     for index, (url, label) in enumerate(MENU):
