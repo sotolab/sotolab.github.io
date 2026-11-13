@@ -103,7 +103,7 @@ def build_experience():
         for i, (period, title, role) in enumerate(CAREER, 1)
     )
     indexed.sort(key=lambda item: period_years(item[1]['period'])[1], reverse=True)
-    body = '''<section class="s-page-head"><div class="s-wrap"><h1>활동과 경력</h1><p>장성균 박사의 경력과 SotoLAB의 교육·멘토링·연구개발·서비스·특허 기록을 한곳에서 살펴보세요.</p><p><a class="s-text-link" href="index.html#classes">맞춤 실습교육 보기 →</a></p></div></section>
+    body = '''<section class="s-page-head"><div class="s-wrap"><h1>활동과 경력</h1><p><a class="s-text-link" href="index.html#classes">맞춤 실습교육 보기 →</a></p></div></section>
 <section class="s-section" id="archive-results" aria-labelledby="archive-title" style="padding-top:20px"><div class="s-wrap">
 <h2 class="s-content-title" id="archive-title">전체 활동·경력</h2>
 <div class="s-archive" id="archive-main">'''
