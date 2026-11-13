@@ -7,8 +7,8 @@
 }
 .s-archive-nav > div { display: flex; flex-wrap: wrap; gap: 7px 16px; font-size: 13px; }
 .s-archive-nav > div a { padding-block: 6px; white-space: nowrap; }
-.s-archive-credentials { margin-block: 16px; }
-.s-archive-credentials[hidden] { display: none; }
+.s-archive-patents { margin-top: 54px; scroll-margin-top: 130px; }
+.s-archive-patents[hidden], #archive-credentials[hidden] { display: none; }
 @media (max-width: 950px) {
   .s-archive-nav { flex-wrap: wrap; padding-block: 8px 12px; }
   .s-archive-nav > div { flex-basis: 100%; }

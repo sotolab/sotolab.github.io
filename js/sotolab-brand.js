@@ -45,10 +45,11 @@
     const search = document.getElementById('archive-search');
     const year = document.getElementById('archive-year');
     const order = document.getElementById('archive-order');
-    const archive = records[0].parentElement;
+    const patents = document.getElementById('archive-patents');
+    const recordGrids = [...new Set(records.map(record => record.parentElement))];
     const valid = new Set(filters.map(button => button.dataset.archiveFilter));
     const initial = new URLSearchParams(location.search).get('category');
-    let category = valid.has(initial) ? initial : 'all';
+    let category = patents && initial === 'patent' ? 'product' : valid.has(initial) ? initial : 'all';
     const credentials = document.getElementById('archive-credentials');
     const categoryLabels = new Map(filters.map(button => [button.dataset.archiveFilter, button.textContent]));
     const title = document.getElementById('archive-title');
@@ -56,19 +57,27 @@
       const query = search.value.trim().toLocaleLowerCase('ko');
       const selectedYear = year?.value || 'all';
       let count = 0;
+      let patentCount = 0;
       records.forEach(record => {
         const { startYear, endYear } = record.dataset;
         const matchesYear = selectedYear === 'all' || (selectedYear === 'undated'
           ? Number(startYear) === 0
           : Number(startYear) <= Number(selectedYear) && Number(endYear) >= Number(selectedYear));
-        const matches = matchesYear && (category === 'all' || record.dataset.category === category)
+        const isPatent = record.dataset.category === 'patent';
+        const matchesCategory = category === 'all' || record.dataset.category === category
+          || (patents && category === 'product' && isPatent);
+        const matches = matchesYear && matchesCategory
           && record.textContent.toLocaleLowerCase('ko').includes(query);
         record.hidden = !matches;
-        if (matches) count++;
+        if (matches) {
+          count++;
+          if (isPatent) patentCount++;
+        }
       });
       filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.archiveFilter === category)));
       if (title) title.textContent = category === 'all' ? '전체 활동·경력' : categoryLabels.get(category);
-      if (credentials) credentials.hidden = category !== 'patent';
+      if (patents) patents.hidden = patentCount === 0;
+      if (credentials) credentials.hidden = patents ? category !== 'product' : category !== 'patent';
       document.getElementById('archive-count').textContent = `${records.length}개 기록 중 ${count}개를 보고 있습니다.`;
       document.getElementById('archive-empty').hidden = count !== 0;
     };
@@ -81,7 +90,7 @@
         const right = Number(b.dataset[dated]);
         return !left || !right ? Number(!left) - Number(!right) : direction * (left - right);
       });
-      archive.append(...ordered);
+      recordGrids.forEach(grid => grid.append(...ordered.filter(record => record.parentElement === grid)));
     };
     filters.forEach(button => button.addEventListener('click', () => { category = button.dataset.archiveFilter; update(); }));
     search.addEventListener('input', update);
@@ -100,11 +109,15 @@
     const controls = document.getElementById('archive-controls');
     if (controls) controls.hidden = false;
     // Category links land directly on the selected results.
-    if ((initial && valid.has(initial)) || location.hash === '#archive-results') {
+    if ((initial && (valid.has(initial) || (patents && initial === 'patent'))) || location.hash === '#archive-results') {
       requestAnimationFrame(() => {
         const target = document.getElementById(location.hash.slice(1));
         if (target?.classList.contains('s-record') && !target.hidden) {
           target.scrollIntoView({ block: 'start', behavior: 'auto' });
+          return;
+        }
+        if (patents && initial === 'patent') {
+          patents.scrollIntoView({ block: 'start', behavior: 'auto' });
           return;
         }
         document.getElementById('archive-results')?.scrollIntoView({ block: 'start', behavior: 'auto' });
