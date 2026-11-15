@@ -658,8 +658,6 @@ def contact(guide):
                     size=9, color=SAGE)
     guide.box(M, 683, CONTENT, .7, HexColor('#758977'))
     guide.link('목차와 상세 이력 보기', 704, 'contents', dark=True, internal=True)
-    guide.paragraph('표지·작업대·센서·공간 이미지는 교육 맥락을 표현한 연출 이미지입니다.',
-                    755, size=9, color=SAGE)
 
 
 def back_cover(guide):
