@@ -1,6 +1,27 @@
 [
   {
     "category": "education",
+    "period": "2026.11.16",
+    "title": "형태를 넘어, 반응하는 가구: AIoT가 바꾸는 가구의 형태와 사용 경험",
+    "organization": "가톨릭대학교",
+    "role": "대학 특강",
+    "schedule": "2026년 11월 16일(월) 16:00–18:00",
+    "result": "AIoT가 가구의 형태와 사용 경험을 어떻게 바꾸는지 살펴보는 특강",
+    "source": "강사 제공 특강 기록(2026.11.17)",
+    "id": 61
+  },
+  {
+    "category": "education",
+    "period": "2026.11.05 · 11.12",
+    "title": "아카라 실습키트를 활용한 AIoT 특강",
+    "organization": "부천대학교",
+    "role": "대학 실습 특강",
+    "result": "아카라 실습키트를 활용한 실습 중심 특강 2회 진행",
+    "source": "강사 제공 특강 기록(2026.11.17)",
+    "id": 62
+  },
+  {
+    "category": "education",
     "period": "2005–2010",
     "title": "기업 개발자를 위한 임베디드 SW 교육",
     "organization": "LG 아카데미 · 삼성전자 상생협력아카데미",

@@ -76,7 +76,7 @@ def period_years(period):
 def record(row, i):
     cat = row['category']
     start, end = period_years(row['period'])
-    dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')] if row.get(key))
+    dl = ''.join(f'<dt>{label}</dt><dd>{escape(row[key])}</dd>' for label, key in [('일시', 'schedule'), ('역할', 'role'), ('결과', 'result'), ('수업 연결', 'lesson')] if row.get(key))
     link = f'<a class="s-text-link" href="{escape(row["public_url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(row["link_label"])}</a>' if row.get('public_url') else ''
     if row.get('download_url'):
         download = f'<a class="s-text-link" href="{escape(row["download_url"], quote=True)}" download>커리큘럼·교육비 PDF 다운로드</a>'
@@ -136,10 +136,13 @@ def build_contact():
 def build_education_cases():
     body = '<section class="s-page-head"><div class="s-wrap"><p class="s-eyebrow">TEACHING IN PRACTICE</p><h1>교육의 현장과,<br>배움으로 남긴 기록</h1><p>대상에 맞게 구성한 수업과 실제 교육 현장에서 다룬 내용을 소개합니다.</p></div></section><section class="s-section" style="padding-top:10px"><div class="s-wrap"><div class="s-grid-3">'
     body += '''<article class="s-card" id="jeju-namwon"><span class="s-card-number">2018 여름방학</span><h2 style="font-size:24px">제주 남원 지역 학생 소프트웨어 교육</h2><p>썬스타 · 남원읍 한남리 정보화마을</p><p>지역 학생들을 위한 무료 교육에서 웹서비스와 채팅 프로그램을 만드는 실습을 진행했습니다. 학생들이 텍스트 코딩으로 자신의 아이디어를 구현하는 시간을 마련했습니다.</p><p class="s-outcome">직접 프로그램을 만들며 창의적으로 문제를 해결하는 경험을 나눕니다.</p><a class="s-text-link" href="https://www.ijejutoday.com/news/articleView.html?idxno=210963" target="_blank" rel="noopener noreferrer">제주투데이 교육 기사 보기 ↗</a></article>'''
-    for i in (1, 4, 11):
-        row = ROWS[i]
-        body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p><p>{escape(row["result"])}</p><p class="s-outcome">{escape(row["lesson"])}</p></article>'
-        if row['organization'].startswith('가톨릭대학교'):
+    by_id = {row['id']: row for row in ROWS}
+    for record_id in (61, 62, 2, 5, 12):
+        row = by_id[record_id]
+        schedule = f'<p>{escape(row["schedule"])}</p>' if row.get('schedule') else ''
+        outcome = f'<p class="s-outcome">{escape(row["lesson"])}</p>' if row.get('lesson') else ''
+        body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p>{schedule}<p>{escape(row["result"])}</p>{outcome}</article>'
+        if record_id == 12:
             links = '<div class="s-actions"><a class="s-text-link" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">교육 기사 보기 ↗</a><a class="s-text-link" href="academy-interior.html">교육 구성 보기 →</a></div>'
             body = body.removesuffix('</article>') + links + '</article>'
     body += '''<article class="s-card" id="bucheon-mou"><span class="s-card-number">2026.11.03</span><h2 style="font-size:24px">부천대학교 AIoT 리빙랩 산학협력 MOU</h2><p>부천대학교 · 썬스타</p><p>AIoT 리빙랩 개소에 맞춰 산학협력 업무협약을 체결했습니다. IoT·데이터베이스·시스템 구축과 기술개발을 연결해 실무 중심 교육에 협력합니다.</p><p class="s-outcome">공간디자인과 전기·정보통신을 잇는 융합교육과 산학 공동 프로젝트를 함께 추진합니다.</p><a class="s-text-link" href="https://www.e2news.com/news/articleView.html?idxno=335816" target="_blank" rel="noopener noreferrer">리빙랩·MOU 기사 보기 ↗</a><a class="s-text-link" href="academy-interior.html">대학 연계 AIoT 교육 보기 →</a></article>'''
