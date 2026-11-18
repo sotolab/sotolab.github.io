@@ -7,9 +7,31 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 BRAND_ASSET_VERSION = '20261104-6'
 ROWS = json.loads((ROOT / 'data/experience.json').read_text(encoding='utf-8'))
+VISUAL_STEPS = json.loads((ROOT / 'data/experience-visuals.json').read_text(encoding='utf-8'))
+VISUAL_IMAGES = {
+    11: ('academy-simulator-plan.png', 582, 337, 'IoTPlacement 평면 장치 배치 예시'),
+    12: ('academy-simulator-3d.png', 680, 386, 'IoTPlacement 3D 공간 실습 자료'),
+    35: ('academy-simulator-3d.png', 680, 386, 'IoTPlacement 3D 설계 화면'),
+    61: ('academy-simulator-lighting-example.png', 558, 344, 'IoTPlacement 조명 반응 예시'),
+    62: ('academy-special-products-board.png', 1535, 1024, '아카라 장치와 RGB 전구 실습 자료'),
+}
+VISUAL_LABELS = {'education': '교육 개요', 'research': '프로젝트 개념도',
+                 'product': '서비스 이용 흐름', 'mentoring': '멘토링 개요',
+                 'patent': '발명 개념도'}
+RELATED_RECORDS = {
+    12: [(35, '실습 도구 IoTPlacement')],
+    27: [(28, '돌리도 시범사업')],
+    28: [(27, '웹·IoT 통합 테스트'), (36, '에코브리티 플랫폼'), (44, '자원 회수·보상 발명')],
+    35: [(12, '대학 스마트홈 실습 사례'), (61, '반응하는 가구 특강')],
+    36: [(28, '돌리도 시범사업')],
+    44: [(28, '돌리도 시범사업')],
+    60: [(25, '스마트 계약 모듈 개발')],
+    61: [(35, '공간 설계 도구 IoTPlacement')],
+}
 MENU = [('brand.html', 'SotoLAB'), ('profile.html', '교육자 소개'), ('academy.html', '교육 안내'), ('sotolab.html', '현장 멘토링'), ('experience.html', '수업의 바탕'), ('books.html', '교재·저서'), ('contact.html', '교육 섭외')]
 CATEGORIES = {'education': '교육·강연', 'mentoring': '멘토링', 'research': '연구개발', 'product': '개발 서비스', 'patent': '특허·발명'}
 ROWS.sort(key=lambda row: list(CATEGORIES).index(row['category']))
+RELATED_CATEGORIES = {row['id']: 'product' if row['category'] == 'patent' else row['category'] for row in ROWS}
 CAREER = [('2002–2012', '한컴MDS', '임베디드 시스템 개발·스마트폰 OS 포팅'), ('2013–2015', 'MNI Lab', 'IoT 플랫폼 설계·연구개발'), ('2013년부터', '한컴아카데미 전문 교육', 'AI·IoT·블록체인·임베디드·통신 과정 개발 및 강의'), ('2015년부터', '썬스타 · SotoLAB 활동', '기술 개발·교육 콘텐츠·멘토링 서비스'), ('교수 경력', '한양대학교 · 한양사이버대학교', '공학대학원 겸임교수·해킹보안 분야 비전임 교수 역임'), ('2017–2019', '블로코', '사외 교육전담 이사'), ('2021–2022', '디오비스튜디오', 'AI 버추얼휴먼 분야 사외 기술이사'), ('2021.12–2025.04', '아카라라이프', 'AIoT 관련 기술지원 이사·연구개발 및 교육'), ('2025–2026', '폰드메이커스', '비가청 주파수 워터마크 기반 디지털 콘텐츠 마켓 과제 총괄 이력'), ('현재의 SotoLAB', '기술 교육·강연·기업 멘토링', '실무와 연구에서 얻은 경험을 학습자의 구현과 적용으로 연결')]
 SUBMENUS = {
     'brand.html': [('brand.html', '브랜드 소개'), ('history.html', '주요 연혁')],
@@ -24,10 +46,10 @@ SUBMENUS = {
 
 def nav(page):
     if page == 'experience.html':
-        menu = [('index.html', '홈'), ('?category=education&v=8#archive-results', '강의'),
-                ('?category=research&v=8#archive-results', '프로젝트'),
-                ('?category=mentoring&v=8#archive-results', '멘토링'),
-                ('?category=product&v=8#archive-results', '서비스'),
+        menu = [('index.html', '홈'), ('?category=education&v=9#archive-results', '강의'),
+                ('?category=research&v=9#archive-results', '프로젝트'),
+                ('?category=mentoring&v=9#archive-results', '멘토링'),
+                ('?category=product&v=9#archive-results', '서비스'),
                 ('index.html#inquiry', '문의하기')]
         links = ''.join(f'<a href="{escape(href, quote=True)}">{label}</a>' for href, label in menu)
         return f'<a class="s-skip" href="#main">본문으로 이동</a><header class="s-header"><nav class="s-wrap s-archive-nav" aria-label="주요 메뉴"><a class="s-logo" href="index.html" aria-label="SotoLAB 홈"><img src="brand-kit/assets/logo-light.png" width="2170" height="725" alt="SotoLAB"></a><div>{links}</div></nav></header>'
@@ -56,7 +78,8 @@ def page(filename, title, description, body):
     html = html.replace('</head>', schema + '<noscript><style>.s-menu{display:flex!important}.s-menu-toggle{display:none!important}</style></noscript></head>')
     if filename == 'experience.html':
         html = html.replace(f'js/sotolab-brand.js?v={BRAND_ASSET_VERSION}', 'js/sotolab-brand.js?v=archive-6')
-        html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css?v=4"></head>')
+    if filename in ('experience.html', 'reviews.html'):
+        html = html.replace('</head>', '<link rel="stylesheet" href="css/activity-archive.css?v=5"></head>')
     (ROOT / filename).write_text(html + '\n', encoding='utf-8')
 
 
@@ -73,6 +96,21 @@ def period_years(period):
     return (min(years), max(years)) if years else (0, 0)
 
 
+def record_visual(row):
+    record_id = row['id']
+    photo = VISUAL_IMAGES.get(record_id)
+    if photo:
+        name, width, height, caption = photo
+        return (f'<figure class="s-record-visual s-record-photo">'
+                f'<img src="img/{name}" width="{width}" height="{height}" alt="" loading="lazy" decoding="async">'
+                f'<figcaption>{escape(caption)}</figcaption></figure>')
+
+    steps = ''.join(f'<li>{escape(label)}</li>' for label in VISUAL_STEPS[str(record_id)])
+    return (f'<figure class="s-record-visual s-record-flow" data-theme="{row["category"]}">'
+            f'<figcaption>{VISUAL_LABELS[row["category"]]}</figcaption>'
+            f'<ol>{steps}</ol></figure>')
+
+
 def record(row, i):
     cat = row['category']
     start, end = period_years(row['period'])
@@ -81,7 +119,14 @@ def record(row, i):
     if row.get('download_url'):
         download = f'<a class="s-text-link" href="{escape(row["download_url"], quote=True)}" download>커리큘럼·교육비 PDF 다운로드</a>'
         link = f'<div class="s-actions">{download}{link}</div>'
-    return f'''<article class="s-record" data-category="{cat}" data-start-year="{start}" data-end-year="{end}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES.get(cat, '주요 경력')}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p><dl>{dl}</dl>{link}</article>'''
+    visual = record_visual(row) if 'id' in row else ''
+    related = ''.join(
+        f'<a class="s-text-link" href="?category={RELATED_CATEGORIES[target]}#record-{target}">{escape(label)} →</a>'
+        for target, label in RELATED_RECORDS.get(i, ())
+    )
+    if related:
+        related = f'<div class="s-record-related" aria-label="관련 사례">{related}</div>'
+    return f'''<article class="s-record" data-category="{cat}" data-start-year="{start}" data-end-year="{end}" id="record-{i}"><div class="s-record-top"><span>{CATEGORIES.get(cat, '주요 경력')}</span><span>{escape(row['period'])}</span></div><h2>{escape(row['title'])}</h2><p>{escape(row['organization'])}</p>{visual}<dl>{dl}</dl>{link}{related}</article>'''
 
 
 def build_profile():
@@ -141,7 +186,7 @@ def build_education_cases():
         row = by_id[record_id]
         schedule = f'<p>{escape(row["schedule"])}</p>' if row.get('schedule') else ''
         outcome = f'<p class="s-outcome">{escape(row["lesson"])}</p>' if row.get('lesson') else ''
-        body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p>{schedule}<p>{escape(row["result"])}</p>{outcome}</article>'
+        body += f'<article class="s-card"><span class="s-card-number">{escape(row["period"])}</span><h2 style="font-size:24px">{escape(row["title"])}</h2><p>{escape(row["organization"])}</p>{record_visual(row)}{schedule}<p>{escape(row["result"])}</p>{outcome}</article>'
         if record_id == 12:
             links = '<div class="s-actions"><a class="s-text-link" href="https://www.catholic.ac.kr/ko/newsroom/photonews.do?mode=view&amp;articleNo=274897" target="_blank" rel="noopener noreferrer">교육 기사 보기 ↗</a><a class="s-text-link" href="academy-interior.html">교육 구성 보기 →</a></div>'
             body = body.removesuffix('</article>') + links + '</article>'

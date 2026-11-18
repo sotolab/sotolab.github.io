@@ -14,6 +14,76 @@
   .s-archive-nav > div { flex-basis: 100%; }
 }
 .s-record { scroll-margin-top: 90px; }
+.s-record-visual {
+  margin: 16px 0 0;
+  overflow: hidden;
+  border: 1px solid #d6ded0;
+  border-radius: 5px;
+  color: #234032;
+}
+.s-record-photo { background: #e7ebe1; }
+.s-record-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  background: #202821;
+}
+.s-record-visual figcaption {
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.s-record-flow {
+  --visual-surface: #e1eade;
+  --visual-accent: #41634c;
+  padding: 11px 12px 14px;
+  background: radial-gradient(#c4cec0 0.7px, transparent 0.7px) 0 0 / 10px 10px, var(--visual-surface);
+}
+.s-record-flow[data-theme="education"] { --visual-surface: #f2e8d8; --visual-accent: #82583c; }
+.s-record-flow[data-theme="research"] { --visual-surface: #e0e9ec; --visual-accent: #3e6574; }
+.s-record-flow[data-theme="mentoring"] { --visual-surface: #eee6ea; --visual-accent: #795464; }
+.s-record-flow[data-theme="patent"] { --visual-surface: #ece8db; --visual-accent: #76623b; }
+.s-record-flow figcaption { padding: 0 0 9px; color: var(--visual-accent); }
+.s-record-flow ol {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.s-record-flow li {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 54px;
+  padding: 5px;
+  border: 1px solid #c8cfc5;
+  border-top: 2px solid var(--visual-accent);
+  border-radius: 3px;
+  background: #fcfcf8;
+  color: #253a30;
+  text-align: center;
+  overflow-wrap: anywhere;
+  font-size: clamp(11px, 1.35vw, 14px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.s-record-flow li + li::before {
+  position: absolute;
+  top: calc(50% - 3px);
+  left: -11px;
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid var(--visual-accent);
+  border-right: 1px solid var(--visual-accent);
+  transform: rotate(45deg);
+  content: "";
+}
+.s-record-related { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 14px; }
 @media (min-width: 761px) and (max-width: 1000px) {
   .s-nav { flex-wrap: wrap; padding-block: 10px; }
   .s-nav .s-menu { flex-wrap: wrap; }
