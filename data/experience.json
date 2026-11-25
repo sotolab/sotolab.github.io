@@ -1,6 +1,16 @@
 [
   {
     "category": "education",
+    "period": "2026.11.23",
+    "title": "지능형홈관리사 자격증반 강의",
+    "organization": "부산 대양고등학교",
+    "role": "자격증반 강의",
+    "result": "지능형홈관리사 자격증반을 위한 강의 진행",
+    "source": "강사 제공 출강 기록(2026.11.25)",
+    "id": 63
+  },
+  {
+    "category": "education",
     "period": "2026.11.16",
     "title": "형태를 넘어, 반응하는 가구: AIoT가 바꾸는 가구의 형태와 사용 경험",
     "organization": "가톨릭대학교",
