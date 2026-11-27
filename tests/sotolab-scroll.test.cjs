@@ -104,12 +104,17 @@ test('loading the script twice does not duplicate controls or animation', () => 
   assert.equal(state.appended.length, 2);
 });
 
-test('all 18 public pages load the current animation script exactly once', () => {
+test('all 17 pages with shared scroll controls load the same script exactly once', () => {
   const pages = ['index', 'profile', 'academy', 'academy-interior', 'academy-practice',
     'academy-special', 'academy-visit', 'academy-business', 'sotolab', 'experience',
-    'books', 'contact', 'curriculum', 'mvp-projects', 'online', 'reviews', 'brand', 'history'];
+    'books', 'contact', 'curriculum', 'mvp-projects', 'online', 'reviews', 'history'];
+  // The standalone brand guide does not use the shared scroll controls.
+  const home = readFileSync(join(root, 'index.html'), 'utf8');
+  const currentScript = home.match(/src="(js\/sotolab-scroll\.js\?v=[\d-]+)"/)[1];
   for (const page of pages) {
     const html = readFileSync(join(root, page + '.html'), 'utf8');
-    assert.equal((html.match(/src="js\/sotolab-scroll\.js\?v=20261105-1"/g) || []).length, 1, page);
+    const scripts = [...html.matchAll(/src="(js\/sotolab-scroll\.js(?:\?[^"\s]*)?)"/g)];
+    assert.equal(scripts.length, 1, page);
+    assert.equal(scripts[0][1], currentScript, page);
   }
 });
