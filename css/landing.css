@@ -184,3 +184,50 @@ h2 { font-size: clamp(32px, 4.3vw, 60px); font-weight: 700; line-height: 1.32; }
   .contact-steps { grid-template-columns: minmax(0, 1fr); gap: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* The homepage is a short introduction; the linked pages carry the detail. */
+.home-page .hero-grid { padding-block: 36px 44px; }
+.home-page .hero-visual { min-height: clamp(340px, 32vw, 460px); }
+.home-page .hero-description { max-width: 480px; }
+.home-page #classes h2, .home-section-head h2, .home-page .contact-copy h2 { font-size: clamp(28px, 3vw, 42px); }
+.home-page .brand-section > .wrap { padding-block: 44px; }
+.home-page .program-grid { margin-top: 24px; }
+.home-page .program-grid article { padding: 24px; }
+.home-page .program-grid h3 + p { margin-bottom: 0; }
+.home-page .program-grid h3 { font-size: clamp(21px, 2.2vw, 28px); }
+.home-work { padding-block: 56px; }
+.home-section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+.home-case-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.home-tool img { width: 100%; background: #e7ebdf; }
+.home-tool > a { display: block; }
+.home-tool figcaption { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; font-size: 14px; line-height: 1.6; }
+.home-tool figcaption span { color: var(--muted); }
+.home-class { display: block; padding: 18px 0; border-bottom: 1px solid var(--rule); text-decoration: none; }
+.home-class:hover h3 { text-decoration: underline; text-underline-offset: .25em; }
+.home-class > span { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: var(--muted); font-size: 14px; }
+.home-class time { font-variant-numeric: tabular-nums; }
+.home-class h3 { margin-top: 8px; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; }
+.home-educator { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.home-educator p { font-size: 16px; line-height: 1.8; }
+.home-educator p span { display: block; color: var(--muted); font-size: 14px; }
+.home-educator nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.home-educator nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+.home-page .contact-grid { padding-block: 48px; }
+@media (min-width: 681px) and (max-width: 950px) {
+  .home-page .program-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .home-page .program-grid article { padding: 18px; }
+  .home-page .program-grid h3 { font-size: 21px; }
+}
+@media (max-width: 680px) {
+  .home-page .hero-grid { padding-block: 24px 32px; }
+  .home-page .hero-visual { min-height: 0; aspect-ratio: 1.8; }
+  .home-page h1 { font-size: clamp(34px, 8.8vw, 56px); }
+  .home-page .hero-description { line-height: 1.8; }
+  .home-page .program-grid { gap: 0; }
+  .home-page .program-grid article { padding: 20px 0; background: transparent; border-top: 1px solid #aab5a5; }
+  .home-page .program-grid h3 { margin-block: 4px; }
+  .home-case-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .home-work { padding-block: 40px; }
+  .home-educator { margin-top: 28px; }
+  .home-page .contact-grid { padding-block: 36px; }
+}
